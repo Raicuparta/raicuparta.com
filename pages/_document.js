@@ -31,27 +31,47 @@ class CustomHead extends Head {
   }
 }
 
+const Analytics = ({ id }) => (
+  <>
+    <script
+      async
+      src={`https://www.googletagmanager.com/gtag/js?id=${id}`}
+    />
+    <script
+      dangerouslySetInnerHTML={{
+        __html: `
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', '${id}');
+        `
+      }}
+    />
+  </>
+)
+
 class StaticDocument extends Document {
   render() {
     return (
       <html>
         <CustomHead>
-            <title>
-              Ricardo Lopes: Front-end Developer
-            </title>
-            <meta
-              name="author"
-              content="Ricardo Lopes"
-            />
-            <meta
-              name="description"
-              content="Portfolio page for Ricardo Lopes: Front-end Developer"
-            />
-          	<link
-              rel="shortcut icon"
-              href="static/favicon.ico"
-              type="image/vnd.microsoft.icon"
-            />
+          <Analytics id="UA-65658920-2" />
+          <title>
+            Ricardo Lopes: Front-end Developer
+          </title>
+          <meta
+            name="author"
+            content="Ricardo Lopes"
+          />
+          <meta
+            name="description"
+            content="Portfolio page for Ricardo Lopes: Front-end Developer"
+          />
+          <link
+            rel="shortcut icon"
+            href="static/favicon.ico"
+            type="image/vnd.microsoft.icon"
+          />
         </CustomHead>
         <body>
           <Main />
