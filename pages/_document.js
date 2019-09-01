@@ -35,7 +35,24 @@ class StaticDocument extends Document {
   render() {
     return (
       <html>
-        <CustomHead />
+        <CustomHead>
+            <title>
+              Ricardo Lopes: Front-end Developer
+            </title>
+            <meta
+              name="author"
+              content="Ricardo Lopes"
+            />
+            <meta
+              name="description"
+              content="Portfolio page for Ricardo Lopes: Front-end Developer"
+            />
+          	<link
+              rel="shortcut icon"
+              href="static/favicon.ico"
+              type="image/vnd.microsoft.icon"
+            />
+        </CustomHead>
         <body>
           <Main />
         </body>
