@@ -53,7 +53,7 @@ const Analytics = ({ id }) => (
 class StaticDocument extends Document {
   render() {
     return (
-      <html>
+      <html lang="en">
         <CustomHead>
           <Analytics id="UA-65658920-2" />
           <title>
