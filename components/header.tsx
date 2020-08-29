@@ -1,16 +1,18 @@
-import React from 'react'
-import css from 'styled-jsx/css'
+import React from 'react';
+import css from 'styled-jsx/css';
 
-const Header = ({
-  title,
-  subtitle,
-}) => (
+type Props = {
+  title: string;
+  subtitle: string;
+};
+
+export const Header = ({ title, subtitle }: Props) => (
   <header>
     <h1>{title}</h1>
     <h2>{subtitle}</h2>
     <style jsx>{styles}</style>
   </header>
-)
+);
 
 const styles = css`
   font-weight: normal;
@@ -26,6 +28,4 @@ const styles = css`
     color: var(--accent);
     margin-bottom: 1.2em;
   }
-`
-
-export default Header
+`;

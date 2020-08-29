@@ -1,24 +1,28 @@
 {
   "name": "ricardo-lopes-dev",
-  "homepage": "https://raicuparta.github.io/ricardo-lopes-dev",
+  "homepage": "https://ricardolopes.dev",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "run-build": "npm run build && next start",
+    "deploy": "npm run build && gh-pages -t -d out",
     "build": "next build && next export",
-    "start": "next start",
-    "predeploy": "yarn build",
-    "deploy": "gh-pages -d out"
+    "prettier": "prettier --write ."
   },
   "dependencies": {
-    "@svgr/webpack": "^4.3.2",
-    "next": "9.3.2",
-    "react": "16.9.0",
-    "react-dom": "16.9.0"
+    "@svgr/webpack": "^5.4.0",
+    "axios": "^0.20.0",
+    "next": "9.5.2",
+    "react": "16.13.1",
+    "react-dom": "16.13.1"
   },
   "devDependencies": {
-    "babel-plugin-inline-react-svg": "^1.1.0",
-    "eslint": "^6.3.0",
-    "gh-pages": "^2.1.1"
+    "@types/node": "^14.6.2",
+    "@types/styled-jsx": "^2.2.8",
+    "@types/react": "^16.9.48",
+    "gh-pages": "^3.1.0",
+    "prettier": "^2.1.1",
+    "typescript": "^4.0.2"
   }
 }

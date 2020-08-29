@@ -1,14 +1,14 @@
-import React from 'react'
-import css from 'styled-jsx/css'
+import React from 'react';
+import css from 'styled-jsx/css';
 
-const Face = () => (
+export const Face = () => (
   <picture>
-    <source srcSet="static/img/face.webp" type="image/webp" />
-    <source srcSet="static/img/face.jpg" type="image/jpeg" />
+    <source srcSet="img/face.webp" type="image/webp" />
+    <source srcSet="img/face.jpg" type="image/jpeg" />
     <img src="img/face.jpg" alt="" />
     <style jsx>{styles}</style>
   </picture>
-)
+);
 
 const styles = css`
   img {
@@ -52,6 +52,4 @@ const styles = css`
       transform: scale(2) rotate(-60deg);
     }
   }
-`
-
-export default Face
+`;

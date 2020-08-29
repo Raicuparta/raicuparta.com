@@ -1,22 +1,24 @@
-import React from 'react'
-import css from 'styled-jsx/css'
+import React from 'react';
+import css from 'styled-jsx/css';
 
-import svg from '../assets'
+import assets from '../svg-assets';
 
-const Icon = ({
-  name,
-  title,
-  url,
-}) => {
-  const SvgIcon = svg[name]
+type Props = {
+  name: keyof typeof assets;
+  title: string;
+  url: string;
+};
+
+export const Icon = ({ name, title, url }: Props) => {
+  const SvgIcon = assets[name];
 
   return (
     <a href={url} title={title}>
-      <SvgIcon alt={title} />
+      <SvgIcon />
       <style jsx>{styles}</style>
     </a>
-  )
-}
+  );
+};
 
 const styles = css`
   width: 50px;
@@ -34,6 +36,4 @@ const styles = css`
     opacity: 1;
     fill: var(--accent);
   }
-`
-
-export default Icon
+`;
