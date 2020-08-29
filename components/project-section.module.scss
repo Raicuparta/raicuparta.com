@@ -1,0 +1,49 @@
+.projectsWrapper {
+  display: flex;
+  margin: auto;
+  // padding: 0 20px;
+  justify-content: center;
+  max-width: 800px;
+  flex-wrap: wrap;
+}
+
+.project {
+  margin: 10px;
+  padding: 15px;
+  background: #2e2e2e;
+  max-width: 300px;
+  color: var(--text);
+  text-decoration: none;
+  &:hover {
+    background: #3a3a3a;
+  }
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.projectDescription {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+    'Lucida Sans', Arial, sans-serif;
+  font-size: 0.8em;
+}
+
+.projectTitle {
+  margin: 0;
+}
+
+.starIcon {
+  width: 20px;
+  height: 20px;
+  fill: var(--accent);
+}
+
+.tag {
+  padding: 3px 5px;
+  font-size: 0.75em;
+  margin: 5px;
+  color: var(--background);
+  background: var(--accent);
+  border-radius: 3px;
+  font-weight: bold;
+}

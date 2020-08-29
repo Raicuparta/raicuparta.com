@@ -7,7 +7,7 @@ type Props = {
 };
 
 export const Header = ({ title, subtitle }: Props) => (
-  <header>
+  <header style={{ fontWeight: 'normal' }}>
     <h1>{title}</h1>
     <h2>{subtitle}</h2>
     <style jsx>{styles}</style>
@@ -15,7 +15,6 @@ export const Header = ({ title, subtitle }: Props) => (
 );
 
 const styles = css`
-  font-weight: normal;
   margin-top: 0;
 
   h1 {

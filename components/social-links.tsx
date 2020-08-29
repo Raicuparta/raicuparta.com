@@ -1,4 +1,5 @@
-import { Icon } from '../components';
+import { IconLink } from '../components';
+import styles from './social-links.module.scss';
 
 const links = [
   {
@@ -10,11 +11,6 @@ const links = [
     name: 'LinkedIn',
     title: 'LinkedIn Ricardo Lopes',
     url: 'https://www.linkedin.com/in/ricardo-lopes-3a071643/',
-  },
-  {
-    name: 'Envelope',
-    title: 'E-mail raicuparta@gmail.com',
-    url: 'mailto:raicuparta@gmail.com',
   },
   {
     name: 'StackOverflow',
@@ -39,9 +35,9 @@ const links = [
 ] as const;
 
 export const SocialLinks = () => (
-  <nav className="links">
+  <nav className={styles.socialLinks}>
     {links.map((link) => (
-      <Icon key={link.name} {...link} />
+      <IconLink key={link.name} {...link} />
     ))}
   </nav>
 );
