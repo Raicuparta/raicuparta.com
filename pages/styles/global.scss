@@ -1,7 +1,7 @@
 body {
   --background: #222;
   --background-light: #2e2e2e;
-  --text: white;
+  --text: #e7e7e7;
   --accent: #8ee478;
   --spacing: 15px;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
@@ -9,6 +9,7 @@ body {
   margin: 0;
   color: var(--text);
   background: var(--background);
+  font-weight: lighter;
 }
 
 h1,

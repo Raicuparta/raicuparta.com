@@ -2,17 +2,18 @@
   max-width: 35px;
   max-height: 35px;
   flex: 1;
-  /* margin: 0 15px; */
-  display: inline-block;
-  opacity: 0.5;
-  transition: 150ms;
-  fill: var(--text);
-
-  :hover,
-  :active,
-  :focus {
-    transform: scale(1.1);
-    opacity: 1;
-    fill: var(--accent);
+  &:hover,
+  &:active,
+  &:focus {
+    .icon {
+      transform: scale(1.1);
+      opacity: 1;
+    }
   }
+}
+
+.icon {
+  opacity: 0.8;
+  transition: 150ms;
+  fill: var(--accent);
 }

@@ -78,7 +78,7 @@ const Home = () => (
     <Face />
     <main className={styles.main}>
       <div className={styles.pageBody}>
-        <Header title="Ricardo Lopes" subtitle="Front-end Developer" />
+        <Header title="Ricardo Lopes" />
         <SocialLinks />
         <div className={styles.content}>
           <ProjectsSection title="Popular Articles" projects={articles} />

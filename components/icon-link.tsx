@@ -17,7 +17,7 @@ export const IconLink = ({ name, title, url }: Props) => {
       href={url}
       title={title}
     >
-      <Icon name={name} />
+      <Icon className={styles.icon} name={name} />
     </a>
   );
 };
