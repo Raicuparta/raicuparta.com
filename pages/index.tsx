@@ -91,9 +91,9 @@ const Home = () => (
               <a href="https://www.mobiusdigitalgames.com/outer-wilds.html">
                 Outer Wilds
               </a>
-              , I worked on a few projects that became popular. Got some
-              coverage by{' '}
-              <a href="https://uploadvr.com/outer-wilds-vr-mod">UploadVR</a> and{' '}
+              , I worked on a few projects popular projects. Got some coverage
+              by <a href="https://uploadvr.com/outer-wilds-vr-mod">UploadVR</a>{' '}
+              and{' '}
               <a href="https://www.dualshockers.com/outer-wilds-virtual-reality-fan-mod/">
                 DualShockers
               </a>

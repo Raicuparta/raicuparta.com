@@ -1,6 +1,7 @@
 import { Project } from '../types';
 import { Icon } from '.';
 import styles from './styles/project-card.module.scss';
+import { Tag } from './tag';
 
 type Props = {
   project: Project;
@@ -19,9 +20,7 @@ export const ProjectCard = ({ project }: Props) => (
     </div>
     <div>
       {project.tags.map((tag) => (
-        <span key={tag} className={styles.tag}>
-          {tag}
-        </span>
+        <Tag key={tag}>{tag}</Tag>
       ))}
     </div>
     {project.stars > 0 && (
