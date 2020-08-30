@@ -4,7 +4,7 @@ import {
   SocialLinks,
   ProjectsSection,
   Face,
-  ExternalLink,
+  Link,
 } from '../components';
 import styles from './styles/index.module.scss';
 
@@ -94,18 +94,18 @@ const Home = () => (
           >
             <p>
               As part of the modding community of the video game{' '}
-              <ExternalLink href="https://www.mobiusdigitalgames.com/outer-wilds.html">
+              <Link href="https://www.mobiusdigitalgames.com/outer-wilds.html">
                 Outer Wilds
-              </ExternalLink>
+              </Link>
               , I worked on a few projects popular projects. Got some coverage
               by{' '}
-              <ExternalLink href="https://uploadvr.com/outer-wilds-vr-mod">
+              <Link href="https://uploadvr.com/outer-wilds-vr-mod">
                 UploadVR
-              </ExternalLink>{' '}
+              </Link>{' '}
               and{' '}
-              <ExternalLink href="https://www.dualshockers.com/outer-wilds-virtual-reality-fan-mod/">
+              <Link href="https://www.dualshockers.com/outer-wilds-virtual-reality-fan-mod/">
                 DualShockers
-              </ExternalLink>
+              </Link>
               .
             </p>
           </ProjectsSection>

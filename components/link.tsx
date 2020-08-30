@@ -5,7 +5,7 @@ type Props = DetailedHTMLProps<
   HTMLAnchorElement
 >;
 
-export const ExternalLink: React.FunctionComponent<Props> = ({
+export const Link: React.FunctionComponent<Props> = ({
   children,
   ...props
 }) => (

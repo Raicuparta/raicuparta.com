@@ -4,5 +4,5 @@ export * from './icon-link';
 export * from './projects-section';
 export * from './social-links';
 export * from './icon';
-export * from './external-link';
+export * from './link';
 export * from './tag';
