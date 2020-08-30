@@ -20,8 +20,9 @@ export const IconLink = ({ name, title, url }: Props) => {
 };
 
 const styles = css`
-  width: 20px;
-  height: 20px;
+  max-width: 35px;
+  max-height: 35px;
+  flex: 1;
   margin: 0 15px;
   display: inline-block;
   opacity: 0.5;

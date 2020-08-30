@@ -82,26 +82,28 @@ const Home = () => (
       <div className={styles.pageBody}>
         <Header title="Ricardo Lopes" subtitle="Front-end Developer" />
         <SocialLinks />
-        <ProjectsSection title="Popular Articles" projects={articles} />
-        <ProjectsSection
-          title="Outer Wilds Projects"
-          projects={outerWildsProjects}
-        >
-          <p>
-            As part of the modding community of the video game{' '}
-            <a href="https://www.mobiusdigitalgames.com/outer-wilds.html">
-              Outer Wilds
-            </a>
-            , I worked on a few projects that became popular. Got some coverage
-            by <a href="https://uploadvr.com/outer-wilds-vr-mod">UploadVR</a>{' '}
-            and{' '}
-            <a href="https://www.dualshockers.com/outer-wilds-virtual-reality-fan-mod/">
-              DualShockers
-            </a>
-            .
-          </p>
-        </ProjectsSection>
-        <ProjectsSection title="Other Projects" projects={otherProjects} />
+        <div className={styles.content}>
+          <ProjectsSection title="Popular Articles" projects={articles} />
+          <ProjectsSection
+            title="Outer Wilds Projects"
+            projects={outerWildsProjects}
+          >
+            <p>
+              As part of the modding community of the video game{' '}
+              <a href="https://www.mobiusdigitalgames.com/outer-wilds.html">
+                Outer Wilds
+              </a>
+              , I worked on a few projects that became popular. Got some
+              coverage by{' '}
+              <a href="https://uploadvr.com/outer-wilds-vr-mod">UploadVR</a> and{' '}
+              <a href="https://www.dualshockers.com/outer-wilds-virtual-reality-fan-mod/">
+                DualShockers
+              </a>
+              .
+            </p>
+          </ProjectsSection>
+          <ProjectsSection title="Other Projects" projects={otherProjects} />
+        </div>
       </div>
     </main>
   </>

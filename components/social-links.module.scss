@@ -1,7 +1,9 @@
 .socialLinks {
-  padding: var(--spacing);
+  padding: var(--spacing) 0;
   position: sticky;
   top: 0;
   background: var(--background);
   box-shadow: 0 5px 10px var(--background);
+  display: flex;
+  justify-content: space-evenly;
 }
