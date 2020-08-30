@@ -1,13 +1,4 @@
-.projectsWrapper {
-  display: flex;
-  margin: auto;
-  // padding: 0 20px;
-  justify-content: center;
-  max-width: 800px;
-  flex-wrap: wrap;
-}
-
-.project {
+.projectCard {
   margin: 10px;
   padding: 15px;
   background: #2e2e2e;
@@ -22,13 +13,13 @@
   justify-content: space-between;
 }
 
-.projectDescription {
+.description {
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
     'Lucida Sans', Arial, sans-serif;
   font-size: 0.8em;
 }
 
-.projectTitle {
+.title {
   margin: 0;
 }
 
