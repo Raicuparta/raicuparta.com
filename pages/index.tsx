@@ -4,36 +4,55 @@ import { Project } from '../types';
 import { Header, SocialLinks, ProjectsSection } from '../components';
 import styles from './index.module.scss';
 
-const projects: Project[] = [
+const outerWildsProjects: Project[] = [
   {
     title: 'NomaiVR',
     description:
-      'Modification for the game "Outer Wilds" that converts it from a regular "flat" 3D game to a full VR experience',
+      'Mod that converts Outer Wilds from a traditional "flat" 3D game to a full VR experience',
     url: 'https://github.com/Raicuparta/nomai-vr',
     tags: ['C#', '.NET', 'Unity'],
     stars: 0,
   },
   {
-    title: 'Outer Wilds Mod Manager',
-    description:
-      'Windows app for installing and downloading game modifications.',
+    title: 'Mod Manager',
+    description: 'Windows app for installing and downloading mods.',
     url: 'https://github.com/Raicuparta/ow-mod-manager',
     tags: ['Electron', 'TypeScript', 'React'],
     stars: 0,
   },
   {
-    title: 'Outer Wilds Mods Website',
-    description: 'Web page with information about game modifications.',
+    title: 'Mods Website',
+    description:
+      'Web page with information about game modifications. Static page, but updates itself automatically with data from the mod database.',
     url: 'https://github.com/Raicuparta/outerwildsmods.com',
     tags: ['TypeScript', 'Next.js', 'React'],
     stars: 0,
   },
+  {
+    title: 'Mod Database',
+    description:
+      'Aggregates all mod repos made by the community into a self-updating repo. The website and mod manager both use this database.',
+    url: 'https://github.com/Raicuparta/outer-wilds-mod-db',
+    tags: ['GitHub Actions', 'TypeScript'],
+    stars: 0,
+  },
+];
+
+const otherProjects: Project[] = [
   {
     title: 'Curvatron',
     description:
       'Minimalist "snake" video game, available on Steam. Previously available on Android and iOS.',
     url: 'https://github.com/bravebunny/curvatron',
     tags: ['JavaScript', 'Phaser.JS'],
+    stars: 0,
+  },
+  {
+    title: 'Brave Bunny',
+    description:
+      'Worked on multiple small game projects with friends, participated in a bunch of game jams and other events.',
+    url: 'https://bravebunny.co',
+    tags: ['JavaScript', 'C#', 'Unity'],
     stars: 0,
   },
 ];
@@ -62,8 +81,12 @@ const Home = () => (
     <main className={styles.main}>
       <div className={styles.pageBody}>
         <Header title="Ricardo Lopes" subtitle="Front-end Developer" />
-        <ProjectsSection title="Popular Projects" projects={projects} />
         <ProjectsSection title="Popular Articles" projects={articles} />
+        <ProjectsSection
+          title="Outer Wilds Projects"
+          projects={outerWildsProjects}
+        />
+        <ProjectsSection title="Other Projects" projects={otherProjects} />
       </div>
       <SocialLinks />
     </main>
