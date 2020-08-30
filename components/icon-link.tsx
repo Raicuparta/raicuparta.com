@@ -19,6 +19,7 @@ export const IconLink = ({ name, title, url }: Props) => {
   );
 };
 
+// TODO cleanup all css
 const styles = css`
   max-width: 35px;
   max-height: 35px;
