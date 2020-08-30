@@ -81,6 +81,7 @@ const Home = () => (
     <main className={styles.main}>
       <div className={styles.pageBody}>
         <Header title="Ricardo Lopes" subtitle="Front-end Developer" />
+        <SocialLinks />
         <ProjectsSection title="Popular Articles" projects={articles} />
         <ProjectsSection
           title="Outer Wilds Projects"
@@ -102,7 +103,6 @@ const Home = () => (
         </ProjectsSection>
         <ProjectsSection title="Other Projects" projects={otherProjects} />
       </div>
-      <SocialLinks />
     </main>
   </>
 );

@@ -1,6 +1,7 @@
 .socialLinks {
   padding: var(--spacing);
   position: sticky;
-  bottom: 0;
+  top: 0;
   background: var(--background);
+  box-shadow: 0 5px 10px var(--background);
 }

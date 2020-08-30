@@ -25,6 +25,6 @@ const styles = css`
   h2 {
     font-size: 2em;
     color: var(--accent);
-    margin-bottom: 1.2em;
+    margin-bottom: 0.5em;
   }
 `;
