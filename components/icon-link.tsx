@@ -1,7 +1,5 @@
-import React from 'react';
-import css from 'styled-jsx/css';
-
 import assets from '../svg-assets';
+import styles from './icon-link.module.scss';
 import { Icon } from './icon';
 
 type Props = {
@@ -12,29 +10,14 @@ type Props = {
 
 export const IconLink = ({ name, title, url }: Props) => {
   return (
-    <a target="_blank" rel="noopener noreferrer" href={url} title={title}>
+    <a
+      className={styles.iconLink}
+      target="_blank"
+      rel="noopener noreferrer"
+      href={url}
+      title={title}
+    >
       <Icon name={name} />
-      <style jsx>{styles}</style>
     </a>
   );
 };
-
-// TODO cleanup all css
-const styles = css`
-  max-width: 35px;
-  max-height: 35px;
-  flex: 1;
-  /* margin: 0 15px; */
-  display: inline-block;
-  opacity: 0.5;
-  transition: 150ms;
-  fill: var(--text);
-
-  :hover,
-  :active,
-  :focus {
-    transform: scale(1.1);
-    opacity: 1;
-    fill: var(--accent);
-  }
-`;

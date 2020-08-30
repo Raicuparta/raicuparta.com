@@ -1,0 +1,15 @@
+.title,
+.subtitle {
+  margin-top: 0;
+}
+
+.title {
+  font-size: 3.5em;
+  margin-bottom: var(--spacing);
+}
+
+.subtitle {
+  font-size: 2em;
+  color: var(--accent);
+  margin-bottom: 0.5em;
+}

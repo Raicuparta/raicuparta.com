@@ -1,5 +1,4 @@
-import React from 'react';
-import css from 'styled-jsx/css';
+import styles from './header.module.scss';
 
 type Props = {
   title: string;
@@ -7,24 +6,8 @@ type Props = {
 };
 
 export const Header = ({ title, subtitle }: Props) => (
-  <header style={{ fontWeight: 'normal' }}>
-    <h1>{title}</h1>
-    <h2>{subtitle}</h2>
-    <style jsx>{styles}</style>
+  <header>
+    <h1 className={styles.title}>{title}</h1>
+    <h2 className={styles.subtitle}>{subtitle}</h2>
   </header>
 );
-
-const styles = css`
-  margin-top: 0;
-
-  h1 {
-    font-size: 3.5em;
-    margin-bottom: var(--spacing);
-  }
-
-  h2 {
-    font-size: 2em;
-    color: var(--accent);
-    margin-bottom: 0.5em;
-  }
-`;

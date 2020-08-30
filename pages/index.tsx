@@ -1,7 +1,5 @@
-import css from 'styled-jsx/css';
-
 import { Project } from '../types';
-import { Header, SocialLinks, ProjectsSection } from '../components';
+import { Header, SocialLinks, ProjectsSection, Face } from '../components';
 import styles from './index.module.scss';
 
 const outerWildsProjects: Project[] = [
@@ -77,7 +75,7 @@ const articles: Project[] = [
 
 const Home = () => (
   <>
-    {/* <Face /> */}
+    <Face />
     <main className={styles.main}>
       <div className={styles.pageBody}>
         <Header title="Ricardo Lopes" subtitle="Front-end Developer" />
