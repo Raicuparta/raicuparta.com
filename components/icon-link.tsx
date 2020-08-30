@@ -12,7 +12,7 @@ type Props = {
 
 export const IconLink = ({ name, title, url }: Props) => {
   return (
-    <a href={url} title={title}>
+    <a target="_blank" rel="noopener noreferrer" href={url} title={title}>
       <Icon name={name} />
       <style jsx>{styles}</style>
     </a>

@@ -7,7 +7,12 @@ type Props = {
 };
 
 export const ProjectCard = ({ project }: Props) => (
-  <a className={styles.projectCard} href={project.url}>
+  <a
+    className={styles.projectCard}
+    href={project.url}
+    target="_blank"
+    rel="noopener noreferrer"
+  >
     <h3 className={styles.title}>{project.title}</h3>
     <p className={styles.description}>{project.description}</p>
     <div>
