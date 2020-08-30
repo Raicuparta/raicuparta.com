@@ -23,7 +23,7 @@ const styles = css`
   max-width: 35px;
   max-height: 35px;
   flex: 1;
-  margin: 0 15px;
+  /* margin: 0 15px; */
   display: inline-block;
   opacity: 0.5;
   transition: 150ms;
