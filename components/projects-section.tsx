@@ -8,12 +8,17 @@ type Props = {
   title: string;
 };
 
-export const ProjectsSection = ({ projects, title }: Props) => (
-  <section>
+export const ProjectsSection: React.FunctionComponent<Props> = ({
+  projects,
+  title,
+  children,
+}) => (
+  <section className={styles.projectsSection}>
     <h2>{title}</h2>
+    {children}
     <div className={styles.projectsWrapper}>
       {projects.map((project) => (
-        <ProjectCard project={project} />
+        <ProjectCard key={project.title} project={project} />
       ))}
     </div>
   </section>

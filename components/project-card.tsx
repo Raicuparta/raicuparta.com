@@ -7,12 +7,14 @@ type Props = {
 };
 
 export const ProjectCard = ({ project }: Props) => (
-  <a key={project.title} className={styles.projectCard} href={project.url}>
+  <a className={styles.projectCard} href={project.url}>
     <h3 className={styles.title}>{project.title}</h3>
     <p className={styles.description}>{project.description}</p>
     <div>
       {project.tags.map((tag) => (
-        <span className={styles.tag}>{tag}</span>
+        <span key={tag} className={styles.tag}>
+          {tag}
+        </span>
       ))}
     </div>
     {project.stars > 0 && (

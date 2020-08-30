@@ -1,8 +1,11 @@
+.projectsSection {
+  max-width: 800px;
+  margin: auto;
+}
+
 .projectsWrapper {
   display: flex;
-  margin: auto;
   // padding: 0 20px;
   justify-content: center;
-  max-width: 800px;
   flex-wrap: wrap;
 }
