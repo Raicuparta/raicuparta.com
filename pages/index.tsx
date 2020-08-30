@@ -1,5 +1,11 @@
 import { Project } from '../types';
-import { Header, SocialLinks, ProjectsSection, Face } from '../components';
+import {
+  Header,
+  SocialLinks,
+  ProjectsSection,
+  Face,
+  ExternalLink,
+} from '../components';
 import styles from './styles/index.module.scss';
 
 const outerWildsProjects: Project[] = [
@@ -88,15 +94,18 @@ const Home = () => (
           >
             <p>
               As part of the modding community of the video game{' '}
-              <a href="https://www.mobiusdigitalgames.com/outer-wilds.html">
+              <ExternalLink href="https://www.mobiusdigitalgames.com/outer-wilds.html">
                 Outer Wilds
-              </a>
+              </ExternalLink>
               , I worked on a few projects popular projects. Got some coverage
-              by <a href="https://uploadvr.com/outer-wilds-vr-mod">UploadVR</a>{' '}
+              by{' '}
+              <ExternalLink href="https://uploadvr.com/outer-wilds-vr-mod">
+                UploadVR
+              </ExternalLink>{' '}
               and{' '}
-              <a href="https://www.dualshockers.com/outer-wilds-virtual-reality-fan-mod/">
+              <ExternalLink href="https://www.dualshockers.com/outer-wilds-virtual-reality-fan-mod/">
                 DualShockers
-              </a>
+              </ExternalLink>
               .
             </p>
           </ProjectsSection>

@@ -1,6 +1,6 @@
 import assets from '../svg-assets';
 import styles from './styles/icon-link.module.scss';
-import { Icon } from './icon';
+import { Icon, ExternalLink } from '.';
 
 type Props = {
   name: keyof typeof assets;
@@ -10,14 +10,8 @@ type Props = {
 
 export const IconLink = ({ name, title, url }: Props) => {
   return (
-    <a
-      className={styles.iconLink}
-      target="_blank"
-      rel="noopener noreferrer"
-      href={url}
-      title={title}
-    >
+    <ExternalLink className={styles.iconLink} href={url} title={title}>
       <Icon className={styles.icon} name={name} />
-    </a>
+    </ExternalLink>
   );
 };
