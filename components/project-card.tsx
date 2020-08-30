@@ -13,8 +13,10 @@ export const ProjectCard = ({ project }: Props) => (
     target="_blank"
     rel="noopener noreferrer"
   >
-    <h3 className={styles.title}>{project.title}</h3>
-    <p className={styles.description}>{project.description}</p>
+    <div>
+      <h3 className={styles.title}>{project.title}</h3>
+      <p className={styles.description}>{project.description}</p>
+    </div>
     <div>
       {project.tags.map((tag) => (
         <span key={tag} className={styles.tag}>

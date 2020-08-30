@@ -1,9 +1,12 @@
-.socialLinks {
-  padding: var(--spacing) 0;
+.wrapper {
   position: sticky;
   top: 0;
   background: var(--background);
   box-shadow: 0 5px 10px var(--background);
+}
+
+.socialLinks {
+  padding: var(--spacing) 0;
   display: flex;
   justify-content: space-evenly;
   max-width: 500px;

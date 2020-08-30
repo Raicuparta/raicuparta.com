@@ -35,9 +35,11 @@ const links = [
 ] as const;
 
 export const SocialLinks = () => (
-  <nav className={styles.socialLinks}>
-    {links.map((link) => (
-      <IconLink key={link.name} {...link} />
-    ))}
-  </nav>
+  <div className={styles.wrapper}>
+    <nav className={styles.socialLinks}>
+      {links.map((link) => (
+        <IconLink key={link.name} {...link} />
+      ))}
+    </nav>
+  </div>
 );
