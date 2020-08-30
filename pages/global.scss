@@ -2,12 +2,14 @@ body {
   --background: #222;
   --text: white;
   --accent: #8ee478;
+  --spacing: 10px;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
     'Lucida Sans', Arial, sans-serif;
   margin: 0;
   color: var(--text);
   background: var(--background);
   text-align: center;
+  padding: var(--spacing);
 }
 
 h1,

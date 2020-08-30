@@ -1,8 +1,8 @@
 .projectCard {
-  margin: 10px;
+  margin: var(--spacing);
   padding: 15px;
   background: #2e2e2e;
-  width: 300px;
+  min-width: 300px;
   color: var(--text);
   text-decoration: none;
   &:hover {
@@ -11,6 +11,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  flex: 1;
 }
 
 .description {

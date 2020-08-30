@@ -3,9 +3,14 @@
   margin: auto;
 }
 
+.title {
+  margin-bottom: 0;
+}
+
 .projectsWrapper {
   display: flex;
   // padding: 0 20px;
   justify-content: center;
   flex-wrap: wrap;
+  margin: 0 calc(var(--spacing) * -1);
 }

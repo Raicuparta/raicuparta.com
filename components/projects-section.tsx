@@ -14,7 +14,7 @@ export const ProjectsSection: React.FunctionComponent<Props> = ({
   children,
 }) => (
   <section className={styles.projectsSection}>
-    <h2>{title}</h2>
+    <h2 className={styles.title}>{title}</h2>
     {children}
     <div className={styles.projectsWrapper}>
       {projects.map((project) => (

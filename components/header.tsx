@@ -19,7 +19,7 @@ const styles = css`
 
   h1 {
     font-size: 3.5em;
-    margin-bottom: 10px;
+    margin-bottom: var(--spacing);
   }
 
   h2 {
