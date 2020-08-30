@@ -1,11 +1,11 @@
 .projectCard {
   margin: var(--spacing);
   padding: 15px;
-  background: #2e2e2e;
+  border: 1px solid var(--background-light);
   color: var(--text);
   text-decoration: none;
   &:hover {
-    background: #3a3a3a;
+    background: var(--background-light);
   }
   display: flex;
   flex-direction: column;
@@ -19,6 +19,7 @@
 
 .title {
   margin: 0;
+  color: var(--accent);
 }
 
 .starIcon {

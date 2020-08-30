@@ -5,6 +5,7 @@
 
 .title {
   margin-bottom: 0;
+  text-align: center;
 }
 
 .projectsWrapper {
@@ -15,5 +16,7 @@
 }
 
 .description p {
-  margin: 0.5em;
+  margin: 0.5em 0 0 0;
+  text-align-last: left;
+  line-height: 1.4em;
 }
