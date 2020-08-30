@@ -1,0 +1,25 @@
+body {
+  --background: #222;
+  --background-light: #2e2e2e;
+  --text: #cfcfcf;
+  --accent: #81ce6d;
+  --spacing: 15px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+    'Lucida Sans', Arial, sans-serif;
+  margin: 0;
+  color: var(--text);
+  background: var(--background);
+  font-weight: lighter;
+}
+
+h1,
+h2,
+h3 {
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: normal;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
