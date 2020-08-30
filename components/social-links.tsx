@@ -1,5 +1,5 @@
 import { IconLink } from '../components';
-import styles from './social-links.module.scss';
+import styles from './styles/social-links.module.scss';
 
 const links = [
   {

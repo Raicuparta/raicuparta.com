@@ -1,5 +1,5 @@
 import assets from '../svg-assets';
-import styles from './icon-link.module.scss';
+import styles from './styles/icon-link.module.scss';
 import { Icon } from './icon';
 
 type Props = {

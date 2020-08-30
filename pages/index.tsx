@@ -1,6 +1,6 @@
 import { Project } from '../types';
 import { Header, SocialLinks, ProjectsSection, Face } from '../components';
-import styles from './index.module.scss';
+import styles from './styles/index.module.scss';
 
 const outerWildsProjects: Project[] = [
   {

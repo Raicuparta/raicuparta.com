@@ -1,4 +1,4 @@
-import styles from './face.module.scss';
+import styles from './styles/face.module.scss';
 
 export const Face = () => (
   <picture>
