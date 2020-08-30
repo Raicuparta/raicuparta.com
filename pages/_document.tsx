@@ -73,6 +73,10 @@ class MyDocument extends Document {
         <title>Ricardo Lopes</title>
         <CustomHead>
           <Analytics id={googleAnalyticsId} />
+          <meta
+            name="Description"
+            content="Ricardo Lopes: Frontend Developer"
+          ></meta>
         </CustomHead>
         <body>
           <Main />
