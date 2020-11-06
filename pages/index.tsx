@@ -79,6 +79,41 @@ const articles: Project[] = [
   },
 ];
 
+const professionalProjects: Project[] = [
+  {
+    title: 'Trainline',
+    description:
+      'Ticketing platform for trains / buses. I did maintenance and implementation of new features on the front end for trainline.com.',
+    url: 'https://trainline.com',
+    tags: ['TypeScript', 'Node.js', 'React'],
+    stars: 0,
+  },
+  {
+    title: 'AutoScout24 Switzerland',
+    description:
+      'Marketplace for vehicles. I worked on the main page, and created a new area for private members.',
+    url: 'https://autoscout24.ch',
+    tags: ['TypeScript', 'Node.js', 'React'],
+    stars: 0,
+  },
+  {
+    title: 'CityRow Go',
+    description:
+      'Fitness app for rowing enthusiasts. I helped create the React Native app.',
+    url: 'https://www.cityrow.com/',
+    tags: ['TypeScript', 'React Native'],
+    stars: 0,
+  },
+  {
+    title: 'Radiator Labs',
+    description:
+      'App / device for improving the efficiency of radiators. I built a dashboard with graphs and stats about said radiators.',
+    url: 'https://www.radiatorlabs.com',
+    tags: ['JavaScript', 'React', 'GraphQL'],
+    stars: 0,
+  },
+];
+
 const Home = () => (
   <>
     <Face />
@@ -110,6 +145,15 @@ const Home = () => (
             </p>
           </ProjectsSection>
           <ProjectsSection title="Other Projects" projects={otherProjects} />
+          <ProjectsSection
+            title="Professional Projects"
+            projects={professionalProjects}
+          >
+            <p>
+              These are a few of the projects I contributed to during my
+              professional career.
+            </p>
+          </ProjectsSection>
         </div>
       </div>
     </main>
