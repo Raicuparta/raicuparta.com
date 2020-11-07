@@ -132,8 +132,7 @@ const Home = () => (
               <Link href="https://www.mobiusdigitalgames.com/outer-wilds.html">
                 Outer Wilds
               </Link>
-              , I worked on a few projects popular projects. Got some coverage
-              by{' '}
+              , I worked on a few popular projects. Got some coverage by{' '}
               <Link href="https://uploadvr.com/outer-wilds-vr-mod">
                 UploadVR
               </Link>{' '}
