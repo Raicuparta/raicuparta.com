@@ -5,7 +5,6 @@ import LinkedIn from './linkedin.svg';
 import Medium from './medium.svg';
 import StackOverflow from './stack-overflow.svg';
 import Twitter from './twitter.svg';
-import Star from './star.svg';
 
 export default {
   Dev,
@@ -15,5 +14,4 @@ export default {
   Medium,
   StackOverflow,
   Twitter,
-  Star,
 };

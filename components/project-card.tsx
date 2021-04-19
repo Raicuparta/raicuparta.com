@@ -17,11 +17,5 @@ export const ProjectCard = ({ project }: Props) => (
         <Tag key={tag}>{tag}</Tag>
       ))}
     </div>
-    {project.stars > 0 && (
-      <span>
-        <Icon className={styles.starIcon} name="Star" />
-        {project.stars}
-      </span>
-    )}
   </Link>
 );
