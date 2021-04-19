@@ -13,6 +13,7 @@
 }
 
 .icon {
-  transition: var(--transition-time);
+  transition-property: fill, transform;
+  transition-duration: var(--transition-time);
   fill: var(--text);
 }

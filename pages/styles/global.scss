@@ -33,5 +33,5 @@ a {
   &:hover {
     color: var(--accent);
   }
-  transition: var(--transition-time);
+  transition: color var(--transition-time);
 }
