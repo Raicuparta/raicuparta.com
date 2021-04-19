@@ -1,11 +1,12 @@
 .projectCard {
-  margin: var(--spacing);
-  padding: 15px;
-  border: 1px solid var(--background-light);
+  margin: var(--spacing) 0;
+  padding: var(--spacing);
+  border: 1px solid var(--highlight);
+  border-radius: 15px;
   color: var(--text);
   text-decoration: none;
   &:hover {
-    background: var(--background-light);
+    background: var(--highlight);
   }
   display: flex;
   flex-direction: column;
@@ -20,7 +21,7 @@
 }
 
 .title {
-  margin: 0;
+  margin: -5px 0 0 0;
   color: var(--accent);
 }
 

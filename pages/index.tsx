@@ -116,7 +116,7 @@ const professionalProjects: Project[] = [
 
 const Home = () => (
   <>
-    <Face />
+    {/* <Face /> */}
     <main className={styles.main}>
       <div className={styles.pageBody}>
         <Header title="Ricardo Lopes" />

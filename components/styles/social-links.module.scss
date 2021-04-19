@@ -2,7 +2,8 @@
   position: sticky;
   top: 0;
   background: var(--background);
-  box-shadow: 0 5px 10px var(--background);
+  background: linear-gradient(0, transparent 0%, var(--background) 50%);
+  // box-shadow: 0 5px 10px var(--background);
   z-index: 1;
 }
 
