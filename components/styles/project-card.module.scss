@@ -1,21 +1,22 @@
 .projectCard {
   margin: var(--spacing) 0;
   padding: var(--spacing);
-  border-radius: 15px;
+  border-radius: 20px;
   color: var(--text);
   text-decoration: none;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   flex: 1;
-  box-shadow: inset 0 0 20px 0px var(--highlight);
+  box-shadow: inset 0 0 10px 0px var(--highlight);
+  transition: var(--transition-time);
   &:hover {
-    background: var(--highlight);
+    box-shadow: inset 0 0 10px 0px var(--text);
   }
 }
 
 .description {
-  font-size: 0.8em;
+  font-weight: lighter;
   line-height: 1.4em;
   margin-top: 0;
 }

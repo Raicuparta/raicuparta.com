@@ -1,20 +1,18 @@
 .iconLink {
   max-width: 35px;
   max-height: 35px;
-  border-radius: 10px;
   flex: 1;
   &:hover,
   &:active,
   &:focus {
     .icon {
       transform: scale(1.1);
-      opacity: 1;
+      fill: var(--accent);
     }
   }
 }
 
 .icon {
-  opacity: 0.8;
-  transition: 150ms;
-  fill: var(--accent);
+  transition: var(--transition-time);
+  fill: var(--text);
 }
