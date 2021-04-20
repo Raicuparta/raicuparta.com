@@ -1,4 +1,3 @@
-export * from './face';
 export * from './header';
 export * from './icon-link';
 export * from './projects-section';

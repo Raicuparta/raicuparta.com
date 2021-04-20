@@ -1,11 +1,5 @@
 import { Project } from '../types';
-import {
-  Header,
-  SocialLinks,
-  ProjectsSection,
-  Face,
-  Link,
-} from '../components';
+import { Header, SocialLinks, ProjectsSection, Link } from '../components';
 import styles from './styles/index.module.scss';
 
 const outerWildsProjects: Project[] = [
@@ -104,10 +98,9 @@ const professionalProjects: Project[] = [
 
 const Home = () => (
   <>
-    {/* <Face /> */}
     <main className={styles.main}>
       <div className={styles.pageBody}>
-        <Header title="Ricardo Lopes" />
+        <Header title="ricardo lopes" />
         <SocialLinks />
         <div className={styles.content}>
           <ProjectsSection title="Popular Articles" projects={articles} />

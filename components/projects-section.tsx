@@ -16,10 +16,8 @@ export const ProjectsSection: React.FunctionComponent<Props> = ({
   <section className={styles.projectsSection}>
     <h2 className={styles.title}>{title}</h2>
     <div className={styles.description}>{children}</div>
-    {/* <div className={styles.projectsWrapper}> */}
     {projects.map((project) => (
       <ProjectCard key={project.title} project={project} />
     ))}
-    {/* </div> */}
   </section>
 );
