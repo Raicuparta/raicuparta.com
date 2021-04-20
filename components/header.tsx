@@ -5,7 +5,7 @@ type Props = {
 };
 
 export const Header = ({ title }: Props) => (
-  <header>
+  <header className={styles.wrapper}>
     <h1 className={styles.title}>{title}</h1>
   </header>
 );

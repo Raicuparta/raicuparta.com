@@ -1,14 +1,13 @@
 .wrapper {
   position: sticky;
   top: 0;
-  background: var(--background);
-  background: linear-gradient(0, transparent 0%, var(--background) 50%);
+  background: var(--overlay-dark);
+  margin-bottom: calc(2 * var(--spacing));
   z-index: 1;
-  margin-bottom: var(--spacing);
 }
 
 .socialLinks {
-  padding: var(--spacing) 0;
+  padding: calc(var(--spacing) / 2) 0;
   display: flex;
   justify-content: space-evenly;
   max-width: 500px;
