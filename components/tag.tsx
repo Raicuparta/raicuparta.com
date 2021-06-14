@@ -5,5 +5,7 @@ type Props = {
 };
 
 export const Tag = ({ children }: Props) => (
-  <span className={styles.tag}>{children}</span>
+  <span className={styles.tag}>
+    <span className={styles.content}>{children}</span>
+  </span>
 );

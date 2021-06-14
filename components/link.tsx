@@ -1,4 +1,5 @@
 import { DetailedHTMLProps, AnchorHTMLAttributes } from 'react';
+import styles from './styles/link.module.scss';
 
 type Props = DetailedHTMLProps<
   AnchorHTMLAttributes<HTMLAnchorElement>,
@@ -9,7 +10,12 @@ export const Link: React.FunctionComponent<Props> = ({
   children,
   ...props
 }) => (
-  <a {...props} target="_blank" rel="noopener noreferrer">
+  <a
+    className={styles.link}
+    {...props}
+    target="_blank"
+    rel="noopener noreferrer"
+  >
     {children}
   </a>
 );

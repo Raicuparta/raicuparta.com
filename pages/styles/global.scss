@@ -27,12 +27,15 @@ h3 {
   font-weight: 100;
 }
 
-a {
-  color: var(--text);
-  text-underline-offset: 4px;
-  font-weight: 300;
-  &:hover {
-    color: var(--accent);
-  }
-  transition: color var(--transition-time);
-}
+// a {
+//   color: var(--text);
+//   text-underline-offset: 2px;
+//   font-weight: 300;
+//   border-bottom: 3px solid transparent;
+//   &:hover {
+//     color: var(--accent);
+//     border-bottom-color: currentColor;
+//   }
+//   transition-property: color border-bottom-color;
+//   transition-duration: var(--transition-time);
+// }
