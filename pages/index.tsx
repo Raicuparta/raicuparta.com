@@ -131,7 +131,6 @@ const Home = () => (
               .
             </p>
           </ProjectsSection>
-          <ProjectsSection title="Other Projects" projects={otherProjects} />
           <ProjectsSection
             title="Professional Projects"
             projects={professionalProjects}
@@ -141,6 +140,10 @@ const Home = () => (
               professional career.
             </p>
           </ProjectsSection>
+          <ProjectsSection
+            title="Other Game Dev Projects"
+            projects={otherProjects}
+          />
         </div>
       </div>
     </main>
