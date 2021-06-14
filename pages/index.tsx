@@ -67,6 +67,13 @@ const articles: Project[] = [
 
 const professionalProjects: Project[] = [
   {
+    title: 'Hasty.ai',
+    description:
+      'End-to-end vision AI solution, with AI-assisted annotation, automated QA, etc, to assist in the creation of models.',
+    url: 'https://hasty.ai',
+    tags: ['TypeScript', 'Node.js', 'React', 'Canvas'],
+  },
+  {
     title: 'Trainline',
     description:
       'Ticketing platform for trains / buses. I did maintenance and implementation of new features on the front end for trainline.com.',

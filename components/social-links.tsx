@@ -10,7 +10,7 @@ const links = [
   {
     name: 'LinkedIn',
     title: 'LinkedIn Ricardo Lopes',
-    url: 'https://www.linkedin.com/in/ricardo-lopes-3a071643/',
+    url: 'https://www.linkedin.com/in/riclop',
   },
   {
     name: 'StackOverflow',
