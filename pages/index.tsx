@@ -2,14 +2,31 @@ import { Project } from '../types';
 import { Header, SocialLinks, ProjectsSection, Link } from '../components';
 import styles from './styles/index.module.scss';
 
-const outerWildsProjects: Project[] = [
+const vrProjects: Project[] = [
+  {
+    title: 'VR Mods Patreon',
+    description:
+      'This is where I share some of my VR projects, mostly exclusively to people who subscribe to my Patreon.',
+    url: 'https://www.patreon.com/raivr',
+    tags: [],
+  },
   {
     title: 'NomaiVR',
     description:
-      'Mod that converts Outer Wilds from a traditional "flat" 3D game to a full VR experience',
+      'Converts the fame "Outer Wilds" into VR experience, with full motion controls.',
     url: 'https://github.com/Raicuparta/nomai-vr',
     tags: ['C#', '.NET', 'Unity'],
   },
+  {
+    title: 'Two Forks VR',
+    description:
+      'Converts the fame "Firewatch" into a full VR experience, with motion controls and comfort options.',
+    url: 'https://www.patreon.com/raivr',
+    tags: ['C#', '.NET', 'Unity'],
+  },
+];
+
+const outerWildsProjects: Project[] = [
   {
     title: 'Mod Manager',
     description: 'Windows app for installing and downloading mods.',
@@ -21,7 +38,7 @@ const outerWildsProjects: Project[] = [
     description:
       'Web page with information about game modifications. Static page, but updates itself automatically with data from the mod database.',
     url: 'https://github.com/Raicuparta/outerwildsmods.com',
-    tags: ['TypeScript', 'Next.js', 'React'],
+    tags: ['TypeScript', 'Svelte', 'React'],
   },
   {
     title: 'Mod Database',
@@ -111,8 +128,26 @@ const Home = () => (
         <SocialLinks />
         <div className={styles.content}>
           <ProjectsSection title="Popular Articles" projects={articles} />
+          <ProjectsSection title="Virtual Reality" projects={vrProjects}>
+            <p>
+              I modified a few conventional "flat" games into full VR
+              experiences. Got some coverage by{' '}
+              <Link href="https://uploadvr.com/outer-wilds-vr-mod">
+                UploadVR
+              </Link>{' '}
+              ,{' '}
+              <Link href="https://www.dualshockers.com/outer-wilds-virtual-reality-fan-mod/">
+                DualShockers
+              </Link>
+              ,{' '}
+              <Link href="https://www.youtube.com/watch?v=jO_V-sq-Ics">
+                Eurogamer
+              </Link>
+              , and more.
+            </p>
+          </ProjectsSection>
           <ProjectsSection
-            title="Outer Wilds Projects"
+            title="Outer Wilds Modding Ecosystem"
             projects={outerWildsProjects}
           >
             <p>
@@ -120,15 +155,9 @@ const Home = () => (
               <Link href="https://www.mobiusdigitalgames.com/outer-wilds.html">
                 Outer Wilds
               </Link>
-              , I worked on a few popular projects. Got some coverage by{' '}
-              <Link href="https://uploadvr.com/outer-wilds-vr-mod">
-                UploadVR
-              </Link>{' '}
-              and{' '}
-              <Link href="https://www.dualshockers.com/outer-wilds-virtual-reality-fan-mod/">
-                DualShockers
-              </Link>
-              .
+              , I built an ecosystem with a database, app, and website. All
+              running off of static data on GitHub, while still having up to
+              date information about all the mods.
             </p>
           </ProjectsSection>
           <ProjectsSection

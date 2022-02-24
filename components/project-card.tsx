@@ -12,10 +12,12 @@ export const ProjectCard = ({ project }: Props) => (
       <h3 className={styles.title}>{project.title}</h3>
       <p className={styles.description}>{project.description}</p>
     </div>
-    <div>
-      {project.tags.map((tag) => (
-        <Tag key={tag}>{tag}</Tag>
-      ))}
-    </div>
+    {project.tags.length > 0 && (
+      <div className={styles.tags}>
+        {project.tags.map((tag) => (
+          <Tag key={tag}>{tag}</Tag>
+        ))}
+      </div>
+    )}
   </Link>
 );

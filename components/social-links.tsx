@@ -3,6 +3,11 @@ import styles from './styles/social-links.module.scss';
 
 const links = [
   {
+    name: 'Patreon',
+    title: 'Patreon RaiVR',
+    url: 'https://www.patreon.com/raivr',
+  },
+  {
     name: 'Twitter',
     title: 'Twitter @Raicuparta',
     url: 'https://twitter.com/raicuparta',
