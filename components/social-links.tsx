@@ -28,11 +28,6 @@ const links = [
     url: 'https://dev.to/raicuparta',
   },
   {
-    name: 'Medium',
-    title: 'Medium @Raicuparta',
-    url: 'https://medium.com/@Raicuparta',
-  },
-  {
     name: 'Github',
     title: 'Github @Raicuparta',
     url: 'https://github.com/Raicuparta',

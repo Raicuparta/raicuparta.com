@@ -1,7 +1,5 @@
-import { Project } from '../types';
-import { Icon } from './icon';
 import styles from './styles/projects-section.module.scss';
-import { ProjectCard } from './project-card';
+import { Project, ProjectCard } from './project-card';
 
 type Props = {
   projects: Project[];

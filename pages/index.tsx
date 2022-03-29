@@ -1,5 +1,5 @@
-import { Project } from '../types';
 import { Header, SocialLinks, ProjectsSection, Link } from '../components';
+import { Project } from '../components/project-card';
 import styles from './styles/index.module.scss';
 
 const vrProjects: Project[] = [
@@ -84,6 +84,13 @@ const articles: Project[] = [
 
 const professionalProjects: Project[] = [
   {
+    title: 'LIV',
+    description:
+      'VR toolset for video capture, streaming, etc. I modify Unity games to add support for all the LIV tools.',
+    url: 'https://www.liv.tv/',
+    tags: ['C#', '.NET', 'Unity'],
+  },
+  {
     title: 'Hasty.ai',
     description:
       'End-to-end vision AI solution, with AI-assisted annotation, automated QA, etc, to assist in the creation of models.',
@@ -127,8 +134,7 @@ const Home = () => (
         <Header title="ricardo lopes" />
         <SocialLinks />
         <div className={styles.content}>
-          <ProjectsSection title="Popular Articles" projects={articles} />
-          <ProjectsSection title="Virtual Reality" projects={vrProjects}>
+          <ProjectsSection title="VR Mods" projects={vrProjects}>
             <p>
               I modified a few conventional "flat" games into full VR
               experiences. Got some coverage by{' '}
@@ -169,6 +175,7 @@ const Home = () => (
               professional career.
             </p>
           </ProjectsSection>
+          <ProjectsSection title="Popular Articles" projects={articles} />
           <ProjectsSection
             title="Other Game Dev Projects"
             projects={otherProjects}

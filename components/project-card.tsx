@@ -1,6 +1,12 @@
-import { Project } from '../types';
 import { Icon, Tag, Link } from '.';
 import styles from './styles/project-card.module.scss';
+
+export type Project = {
+  title: string;
+  description?: string;
+  url: string;
+  tags: string[];
+};
 
 type Props = {
   project: Project;
