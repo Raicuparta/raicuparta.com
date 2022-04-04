@@ -13,14 +13,14 @@ const vrProjects: Project[] = [
   {
     title: 'NomaiVR',
     description:
-      'Converts the fame "Outer Wilds" into VR experience, with full motion controls.',
+      'Converts the game "Outer Wilds" into VR experience, with full motion controls.',
     url: 'https://github.com/Raicuparta/nomai-vr',
     tags: ['C#', '.NET', 'Unity'],
   },
   {
     title: 'Two Forks VR',
     description:
-      'Converts the fame "Firewatch" into a full VR experience, with motion controls and comfort options.',
+      'Converts the game "Firewatch" into a full VR experience, with motion controls and comfort options.',
     url: 'https://www.patreon.com/raivr',
     tags: ['C#', '.NET', 'Unity'],
   },
@@ -70,14 +70,12 @@ const articles: Project[] = [
   {
     title:
       'Dealing with Platform Inconsistencies as a North Korean Front-End Developer',
-    url:
-      'https://dev.to/raicuparta/dealing-with-platform-inconsistencies-as-a-north-korean-front-end-developer-3158',
+    url: 'https://dev.to/raicuparta/dealing-with-platform-inconsistencies-as-a-north-korean-front-end-developer-3158',
     tags: ['HTML', 'JavaScript', 'CSS'],
   },
   {
     title: 'Ditching worthless friends with Facebook data and JavaScript',
-    url:
-      'https://dev.to/raicuparta/ditching-worthless-friends-with-facebook-data-and-javascript-3f2i',
+    url: 'https://dev.to/raicuparta/ditching-worthless-friends-with-facebook-data-and-javascript-3f2i',
     tags: ['JavaScript'],
   },
 ];
