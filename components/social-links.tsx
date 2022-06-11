@@ -3,6 +3,11 @@ import styles from './styles/social-links.module.scss';
 
 const links = [
   {
+    name: 'Github',
+    title: 'Github @Raicuparta',
+    url: 'https://github.com/Raicuparta',
+  },
+  {
     name: 'Patreon',
     title: 'Patreon RaiVR',
     url: 'https://www.patreon.com/raivr',
@@ -13,6 +18,11 @@ const links = [
     url: 'https://twitter.com/raicuparta',
   },
   {
+    name: 'Dev',
+    title: 'DEV @Raicuparta',
+    url: 'https://dev.to/raicuparta',
+  },
+  {
     name: 'LinkedIn',
     title: 'LinkedIn Ricardo Lopes',
     url: 'https://www.linkedin.com/in/riclop',
@@ -21,16 +31,6 @@ const links = [
     name: 'StackOverflow',
     title: 'Stack Overflow @Raicuparta',
     url: 'https://stackoverflow.com/users/3962104/ricardo-lopes?tab=profile',
-  },
-  {
-    name: 'Dev',
-    title: 'DEV @Raicuparta',
-    url: 'https://dev.to/raicuparta',
-  },
-  {
-    name: 'Github',
-    title: 'Github @Raicuparta',
-    url: 'https://github.com/Raicuparta',
   },
 ] as const;
 

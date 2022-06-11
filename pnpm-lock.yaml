@@ -1,4 +1,4 @@
-lockfileVersion: 5.3
+lockfileVersion: 5.4
 
 specifiers:
   '@svgr/webpack': 6.2.1
@@ -16,7 +16,7 @@ specifiers:
 dependencies:
   '@svgr/webpack': 6.2.1
   axios: 0.26.1
-  next: 12.1.2_474687a09a9af848f679e6da73326fb9
+  next: 12.1.2_i5dipie2tl4er5tz43nhgmtpxe
   react: 18.0.0
   react-dom: 18.0.0_react@18.0.0
   sass: 1.49.9
@@ -2224,7 +2224,7 @@ packages:
     hasBin: true
     dev: false
 
-  /next/12.1.2_474687a09a9af848f679e6da73326fb9:
+  /next/12.1.2_i5dipie2tl4er5tz43nhgmtpxe:
     resolution: {integrity: sha512-JHPCsnFTBO0Z4SQxSYc611UA1WA+r/3y3Neg66AH5/gSO/oksfRnFw/zGX/FZ9+oOUHS9y3wJFawNpVYR2gJSQ==}
     engines: {node: '>=12.22.0'}
     hasBin: true

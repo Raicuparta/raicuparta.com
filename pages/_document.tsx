@@ -70,7 +70,6 @@ class MyDocument extends Document {
   render() {
     return (
       <Html lang="en">
-        <title>Ricardo Lopes</title>
         <CustomHead>
           <Analytics id={googleAnalyticsId} />
           <meta

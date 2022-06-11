@@ -6,14 +6,14 @@ const vrProjects: Project[] = [
   {
     title: 'VR Mods Patreon',
     description:
-      'This is where I share some of my VR projects, mostly exclusively to people who subscribe to my Patreon.',
+      'People who like what I do can join my Patreon, which gives them access to early development versions of some of my VR mods.',
     url: 'https://www.patreon.com/raivr',
     tags: [],
   },
   {
     title: 'NomaiVR',
     description:
-      'Converts the game "Outer Wilds" into VR experience, with full motion controls.',
+      'Converts the game "Outer Wilds" into a full VR experience, with full motion controls.',
     url: 'https://github.com/Raicuparta/nomai-vr',
     tags: ['C#', '.NET', 'Unity'],
   },
@@ -21,7 +21,7 @@ const vrProjects: Project[] = [
     title: 'Two Forks VR',
     description:
       'Converts the game "Firewatch" into a full VR experience, with motion controls and comfort options.',
-    url: 'https://www.patreon.com/raivr',
+    url: 'https://github.com/Raicuparta/two-forks-vr/',
     tags: ['C#', '.NET', 'Unity'],
   },
 ];
@@ -127,6 +127,7 @@ const professionalProjects: Project[] = [
 
 const Home = () => (
   <>
+    <title>Ricardo Lopes</title>
     <main className={styles.main}>
       <div className={styles.pageBody}>
         <Header title="ricardo lopes" />
