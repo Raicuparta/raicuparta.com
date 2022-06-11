@@ -61,7 +61,7 @@ const otherProjects: Project[] = [
     title: 'Brave Bunny',
     description:
       'Worked on multiple small game projects with friends, participated in a bunch of game jams and other events.',
-    url: 'https://bravebunny.co',
+    url: 'https://github.com/bravebunny',
     tags: ['JavaScript', 'C#', 'Unity'],
   },
 ];
