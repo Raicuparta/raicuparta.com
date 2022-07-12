@@ -144,31 +144,42 @@ const Home = () => (
           >
             <ModCard
               title="StanleyVR"
+              gameName="The Stanley Parable: Ultra Deluxe"
               imageSource="img/stanley-vr.jpg"
               description="This is a game with a mod. The mod is in the game and there is a game,
       which has a mod. What a game with a mod. Can you believe it?"
             />
             <ModCard
               title="ShipbreakerVR"
+              gameName="Hardspace: Shipbreaker"
               imageSource="img/shipbreaker-vr.webp"
               description="This is a game with a mod. The mod is in the game and there is a game,
         which has a mod. What a game with a mod. Can you believe it?"
             />
             <ModCard
               title="Two Forks VR"
+              gameName="Firewatch"
               imageSource="img/two-forks-vr.jpg"
               description="This is a game with a mod. The mod is in the game and there is a game,
         which has a mod. What a game with a mod. Can you believe it?"
             />
             <ModCard
               title="NomaiVR"
+              gameName="Outer Wilds"
               imageSource="img/nomaivr.jpg"
               description="This is a game with a mod. The mod is in the game and there is a game,
         which has a mod. What a game with a mod. Can you believe it?"
             />
-
+            <ModCard
+              title="ColossalVr"
+              gameName="Praey for the Gods"
+              imageSource="img/colossal-vr.jpg"
+              description="This is a game with a mod. The mod is in the game and there is a game,
+        which has a mod. What a game with a mod. Can you believe it?"
+            />
             <ModCard
               title="FatesVR"
+              gameName="Return of the Obra Dinn"
               imageSource="img/fates-vr.jpg"
               description="This is a game with a mod. The mod is in the game and there is a game,
         which has a mod. What a game with a mod. Can you believe it?"
