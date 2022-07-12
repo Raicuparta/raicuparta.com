@@ -1,130 +1,6 @@
 import { Header, SocialLinks, ProjectsSection, Link } from '../components';
 import { ModCard } from '../components/mod-card';
-import { Project } from '../components/project-card';
 import styles from './styles/index.module.scss';
-
-const vrProjects: Project[] = [
-  {
-    title: 'VR Mods Patreon',
-    description:
-      'People who like what I do can join my Patreon, which gives them access to early development versions of some of my VR mods.',
-    url: 'https://www.patreon.com/raivr',
-    tags: [],
-  },
-  {
-    title: 'NomaiVR',
-    description:
-      'Converts the game "Outer Wilds" into a full VR experience, with full motion controls.',
-    url: 'https://github.com/Raicuparta/nomai-vr',
-    tags: ['C#', '.NET', 'Unity'],
-  },
-  {
-    title: 'Two Forks VR',
-    description:
-      'Converts the game "Firewatch" into a full VR experience, with motion controls and comfort options.',
-    url: 'https://github.com/Raicuparta/two-forks-vr/',
-    tags: ['C#', '.NET', 'Unity'],
-  },
-];
-
-const outerWildsProjects: Project[] = [
-  {
-    title: 'Mod Manager',
-    description: 'Windows app for installing and downloading mods.',
-    url: 'https://github.com/Raicuparta/ow-mod-manager',
-    tags: ['Electron', 'TypeScript', 'React'],
-  },
-  {
-    title: 'Mods Website',
-    description:
-      'Web page with information about game modifications. Static page, but updates itself automatically with data from the mod database.',
-    url: 'https://github.com/Raicuparta/outerwildsmods.com',
-    tags: ['TypeScript', 'Svelte', 'React'],
-  },
-  {
-    title: 'Mod Database',
-    description:
-      'Aggregates all mod repos made by the community into a self-updating repo. The website and mod manager both use this database.',
-    url: 'https://github.com/Raicuparta/outer-wilds-mod-db',
-    tags: ['GitHub Actions', 'TypeScript'],
-  },
-];
-
-const otherProjects: Project[] = [
-  {
-    title: 'Curvatron',
-    description:
-      'Minimalist "snake" video game, available on Steam. Previously available on Android and iOS.',
-    url: 'https://github.com/bravebunny/curvatron',
-    tags: ['JavaScript', 'Phaser.JS'],
-  },
-  {
-    title: 'Brave Bunny',
-    description:
-      'Worked on multiple small game projects with friends, participated in a bunch of game jams and other events.',
-    url: 'https://github.com/bravebunny',
-    tags: ['JavaScript', 'C#', 'Unity'],
-  },
-];
-
-const articles: Project[] = [
-  {
-    title:
-      'Dealing with Platform Inconsistencies as a North Korean Front-End Developer',
-    url: 'https://dev.to/raicuparta/dealing-with-platform-inconsistencies-as-a-north-korean-front-end-developer-3158',
-    tags: ['HTML', 'JavaScript', 'CSS'],
-  },
-  {
-    title: 'Ditching worthless friends with Facebook data and JavaScript',
-    url: 'https://dev.to/raicuparta/ditching-worthless-friends-with-facebook-data-and-javascript-3f2i',
-    tags: ['JavaScript'],
-  },
-];
-
-const professionalProjects: Project[] = [
-  {
-    title: 'LIV',
-    description:
-      'VR toolset for video capture, streaming, etc. I modify Unity games to add support for all the LIV tools.',
-    url: 'https://www.liv.tv/',
-    tags: ['C#', '.NET', 'Unity'],
-  },
-  {
-    title: 'Hasty.ai',
-    description:
-      'End-to-end vision AI solution, with AI-assisted annotation, automated QA, etc, to assist in the creation of models.',
-    url: 'https://hasty.ai',
-    tags: ['TypeScript', 'Node.js', 'React', 'Canvas'],
-  },
-  {
-    title: 'Trainline',
-    description:
-      'Ticketing platform for trains / buses. I did maintenance and implementation of new features on the front end for trainline.com.',
-    url: 'https://trainline.com',
-    tags: ['TypeScript', 'Node.js', 'React'],
-  },
-  {
-    title: 'AutoScout24 Switzerland',
-    description:
-      'Marketplace for vehicles. I worked on the main page, and created a new area for private members.',
-    url: 'https://autoscout24.ch',
-    tags: ['TypeScript', 'Node.js', 'React'],
-  },
-  {
-    title: 'CityRow Go',
-    description:
-      'Fitness app for rowing enthusiasts. I helped create the React Native app.',
-    url: 'https://www.cityrow.com/',
-    tags: ['TypeScript', 'React Native'],
-  },
-  {
-    title: 'Radiator Labs',
-    description:
-      'App / device for improving the efficiency of radiators. I built a dashboard with graphs and stats about said radiators.',
-    url: 'https://www.radiatorlabs.com',
-    tags: ['JavaScript', 'React', 'GraphQL'],
-  },
-];
 
 const Home = () => (
   <>
@@ -144,43 +20,53 @@ const Home = () => (
           >
             <ModCard
               title="StanleyVR"
+              videos={[
+                'https://youtu.be/iYt0YlLFjYI',
+                'https://youtu.be/ZIAWcsPLT1c',
+                'https://youtu.be/qM25FLL-NSQ',
+              ]}
               gameName="The Stanley Parable: Ultra Deluxe"
-              imageSource="img/stanley-vr.jpg"
+              gameKey="stanley-parable"
               description="This is a game with a mod. The mod is in the game and there is a game,
       which has a mod. What a game with a mod. Can you believe it?"
             />
             <ModCard
               title="ShipbreakerVR"
+              videos={[]}
               gameName="Hardspace: Shipbreaker"
-              imageSource="img/shipbreaker-vr.webp"
+              gameKey="shipbreaker"
               description="This is a game with a mod. The mod is in the game and there is a game,
         which has a mod. What a game with a mod. Can you believe it?"
             />
             <ModCard
               title="Two Forks VR"
+              videos={[]}
               gameName="Firewatch"
-              imageSource="img/two-forks-vr.jpg"
+              gameKey="firewatch"
               description="This is a game with a mod. The mod is in the game and there is a game,
         which has a mod. What a game with a mod. Can you believe it?"
             />
             <ModCard
               title="NomaiVR"
+              videos={[]}
               gameName="Outer Wilds"
-              imageSource="img/nomaivr.jpg"
+              gameKey="outer-wilds"
               description="This is a game with a mod. The mod is in the game and there is a game,
         which has a mod. What a game with a mod. Can you believe it?"
             />
             <ModCard
               title="ColossalVr"
+              videos={[]}
               gameName="Praey for the Gods"
-              imageSource="img/colossal-vr.jpg"
+              gameKey="praey-for-the-gods"
               description="This is a game with a mod. The mod is in the game and there is a game,
         which has a mod. What a game with a mod. Can you believe it?"
             />
             <ModCard
               title="FatesVR"
+              videos={[]}
               gameName="Return of the Obra Dinn"
-              imageSource="img/fates-vr.jpg"
+              gameKey="obra-dinn"
               description="This is a game with a mod. The mod is in the game and there is a game,
         which has a mod. What a game with a mod. Can you believe it?"
             />

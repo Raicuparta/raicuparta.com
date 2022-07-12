@@ -63,3 +63,20 @@
 .description {
   // margin-top: 0;
 }
+
+.videoList {
+  display: flex;
+  gap: 1em;
+}
+
+.video {
+  border-radius: 1em;
+  overflow: hidden;
+  transition: transform 150ms;
+  img {
+    display: block;
+  }
+  &:hover {
+    transform: scale(1.05);
+  }
+}
