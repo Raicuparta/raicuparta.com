@@ -1,4 +1,5 @@
 import { Header, SocialLinks, ProjectsSection, Link } from '../components';
+import { ModCard } from '../components/mod-card';
 import { Project } from '../components/project-card';
 import styles from './styles/index.module.scss';
 
@@ -127,58 +128,52 @@ const professionalProjects: Project[] = [
 
 const Home = () => (
   <>
-    <title>Ricardo Lopes</title>
+    <title>Raicuparta</title>
     <main className={styles.main}>
       <div className={styles.pageBody}>
-        <Header title="ricardo lopes" />
+        <Header title="Raicuparta" />
         <SocialLinks />
         <div className={styles.content}>
-          <ProjectsSection title="VR Mods" projects={vrProjects}>
-            <p>
-              I modified a few conventional "flat" games into full VR
-              experiences. Got some coverage by{' '}
-              <Link href="https://uploadvr.com/outer-wilds-vr-mod">
-                UploadVR
-              </Link>{' '}
-              ,{' '}
-              <Link href="https://www.dualshockers.com/outer-wilds-virtual-reality-fan-mod/">
-                DualShockers
-              </Link>
-              ,{' '}
-              <Link href="https://www.youtube.com/watch?v=jO_V-sq-Ics">
-                Eurogamer
-              </Link>
-              , and more.
-            </p>
-          </ProjectsSection>
-          <ProjectsSection
-            title="Outer Wilds Modding Ecosystem"
-            projects={outerWildsProjects}
+          <div
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '2em',
+              width: '100%',
+            }}
           >
-            <p>
-              As part of the modding community of the video game{' '}
-              <Link href="https://www.mobiusdigitalgames.com/outer-wilds.html">
-                Outer Wilds
-              </Link>
-              , I built an ecosystem with a database, app, and website. All
-              running off of static data on GitHub, while still having up to
-              date information about all the mods.
-            </p>
-          </ProjectsSection>
-          <ProjectsSection
-            title="Professional Projects"
-            projects={professionalProjects}
-          >
-            <p>
-              These are a few of the projects I contributed to during my
-              professional career.
-            </p>
-          </ProjectsSection>
-          <ProjectsSection title="Popular Articles" projects={articles} />
-          <ProjectsSection
-            title="Other Game Dev Projects"
-            projects={otherProjects}
-          />
+            <ModCard
+              title="StanleyVR"
+              imageSource="img/stanley-vr.jpg"
+              description="This is a game with a mod. The mod is in the game and there is a game,
+      which has a mod. What a game with a mod. Can you believe it?"
+            />
+            <ModCard
+              title="ShipbreakerVR"
+              imageSource="img/shipbreaker-vr.webp"
+              description="This is a game with a mod. The mod is in the game and there is a game,
+        which has a mod. What a game with a mod. Can you believe it?"
+            />
+            <ModCard
+              title="Two Forks VR"
+              imageSource="img/two-forks-vr.jpg"
+              description="This is a game with a mod. The mod is in the game and there is a game,
+        which has a mod. What a game with a mod. Can you believe it?"
+            />
+            <ModCard
+              title="NomaiVR"
+              imageSource="img/nomaivr.jpg"
+              description="This is a game with a mod. The mod is in the game and there is a game,
+        which has a mod. What a game with a mod. Can you believe it?"
+            />
+
+            <ModCard
+              title="FatesVR"
+              imageSource="img/fates-vr.jpg"
+              description="This is a game with a mod. The mod is in the game and there is a game,
+        which has a mod. What a game with a mod. Can you believe it?"
+            />
+          </div>
         </div>
       </div>
     </main>

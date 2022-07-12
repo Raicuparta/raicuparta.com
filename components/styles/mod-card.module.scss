@@ -1,0 +1,50 @@
+.modCard {
+  border-radius: 1em;
+  overflow: hidden;
+  background: var(--overlay-dark);
+}
+
+.thumbnailWrapper {
+  position: relative;
+  // z-index: -1;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+}
+
+.thumbnail {
+  object-fit: contain;
+  object-position: top;
+  display: block;
+  box-shadow: 0 0 30px black;
+}
+
+.thumbnailBackground {
+  object-fit: cover;
+  object-position: top;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  filter: blur(10px);
+}
+
+.content {
+  padding: 0 1em;
+}
+
+.title {
+  font-weight: 400;
+  font-size: 3em;
+  margin: 0;
+  position: absolute;
+  bottom: 0.2em;
+  text-shadow: 0 0 5px black;
+  text-align: center;
+  width: 100%;
+  color: white;
+}
+
+.description {
+  // margin-top: 0;
+}
