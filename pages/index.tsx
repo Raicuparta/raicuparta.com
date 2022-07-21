@@ -46,6 +46,7 @@ const Home = () => (
             <ModCard
               title="ShipbreakerVR"
               videos={[
+                'https://www.twitch.tv/ragesaq/video/1508802767',
                 'https://youtu.be/PZLhq5NiFKo',
                 'https://youtu.be/UGGtz1lYMNw',
               ]}
@@ -90,7 +91,12 @@ const Home = () => (
             />
             <ModCard
               title="NomaiVR"
-              videos={[]}
+              videos={[
+                'https://youtu.be/g2NbjF4fG0s',
+                'https://youtu.be/SCZ8vtl4sVs',
+                'https://youtu.be/5ntWk0rJTC0',
+                'https://youtu.be/_mfKvDbeEkg',
+              ]}
               articles={[]}
               gameName="Outer Wilds"
               gameKey="outer-wilds"
