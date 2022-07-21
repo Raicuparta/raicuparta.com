@@ -72,10 +72,7 @@ class MyDocument extends Document {
       <Html lang="en">
         <CustomHead>
           <Analytics id={googleAnalyticsId} />
-          <meta
-            name="Description"
-            content="Ricardo Lopes: Frontend Developer"
-          />
+          <meta name="Description" content="Raicuparta: VR Mod Developer" />
           <link
             rel="apple-touch-icon"
             sizes="180x180"

@@ -25,7 +25,7 @@ const links = [
   {
     name: 'StackOverflow',
     title: 'Stack Overflow @Raicuparta',
-    url: 'https://stackoverflow.com/users/3962104/ricardo-lopes?tab=profile',
+    url: 'https://stackoverflow.com/users/3962104/raicuparta',
   },
 ] as const;
 

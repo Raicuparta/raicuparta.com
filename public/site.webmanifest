@@ -1,6 +1,6 @@
 {
-    "name": "Ricardo Lopes",
-    "short_name": "Ricardo",
+    "name": "Raicuparta",
+    "short_name": "Raicuparta",
     "icons": [
         {
             "src": "/android-chrome-192x192.png",
@@ -13,6 +13,7 @@
             "type": "image/png"
         }
     ],
-    "theme_color": "#3a698f",
-    "background_color": "#473a8f"
+    "theme_color": "#ffffff",
+    "background_color": "#ffffff",
+    "display": "standalone"
 }
