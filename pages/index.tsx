@@ -40,7 +40,7 @@ const Home = () => (
               ]}
               gameName="The Stanley Parable: Ultra Deluxe"
               gameKey="stanley-parable"
-              description="Full VR mod for The Stanley Parable: Ultra Deluxe. Full room-scale VR with motion controls."
+              description="StanleyVR is a VR mod for The Stanley Parable: Ultra Deluxe. Still being polished but the full game is already playable. Full room-scale VR with motion controls."
               gameLinks={[
                 {
                   title: 'The Stanley Parable: Ultra Deluxe on Steam',
@@ -62,8 +62,7 @@ const Home = () => (
               articles={[]}
               gameName="Hardspace: Shipbreaker"
               gameKey="shipbreaker"
-              description="This is a game with a mod. The mod is in the game and there is a game,
-        which has a mod. What a game with a mod. Can you believe it?"
+              description="ShipbreakerVR is a VR mod for Hardspace: Shipbreaker. This mod is still in early development. The current version has no motion controls, but features camera-independent aiming for all the game tools."
               gameLinks={[
                 {
                   title: 'Hardspace: Shipbreaker on Steam',
@@ -110,8 +109,7 @@ const Home = () => (
               ]}
               gameName="Firewatch"
               gameKey="firewatch"
-              description="This is a game with a mod. The mod is in the game and there is a game,
-        which has a mod. What a game with a mod. Can you believe it?"
+              description="Two Forks VR is a VR mod for Firewatch. The full game is playable in VR, with room-scale tracking, motion controls, and multiple comfort options. The mod is finished and has thus been open-sourced."
               downloadUrl="https://github.com/Raicuparta/two-forks-vr/#readme"
               sourceUrl="https://github.com/Raicuparta/two-forks-vr"
               gameLinks={[
@@ -154,8 +152,7 @@ const Home = () => (
               ]}
               gameName="Outer Wilds"
               gameKey="outer-wilds"
-              description="This is a game with a mod. The mod is in the game and there is a game,
-        which has a mod. What a game with a mod. Can you believe it?"
+              description="NomaiVR is a VR mod for Outer Wilds. It was my first VR mod. The full game can be played in VR with room-scale tracking and motion controls."
               downloadUrl="https://outerwildsmods.com/mods/nomaivr/"
               sourceUrl="https://github.com/Raicuparta/nomai-vr"
               gameLinks={[
@@ -182,8 +179,7 @@ const Home = () => (
               articles={[]}
               gameName="Praey for the Gods"
               gameKey="praey-for-the-gods"
-              description="This is a game with a mod. The mod is in the game and there is a game,
-        which has a mod. What a game with a mod. Can you believe it?"
+              description="ColossalVR is a VR mod for Praey for the Gods. This is a third person game, and the VR mod keeps that perspective. A tracked VR camera with adjustments to the game UI."
               gameLinks={[
                 {
                   title: 'Praey for the Gods on Steam',
@@ -201,8 +197,7 @@ const Home = () => (
               articles={[]}
               gameName="Return of the Obra Dinn"
               gameKey="obra-dinn"
-              description="This is a game with a mod. The mod is in the game and there is a game,
-        which has a mod. What a game with a mod. Can you believe it?"
+              description="FatesVR is a VR mod for Return of the Obra Dinn. I provide this mod just for people who are curious about it after watching my video on the subject. It was just an experiment to see how far I could get with a VR mod for a game with such a peculiar art style."
               gameLinks={[
                 {
                   title: 'Return of the Obra Dinn on Steam',
