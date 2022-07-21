@@ -6,6 +6,10 @@ type Props = {
   description: string;
   gameKey: string;
   videos: string[];
+  articles: {
+    title: string;
+    url: string;
+  }[];
   downloadUrl?: string;
 };
 
@@ -28,16 +32,16 @@ export const ModCard = (props: Props) => {
       </div>
       <div className={styles.content}>
         <p className={styles.description}>{props.description}</p>
-        🔗
         {props.downloadUrl ? (
           <a href={props.downloadUrl}>Download mod</a>
         ) : (
           <a
+            className={styles.downloadLink}
             target="_blank"
             rel="noopener noreferrer"
             href="https://www.patreon.com/raivr"
           >
-            Become a patron to download this mod.
+            🔗<span>Become a patron to download this mod.</span>
           </a>
         )}
         {props.videos.length > 0 && (
@@ -45,13 +49,8 @@ export const ModCard = (props: Props) => {
             <h4>Videos</h4>
             <div className={styles.videoList}>
               {props.videos.map((videoUrl, index) => (
-                <div className={styles.video}>
-                  <a
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    href={videoUrl}
-                    key={videoUrl}
-                  >
+                <div key={videoUrl} className={styles.video}>
+                  <a target="_blank" rel="noopener noreferrer" href={videoUrl}>
                     <img
                       height="100px"
                       src={`/mods/${props.gameKey}/videos/${index}.jpg`}
@@ -60,6 +59,18 @@ export const ModCard = (props: Props) => {
                 </div>
               ))}
             </div>
+          </>
+        )}
+        {props.articles.length > 0 && (
+          <>
+            <h4>Articles</h4>
+            <ul>
+              {props.articles.map(({ title, url }) => (
+                <li key={url}>
+                  <a href={url}>{title}</a>
+                </li>
+              ))}
+            </ul>
           </>
         )}
       </div>

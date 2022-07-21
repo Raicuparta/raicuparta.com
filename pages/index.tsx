@@ -21,9 +21,22 @@ const Home = () => (
             <ModCard
               title="StanleyVR"
               videos={[
+                'https://youtu.be/JVanThRk5e8',
                 'https://youtu.be/iYt0YlLFjYI',
                 'https://youtu.be/ZIAWcsPLT1c',
                 'https://youtu.be/qM25FLL-NSQ',
+              ]}
+              articles={[
+                {
+                  title:
+                    'UploadVR: The Stanley Parable Is Getting A VR Mod, First Footage Revealed',
+                  url: 'https://uploadvr.com/the-stanley-parable-vr-mod/',
+                },
+                {
+                  title:
+                    'Real o Virtual: The Stanley Parable también tendrá mod VR',
+                  url: 'https://www.realovirtual.com/noticias/11309/stanley-parable-tendra-mod-vr',
+                },
               ]}
               gameName="The Stanley Parable: Ultra Deluxe"
               gameKey="stanley-parable"
@@ -33,6 +46,7 @@ const Home = () => (
             <ModCard
               title="ShipbreakerVR"
               videos={[]}
+              articles={[]}
               gameName="Hardspace: Shipbreaker"
               gameKey="shipbreaker"
               description="This is a game with a mod. The mod is in the game and there is a game,
@@ -41,6 +55,7 @@ const Home = () => (
             <ModCard
               title="Two Forks VR"
               videos={[]}
+              articles={[]}
               gameName="Firewatch"
               gameKey="firewatch"
               description="This is a game with a mod. The mod is in the game and there is a game,
@@ -50,6 +65,7 @@ const Home = () => (
             <ModCard
               title="NomaiVR"
               videos={[]}
+              articles={[]}
               gameName="Outer Wilds"
               gameKey="outer-wilds"
               description="This is a game with a mod. The mod is in the game and there is a game,
@@ -59,6 +75,7 @@ const Home = () => (
             <ModCard
               title="ColossalVr"
               videos={[]}
+              articles={[]}
               gameName="Praey for the Gods"
               gameKey="praey-for-the-gods"
               description="This is a game with a mod. The mod is in the game and there is a game,
@@ -67,6 +84,7 @@ const Home = () => (
             <ModCard
               title="FatesVR"
               videos={[]}
+              articles={[]}
               gameName="Return of the Obra Dinn"
               gameKey="obra-dinn"
               description="This is a game with a mod. The mod is in the game and there is a game,

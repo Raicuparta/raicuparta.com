@@ -80,6 +80,7 @@
 }
 
 .video {
+  flex: 1;
   border-radius: 1em;
   overflow: hidden;
   transition: transform 150ms;
@@ -88,5 +89,12 @@
   }
   &:hover {
     transform: scale(1.05);
+  }
+}
+
+.downloadLink {
+  text-decoration: none;
+  span {
+    border-bottom: 2px solid;
   }
 }
