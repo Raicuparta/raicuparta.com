@@ -3,6 +3,7 @@ import Github from './github.svg';
 import StackOverflow from './stack-overflow.svg';
 import Twitter from './twitter.svg';
 import Patreon from './patreon.svg';
+import Download from './download.svg';
 
 export default {
   Dev,
@@ -10,4 +11,5 @@ export default {
   StackOverflow,
   Twitter,
   Patreon,
+  Download,
 };

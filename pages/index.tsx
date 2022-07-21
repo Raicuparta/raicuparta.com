@@ -90,6 +90,7 @@ const Home = () => (
               description="This is a game with a mod. The mod is in the game and there is a game,
         which has a mod. What a game with a mod. Can you believe it?"
               downloadUrl="https://github.com/Raicuparta/two-forks-vr/#readme"
+              sourceUrl="https://github.com/Raicuparta/two-forks-vr"
             />
             <ModCard
               title="NomaiVR"
@@ -115,6 +116,7 @@ const Home = () => (
               description="This is a game with a mod. The mod is in the game and there is a game,
         which has a mod. What a game with a mod. Can you believe it?"
               downloadUrl="https://outerwildsmods.com/mods/nomaivr/"
+              sourceUrl="https://github.com/Raicuparta/nomai-vr"
             />
             <ModCard
               title="ColossalVr"

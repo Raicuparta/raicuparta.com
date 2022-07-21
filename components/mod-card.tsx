@@ -1,3 +1,4 @@
+import { Icon } from './icon';
 import styles from './styles/mod-card.module.scss';
 
 type Props = {
@@ -11,6 +12,7 @@ type Props = {
     url: string;
   }[];
   downloadUrl?: string;
+  sourceUrl?: string;
 };
 
 export const ModCard = (props: Props) => {
@@ -32,18 +34,40 @@ export const ModCard = (props: Props) => {
       </div>
       <div className={styles.content}>
         <p className={styles.description}>{props.description}</p>
-        {props.downloadUrl ? (
-          <a href={props.downloadUrl}>Download mod</a>
-        ) : (
-          <a
-            className={styles.downloadLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            href="https://www.patreon.com/raivr"
-          >
-            🔗<span>Become a patron to download this mod.</span>
-          </a>
-        )}
+        <div className={styles.downloadWrapper}>
+          {props.downloadUrl ? (
+            <a
+              className={styles.downloadLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              href={props.downloadUrl}
+            >
+              <Icon className={styles.buttonIcon} name="Download" />
+              Download mod
+            </a>
+          ) : (
+            <a
+              className={styles.patreonLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://www.patreon.com/raivr"
+            >
+              <Icon className={styles.buttonIcon} name="Patreon" />
+              Become a patron to download this mod
+            </a>
+          )}
+          {props.sourceUrl && (
+            <a
+              className={styles.downloadLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              href={props.sourceUrl}
+            >
+              <Icon className={styles.buttonIcon} name="Github" />
+              Source code
+            </a>
+          )}
+        </div>
         {props.videos.length > 0 && (
           <>
             <h4>Videos</h4>
@@ -68,7 +92,7 @@ export const ModCard = (props: Props) => {
               <div className={styles.linkList}>
                 {props.articles.map(({ title, url }) => (
                   <a
-                    className={styles.downloadLink}
+                    className={styles.listLink}
                     target="_blank"
                     rel="noopener noreferrer"
                     key={url}

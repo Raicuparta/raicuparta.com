@@ -99,10 +99,24 @@
 
 .downloadLink {
   text-decoration: none;
-  display: block;
-  span {
-    border-bottom: 2px solid;
-  }
+  display: flex;
+  background-color: #0f8b5e;
+  padding: 0.5em 1em;
+  border-radius: 1em;
+}
+
+.patreonLink {
+  text-decoration: none;
+  display: flex;
+  background-color: #c42e35;
+  padding: 0.5em 1em;
+  border-radius: 1em;
+}
+
+.buttonIcon {
+  fill: white;
+  height: 1.5em;
+  margin-right: 0.5em;
 }
 
 .linkListWrapper {
@@ -110,8 +124,23 @@
   justify-content: center;
 }
 
+.listLink {
+  text-decoration: none;
+  display: block;
+  span {
+    border-bottom: 2px solid;
+  }
+}
+
 .linkList {
   display: flex;
   flex-direction: column;
   gap: 0.5em;
+}
+
+.downloadWrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 1em;
 }
