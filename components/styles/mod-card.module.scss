@@ -58,14 +58,14 @@
   text-align: center;
   width: 100%;
   color: white;
-  text-shadow: 0 0 8px black;
+  text-shadow: 0 0 8px black, 0 0 10px black, 0 0 20px black;
 }
 
 .gameName {
   opacity: 1;
   line-height: 1em;
   background-color: rgba(0, 0, 0, 0.5);
-  border-radius: 1em;
+  border-radius: 0.5em;
   padding: 0.2em 0.5em;
   display: inline-block;
 }
@@ -81,7 +81,7 @@
 }
 
 .video {
-  border-radius: 1em;
+  border-radius: 0.5em;
   overflow: hidden;
   transition: transform 150ms;
   will-change: transform;
@@ -98,7 +98,7 @@
   display: flex;
   background-color: #0f8b5e;
   padding: 0.5em 1em;
-  border-radius: 1em;
+  border-radius: 0.5em;
   will-change: transform;
   transition: transform 150ms;
   &:hover {
@@ -111,7 +111,7 @@
   display: flex;
   background-color: #d6343c;
   padding: 0.5em 1em;
-  border-radius: 1em;
+  border-radius: 0.5em;
   will-change: transform;
   transition: transform 150ms;
   &:hover {
@@ -134,7 +134,7 @@
   display: block;
   background: rgba(255, 255, 253, 0.2);
   padding: 0.1em;
-  border-radius: 1em;
+  border-radius: 0.5em;
   text-align: center;
   color: white;
   font-weight: 400;
