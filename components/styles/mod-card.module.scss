@@ -77,6 +77,8 @@
 .videoList {
   display: flex;
   justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
   gap: 1em;
 }
 
@@ -88,7 +90,9 @@
   img {
     display: block;
   }
-  &:hover {
+  &:hover,
+  &:active,
+  &:focus {
     transform: scale(1.05);
   }
 }
@@ -101,7 +105,9 @@
   border-radius: 0.5em;
   will-change: transform;
   transition: transform 150ms;
-  &:hover {
+  &:hover,
+  &:active,
+  &:focus {
     transform: scale(1.05);
   }
 }
@@ -114,7 +120,9 @@
   border-radius: 0.5em;
   will-change: transform;
   transition: transform 150ms;
-  &:hover {
+  &:hover,
+  &:active,
+  &:focus {
     transform: scale(1.05);
   }
 }
@@ -133,14 +141,16 @@
   text-decoration: none;
   display: block;
   background: rgba(255, 255, 253, 0.2);
-  padding: 0.1em;
+  padding: 0.2em 0.5em;
   border-radius: 0.5em;
   text-align: center;
   color: white;
   font-weight: 400;
   opacity: 0.8;
   transition: 150ms;
-  &:hover {
+  &:hover,
+  &:active,
+  &:focus {
     opacity: 1;
   }
 }

@@ -79,7 +79,7 @@ export const ModCard = (props: Props) => {
                 <div key={videoUrl} className={styles.video}>
                   <a target="_blank" rel="noopener noreferrer" href={videoUrl}>
                     <img
-                      height="100px"
+                      height="80px"
                       src={`/mods/${props.gameKey}/videos/${index}.jpg`}
                     />
                   </a>
