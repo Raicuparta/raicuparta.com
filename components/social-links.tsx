@@ -23,11 +23,6 @@ const links = [
     url: 'https://dev.to/raicuparta',
   },
   {
-    name: 'LinkedIn',
-    title: 'LinkedIn Ricardo Lopes',
-    url: 'https://www.linkedin.com/in/riclop',
-  },
-  {
     name: 'StackOverflow',
     title: 'Stack Overflow @Raicuparta',
     url: 'https://stackoverflow.com/users/3962104/ricardo-lopes?tab=profile',

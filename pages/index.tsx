@@ -1,184 +1,219 @@
 import { Header, SocialLinks, ProjectsSection, Link } from '../components';
-import { Project } from '../components/project-card';
+import { ModCard } from '../components/mod-card';
 import styles from './styles/index.module.scss';
-
-const vrProjects: Project[] = [
-  {
-    title: 'VR Mods Patreon',
-    description:
-      'People who like what I do can join my Patreon, which gives them access to early development versions of some of my VR mods.',
-    url: 'https://www.patreon.com/raivr',
-    tags: [],
-  },
-  {
-    title: 'NomaiVR',
-    description:
-      'Converts the game "Outer Wilds" into a full VR experience, with full motion controls.',
-    url: 'https://github.com/Raicuparta/nomai-vr',
-    tags: ['C#', '.NET', 'Unity'],
-  },
-  {
-    title: 'Two Forks VR',
-    description:
-      'Converts the game "Firewatch" into a full VR experience, with motion controls and comfort options.',
-    url: 'https://github.com/Raicuparta/two-forks-vr/',
-    tags: ['C#', '.NET', 'Unity'],
-  },
-];
-
-const outerWildsProjects: Project[] = [
-  {
-    title: 'Mod Manager',
-    description: 'Windows app for installing and downloading mods.',
-    url: 'https://github.com/Raicuparta/ow-mod-manager',
-    tags: ['Electron', 'TypeScript', 'React'],
-  },
-  {
-    title: 'Mods Website',
-    description:
-      'Web page with information about game modifications. Static page, but updates itself automatically with data from the mod database.',
-    url: 'https://github.com/Raicuparta/outerwildsmods.com',
-    tags: ['TypeScript', 'Svelte', 'React'],
-  },
-  {
-    title: 'Mod Database',
-    description:
-      'Aggregates all mod repos made by the community into a self-updating repo. The website and mod manager both use this database.',
-    url: 'https://github.com/Raicuparta/outer-wilds-mod-db',
-    tags: ['GitHub Actions', 'TypeScript'],
-  },
-];
-
-const otherProjects: Project[] = [
-  {
-    title: 'Curvatron',
-    description:
-      'Minimalist "snake" video game, available on Steam. Previously available on Android and iOS.',
-    url: 'https://github.com/bravebunny/curvatron',
-    tags: ['JavaScript', 'Phaser.JS'],
-  },
-  {
-    title: 'Brave Bunny',
-    description:
-      'Worked on multiple small game projects with friends, participated in a bunch of game jams and other events.',
-    url: 'https://github.com/bravebunny',
-    tags: ['JavaScript', 'C#', 'Unity'],
-  },
-];
-
-const articles: Project[] = [
-  {
-    title:
-      'Dealing with Platform Inconsistencies as a North Korean Front-End Developer',
-    url: 'https://dev.to/raicuparta/dealing-with-platform-inconsistencies-as-a-north-korean-front-end-developer-3158',
-    tags: ['HTML', 'JavaScript', 'CSS'],
-  },
-  {
-    title: 'Ditching worthless friends with Facebook data and JavaScript',
-    url: 'https://dev.to/raicuparta/ditching-worthless-friends-with-facebook-data-and-javascript-3f2i',
-    tags: ['JavaScript'],
-  },
-];
-
-const professionalProjects: Project[] = [
-  {
-    title: 'LIV',
-    description:
-      'VR toolset for video capture, streaming, etc. I modify Unity games to add support for all the LIV tools.',
-    url: 'https://www.liv.tv/',
-    tags: ['C#', '.NET', 'Unity'],
-  },
-  {
-    title: 'Hasty.ai',
-    description:
-      'End-to-end vision AI solution, with AI-assisted annotation, automated QA, etc, to assist in the creation of models.',
-    url: 'https://hasty.ai',
-    tags: ['TypeScript', 'Node.js', 'React', 'Canvas'],
-  },
-  {
-    title: 'Trainline',
-    description:
-      'Ticketing platform for trains / buses. I did maintenance and implementation of new features on the front end for trainline.com.',
-    url: 'https://trainline.com',
-    tags: ['TypeScript', 'Node.js', 'React'],
-  },
-  {
-    title: 'AutoScout24 Switzerland',
-    description:
-      'Marketplace for vehicles. I worked on the main page, and created a new area for private members.',
-    url: 'https://autoscout24.ch',
-    tags: ['TypeScript', 'Node.js', 'React'],
-  },
-  {
-    title: 'CityRow Go',
-    description:
-      'Fitness app for rowing enthusiasts. I helped create the React Native app.',
-    url: 'https://www.cityrow.com/',
-    tags: ['TypeScript', 'React Native'],
-  },
-  {
-    title: 'Radiator Labs',
-    description:
-      'App / device for improving the efficiency of radiators. I built a dashboard with graphs and stats about said radiators.',
-    url: 'https://www.radiatorlabs.com',
-    tags: ['JavaScript', 'React', 'GraphQL'],
-  },
-];
 
 const Home = () => (
   <>
-    <title>Ricardo Lopes</title>
+    <title>Raicuparta</title>
     <main className={styles.main}>
       <div className={styles.pageBody}>
-        <Header title="ricardo lopes" />
+        <Header title="Raicuparta" />
         <SocialLinks />
         <div className={styles.content}>
-          <ProjectsSection title="VR Mods" projects={vrProjects}>
-            <p>
-              I modified a few conventional "flat" games into full VR
-              experiences. Got some coverage by{' '}
-              <Link href="https://uploadvr.com/outer-wilds-vr-mod">
-                UploadVR
-              </Link>{' '}
-              ,{' '}
-              <Link href="https://www.dualshockers.com/outer-wilds-virtual-reality-fan-mod/">
-                DualShockers
-              </Link>
-              ,{' '}
-              <Link href="https://www.youtube.com/watch?v=jO_V-sq-Ics">
-                Eurogamer
-              </Link>
-              , and more.
-            </p>
-          </ProjectsSection>
-          <ProjectsSection
-            title="Outer Wilds Modding Ecosystem"
-            projects={outerWildsProjects}
+          <div
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '2em',
+              width: '100%',
+            }}
           >
-            <p>
-              As part of the modding community of the video game{' '}
-              <Link href="https://www.mobiusdigitalgames.com/outer-wilds.html">
-                Outer Wilds
-              </Link>
-              , I built an ecosystem with a database, app, and website. All
-              running off of static data on GitHub, while still having up to
-              date information about all the mods.
-            </p>
-          </ProjectsSection>
-          <ProjectsSection
-            title="Professional Projects"
-            projects={professionalProjects}
-          >
-            <p>
-              These are a few of the projects I contributed to during my
-              professional career.
-            </p>
-          </ProjectsSection>
-          <ProjectsSection title="Popular Articles" projects={articles} />
-          <ProjectsSection
-            title="Other Game Dev Projects"
-            projects={otherProjects}
-          />
+            <ModCard
+              title="StanleyVR"
+              videos={[
+                'https://youtu.be/JVanThRk5e8',
+                'https://youtu.be/iYt0YlLFjYI',
+                'https://youtu.be/ZIAWcsPLT1c',
+                'https://youtu.be/qM25FLL-NSQ',
+              ]}
+              articles={[
+                {
+                  title:
+                    'UploadVR: The Stanley Parable Is Getting A VR Mod, First Footage Revealed',
+                  url: 'https://uploadvr.com/the-stanley-parable-vr-mod/',
+                },
+                {
+                  title:
+                    'Real o Virtual: The Stanley Parable también tendrá mod VR',
+                  url: 'https://www.realovirtual.com/noticias/11309/stanley-parable-tendra-mod-vr',
+                },
+              ]}
+              gameName="The Stanley Parable: Ultra Deluxe"
+              gameKey="stanley-parable"
+              description="StanleyVR is a VR mod for The Stanley Parable: Ultra Deluxe. Still being polished but the full game is already playable. Full room-scale VR with motion controls."
+              gameLinks={[
+                {
+                  title: 'The Stanley Parable: Ultra Deluxe on Steam',
+                  url: 'https://store.steampowered.com/app/1703340/The_Stanley_Parable_Ultra_Deluxe/',
+                },
+                {
+                  title: 'Official page',
+                  url: 'https://www.stanleyparable.com/',
+                },
+              ]}
+            />
+            <ModCard
+              title="ShipbreakerVR"
+              videos={[
+                'https://www.twitch.tv/ragesaq/video/1508802767',
+                'https://youtu.be/PZLhq5NiFKo',
+                'https://youtu.be/UGGtz1lYMNw',
+              ]}
+              articles={[]}
+              gameName="Hardspace: Shipbreaker"
+              gameKey="shipbreaker"
+              description="ShipbreakerVR is a VR mod for Hardspace: Shipbreaker. This mod is still in early development. The current version has no motion controls, but features camera-independent aiming for all the game tools."
+              gameLinks={[
+                {
+                  title: 'Hardspace: Shipbreaker on Steam',
+                  url: 'https://store.steampowered.com/app/1161580/Hardspace_Shipbreaker/',
+                },
+                {
+                  title: 'Hardspace: Shipbreaker on PC Xbox Game Pass',
+                  url: 'https://www.xbox.com/en-US/games/store/hardspace-shipbreaker/9mw8rmsbb5qh',
+                },
+                {
+                  title: 'Official page',
+                  url: 'https://www.focus-entmt.com/en/games/hardspace-shipbreaker',
+                },
+              ]}
+            />
+            <ModCard
+              title="Two Forks VR"
+              videos={[
+                'https://youtu.be/jO_V-sq-Ics',
+                'https://youtu.be/h2uI3ITaHj8',
+                'https://youtu.be/KeKsGIhehjU',
+                'https://youtu.be/Wo27DFX8rYw',
+              ]}
+              articles={[
+                {
+                  title:
+                    '‘Firewatch’ VR Support is Now Free as Unofficial Mod Goes Open Source',
+                  url: 'https://www.roadtovr.com/firewatch-vr-mod-free-pc-vr-quest/',
+                },
+                {
+                  title:
+                    'VRScout: Firewatch VR Mod Now Available Free Of Charge',
+                  url: 'https://vrscout.com/news/firewatch-vr-mod-now-available-free-of-charge/',
+                },
+                {
+                  title:
+                    'Real o Virtual: El mod VR de Firewatch llega a su versión definitiva',
+                  url: 'https://www.realovirtual.com/noticias/11291/mod-vr-firewatch-llega-su-version-definitiva',
+                },
+                {
+                  title: 'UploadVR: Firewatch VR Mod Is Now Complete',
+                  url: 'https://uploadvr.com/firewatch-vr-mod-now-complete/',
+                },
+              ]}
+              gameName="Firewatch"
+              gameKey="firewatch"
+              description="Two Forks VR is a VR mod for Firewatch. The full game is playable in VR, with room-scale tracking, motion controls, and multiple comfort options. The mod is finished and has thus been open-sourced."
+              downloadUrl="https://github.com/Raicuparta/two-forks-vr/#readme"
+              sourceUrl="https://github.com/Raicuparta/two-forks-vr"
+              gameLinks={[
+                {
+                  title: 'Firewatch on Steam',
+                  url: 'https://store.steampowered.com/app/383870/Firewatch/',
+                },
+                {
+                  title: 'Firewatch on GOG',
+                  url: 'https://www.gog.com/en/game/firewatch',
+                },
+                {
+                  title: 'Firewatch on PC Xbox Game Pass',
+                  url: 'https://www.xbox.com/en-US/games/store/firewatch/BQQKG9H2STC0',
+                },
+                {
+                  title: 'Official page',
+                  url: 'https://www.firewatchgame.com/',
+                },
+              ]}
+            />
+            <ModCard
+              title="NomaiVR"
+              videos={[
+                'https://youtu.be/g2NbjF4fG0s',
+                'https://youtu.be/SCZ8vtl4sVs',
+                'https://youtu.be/5ntWk0rJTC0',
+                'https://youtu.be/_mfKvDbeEkg',
+              ]}
+              articles={[
+                {
+                  title: 'UploadVR: Outer Wilds Now Has An Incredible VR Mod',
+                  url: 'https://uploadvr.com/outer-wilds-vr-mod/',
+                },
+                {
+                  title:
+                    'Real o Virtual: Outer Wilds está en Gamepass y se puede jugar en VR',
+                  url: 'https://www.realovirtual.com/noticias/10852/outer-wilds-esta-gamepass-se-puede-jugar-vr',
+                },
+              ]}
+              gameName="Outer Wilds"
+              gameKey="outer-wilds"
+              description="NomaiVR is a VR mod for Outer Wilds. It was my first VR mod. The full game can be played in VR with room-scale tracking and motion controls."
+              downloadUrl="https://outerwildsmods.com/mods/nomaivr/"
+              sourceUrl="https://github.com/Raicuparta/nomai-vr"
+              gameLinks={[
+                {
+                  title: 'Outer Wilds on Steam',
+                  url: 'https://store.steampowered.com/app/753640/Outer_Wilds/',
+                },
+                {
+                  title: 'Outer Wilds on PC Xbox Game Pass',
+                  url: 'https://www.xbox.com/en-US/games/store/outer-wilds/C596FKDKMQN7',
+                },
+                {
+                  title: 'Outer Wilds on Epic Games Store',
+                  url: 'https://store.epicgames.com/en-US/p/outerwilds',
+                },
+              ]}
+            />
+            <ModCard
+              title="ColossalVr"
+              videos={[
+                'https://youtu.be/kqGIscwN6vc',
+                'https://youtu.be/fEyUUN_eKFQ',
+              ]}
+              articles={[]}
+              gameName="Praey for the Gods"
+              gameKey="praey-for-the-gods"
+              description="ColossalVR is a VR mod for Praey for the Gods. This is a third person game, and the VR mod keeps that perspective. A tracked VR camera with adjustments to the game UI."
+              gameLinks={[
+                {
+                  title: 'Praey for the Gods on Steam',
+                  url: 'https://store.steampowered.com/app/494430/Praey_for_the_Gods/',
+                },
+                {
+                  title: 'Official page',
+                  url: 'https://www.praeyforthegods.com/',
+                },
+              ]}
+            />
+            <ModCard
+              title="FatesVR"
+              videos={['https://youtu.be/Gt_kIrmTl44']}
+              articles={[]}
+              gameName="Return of the Obra Dinn"
+              gameKey="obra-dinn"
+              description="FatesVR is a VR mod for Return of the Obra Dinn. I provide this mod just for people who are curious about it after watching my video on the subject. It was just an experiment to see how far I could get with a VR mod for a game with such a peculiar art style."
+              gameLinks={[
+                {
+                  title: 'Return of the Obra Dinn on Steam',
+                  url: 'https://store.steampowered.com/app/653530/Return_of_the_Obra_Dinn/',
+                },
+                {
+                  title: 'Return of the Obra Dinn on GOG',
+                  url: 'https://www.gog.com/game/return_of_the_obra_dinn',
+                },
+                {
+                  title: 'Official page',
+                  url: 'https://obradinn.com/',
+                },
+              ]}
+            />
+          </div>
         </div>
       </div>
     </main>

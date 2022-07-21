@@ -1,0 +1,170 @@
+.modCard {
+  border-radius: 1em;
+  overflow: hidden;
+  background: var(--overlay-dark);
+
+  h4 {
+    text-align: center;
+    margin: 1.5em 0 0.5em 0;
+  }
+}
+
+.thumbnailWrapper {
+  position: relative;
+  // z-index: -1;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+}
+
+.thumbnail {
+  object-fit: contain;
+  object-position: top;
+  display: block;
+  box-shadow: 0 0 30px black;
+}
+
+.thumbnailBackground {
+  object-fit: cover;
+  object-position: top;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  filter: blur(10px);
+}
+
+.content {
+  padding: 1em;
+
+  a {
+    color: white;
+    font-weight: 400;
+  }
+}
+
+.titleWrapper {
+  position: absolute;
+  bottom: 0.5em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  font-weight: 400;
+  font-size: 3em;
+  margin: 0;
+  text-align: center;
+  width: 100%;
+  color: white;
+  text-shadow: 0 0 8px black, 0 0 10px black, 0 0 20px black;
+}
+
+.gameName {
+  opacity: 1;
+  line-height: 1em;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 0.5em;
+  padding: 0.2em 0.5em;
+  display: inline-block;
+}
+
+.description {
+  margin-top: 0;
+}
+
+.videoList {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1em;
+}
+
+.video {
+  border-radius: 0.5em;
+  overflow: hidden;
+  transition: transform 150ms;
+  will-change: transform;
+  img {
+    display: block;
+  }
+  &:hover,
+  &:active,
+  &:focus {
+    transform: scale(1.05);
+  }
+}
+
+.downloadLink {
+  text-decoration: none;
+  display: flex;
+  background-color: #0f8b5e;
+  padding: 0.5em 1em;
+  border-radius: 0.5em;
+  will-change: transform;
+  transition: transform 150ms;
+  &:hover,
+  &:active,
+  &:focus {
+    transform: scale(1.05);
+  }
+}
+
+.patreonLink {
+  text-decoration: none;
+  display: flex;
+  background-color: #d6343c;
+  padding: 0.5em 1em;
+  border-radius: 0.5em;
+  will-change: transform;
+  transition: transform 150ms;
+  &:hover,
+  &:active,
+  &:focus {
+    transform: scale(1.05);
+  }
+}
+
+.buttonIcon {
+  fill: white;
+  height: 1.5em;
+  margin-right: 0.5em;
+}
+
+.linkListWrapper {
+  display: flex;
+}
+
+.listLink {
+  text-decoration: none;
+  display: block;
+  background: rgba(255, 255, 253, 0.2);
+  padding: 0.2em 0.5em;
+  border-radius: 0.5em;
+  text-align: center;
+  color: white;
+  font-weight: 400;
+  opacity: 0.8;
+  transition: 150ms;
+  &:hover,
+  &:active,
+  &:focus {
+    opacity: 1;
+  }
+}
+
+.linkList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  width: 100%;
+}
+
+.downloadWrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 1em;
+}
