@@ -1,18 +1,21 @@
 import { Icon } from './icon';
 import styles from './styles/mod-card.module.scss';
 
+type Link = {
+  title: string;
+  url: string;
+};
+
 type Props = {
   title: string;
   gameName: string;
   description: string;
   gameKey: string;
   videos: string[];
-  articles: {
-    title: string;
-    url: string;
-  }[];
+  articles: Link[];
   downloadUrl?: string;
   sourceUrl?: string;
+  gameLinks: Link[];
 };
 
 export const ModCard = (props: Props) => {
@@ -91,6 +94,26 @@ export const ModCard = (props: Props) => {
             <div className={styles.linkListWrapper}>
               <div className={styles.linkList}>
                 {props.articles.map(({ title, url }) => (
+                  <a
+                    className={styles.listLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    key={url}
+                    href={url}
+                  >
+                    🔗<span>{title}</span>
+                  </a>
+                ))}
+              </div>
+            </div>
+          </>
+        )}
+        {props.gameLinks.length > 0 && (
+          <>
+            <h4>Game links</h4>
+            <div className={styles.linkListWrapper}>
+              <div className={styles.linkList}>
+                {props.gameLinks.map(({ title, url }) => (
                   <a
                     className={styles.listLink}
                     target="_blank"

@@ -40,8 +40,17 @@ const Home = () => (
               ]}
               gameName="The Stanley Parable: Ultra Deluxe"
               gameKey="stanley-parable"
-              description="This is a game with a mod. The mod is in the game and there is a game,
-      which has a mod. What a game with a mod. Can you believe it?"
+              description="Full VR mod for The Stanley Parable: Ultra Deluxe. Full room-scale VR with motion controls."
+              gameLinks={[
+                {
+                  title: 'The Stanley Parable: Ultra Deluxe on Steam',
+                  url: 'https://store.steampowered.com/app/1703340/The_Stanley_Parable_Ultra_Deluxe/',
+                },
+                {
+                  title: 'Official page',
+                  url: 'https://www.stanleyparable.com/',
+                },
+              ]}
             />
             <ModCard
               title="ShipbreakerVR"
@@ -55,6 +64,20 @@ const Home = () => (
               gameKey="shipbreaker"
               description="This is a game with a mod. The mod is in the game and there is a game,
         which has a mod. What a game with a mod. Can you believe it?"
+              gameLinks={[
+                {
+                  title: 'Hardspace: Shipbreaker on Steam',
+                  url: 'https://store.steampowered.com/app/1161580/Hardspace_Shipbreaker/',
+                },
+                {
+                  title: 'Hardspace: Shipbreaker on PC Xbox Game Pass',
+                  url: 'https://www.xbox.com/en-US/games/store/hardspace-shipbreaker/9mw8rmsbb5qh',
+                },
+                {
+                  title: 'Official page',
+                  url: 'https://www.focus-entmt.com/en/games/hardspace-shipbreaker',
+                },
+              ]}
             />
             <ModCard
               title="Two Forks VR"
@@ -91,6 +114,7 @@ const Home = () => (
         which has a mod. What a game with a mod. Can you believe it?"
               downloadUrl="https://github.com/Raicuparta/two-forks-vr/#readme"
               sourceUrl="https://github.com/Raicuparta/two-forks-vr"
+              gameLinks={[]}
             />
             <ModCard
               title="NomaiVR"
@@ -117,6 +141,7 @@ const Home = () => (
         which has a mod. What a game with a mod. Can you believe it?"
               downloadUrl="https://outerwildsmods.com/mods/nomaivr/"
               sourceUrl="https://github.com/Raicuparta/nomai-vr"
+              gameLinks={[{ title: '', url: '' }]}
             />
             <ModCard
               title="ColossalVr"
@@ -129,6 +154,7 @@ const Home = () => (
               gameKey="praey-for-the-gods"
               description="This is a game with a mod. The mod is in the game and there is a game,
         which has a mod. What a game with a mod. Can you believe it?"
+              gameLinks={[{ title: '', url: '' }]}
             />
             <ModCard
               title="FatesVR"
@@ -138,6 +164,7 @@ const Home = () => (
               gameKey="obra-dinn"
               description="This is a game with a mod. The mod is in the game and there is a game,
         which has a mod. What a game with a mod. Can you believe it?"
+              gameLinks={[{ title: '', url: '' }]}
             />
           </div>
         </div>
