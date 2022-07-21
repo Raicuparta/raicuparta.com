@@ -71,15 +71,17 @@ const Home = () => (
                   url: 'https://www.roadtovr.com/firewatch-vr-mod-free-pc-vr-quest/',
                 },
                 {
-                  title: 'Firewatch VR Mod Now Available Free Of Charge',
+                  title:
+                    'VRScout: Firewatch VR Mod Now Available Free Of Charge',
                   url: 'https://vrscout.com/news/firewatch-vr-mod-now-available-free-of-charge/',
                 },
                 {
-                  title: 'El mod VR de Firewatch llega a su versión definitiva',
+                  title:
+                    'Real o Virtual: El mod VR de Firewatch llega a su versión definitiva',
                   url: 'https://www.realovirtual.com/noticias/11291/mod-vr-firewatch-llega-su-version-definitiva',
                 },
                 {
-                  title: 'Firewatch VR Mod Is Now Complete',
+                  title: 'UploadVR: Firewatch VR Mod Is Now Complete',
                   url: 'https://uploadvr.com/firewatch-vr-mod-now-complete/',
                 },
               ]}
@@ -97,7 +99,17 @@ const Home = () => (
                 'https://youtu.be/5ntWk0rJTC0',
                 'https://youtu.be/_mfKvDbeEkg',
               ]}
-              articles={[]}
+              articles={[
+                {
+                  title: 'UploadVR: Outer Wilds Now Has An Incredible VR Mod',
+                  url: 'https://uploadvr.com/outer-wilds-vr-mod/',
+                },
+                {
+                  title:
+                    'Real o Virtual: Outer Wilds está en Gamepass y se puede jugar en VR',
+                  url: 'https://www.realovirtual.com/noticias/10852/outer-wilds-esta-gamepass-se-puede-jugar-vr',
+                },
+              ]}
               gameName="Outer Wilds"
               gameKey="outer-wilds"
               description="This is a game with a mod. The mod is in the game and there is a game,
