@@ -64,13 +64,21 @@ export const ModCard = (props: Props) => {
         {props.articles.length > 0 && (
           <>
             <h4>Articles</h4>
-            <ul>
-              {props.articles.map(({ title, url }) => (
-                <li key={url}>
-                  <a href={url}>{title}</a>
-                </li>
-              ))}
-            </ul>
+            <div className={styles.linkListWrapper}>
+              <div className={styles.linkList}>
+                {props.articles.map(({ title, url }) => (
+                  <a
+                    className={styles.downloadLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    key={url}
+                    href={url}
+                  >
+                    🔗<span>{title}</span>
+                  </a>
+                ))}
+              </div>
+            </div>
           </>
         )}
       </div>

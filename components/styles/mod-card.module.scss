@@ -2,6 +2,11 @@
   border-radius: 1em;
   overflow: hidden;
   background: var(--overlay-dark);
+
+  h4 {
+    text-align: center;
+    margin: 1em 0 0.5em 0;
+  }
 }
 
 .thumbnailWrapper {
@@ -94,7 +99,19 @@
 
 .downloadLink {
   text-decoration: none;
+  display: block;
   span {
     border-bottom: 2px solid;
   }
+}
+
+.linkListWrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.linkList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
 }

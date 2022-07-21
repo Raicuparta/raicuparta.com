@@ -118,7 +118,10 @@ const Home = () => (
             />
             <ModCard
               title="ColossalVr"
-              videos={[]}
+              videos={[
+                'https://youtu.be/kqGIscwN6vc',
+                'https://youtu.be/fEyUUN_eKFQ',
+              ]}
               articles={[]}
               gameName="Praey for the Gods"
               gameKey="praey-for-the-gods"
@@ -127,7 +130,7 @@ const Home = () => (
             />
             <ModCard
               title="FatesVR"
-              videos={[]}
+              videos={['https://youtu.be/Gt_kIrmTl44']}
               articles={[]}
               gameName="Return of the Obra Dinn"
               gameKey="obra-dinn"
