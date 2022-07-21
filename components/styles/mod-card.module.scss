@@ -76,11 +76,11 @@
 
 .videoList {
   display: flex;
+  justify-content: center;
   gap: 1em;
 }
 
 .video {
-  flex: 1;
   border-radius: 1em;
   overflow: hidden;
   transition: transform 150ms;

@@ -45,7 +45,10 @@ const Home = () => (
             />
             <ModCard
               title="ShipbreakerVR"
-              videos={[]}
+              videos={[
+                'https://youtu.be/PZLhq5NiFKo',
+                'https://youtu.be/UGGtz1lYMNw',
+              ]}
               articles={[]}
               gameName="Hardspace: Shipbreaker"
               gameKey="shipbreaker"
