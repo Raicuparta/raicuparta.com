@@ -57,8 +57,31 @@ const Home = () => (
             />
             <ModCard
               title="Two Forks VR"
-              videos={[]}
-              articles={[]}
+              videos={[
+                'https://youtu.be/jO_V-sq-Ics',
+                'https://youtu.be/h2uI3ITaHj8',
+                'https://youtu.be/KeKsGIhehjU',
+                'https://youtu.be/Wo27DFX8rYw',
+              ]}
+              articles={[
+                {
+                  title:
+                    '‘Firewatch’ VR Support is Now Free as Unofficial Mod Goes Open Source',
+                  url: 'https://www.roadtovr.com/firewatch-vr-mod-free-pc-vr-quest/',
+                },
+                {
+                  title: 'Firewatch VR Mod Now Available Free Of Charge',
+                  url: 'https://vrscout.com/news/firewatch-vr-mod-now-available-free-of-charge/',
+                },
+                {
+                  title: 'El mod VR de Firewatch llega a su versión definitiva',
+                  url: 'https://www.realovirtual.com/noticias/11291/mod-vr-firewatch-llega-su-version-definitiva',
+                },
+                {
+                  title: 'Firewatch VR Mod Is Now Complete',
+                  url: 'https://uploadvr.com/firewatch-vr-mod-now-complete/',
+                },
+              ]}
               gameName="Firewatch"
               gameKey="firewatch"
               description="This is a game with a mod. The mod is in the game and there is a game,
