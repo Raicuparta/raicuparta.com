@@ -101,7 +101,7 @@ export const ModCard = (props: Props) => {
                     key={url}
                     href={url}
                   >
-                    🔗<span>{title}</span>
+                    {title}
                   </a>
                 ))}
               </div>
@@ -121,7 +121,7 @@ export const ModCard = (props: Props) => {
                     key={url}
                     href={url}
                   >
-                    🔗<span>{title}</span>
+                    {title}
                   </a>
                 ))}
               </div>

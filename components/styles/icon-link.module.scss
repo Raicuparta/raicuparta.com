@@ -2,6 +2,7 @@
   max-width: 30px;
   max-height: 30px;
   flex: 1;
+  will-change: transform;
   &:hover,
   &:active,
   &:focus {

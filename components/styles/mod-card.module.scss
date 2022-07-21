@@ -40,11 +40,6 @@
   a {
     color: white;
     font-weight: 400;
-    opacity: 0.8;
-    transition: 150ms;
-    &:hover {
-      opacity: 1;
-    }
   }
 }
 
@@ -89,6 +84,7 @@
   border-radius: 1em;
   overflow: hidden;
   transition: transform 150ms;
+  will-change: transform;
   img {
     display: block;
   }
@@ -103,14 +99,24 @@
   background-color: #0f8b5e;
   padding: 0.5em 1em;
   border-radius: 1em;
+  will-change: transform;
+  transition: transform 150ms;
+  &:hover {
+    transform: scale(1.05);
+  }
 }
 
 .patreonLink {
   text-decoration: none;
   display: flex;
-  background-color: #c42e35;
+  background-color: #d6343c;
   padding: 0.5em 1em;
   border-radius: 1em;
+  will-change: transform;
+  transition: transform 150ms;
+  &:hover {
+    transform: scale(1.05);
+  }
 }
 
 .buttonIcon {
@@ -121,14 +127,21 @@
 
 .linkListWrapper {
   display: flex;
-  justify-content: center;
 }
 
 .listLink {
   text-decoration: none;
   display: block;
-  span {
-    border-bottom: 2px solid;
+  background: rgba(255, 255, 253, 0.2);
+  padding: 0.1em;
+  border-radius: 1em;
+  text-align: center;
+  color: white;
+  font-weight: 400;
+  opacity: 0.8;
+  transition: 150ms;
+  &:hover {
+    opacity: 1;
   }
 }
 
@@ -136,6 +149,7 @@
   display: flex;
   flex-direction: column;
   gap: 0.5em;
+  width: 100%;
 }
 
 .downloadWrapper {

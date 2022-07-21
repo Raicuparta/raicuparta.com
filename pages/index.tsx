@@ -114,7 +114,24 @@ const Home = () => (
         which has a mod. What a game with a mod. Can you believe it?"
               downloadUrl="https://github.com/Raicuparta/two-forks-vr/#readme"
               sourceUrl="https://github.com/Raicuparta/two-forks-vr"
-              gameLinks={[]}
+              gameLinks={[
+                {
+                  title: 'Firewatch on Steam',
+                  url: 'https://store.steampowered.com/app/383870/Firewatch/',
+                },
+                {
+                  title: 'Firewatch on GOG',
+                  url: 'https://www.gog.com/en/game/firewatch',
+                },
+                {
+                  title: 'Firewatch on PC Xbox Game Pass',
+                  url: 'https://www.xbox.com/en-US/games/store/firewatch/BQQKG9H2STC0',
+                },
+                {
+                  title: 'Official page',
+                  url: 'https://www.firewatchgame.com/',
+                },
+              ]}
             />
             <ModCard
               title="NomaiVR"
@@ -141,7 +158,20 @@ const Home = () => (
         which has a mod. What a game with a mod. Can you believe it?"
               downloadUrl="https://outerwildsmods.com/mods/nomaivr/"
               sourceUrl="https://github.com/Raicuparta/nomai-vr"
-              gameLinks={[{ title: '', url: '' }]}
+              gameLinks={[
+                {
+                  title: 'Outer Wilds on Steam',
+                  url: 'https://store.steampowered.com/app/753640/Outer_Wilds/',
+                },
+                {
+                  title: 'Outer Wilds on PC Xbox Game Pass',
+                  url: 'https://www.xbox.com/en-US/games/store/outer-wilds/C596FKDKMQN7',
+                },
+                {
+                  title: 'Outer Wilds on Epic Games Store',
+                  url: 'https://store.epicgames.com/en-US/p/outerwilds',
+                },
+              ]}
             />
             <ModCard
               title="ColossalVr"
@@ -154,7 +184,16 @@ const Home = () => (
               gameKey="praey-for-the-gods"
               description="This is a game with a mod. The mod is in the game and there is a game,
         which has a mod. What a game with a mod. Can you believe it?"
-              gameLinks={[{ title: '', url: '' }]}
+              gameLinks={[
+                {
+                  title: 'Praey for the Gods on Steam',
+                  url: 'https://store.steampowered.com/app/494430/Praey_for_the_Gods/',
+                },
+                {
+                  title: 'Official page',
+                  url: 'https://www.praeyforthegods.com/',
+                },
+              ]}
             />
             <ModCard
               title="FatesVR"
@@ -164,7 +203,20 @@ const Home = () => (
               gameKey="obra-dinn"
               description="This is a game with a mod. The mod is in the game and there is a game,
         which has a mod. What a game with a mod. Can you believe it?"
-              gameLinks={[{ title: '', url: '' }]}
+              gameLinks={[
+                {
+                  title: 'Return of the Obra Dinn on Steam',
+                  url: 'https://store.steampowered.com/app/653530/Return_of_the_Obra_Dinn/',
+                },
+                {
+                  title: 'Return of the Obra Dinn on GOG',
+                  url: 'https://www.gog.com/game/return_of_the_obra_dinn',
+                },
+                {
+                  title: 'Official page',
+                  url: 'https://obradinn.com/',
+                },
+              ]}
             />
           </div>
         </div>
