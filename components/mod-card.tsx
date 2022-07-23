@@ -1,8 +1,7 @@
 import { Button } from './button';
-import { Icon } from './icon';
 import { Link } from './link';
 import { LinkInfo, LinkList } from './link-list';
-import styles from './styles/mod-card.module.scss';
+import { Section } from './section';
 
 type Props = {
   title: string;
@@ -28,15 +27,15 @@ export const ModCard = (props: Props) => {
         />
         <img className="absolute top-0 -z-10 blur-lg" src={imagePath} />
         <div className="absolute bottom-4 flex flex-col items-center gap-4">
-          <h3 className="text-4xl font-normal text-shadow text-white">
+          <h2 className="text-4xl font-normal text-shadow text-white">
             {props.title}
-          </h3>
+          </h2>
           <span className="bg-black bg-opacity-50 px-2 rounded">
             for {props.gameName}
           </span>
         </div>
       </div>
-      <div className="p-4 flex flex-col gap-4">
+      <div className="p-4 flex flex-col gap-6">
         <p>{props.description}</p>
         <div className="flex gap-4 flex-wrap justify-center">
           {props.downloadUrl ? (
@@ -67,8 +66,7 @@ export const ModCard = (props: Props) => {
           )}
         </div>
         {props.videos.length > 0 && (
-          <>
-            <h4>Videos</h4>
+          <Section title="Videos">
             <div className="flex flex-wrap gap-4 justify-center">
               {props.videos.map((videoUrl, index) => (
                 <Link className="rounded overflow-hidden" href={videoUrl}>
@@ -79,19 +77,17 @@ export const ModCard = (props: Props) => {
                 </Link>
               ))}
             </div>
-          </>
+          </Section>
         )}
         {props.articles.length > 0 && (
-          <>
-            <h4>Articles</h4>
+          <Section title="Articles">
             <LinkList links={props.articles} />
-          </>
+          </Section>
         )}
         {props.gameLinks.length > 0 && (
-          <>
-            <h4>Game links</h4>
+          <Section title="Game links">
             <LinkList links={props.gameLinks} />
-          </>
+          </Section>
         )}
       </div>
     </div>
