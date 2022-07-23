@@ -5,7 +5,7 @@ import Twitter from './twitter.svg';
 import Patreon from './patreon.svg';
 import Download from './download.svg';
 
-export default {
+const assets = {
   Dev,
   Github,
   StackOverflow,
@@ -13,3 +13,6 @@ export default {
   Patreon,
   Download,
 };
+
+export type IconName = keyof typeof assets;
+export default assets;

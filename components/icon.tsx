@@ -1,7 +1,7 @@
-import assets from '../svg-assets';
+import assets, { IconName } from '../svg-assets';
 
 type Props = {
-  name: keyof typeof assets;
+  name: IconName;
   className?: string;
 };
 

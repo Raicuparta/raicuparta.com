@@ -1,3 +1,4 @@
+import { Button } from './button';
 import { Icon } from './icon';
 import styles from './styles/mod-card.module.scss';
 
@@ -29,45 +30,43 @@ export const ModCard = (props: Props) => {
           width="400px"
         />
         <img className="absolute top-0 -z-10 blur-lg" src={imagePath} />
-        <div className={styles.titleWrapper}>
-          <h3 className={styles.title}>{props.title}</h3>
-          <span className={styles.gameName}>for {props.gameName}</span>
+        <div className="absolute bottom-4 flex flex-col items-center gap-4">
+          <h3 className="text-4xl font-normal text-shadow text-white">
+            {props.title}
+          </h3>
+          <span className="bg-black bg-opacity-50 px-2 rounded">
+            for {props.gameName}
+          </span>
         </div>
       </div>
-      <div className={styles.content}>
-        <p className={styles.description}>{props.description}</p>
-        <div className={styles.downloadWrapper}>
+      <div className="p-4 flex flex-col gap-4">
+        <p>{props.description}</p>
+        <div className="flex gap-4 flex-wrap justify-center">
           {props.downloadUrl ? (
-            <a
-              className={styles.downloadLink}
-              target="_blank"
-              rel="noopener noreferrer"
+            <Button
               href={props.downloadUrl}
+              iconName="Download"
+              className="bg-teal-700"
             >
-              <Icon className={styles.buttonIcon} name="Download" />
               Download mod
-            </a>
+            </Button>
           ) : (
-            <a
-              className={styles.patreonLink}
-              target="_blank"
-              rel="noopener noreferrer"
+            <Button
               href="https://www.patreon.com/raivr"
+              iconName="Patreon"
+              className="bg-pink-800"
             >
-              <Icon className={styles.buttonIcon} name="Patreon" />
               Download on Patreon
-            </a>
+            </Button>
           )}
           {props.sourceUrl && (
-            <a
-              className={styles.downloadLink}
-              target="_blank"
-              rel="noopener noreferrer"
+            <Button
               href={props.sourceUrl}
+              iconName="Github"
+              className="bg-teal-700"
             >
-              <Icon className={styles.buttonIcon} name="Github" />
               Source code
-            </a>
+            </Button>
           )}
         </div>
         {props.videos.length > 0 && (
