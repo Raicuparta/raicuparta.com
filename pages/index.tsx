@@ -8,7 +8,7 @@ const Home = () => (
     {mods.map((mod) => (
       <ButtonLink
         key={mod.gameKey}
-        href={mod.gameKey}
+        href={`${mod.gameKey}-vr-mod`}
         className="rounded overflow-hidden relative"
       >
         <ModImage
