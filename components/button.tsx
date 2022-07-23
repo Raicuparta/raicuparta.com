@@ -14,7 +14,6 @@ interface Props
 }
 
 export const Button = ({ iconName, className, children, ...props }: Props) => (
-  // TODO: colors
   <Link className={twMerge(className, 'flex p-2 rounded')} {...props}>
     <Icon className="fill-white mr-2 h-6" name={iconName} />
     {children}
