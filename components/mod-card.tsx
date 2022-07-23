@@ -56,7 +56,7 @@ export const ModCard = (props: Props) => {
               href="https://www.patreon.com/raivr"
             >
               <Icon className={styles.buttonIcon} name="Patreon" />
-              Become a patron to download this mod
+              Download on Patreon
             </a>
           )}
           {props.sourceUrl && (
