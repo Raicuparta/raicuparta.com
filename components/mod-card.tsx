@@ -1,5 +1,5 @@
-import { Button } from './button';
-import { Link } from './link';
+import { IconButton } from './icon-button';
+import { ButtonLink } from './button-link';
 import { LinkInfo, LinkList } from './link-list';
 import { Section } from './section';
 
@@ -37,38 +37,42 @@ export const ModCard = (props: Props) => {
         <p>{props.description}</p>
         <div className="flex gap-4 flex-wrap justify-center">
           {props.downloadUrl ? (
-            <Button
+            <IconButton
               href={props.downloadUrl}
               iconName="Download"
               className="bg-cta"
             >
               Download mod
-            </Button>
+            </IconButton>
           ) : (
-            <Button
+            <IconButton
               href="https://www.patreon.com/raivr"
               iconName="Patreon"
               className="bg-patreon"
             >
               Download on Patreon
-            </Button>
+            </IconButton>
           )}
           {props.sourceUrl && (
-            <Button href={props.sourceUrl} iconName="Github" className="bg-cta">
+            <IconButton
+              href={props.sourceUrl}
+              iconName="Github"
+              className="bg-cta"
+            >
               Source code
-            </Button>
+            </IconButton>
           )}
         </div>
         {props.videos.length > 0 && (
           <Section title="Videos">
             <div className="flex flex-wrap gap-4 justify-center">
               {props.videos.map((videoUrl, index) => (
-                <Link className="rounded overflow-hidden" href={videoUrl}>
+                <ButtonLink className="rounded overflow-hidden" href={videoUrl}>
                   <img
                     width="160px"
                     src={`/mods/${props.gameKey}/videos/${index}.jpg`}
                   />
-                </Link>
+                </ButtonLink>
               ))}
             </div>
           </Section>

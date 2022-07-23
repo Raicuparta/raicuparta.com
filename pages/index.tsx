@@ -1,20 +1,22 @@
-import { Header, SocialLinks } from '../components';
+import { Header, ButtonLink, SocialLinks } from '../components';
 import { ModCard } from '../components/mod-card';
 import mods from './mods.json';
 
 const Home = () => (
-  <>
-    <title>Raicuparta</title>
-    <main>
-      <Header title="Raicuparta" />
-      <SocialLinks />
-      <div className="max-w-3xl m-auto p-4 flex flex-col gap-4">
-        {mods.map((mod) => (
-          <ModCard key={mod.gameKey} {...mod} />
-        ))}
-      </div>
-    </main>
-  </>
+  <div className="flex flex-wrap gap-4 justify-center">
+    {mods.map((mod) => (
+      <ButtonLink
+        key={mod.gameKey}
+        href={mod.gameKey}
+        className="rounded overflow-hidden relative"
+      >
+        <img src={`/mods/${mod.gameKey}/mod.jpg`} width="300px" />
+        <span className="absolute z-10 bottom-4 text-center w-full text-4xl font-normal text-shadow text-white">
+          {mod.title}
+        </span>
+      </ButtonLink>
+    ))}
+  </div>
 );
 
 export default Home;
