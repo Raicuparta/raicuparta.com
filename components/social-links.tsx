@@ -1,5 +1,4 @@
 import { IconLink } from '../components';
-import styles from './styles/social-links.module.scss';
 
 const links = [
   {
@@ -31,13 +30,12 @@ const links = [
 
 export const SocialLinks = () => (
   <>
-    <div className={styles.wrapper}>
-      <nav className={styles.socialLinks}>
+    <div className="sticky top-0 z-10 bg-black bg-opacity-20">
+      <nav className="flex justify-evenly max-w-lg m-auto p-2">
         {links.map((link) => (
           <IconLink key={link.name} {...link} />
         ))}
       </nav>
     </div>
-    <div className={styles.background} />
   </>
 );

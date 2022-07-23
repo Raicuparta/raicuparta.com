@@ -1,5 +1,6 @@
 import { DetailedHTMLProps, AnchorHTMLAttributes } from 'react';
 import styles from './styles/link.module.scss';
+import { twMerge } from 'tailwind-merge';
 
 type Props = DetailedHTMLProps<
   AnchorHTMLAttributes<HTMLAnchorElement>,
@@ -8,10 +9,14 @@ type Props = DetailedHTMLProps<
 
 export const Link: React.FunctionComponent<Props> = ({
   children,
+  className,
   ...props
 }) => (
   <a
-    className={styles.link}
+    className={twMerge(
+      className,
+      'hover:scale-110 transition-transform will-change-transform'
+    )}
     {...props}
     target="_blank"
     rel="noopener noreferrer"

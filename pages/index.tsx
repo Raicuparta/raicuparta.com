@@ -1,4 +1,4 @@
-import { Header, SocialLinks, ProjectsSection, Link } from '../components';
+import { Header, SocialLinks } from '../components';
 import { ModCard } from '../components/mod-card';
 import styles from './styles/index.module.scss';
 import mods from './mods.json';
