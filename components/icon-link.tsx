@@ -9,8 +9,8 @@ type Props = {
 
 export const IconLink = ({ name, title, url }: Props) => {
   return (
-    <Link className="w-8 opacity-80 hover:opacity-100" href={url} title={title}>
-      <Icon className="fill-white" name={name} />
+    <Link className="w-8" href={url} title={title}>
+      <Icon className="fill-darkWhite" name={name} />
     </Link>
   );
 };

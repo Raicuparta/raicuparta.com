@@ -9,6 +9,7 @@ module.exports = {
       patreon: '#d6343c',
       cta: '#3a8f7e',
       white: '#ffffff',
+      darkWhite: '#e6e1ff',
       overlay: 'rgba(0, 0, 0, 0.2)',
     },
     borderRadius: {
