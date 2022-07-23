@@ -1,5 +1,6 @@
 import { Button } from './button';
 import { Icon } from './icon';
+import { Link } from './link';
 import styles from './styles/mod-card.module.scss';
 
 type Link = {
@@ -72,16 +73,14 @@ export const ModCard = (props: Props) => {
         {props.videos.length > 0 && (
           <>
             <h4>Videos</h4>
-            <div className={styles.videoList}>
+            <div className="flex flex-wrap gap-4 justify-center">
               {props.videos.map((videoUrl, index) => (
-                <div key={videoUrl} className={styles.video}>
-                  <a target="_blank" rel="noopener noreferrer" href={videoUrl}>
-                    <img
-                      height="80px"
-                      src={`/mods/${props.gameKey}/videos/${index}.jpg`}
-                    />
-                  </a>
-                </div>
+                <Link className="rounded overflow-hidden" href={videoUrl}>
+                  <img
+                    width="160px"
+                    src={`/mods/${props.gameKey}/videos/${index}.jpg`}
+                  />
+                </Link>
               ))}
             </div>
           </>

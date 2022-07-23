@@ -1,26 +1,3 @@
-.videoList {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 1em;
-}
-
-.video {
-  border-radius: 0.5em;
-  overflow: hidden;
-  transition: transform 150ms;
-  will-change: transform;
-  img {
-    display: block;
-  }
-  &:hover,
-  &:active,
-  &:focus {
-    transform: scale(1.05);
-  }
-}
-
 .linkListWrapper {
   display: flex;
 }
