@@ -19,14 +19,18 @@ type Props = {
 export const ModCard = (props: Props) => {
   const imagePath = `/mods/${props.gameKey}/mod.jpg`;
   return (
-    <div className="rounded overflow-hidden bg-overlay bg-opacity-20">
-      <ModImage
-        src={imagePath}
-        width="400px"
-        title={props.title}
-        gameName={props.gameName}
-        withBackground
-      />
+    <div className="rounded bg-overlay bg-opacity-20">
+      <div className="relative flex justify-center">
+        <ModImage
+          src={imagePath}
+          width="400px"
+          title={props.title}
+          gameName={props.gameName}
+        />
+        <div className="absolute top-0 -z-10 w-full h-full overflow-hidden rounded-t">
+          <img className="w-full h-full object-cover blur-lg" src={imagePath} />
+        </div>
+      </div>
       <div className="p-4 flex flex-col gap-6">
         <p>{props.description}</p>
         <div className="flex gap-4 flex-wrap justify-center">
@@ -61,7 +65,7 @@ export const ModCard = (props: Props) => {
           <Section title="Videos">
             <div className="flex flex-wrap gap-4 justify-center">
               {props.videos.map((videoUrl, index) => (
-                <ButtonLink className="rounded overflow-hidden" href={videoUrl}>
+                <ButtonLink className="rounded" href={videoUrl}>
                   <img
                     width="160px"
                     src={`/mods/${props.gameKey}/videos/${index}.jpg`}

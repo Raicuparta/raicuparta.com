@@ -6,16 +6,13 @@ import mods from './mods.json';
 const Home = () => (
   <div className="flex flex-wrap gap-4 justify-center">
     {mods.map((mod) => (
-      <ButtonLink
-        key={mod.gameKey}
-        href={`${mod.gameKey}-vr-mod`}
-        className="rounded overflow-hidden relative"
-      >
+      <ButtonLink key={mod.gameKey} href={`${mod.gameKey}-vr-mod`}>
         <ModImage
           src={`/mods/${mod.gameKey}/mod.jpg`}
           title={mod.title}
           gameName={mod.gameName}
           width="300px"
+          className="rounded"
         />
       </ButtonLink>
     ))}
