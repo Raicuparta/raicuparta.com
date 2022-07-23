@@ -21,42 +21,6 @@
   }
 }
 
-.downloadLink {
-  text-decoration: none;
-  display: flex;
-  background-color: #0f8b5e;
-  padding: 0.5em 1em;
-  border-radius: 0.5em;
-  will-change: transform;
-  transition: transform 150ms;
-  &:hover,
-  &:active,
-  &:focus {
-    transform: scale(1.05);
-  }
-}
-
-.patreonLink {
-  text-decoration: none;
-  display: flex;
-  background-color: #d6343c;
-  padding: 0.5em 1em;
-  border-radius: 0.5em;
-  will-change: transform;
-  transition: transform 150ms;
-  &:hover,
-  &:active,
-  &:focus {
-    transform: scale(1.05);
-  }
-}
-
-.buttonIcon {
-  fill: white;
-  height: 1.5em;
-  margin-right: 0.5em;
-}
-
 .linkListWrapper {
   display: flex;
 }
@@ -84,11 +48,4 @@
   flex-direction: column;
   gap: 0.5em;
   width: 100%;
-}
-
-.downloadWrapper {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  gap: 1em;
 }
