@@ -21,15 +21,14 @@ type Props = {
 export const ModCard = (props: Props) => {
   const imagePath = `/mods/${props.gameKey}/mod.jpg`;
   return (
-    <div className={styles.modCard}>
-      <div className={styles.thumbnailWrapper}>
-        <img className={styles.thumbnail} src={imagePath} height="200px" />
+    <div className="rounded overflow-hidden bg-black bg-opacity-20">
+      <div className="relative flex justify-center overflow-hidden">
         <img
-          className={styles.thumbnailBackground}
+          className="object-contain object-top shadow-xl shadow-black"
           src={imagePath}
-          width="100%"
-          height="200px"
+          width="400px"
         />
+        <img className="absolute top-0 -z-10 blur-lg" src={imagePath} />
         <div className={styles.titleWrapper}>
           <h3 className={styles.title}>{props.title}</h3>
           <span className={styles.gameName}>for {props.gameName}</span>
