@@ -6,44 +6,7 @@ import Document, {
   DocumentContext,
 } from 'next/document';
 
-function isPreloadLink(node: JSX.Element) {
-  return (
-    node && node.type === 'link' && node.props && node.props.rel === 'preload'
-  );
-}
-
-class CustomHead extends Head {
-  render() {
-    const res = super.render();
-
-    function transform(node: JSX.Element): JSX.Element {
-      if (isPreloadLink(node)) {
-        return <></>;
-      }
-      if (node && node.props && node.props.children) {
-        return {
-          ...node,
-          props: {
-            ...node.props,
-            children: Array.isArray(node.props.children)
-              ? node.props.children.map(transform)
-              : transform(node.props.children),
-          },
-        };
-      }
-      if (Array.isArray(node)) {
-        return <>{node.map(transform)}</>;
-      }
-
-      return node;
-    }
-
-    return transform(res);
-  }
-}
-
 const googleAnalyticsId = process.env.analyticsId;
-const isProd = process.env.isProd;
 
 const Analytics: React.FunctionComponent<{ id?: string }> = ({ id }) => (
   <>
@@ -70,7 +33,7 @@ class MyDocument extends Document {
   render() {
     return (
       <Html lang="en">
-        <CustomHead>
+        <Head>
           <Analytics id={googleAnalyticsId} />
           <meta name="Description" content="Raicuparta: VR Mod Developer" />
           <link
@@ -93,10 +56,10 @@ class MyDocument extends Document {
           <link rel="manifest" href="/site.webmanifest" />
           <meta name="msapplication-TileColor" content="#da532c" />
           <meta name="theme-color" content="#ffffff" />
-        </CustomHead>
+        </Head>
         <body>
           <Main />
-          {!isProd && <NextScript />}
+          <NextScript />
         </body>
       </Html>
     );
