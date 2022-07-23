@@ -1,12 +1,8 @@
 import { Button } from './button';
 import { Icon } from './icon';
 import { Link } from './link';
+import { LinkInfo, LinkList } from './link-list';
 import styles from './styles/mod-card.module.scss';
-
-type Link = {
-  title: string;
-  url: string;
-};
 
 type Props = {
   title: string;
@@ -14,10 +10,10 @@ type Props = {
   description: string;
   gameKey: string;
   videos: string[];
-  articles: Link[];
+  articles: LinkInfo[];
   downloadUrl?: string;
   sourceUrl?: string;
-  gameLinks: Link[];
+  gameLinks: LinkInfo[];
 };
 
 export const ModCard = (props: Props) => {
@@ -88,41 +84,13 @@ export const ModCard = (props: Props) => {
         {props.articles.length > 0 && (
           <>
             <h4>Articles</h4>
-            <div className={styles.linkListWrapper}>
-              <div className={styles.linkList}>
-                {props.articles.map(({ title, url }) => (
-                  <a
-                    className={styles.listLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    key={url}
-                    href={url}
-                  >
-                    {title}
-                  </a>
-                ))}
-              </div>
-            </div>
+            <LinkList links={props.articles} />
           </>
         )}
         {props.gameLinks.length > 0 && (
           <>
             <h4>Game links</h4>
-            <div className={styles.linkListWrapper}>
-              <div className={styles.linkList}>
-                {props.gameLinks.map(({ title, url }) => (
-                  <a
-                    className={styles.listLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    key={url}
-                    href={url}
-                  >
-                    {title}
-                  </a>
-                ))}
-              </div>
-            </div>
+            <LinkList links={props.gameLinks} />
           </>
         )}
       </div>
