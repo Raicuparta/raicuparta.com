@@ -10,7 +10,10 @@ module.exports = {
       cta: '#3a8f7e',
       white: '#ffffff',
       darkWhite: '#e6e1ff',
-      overlay: 'rgba(0, 0, 0, 0.2)',
+      overlay: 'rgba(0, 0, 0, 0.3)',
+    },
+    dropShadow: {
+      DEFAULT: ['0 0 5px rgb(0 0 0 / 0.3)'],
     },
     borderRadius: {
       full: '100%',

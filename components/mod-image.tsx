@@ -9,7 +9,7 @@ type Props = {
 export const ModImage = (props: Props) => (
   <div className="relative flex justify-center overflow-hidden">
     <img
-      className="object-contain object-top shadow-xl shadow-black"
+      className="object-contain object-top shadow-xl shadow-black brightness-75"
       src={props.src}
       width={props.width}
     />
