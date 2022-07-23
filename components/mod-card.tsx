@@ -3,6 +3,7 @@ import { ButtonLink } from './button-link';
 import { LinkInfo, LinkList } from './link-list';
 import { Section } from './section';
 import { ModImage } from './mod-image';
+import { IconLink } from './icon-link';
 
 type Props = {
   title: string;
@@ -19,7 +20,13 @@ type Props = {
 export const ModCard = (props: Props) => {
   const imagePath = `/mods/${props.gameKey}/mod.jpg`;
   return (
-    <div className="rounded bg-overlay bg-opacity-20">
+    <div className="rounded bg-overlay bg-opacity-20 relative">
+      <IconLink
+        name="Return"
+        title="Return to home page"
+        url="/"
+        className="absolute top-4 left-4 z-20"
+      />
       <div className="relative flex justify-center">
         <ModImage
           src={imagePath}

@@ -4,6 +4,7 @@ import Twitter from './twitter.svg';
 import Patreon from './patreon.svg';
 import Download from './download.svg';
 import YouTube from './youtube.svg';
+import Return from './return.svg';
 
 const assets = {
   Dev,
@@ -12,6 +13,7 @@ const assets = {
   Patreon,
   Download,
   YouTube,
+  Return,
 };
 
 export type IconName = keyof typeof assets;
