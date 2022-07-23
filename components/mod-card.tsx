@@ -2,6 +2,7 @@ import { IconButton } from './icon-button';
 import { ButtonLink } from './button-link';
 import { LinkInfo, LinkList } from './link-list';
 import { Section } from './section';
+import { ModImage } from './mod-image';
 
 type Props = {
   title: string;
@@ -19,20 +20,13 @@ export const ModCard = (props: Props) => {
   const imagePath = `/mods/${props.gameKey}/mod.jpg`;
   return (
     <div className="rounded overflow-hidden bg-overlay bg-opacity-20">
-      <div className="relative flex justify-center overflow-hidden">
-        <img
-          className="object-contain object-top shadow-xl shadow-black"
-          src={imagePath}
-          width="400px"
-        />
-        <img className="absolute top-0 -z-10 blur-lg" src={imagePath} />
-        <div className="absolute bottom-4 flex flex-col items-center gap-4">
-          <h2 className="text-4xl font-normal text-shadow text-white">
-            {props.title}
-          </h2>
-          <span className="bg-overlay px-2 rounded">for {props.gameName}</span>
-        </div>
-      </div>
+      <ModImage
+        src={imagePath}
+        width="400px"
+        title={props.title}
+        gameName={props.gameName}
+        withBackground
+      />
       <div className="p-4 flex flex-col gap-6">
         <p>{props.description}</p>
         <div className="flex gap-4 flex-wrap justify-center">

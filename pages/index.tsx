@@ -1,5 +1,6 @@
 import { Header, ButtonLink, SocialLinks } from '../components';
 import { ModCard } from '../components/mod-card';
+import { ModImage } from '../components/mod-image';
 import mods from './mods.json';
 
 const Home = () => (
@@ -10,10 +11,12 @@ const Home = () => (
         href={mod.gameKey}
         className="rounded overflow-hidden relative"
       >
-        <img src={`/mods/${mod.gameKey}/mod.jpg`} width="300px" />
-        <span className="absolute z-10 bottom-4 text-center w-full text-4xl font-normal text-shadow text-white">
-          {mod.title}
-        </span>
+        <ModImage
+          src={`/mods/${mod.gameKey}/mod.jpg`}
+          title={mod.title}
+          gameName={mod.gameName}
+          width="300px"
+        />
       </ButtonLink>
     ))}
   </div>
