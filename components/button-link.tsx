@@ -20,7 +20,7 @@ export const ButtonLink: React.FunctionComponent<Props> = ({
       <a
         className={twMerge(
           className,
-          'hover:scale-110 hover:brightness-150 transition-all will-change-transform'
+          'hover:scale-105 hover:brightness-125 transition-all will-change-transform'
         )}
         {...props}
         target={isExternal ? '_blank' : undefined}

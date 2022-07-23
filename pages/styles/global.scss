@@ -2,10 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  overflow-y: scroll;
+}
+
 body {
   --background: #473a8f;
   --background-light: #3a698f;
-  --overlay-dark: rgba(0, 0, 0, 0.199);
+  --overlay-dark: rgba(0, 0, 0, 0.2);
   --highlight: rgba(256, 256, 256, 0.1);
   --text: rgba(255, 255, 255, 0.8);
   --accent: #ffffff;
@@ -23,6 +27,25 @@ body {
   );
   background-attachment: fixed;
   font-weight: lighter;
+  scrollbar-width: thin;
+  scrollbar-color: black black;
+}
+
+body::-webkit-scrollbar {
+  width: 0.5em;
+  border-left: solid black 1px;
+}
+
+body::-webkit-scrollbar-track {
+  background: linear-gradient(
+    0,
+    var(--background-light) 0%,
+    var(--background) 80%
+  );
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
 .text-shadow {
