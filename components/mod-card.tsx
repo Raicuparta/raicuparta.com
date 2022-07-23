@@ -18,7 +18,7 @@ type Props = {
 export const ModCard = (props: Props) => {
   const imagePath = `/mods/${props.gameKey}/mod.jpg`;
   return (
-    <div className="rounded overflow-hidden bg-black bg-opacity-20">
+    <div className="rounded overflow-hidden bg-overlay bg-opacity-20">
       <div className="relative flex justify-center overflow-hidden">
         <img
           className="object-contain object-top shadow-xl shadow-black"
@@ -30,9 +30,7 @@ export const ModCard = (props: Props) => {
           <h2 className="text-4xl font-normal text-shadow text-white">
             {props.title}
           </h2>
-          <span className="bg-black bg-opacity-50 px-2 rounded">
-            for {props.gameName}
-          </span>
+          <span className="bg-overlay px-2 rounded">for {props.gameName}</span>
         </div>
       </div>
       <div className="p-4 flex flex-col gap-6">
@@ -42,7 +40,7 @@ export const ModCard = (props: Props) => {
             <Button
               href={props.downloadUrl}
               iconName="Download"
-              className="bg-teal-700"
+              className="bg-cta"
             >
               Download mod
             </Button>
@@ -50,17 +48,13 @@ export const ModCard = (props: Props) => {
             <Button
               href="https://www.patreon.com/raivr"
               iconName="Patreon"
-              className="bg-pink-800"
+              className="bg-patreon"
             >
               Download on Patreon
             </Button>
           )}
           {props.sourceUrl && (
-            <Button
-              href={props.sourceUrl}
-              iconName="Github"
-              className="bg-teal-700"
-            >
+            <Button href={props.sourceUrl} iconName="Github" className="bg-cta">
               Source code
             </Button>
           )}

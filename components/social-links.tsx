@@ -30,7 +30,7 @@ const links = [
 
 export const SocialLinks = () => (
   <>
-    <div className="sticky top-0 z-10 bg-black bg-opacity-20">
+    <div className="sticky top-0 z-10 bg-overlay">
       <nav className="flex justify-evenly max-w-lg m-auto p-2">
         {links.map((link) => (
           <IconLink key={link.name} {...link} />

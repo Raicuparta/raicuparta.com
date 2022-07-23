@@ -3,7 +3,7 @@ type Props = {
 };
 
 export const Header = ({ title }: Props) => (
-  <header className="bg-black bg-opacity-20 p-4">
+  <header className="bg-overlay p-4">
     <div className="flex gap-4 justify-center items-center">
       <img
         height="60"

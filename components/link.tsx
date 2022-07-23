@@ -15,7 +15,7 @@ export const Link: React.FunctionComponent<Props> = ({
   <a
     className={twMerge(
       className,
-      'hover:scale-110 transition-transform will-change-transform'
+      'hover:scale-110 hover:brightness-150 transition-all will-change-transform'
     )}
     {...props}
     target="_blank"
