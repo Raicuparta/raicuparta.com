@@ -11,6 +11,12 @@ const links = [
     title: 'Patreon RaiVR',
     url: 'https://www.patreon.com/raivr',
   },
+
+  {
+    name: 'YouTube',
+    title: 'Raicuparta on YouTube',
+    url: 'https://www.youtube.com/c/Raicuparta',
+  },
   {
     name: 'Twitter',
     title: 'Twitter @Raicuparta',
@@ -20,11 +26,6 @@ const links = [
     name: 'Dev',
     title: 'DEV @Raicuparta',
     url: 'https://dev.to/raicuparta',
-  },
-  {
-    name: 'StackOverflow',
-    title: 'Stack Overflow @Raicuparta',
-    url: 'https://stackoverflow.com/users/3962104/raicuparta',
   },
 ] as const;
 
