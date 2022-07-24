@@ -20,7 +20,7 @@ type Props = {
 export const ModCard = (props: Props) => {
   const imagePath = `/mods/${props.gameKey}/mod.jpg`;
   return (
-    <div className="rounded bg-overlay bg-opacity-20 relative">
+    <div className="rounded bg-overlay bg-opacity-20 relative overflow-hidden">
       <IconLink
         name="Return"
         title="Return to home page"
@@ -34,7 +34,7 @@ export const ModCard = (props: Props) => {
           title={props.title}
           gameName={props.gameName}
         />
-        <div className="absolute top-0 -z-10 w-full h-full overflow-hidden rounded-t">
+        <div className="absolute top-0 -z-10 w-full h-full overflow-hidden">
           <img className="w-full h-full object-cover blur-lg" src={imagePath} />
         </div>
       </div>
@@ -72,7 +72,7 @@ export const ModCard = (props: Props) => {
           <Section title="Videos">
             <div className="flex flex-wrap gap-4 justify-center">
               {props.videos.map((videoUrl, index) => (
-                <ButtonLink className="rounded" href={videoUrl}>
+                <ButtonLink className="rounded overflow-hidden" href={videoUrl}>
                   <img
                     width="160px"
                     src={`/mods/${props.gameKey}/videos/${index}.jpg`}
