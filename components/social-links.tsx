@@ -1,4 +1,4 @@
-import { IconLink } from '../components';
+import { IconLink } from '../components/icon-link';
 
 const links = [
   {

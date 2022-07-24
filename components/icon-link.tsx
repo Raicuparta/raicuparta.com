@@ -1,6 +1,7 @@
 import assets from '../svg-assets';
-import { Icon, ButtonLink } from '.';
 import { twMerge } from 'tailwind-merge';
+import { ButtonLink } from './button-link';
+import { Icon } from './icon';
 
 type Props = {
   name: keyof typeof assets;
