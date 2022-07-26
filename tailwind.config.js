@@ -19,7 +19,11 @@ module.exports = {
       full: '100%',
       DEFAULT: '0.5em',
     },
-    extend: {},
+    extend: {
+      fontSize: {
+        zero: '0',
+      },
+    },
   },
   plugins: [],
 };

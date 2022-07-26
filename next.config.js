@@ -1,3 +1,4 @@
+const withExportImages = require('next-export-optimize-images');
 const { PHASE_PRODUCTION_BUILD } = require('next/constants');
 
 function webpack(config) {
@@ -17,8 +18,8 @@ module.exports = (phase) => {
     isProd,
   };
 
-  return {
+  return withExportImages({
     env,
     webpack,
-  };
+  });
 };

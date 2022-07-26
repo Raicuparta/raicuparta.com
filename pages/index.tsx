@@ -28,7 +28,7 @@ const Home = () => (
             src={`/mods/${mod.gameKey}/mod.jpg`}
             title={mod.title}
             gameName={mod.gameName}
-            width="300px"
+            width={300}
             className="rounded"
           />
         </ButtonLink>

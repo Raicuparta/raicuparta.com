@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { ButtonLink } from './button-link';
 
 type Props = {
@@ -7,12 +8,15 @@ type Props = {
 export const Header = ({ title }: Props) => (
   <header className="bg-overlay p-4 overflow-hidden">
     <ButtonLink href="/" className="flex gap-4 justify-center items-center">
-      <img
-        height="60"
-        width="60"
-        src="img/wario.png"
-        className="rounded-full"
-      />
+      <span className="h-14 w-14 relative">
+        <Image
+          height="120"
+          width="120"
+          layout="fill"
+          src="/img/wario.png"
+          className="rounded-full"
+        />
+      </span>
       <h1 className="text-4xl">{title}</h1>
     </ButtonLink>
   </header>

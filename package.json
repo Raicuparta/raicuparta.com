@@ -5,9 +5,10 @@
   "private": true,
   "scripts": {
     "dev": "next dev -p 3001",
-    "run-build": "pnpm run build && next start",
+    "run-build": "pnpm run build && pnpm run test-build",
     "deploy": "pnpm run build && pnpm run deploy-gh-pages",
-    "build": "next build && next export",
+    "build": "next build && next export && next-export-optimize-images",
+    "test-build": "pnpm dlx http-server out",
     "prettier": "prettier --write .",
     "deploy-gh-pages": "gh-pages -t -d out"
   },
@@ -24,6 +25,7 @@
     "@types/react": "18.0.15",
     "autoprefixer": "^10.4.7",
     "gh-pages": "4.0.0",
+    "next-export-optimize-images": "^1.5.3",
     "postcss": "^8.4.14",
     "prettier": "2.7.1",
     "tailwindcss": "^3.1.6",

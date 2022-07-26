@@ -4,6 +4,7 @@ import { LinkInfo, LinkList } from './link-list';
 import { Section } from './section';
 import { ModImage } from './mod-image';
 import { IconLink } from './icon-link';
+import Image from 'next/image';
 
 type Props = {
   title: string;
@@ -30,12 +31,16 @@ export const ModCard = (props: Props) => {
       <div className="relative flex justify-center">
         <ModImage
           src={imagePath}
-          width="400px"
+          width={400}
           title={props.title}
           gameName={props.gameName}
         />
         <div className="absolute top-0 -z-10 w-full h-full overflow-hidden">
-          <img className="w-full h-full object-cover blur-lg" src={imagePath} />
+          <Image
+            className="w-full h-full object-cover blur-lg"
+            src={imagePath}
+            layout="fill"
+          />
         </div>
       </div>
       <div className="p-4 flex flex-col gap-6">
@@ -73,10 +78,13 @@ export const ModCard = (props: Props) => {
             <div className="flex flex-wrap gap-4 justify-center">
               {props.videos.map((videoUrl, index) => (
                 <ButtonLink className="rounded overflow-hidden" href={videoUrl}>
-                  <img
-                    width="160px"
-                    src={`/mods/${props.gameKey}/videos/${index}.jpg`}
-                  />
+                  <div className="text-zero">
+                    <Image
+                      width={160}
+                      height={90}
+                      src={`/mods/${props.gameKey}/videos/${index}.jpg`}
+                    />
+                  </div>
                 </ButtonLink>
               ))}
             </div>
