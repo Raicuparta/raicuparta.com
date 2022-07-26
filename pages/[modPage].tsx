@@ -18,12 +18,13 @@ const ModPage = () => {
   return (
     <>
       <PageHead
-        description={`${mod.title} is a VR mod for ${mod.gameName} by Raicuparta`}
+        description={`${mod.title} is a VR mod for ${mod.gameName}`}
         imageUrl={`${websiteUrl}${`/mods/${mod.gameKey}/mod.jpg`}`}
         title={`${mod.title} mod for ${mod.gameName}`}
         imageWidth={400}
         imageHeight={225}
-      />
+        largeImage
+      ></PageHead>
       <ModCard {...mod} />
     </>
   );
