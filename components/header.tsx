@@ -15,6 +15,7 @@ export const Header = ({ title }: Props) => (
           layout="fill"
           src="/img/wario.png"
           className="rounded-full"
+          alt="Raicuparta"
         />
       </span>
       <h1 className="text-4xl">{title}</h1>
