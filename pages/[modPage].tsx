@@ -18,7 +18,7 @@ const ModPage = () => {
   return (
     <>
       <PageHead
-        description={`${mod.title} is a VR mod for ${mod.gameName}`}
+        description={`${mod.title} is a mod that converts "${mod.gameName}" into a VR game.`}
         imageUrl={`${websiteUrl}${`/mods/${mod.gameKey}/mod.jpg`}`}
         title={`${mod.title} mod for ${mod.gameName}`}
         imageWidth={400}
