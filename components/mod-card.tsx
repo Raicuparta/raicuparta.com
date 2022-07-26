@@ -40,6 +40,7 @@ export const ModCard = (props: Props) => {
             className="w-full h-full object-cover blur-lg"
             src={imagePath}
             layout="fill"
+            priority
           />
         </div>
       </div>
@@ -77,7 +78,11 @@ export const ModCard = (props: Props) => {
           <Section title="Videos">
             <div className="flex flex-wrap gap-4 justify-center">
               {props.videos.map((videoUrl, index) => (
-                <ButtonLink className="rounded overflow-hidden" href={videoUrl}>
+                <ButtonLink
+                  className="rounded overflow-hidden"
+                  key={videoUrl}
+                  href={videoUrl}
+                >
                   <div className="text-zero">
                     <Image
                       width={160}

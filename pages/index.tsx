@@ -1,40 +1,52 @@
 import { ButtonLink } from '../components/button-link';
 import { ModImage } from '../components/mod-image';
+import { PageHead } from '../components/page-head';
 import { TextLink } from '../components/text-link';
 import mods from './mods.json';
 
 const Home = () => (
-  <div className="flex flex-col gap-4 bg-overlay p-4 rounded">
-    <p>Hello. I'm Raicuparta, and make VR mods for flat screen games.</p>
-    <p>
-      Initially, my mods are available exclusively on{' '}
-      <TextLink href="https://www.patreon.com/raivr">my Patreon</TextLink>. If
-      you're a patron, you'll also get a special role in the{' '}
-      <TextLink href="https://discord.gg/gEEqTVFzvD">Flat2VR Discord</TextLink>,
-      and you'll have access to more frequent development updates and discussion
-      about my mods.
-    </p>
-    <p>
-      After a while, I usually make my mods free and open source, available on{' '}
-      <TextLink href="https://github.com/Raicuparta">my GitHub</TextLink>.
-    </p>
-    <h2 className="text-2xl font-normal text-center mt-4">
-      Raicuparta's VR mods
-    </h2>
-    <div className="flex flex-wrap gap-4 justify-center">
-      {mods.map((mod) => (
-        <ButtonLink key={mod.gameKey} href={`${mod.gameKey}-vr-mod`}>
-          <ModImage
-            src={`/mods/${mod.gameKey}/mod.jpg`}
-            title={mod.title}
-            gameName={mod.gameName}
-            width={300}
-            className="rounded"
-          />
-        </ButtonLink>
-      ))}
+  <>
+    <PageHead
+      description="Raicuparta makes VR mods for flat games"
+      imageUrl="/img/wario.png"
+      imageWidth={120}
+      title="Raicuparta's VR mods"
+    />
+    <title>Raicuparta</title>
+    <div className="flex flex-col gap-4 bg-overlay p-4 rounded">
+      <p>Hello. I'm Raicuparta, and make VR mods for flat screen games.</p>
+      <p>
+        Initially, my mods are available exclusively on{' '}
+        <TextLink href="https://www.patreon.com/raivr">my Patreon</TextLink>. If
+        you're a patron, you'll also get a special role in the{' '}
+        <TextLink href="https://discord.gg/gEEqTVFzvD">
+          Flat2VR Discord
+        </TextLink>
+        , and you'll have access to more frequent development updates and
+        discussion about my mods.
+      </p>
+      <p>
+        After a while, I usually make my mods free and open source, available on{' '}
+        <TextLink href="https://github.com/Raicuparta">my GitHub</TextLink>.
+      </p>
+      <h2 className="text-2xl font-normal text-center mt-4">
+        Raicuparta's VR mods
+      </h2>
+      <div className="flex flex-wrap gap-4 justify-center">
+        {mods.map((mod) => (
+          <ButtonLink key={mod.gameKey} href={`${mod.gameKey}-vr-mod`}>
+            <ModImage
+              src={`/mods/${mod.gameKey}/mod.jpg`}
+              title={mod.title}
+              gameName={mod.gameName}
+              width={300}
+              className="rounded"
+            />
+          </ButtonLink>
+        ))}
+      </div>
     </div>
-  </div>
+  </>
 );
 
 export default Home;

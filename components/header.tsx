@@ -12,10 +12,11 @@ export const Header = ({ title }: Props) => (
         <Image
           height="120"
           width="120"
-          layout="fill"
+          layout="responsive"
           src="/img/wario.png"
           className="rounded-full"
           alt="Raicuparta"
+          priority
         />
       </span>
       <h1 className="text-4xl">{title}</h1>

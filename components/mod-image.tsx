@@ -22,6 +22,7 @@ export const ModImage = (props: Props) => (
       width={props.width}
       height={props.width / (16 / 9)}
       alt={props.gameName}
+      priority
     />
     <div className="absolute bottom-4 flex flex-col items-center gap-4">
       <h2 className="text-4xl font-normal text-shadow">{props.title}</h2>
