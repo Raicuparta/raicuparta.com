@@ -31,13 +31,15 @@ const links: IconInfo[] = [
 ];
 
 export const SocialLinks = () => (
-  <nav className="bg-overlay flex justify-evenly max-w-lg m-auto p-2">
-    {links.map((link) => (
-      <IconLink
-        key={link.iconName}
-        {...link}
-        displayName={link.displayName ?? link.iconName}
-      />
-    ))}
-  </nav>
+  <div className="bg-overlay ">
+    <nav className="flex justify-evenly max-w-lg m-auto p-2">
+      {links.map((link) => (
+        <IconLink
+          key={link.iconName}
+          {...link}
+          displayName={link.displayName ?? link.iconName}
+        />
+      ))}
+    </nav>
+  </div>
 );
