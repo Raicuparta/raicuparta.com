@@ -14,7 +14,7 @@ const Home = () => (
     />
     <title>Raicuparta</title>
     <div className="flex flex-col gap-4 bg-overlay p-4 rounded">
-      <p>Hello. I'm Raicuparta, and make VR mods for flat screen games.</p>
+      <p>Hello. I'm Raicuparta, and I make VR mods for flat screen games.</p>
       <p>
         Initially, my mods are available exclusively on{' '}
         <TextLink href="https://www.patreon.com/raivr">my Patreon</TextLink>. If
