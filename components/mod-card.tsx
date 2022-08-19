@@ -68,7 +68,7 @@ export const ModCard = (props: Props) => {
             <IconButton
               href={props.sourceUrl}
               iconName="Github"
-              className="bg-cta"
+              className="bg-cta bg-opacity-30"
             >
               Source code
             </IconButton>

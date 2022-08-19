@@ -1,4 +1,4 @@
-lockfileVersion: 5.4
+lockfileVersion: 5.3
 
 specifiers:
   '@svgr/webpack': 6.2.1
@@ -19,7 +19,7 @@ specifiers:
 
 dependencies:
   '@svgr/webpack': 6.2.1
-  next: 12.2.2_3xp5yqggaqkk45oiot6ox6p3nu
+  next: 12.2.2_dddfdc40c60414ae75c874fcebf9fb6d
   react: 18.2.0
   react-dom: 18.0.0_react@18.2.0
   sass: 1.53.0
@@ -30,7 +30,7 @@ devDependencies:
   '@types/react': 18.0.15
   autoprefixer: 10.4.7_postcss@8.4.14
   gh-pages: 4.0.0
-  next-export-optimize-images: 1.5.3_msmfp45e4x4vuns4xdvd2sr3ty
+  next-export-optimize-images: 1.5.3_649857f3a4e5f95a365cb8ea3d4a3b9e
   postcss: 8.4.14
   prettier: 2.7.1
   tailwindcss: 3.1.6
@@ -2654,7 +2654,7 @@ packages:
     resolution: {integrity: sha512-ONmRUqK7zj7DWX0D9ADe03wbwOBZxNAfF20PlGfCWQcD3+/MakShIHrMqx9YwPTfxDdF1zLeL+RGZiR9kGMLdg==}
     dev: true
 
-  /next-export-optimize-images/1.5.3_msmfp45e4x4vuns4xdvd2sr3ty:
+  /next-export-optimize-images/1.5.3_649857f3a4e5f95a365cb8ea3d4a3b9e:
     resolution: {integrity: sha512-e1+5G0gcTSNWFAfOUcSdLTT2XLeBDXjo7gGzn2G6hxLpdyTQxOwhhlQOB7x0jU5tsU2r1TnAPrbJy7Tko7C1fQ==}
     engines: {node: ^14.0.0 || ^16.0.0 || ^18.0.0}
     hasBin: true
@@ -2668,13 +2668,13 @@ packages:
       fs-extra: 10.1.0
       got: 11.8.5
       lodash.uniqwith: 4.5.0
-      next: 12.2.2_3xp5yqggaqkk45oiot6ox6p3nu
+      next: 12.2.2_dddfdc40c60414ae75c874fcebf9fb6d
       react: 18.2.0
       react-dom: 18.0.0_react@18.2.0
       sharp: 0.30.7
     dev: true
 
-  /next/12.2.2_3xp5yqggaqkk45oiot6ox6p3nu:
+  /next/12.2.2_dddfdc40c60414ae75c874fcebf9fb6d:
     resolution: {integrity: sha512-zAYFY45aBry/PlKONqtlloRFqU/We3zWYdn2NoGvDZkoYUYQSJC8WMcalS5C19MxbCZLUVCX7D7a6gTGgl2yLg==}
     engines: {node: '>=12.22.0'}
     hasBin: true
