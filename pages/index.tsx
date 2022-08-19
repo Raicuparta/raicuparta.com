@@ -32,14 +32,13 @@ const Home = () => (
       <h2 className="text-2xl font-normal text-center mt-4">
         Raicuparta's VR mods
       </h2>
-      <div className="flex flex-wrap gap-4 justify-center">
+      <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 justify-center">
         {mods.map((mod) => (
           <ButtonLink key={mod.gameKey} href={`${mod.gameKey}-vr-mod`}>
             <ModImage
               src={`/mods/${mod.gameKey}/mod.jpg`}
               title={mod.title}
               gameName={mod.gameName}
-              width={300}
               className="rounded"
             />
           </ButtonLink>
