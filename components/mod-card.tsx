@@ -23,7 +23,7 @@ export const ModCard = (props: Props) => {
   return (
     <div className="rounded bg-overlay bg-opacity-20 relative overflow-hidden">
       <IconLink
-        name="Return"
+        iconName="Return"
         title="Return to home page"
         url="/"
         className="absolute top-4 left-4 z-20"

@@ -1,42 +1,43 @@
-import { IconLink } from '../components/icon-link';
+import { IconInfo, IconLink } from '../components/icon-link';
 
-const links = [
+const links: IconInfo[] = [
   {
-    name: 'Github',
+    iconName: 'Github',
     title: 'Github @Raicuparta',
     url: 'https://github.com/Raicuparta',
   },
   {
-    name: 'Patreon',
-    title: 'Patreon RaiVR',
+    iconName: 'Patreon',
+    title: "Raicuparta's Patreon",
     url: 'https://www.patreon.com/raivr',
   },
 
   {
-    name: 'YouTube',
+    iconName: 'YouTube',
     title: 'Raicuparta on YouTube',
     url: 'https://www.youtube.com/c/Raicuparta',
   },
   {
-    name: 'Twitter',
+    iconName: 'Twitter',
     title: 'Twitter @Raicuparta',
     url: 'https://twitter.com/raicuparta',
   },
   {
-    name: 'Dev',
-    title: 'DEV @Raicuparta',
-    url: 'https://dev.to/raicuparta',
+    iconName: 'Itch',
+    displayName: 'itch.io',
+    title: 'Raicuparta on itch.io',
+    url: 'https://raicuparta.itch.io',
   },
-] as const;
+];
 
 export const SocialLinks = () => (
-  <>
-    <div className="sticky top-0 z-10 bg-overlay">
-      <nav className="flex justify-evenly max-w-lg m-auto p-2">
-        {links.map((link) => (
-          <IconLink key={link.name} {...link} />
-        ))}
-      </nav>
-    </div>
-  </>
+  <nav className="bg-overlay flex justify-evenly max-w-lg m-auto p-2">
+    {links.map((link) => (
+      <IconLink
+        key={link.iconName}
+        {...link}
+        displayName={link.displayName ?? link.iconName}
+      />
+    ))}
+  </nav>
 );

@@ -5,6 +5,7 @@ import Patreon from './patreon.svg';
 import Download from './download.svg';
 import YouTube from './youtube.svg';
 import Return from './return.svg';
+import Itch from './itch.svg';
 
 const assets = {
   Dev,
@@ -14,6 +15,7 @@ const assets = {
   Download,
   YouTube,
   Return,
+  Itch,
 };
 
 export type IconName = keyof typeof assets;

@@ -24,7 +24,7 @@ export const ButtonLink: React.FunctionComponent<Props> = ({
         )}
         {...props}
         target={isExternal ? '_blank' : undefined}
-        rel={isExternal ? 'noopener noreferrer' : undefined}
+        rel={isExternal ? 'noopener' : undefined}
       >
         {children}
       </a>
