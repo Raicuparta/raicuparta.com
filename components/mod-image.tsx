@@ -12,7 +12,8 @@ type Props = {
 export const ModImage = (props: Props) => (
   <div
     className={twMerge(
-      'relative flex flex-1 justify-center overflow-hidden h-40',
+      'relative flex flex-1 justify-center overflow-hidden',
+      !props.width && 'h-40',
       props.className
     )}
   >
