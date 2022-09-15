@@ -16,6 +16,7 @@ type Props = {
   downloadUrl?: string;
   sourceUrl?: string;
   gameLinks: LinkInfo[];
+  unreleased?: boolean;
 };
 
 export const ModCard = (props: Props) => {
@@ -46,34 +47,36 @@ export const ModCard = (props: Props) => {
       </div>
       <div className="p-4 flex flex-col gap-6">
         <p>{props.description}</p>
-        <div className="flex gap-4 flex-wrap justify-center">
-          {props.downloadUrl ? (
-            <IconButton
-              href={props.downloadUrl}
-              iconName="Download"
-              className="bg-cta"
-            >
-              Download mod
-            </IconButton>
-          ) : (
-            <IconButton
-              href="https://www.patreon.com/raivr"
-              iconName="Patreon"
-              className="bg-patreon"
-            >
-              Download on Patreon
-            </IconButton>
-          )}
-          {props.sourceUrl && (
-            <IconButton
-              href={props.sourceUrl}
-              iconName="Github"
-              className="bg-cta bg-opacity-30"
-            >
-              Source code
-            </IconButton>
-          )}
-        </div>
+        {!props.unreleased && (
+          <div className="flex gap-4 flex-wrap justify-center">
+            {props.downloadUrl ? (
+              <IconButton
+                href={props.downloadUrl}
+                iconName="Download"
+                className="bg-cta"
+              >
+                Download mod
+              </IconButton>
+            ) : (
+              <IconButton
+                href="https://www.patreon.com/raivr"
+                iconName="Patreon"
+                className="bg-patreon"
+              >
+                Download on Patreon
+              </IconButton>
+            )}
+            {props.sourceUrl && (
+              <IconButton
+                href={props.sourceUrl}
+                iconName="Github"
+                className="bg-cta bg-opacity-30"
+              >
+                Source code
+              </IconButton>
+            )}
+          </div>
+        )}
         {props.videos.length > 0 && (
           <Section title="Videos">
             <div className="flex flex-wrap gap-4 justify-center">

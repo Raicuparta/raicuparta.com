@@ -1,5 +1,22 @@
 [
   {
+    "title": "HeavenVR",
+    "videos": [
+      "https://twitter.com/Raicuparta/status/1570109137811378177"
+    ],
+    "articles": [],
+    "gameName": "Neon White",
+    "gameKey": "neon-white",
+    "description": "HeavenVR is a VR mod for Neon White. This fast-paced shooter/platformer fits VR really well, just incredibly fun and addictive. It's a very intense VR experience. It is still being developed, and should be released on the weekend of 24-25 of September 2022.",
+    "unreleased": true,
+    "gameLinks": [
+      {
+        "title": "Neon White on Steam",
+        "url": "https://store.steampowered.com/app/1533420/Neon_White/"
+      }
+    ]
+  },
+  {
     "title": "StanleyVR",
     "videos": [
       "https://youtu.be/JVanThRk5e8",
