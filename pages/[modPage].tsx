@@ -1,9 +1,10 @@
 import { ModCard } from '../components/mod-card';
 import mods from './mods.json';
 import { useRouter } from 'next/router';
-import Head from 'next/head';
 import { websiteUrl } from '../helpers/constants';
 import { PageHead } from '../components/page-head';
+
+export type Mod = typeof mods[0];
 
 const ModPage = () => {
   const router = useRouter();

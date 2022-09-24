@@ -20,7 +20,9 @@ export const IconButton = ({
   ...props
 }: Props) => (
   <ButtonLink className={twMerge(className, 'flex p-2 rounded')} {...props}>
-    <Icon className="fill-white mr-2 h-6" name={iconName} />
+    <div>
+      <Icon className="fill-white mr-2 h-6" name={iconName} />
+    </div>
     {children}
   </ButtonLink>
 );

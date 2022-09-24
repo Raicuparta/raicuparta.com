@@ -2,13 +2,26 @@
   {
     "title": "HeavenVR",
     "videos": [
-      "https://twitter.com/Raicuparta/status/1570109137811378177"
+      "https://www.youtube.com/watch?v=DrwI5f5qqpM",
+      "https://www.youtube.com/watch?v=zC-k2HTqg1A"
     ],
-    "articles": [],
+    "articles": [
+      {
+        "title": "Eurogamer: This new VR mod turns Neon White into the perfect 'just one more go' VR game",
+        "url": "https://www.eurogamer.net/this-new-flatscreen-to-vr-mod-turns-neon-white-into-the-perfect-just-one-more-go-vr-game"
+      },
+      {
+        "title": "Real o Virtual: El frenético plataformas Neon White tendrá un mod VR este mismo mes",
+        "url": "https://www.realovirtual.com/noticias/11851/frenetico-plataformas-neon-white-tendra-mod-vr-este-mismo-mes"
+      }
+    ],
     "gameName": "Neon White",
     "gameKey": "neon-white",
-    "description": "HeavenVR is a VR mod for Neon White. This fast-paced shooter/platformer fits VR really well, just incredibly fun and addictive. It's a very intense VR experience. It is still being developed, and should be released on the weekend of 24-25 of September 2022.",
-    "unreleased": true,
+    "description": "HeavenVR is a VR mod for Neon White. This fast-paced shooter/platformer fits VR really well, it's just so fun and addictive. It's a very intense VR experience. The mod is still being developed, but you can gain early access with a one-time purchase on Itch.io, or by being a subscriber on Patreon.",
+    "buttonLinks": {
+      "itch": "https://raicuparta.itch.io/heaven-vr",
+      "patreon": "https://www.patreon.com/raivr"
+    },
     "gameLinks": [
       {
         "title": "Neon White on Steam",
@@ -34,6 +47,9 @@
         "url": "https://www.realovirtual.com/noticias/11309/stanley-parable-tendra-mod-vr"
       }
     ],
+    "buttonLinks": {
+      "patreon": "https://www.patreon.com/raivr"
+    },
     "gameName": "The Stanley Parable: Ultra Deluxe",
     "gameKey": "stanley-parable",
     "description": "StanleyVR is a VR mod for The Stanley Parable: Ultra Deluxe. Still being polished but the full game is already playable. Full room-scale VR with motion controls.",
@@ -59,6 +75,9 @@
     "gameName": "Hardspace: Shipbreaker",
     "gameKey": "shipbreaker",
     "description": "ShipbreakerVR is a VR mod for Hardspace: Shipbreaker. This mod is still in early development. The current version has no motion controls, but features camera-independent aiming for all the game tools.",
+    "buttonLinks": {
+      "patreon": "https://www.patreon.com/raivr"
+    },
     "gameLinks": [
       {
         "title": "Hardspace: Shipbreaker on Steam",
@@ -103,8 +122,10 @@
     "gameName": "Firewatch",
     "gameKey": "firewatch",
     "description": "Two Forks VR is a VR mod for Firewatch. The full game is playable in VR, with room-scale tracking, motion controls, and multiple comfort options. The mod is finished and has thus been open-sourced.",
-    "downloadUrl": "https://raicuparta.itch.io/two-forks-vr",
-    "sourceUrl": "https://github.com/Raicuparta/two-forks-vr",
+    "buttonLinks": {
+      "itch": "https://raicuparta.itch.io/two-forks-vr",
+      "source": "https://github.com/Raicuparta/two-forks-vr"
+    },
     "gameLinks": [
       {
         "title": "Firewatch on Steam",
@@ -145,8 +166,10 @@
     "gameName": "Outer Wilds",
     "gameKey": "outer-wilds",
     "description": "NomaiVR is a VR mod for Outer Wilds. It was my first VR mod. The full game can be played in VR with room-scale tracking and motion controls.",
-    "downloadUrl": "https://outerwildsmods.com/mods/nomaivr/",
-    "sourceUrl": "https://github.com/Raicuparta/nomai-vr",
+    "buttonLinks": {
+      "download": "https://outerwildsmods.com/mods/nomaivr/",
+      "source": "https://github.com/Raicuparta/nomai-vr"
+    },
     "gameLinks": [
       {
         "title": "Outer Wilds on Steam",
@@ -168,6 +191,9 @@
       "https://youtu.be/kqGIscwN6vc",
       "https://youtu.be/fEyUUN_eKFQ"
     ],
+    "buttonLinks": {
+      "patreon": "https://www.patreon.com/raivr"
+    },
     "articles": [],
     "gameName": "Praey for the Gods",
     "gameKey": "praey-for-the-gods",
@@ -188,6 +214,9 @@
     "videos": [
       "https://youtu.be/Gt_kIrmTl44"
     ],
+    "buttonLinks": {
+      "patreon": "https://www.patreon.com/raivr"
+    },
     "articles": [],
     "gameName": "Return of the Obra Dinn",
     "gameKey": "obra-dinn",

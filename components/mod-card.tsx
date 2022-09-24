@@ -1,25 +1,13 @@
+import Image from 'next/image';
 import { IconButton } from './icon-button';
 import { ButtonLink } from './button-link';
-import { LinkInfo, LinkList } from './link-list';
+import { LinkList } from './link-list';
 import { Section } from './section';
 import { ModImage } from './mod-image';
 import { IconLink } from './icon-link';
-import Image from 'next/image';
+import { Mod } from '../pages/[modPage]';
 
-type Props = {
-  title: string;
-  gameName: string;
-  description: string;
-  gameKey: string;
-  videos: string[];
-  articles: LinkInfo[];
-  downloadUrl?: string;
-  sourceUrl?: string;
-  gameLinks: LinkInfo[];
-  unreleased?: boolean;
-};
-
-export const ModCard = (props: Props) => {
+export const ModCard = (props: Mod) => {
   const imagePath = `/mods/${props.gameKey}/mod.jpg`;
   return (
     <div className="rounded bg-overlay bg-opacity-20 relative overflow-hidden">
@@ -47,36 +35,44 @@ export const ModCard = (props: Props) => {
       </div>
       <div className="p-4 flex flex-col gap-6">
         <p>{props.description}</p>
-        {!props.unreleased && (
-          <div className="flex gap-4 flex-wrap justify-center">
-            {props.downloadUrl ? (
-              <IconButton
-                href={props.downloadUrl}
-                iconName="Download"
-                className="bg-cta"
-              >
-                Download mod
-              </IconButton>
-            ) : (
-              <IconButton
-                href="https://www.patreon.com/raivr"
-                iconName="Patreon"
-                className="bg-patreon"
-              >
-                Download on Patreon
-              </IconButton>
-            )}
-            {props.sourceUrl && (
-              <IconButton
-                href={props.sourceUrl}
-                iconName="Github"
-                className="bg-cta bg-opacity-30"
-              >
-                Source code
-              </IconButton>
-            )}
-          </div>
-        )}
+        <div className="flex gap-4 flex-wrap justify-center">
+          {props.buttonLinks?.download && (
+            <IconButton
+              href={props.buttonLinks.download}
+              iconName="Download"
+              className="bg-cta"
+            >
+              Download mod
+            </IconButton>
+          )}
+          {props.buttonLinks?.itch && (
+            <IconButton
+              href={props.buttonLinks.itch}
+              iconName="Itch"
+              className="bg-itch"
+            >
+              Download on Itch.io
+            </IconButton>
+          )}
+          {props.buttonLinks?.patreon && (
+            <IconButton
+              href={props.buttonLinks.patreon}
+              iconName="Patreon"
+              className="bg-patreon"
+            >
+              Download on Patreon
+            </IconButton>
+          )}
+          {props.buttonLinks?.source && (
+            <IconButton
+              href={props.buttonLinks.source}
+              iconName="Github"
+              className="bg-cta bg-opacity-30"
+            >
+              Source code
+            </IconButton>
+          )}
+        </div>
         {props.videos.length > 0 && (
           <Section title="Videos">
             <div className="flex flex-wrap gap-4 justify-center">

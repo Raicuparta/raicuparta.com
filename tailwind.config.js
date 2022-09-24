@@ -7,6 +7,7 @@ module.exports = {
   theme: {
     colors: {
       patreon: '#d6343c',
+      itch: '#c04e4e',
       cta: '#3a8f7e',
       white: '#ffffff',
       darkWhite: '#e6e1ff',

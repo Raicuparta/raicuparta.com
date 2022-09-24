@@ -33,16 +33,23 @@ const Home = () => (
         Raicuparta's VR mods
       </h2>
       <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 justify-center">
-        {mods.map((mod) => (
-          <ButtonLink key={mod.gameKey} href={`${mod.gameKey}-vr-mod`}>
-            <ModImage
-              src={`/mods/${mod.gameKey}/mod.jpg`}
-              title={mod.title}
-              gameName={mod.gameName}
-              className="rounded"
-            />
-          </ButtonLink>
-        ))}
+        {mods.map((mod, index) => {
+          const isBig = mods.length % 2 !== 0 && index == 0;
+          return (
+            <ButtonLink
+              key={mod.gameKey}
+              href={`${mod.gameKey}-vr-mod`}
+              className={isBig ? 'sm:col-span-2' : undefined}
+            >
+              <ModImage
+                src={`/mods/${mod.gameKey}/mod.jpg`}
+                title={mod.title}
+                gameName={mod.gameName}
+                className={`rounded${isBig ? ' h-52' : ''}`}
+              />
+            </ButtonLink>
+          );
+        })}
       </div>
     </div>
   </>
