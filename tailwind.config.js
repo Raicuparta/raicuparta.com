@@ -12,6 +12,7 @@ module.exports = {
       white: '#ffffff',
       darkWhite: '#e6e1ff',
       overlay: 'rgba(0, 0, 0, 0.3)',
+      black: '#000',
     },
     dropShadow: {
       DEFAULT: ['0 0 5px rgb(0 0 0 / 0.3)'],

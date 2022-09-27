@@ -60,7 +60,7 @@ export const ModCard = (props: Mod) => {
               iconName="Patreon"
               className="bg-patreon"
             >
-              Download on Patreon
+              Subscribe on Patreon
             </IconButton>
           )}
           {props.buttonLinks?.source && (

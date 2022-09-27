@@ -29,7 +29,7 @@ export const ModImage = (props: Props) => (
     />
     <div className="absolute bottom-4 flex flex-col items-center gap-4">
       <h2 className="text-4xl font-normal text-shadow">{props.title}</h2>
-      <span className="bg-overlay px-2 rounded text-shadow">
+      <span className="bg-black bg-opacity-75 px-2 rounded text-shadow">
         for {props.gameName}
       </span>
     </div>
