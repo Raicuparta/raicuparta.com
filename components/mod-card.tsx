@@ -31,6 +31,7 @@ export const ModCard = (props: Mod) => {
             src={imagePath}
             layout="fill"
             priority
+            alt={props.title}
           />
         </div>
       </div>
@@ -91,6 +92,7 @@ export const ModCard = (props: Mod) => {
                       width={160}
                       height={90}
                       src={`/mods/${props.gameKey}/videos/${index}.jpg`}
+                      alt={`Video ${index} for ${props.title}`}
                     />
                   </div>
                 </ButtonLink>
