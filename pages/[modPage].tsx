@@ -4,6 +4,7 @@ import { websiteUrl } from '../helpers/constants';
 import { PageHead } from '../components/page-head';
 import { getLinkPreview } from 'link-preview-js';
 import type { GetStaticPropsContext, InferGetStaticPropsType } from 'next';
+import { URL } from 'url';
 
 export type Mod = InferGetStaticPropsType<typeof getStaticProps>;
 
@@ -73,11 +74,14 @@ export const getStaticProps = async (context: GetStaticPropsContext) => {
 
         if (!('title' in linkPreview)) return undefined;
 
+        const url = new URL(article.url).hostname.replace('www.', '');
+
         return {
           url: linkPreview.url,
           title: linkPreview.title,
           image: linkPreview.images[0],
-          favicon: linkPreview.favicons[0],
+          favicon: linkPreview.favicons[linkPreview.favicons.length - 1],
+          siteName: linkPreview.siteName ?? url,
         };
       })
     )

@@ -91,12 +91,15 @@ export const ModCard = (props: Mod) => {
                 >
                   <div className="text-zero">
                     <Image
-                      width={160}
-                      height={90}
+                      width={320}
+                      height={180}
                       src={video.images[0]}
-                      alt={`Video ${index} for ${props.title}`}
+                      alt={video.title}
                     />
                   </div>
+                  <span className="absolute top-0 text-xs font-semibold bg-black bg-opacity-75 m-1 rounded p-1">
+                    {video.title}
+                  </span>
                 </ButtonLink>
               ))}
             </div>
@@ -108,10 +111,12 @@ export const ModCard = (props: Mod) => {
               {props.articles.map((article) => (
                 <LinkListItem
                   key={article.url}
-                  title={article.title}
                   url={article.url}
                   iconUrl={article.favicon}
-                />
+                >
+                  {article.siteName && <strong>{article.siteName}: </strong>}
+                  {article.title}
+                </LinkListItem>
               ))}
             </LinkList>
           </Section>
@@ -120,11 +125,9 @@ export const ModCard = (props: Mod) => {
           <Section title="Game links">
             <LinkList>
               {props.gameLinks.map((gameLink) => (
-                <LinkListItem
-                  key={gameLink.url}
-                  title={gameLink.title}
-                  url={gameLink.url}
-                />
+                <LinkListItem key={gameLink.url} url={gameLink.url}>
+                  {gameLink.title}
+                </LinkListItem>
               ))}
             </LinkList>
           </Section>
