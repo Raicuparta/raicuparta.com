@@ -41,13 +41,14 @@ function filterUndefined<T>(item: T | undefined): item is T {
   return item != undefined;
 }
 
-function pick<T, K extends keyof T>(obj: T, ...keys: K[]): Pick<T, K> {
-  const ret: any = {};
-  keys.forEach((key) => {
-    ret[key] = obj[key];
+const getPreview = (url: string) =>
+  getLinkPreview(url, {
+    followRedirects: 'follow',
+    timeout: 20000,
+    headers: {
+      'user-agent': 'googlebot',
+    },
   });
-  return ret;
-}
 
 export const getStaticProps = async (context: GetStaticPropsContext) => {
   const modPage = context.params?.modPage;
@@ -65,15 +66,10 @@ export const getStaticProps = async (context: GetStaticPropsContext) => {
     throw new Error(`failed to find mod for modPage ${modPage}`);
   }
 
-  const previewSettings = {
-    followRedirects: 'follow',
-    timeout: 20000,
-  } as const;
-
   const articles = (
     await Promise.all(
       mod.articles.map(async (article) => {
-        const linkPreview = await getLinkPreview(article.url, previewSettings);
+        const linkPreview = await getPreview(article.url);
 
         if (!('title' in linkPreview)) return undefined;
 
@@ -93,7 +89,7 @@ export const getStaticProps = async (context: GetStaticPropsContext) => {
   const videos = (
     await Promise.all(
       mod.videos.map(async (videoUrl) => {
-        const linkPreview = await getLinkPreview(videoUrl);
+        const linkPreview = await getPreview(videoUrl);
 
         if (!('title' in linkPreview)) return undefined;
 
