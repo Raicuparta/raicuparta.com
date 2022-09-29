@@ -1,9 +1,9 @@
 import Image from 'next/image';
 
 export type LinkInfo = {
-  title: string;
   url: string;
   iconUrl?: string;
+  children: React.ReactNode;
 };
 
 export const LinkListItem = (props: LinkInfo) => (
@@ -19,6 +19,6 @@ export const LinkListItem = (props: LinkInfo) => (
         <Image src={props.iconUrl} width={32} height={32} alt="" />
       </div>
     )}
-    <span className="flex-1">{props.title}</span>
+    <span className="flex-1">{props.children}</span>
   </a>
 );
