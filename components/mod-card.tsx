@@ -7,9 +7,11 @@ import { ModImage } from './mod-image';
 import { IconLink } from './icon-link';
 import { Mod } from '../pages/[modPage]';
 import YoutubeLite from './youtube-embed';
+import { LinkListItem } from './link-list-item';
 
 export const ModCard = (props: Mod) => {
   const imagePath = `/mods/${props.gameKey}/mod.jpg`;
+
   return (
     <div className="rounded bg-overlay bg-opacity-20 relative overflow-hidden">
       <IconLink
@@ -81,17 +83,17 @@ export const ModCard = (props: Mod) => {
         {props.videos.length > 0 && (
           <Section title="More Videos">
             <div className="flex flex-wrap gap-4 justify-center">
-              {props.videos.map((videoUrl, index) => (
+              {props.videos.map((video, index) => (
                 <ButtonLink
                   className="rounded overflow-hidden"
-                  key={videoUrl}
-                  href={videoUrl}
+                  key={video.url}
+                  href={video.url}
                 >
                   <div className="text-zero">
                     <Image
                       width={160}
                       height={90}
-                      src={`/mods/${props.gameKey}/videos/${index}.jpg`}
+                      src={video.images[0]}
                       alt={`Video ${index} for ${props.title}`}
                     />
                   </div>
@@ -102,12 +104,29 @@ export const ModCard = (props: Mod) => {
         )}
         {props.articles.length > 0 && (
           <Section title="Articles">
-            <LinkList links={props.articles} />
+            <LinkList>
+              {props.articles.map((article) => (
+                <LinkListItem
+                  key={article.url}
+                  title={article.title}
+                  url={article.url}
+                  iconUrl={article.favicon}
+                />
+              ))}
+            </LinkList>
           </Section>
         )}
         {props.gameLinks.length > 0 && (
           <Section title="Game links">
-            <LinkList links={props.gameLinks} />
+            <LinkList>
+              {props.gameLinks.map((gameLink) => (
+                <LinkListItem
+                  key={gameLink.url}
+                  title={gameLink.title}
+                  url={gameLink.url}
+                />
+              ))}
+            </LinkList>
           </Section>
         )}
       </div>
