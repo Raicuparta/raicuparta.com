@@ -18,18 +18,22 @@ export const ModCard = (props: Mod) => {
         iconName="Return"
         title="Return to home page"
         url="/"
-        className="absolute top-4 left-4 z-20"
+        className="absolute top-2 left-3 z-20"
       />
       <div className="relative flex justify-center">
-        <ModImage
+        <div className="m-4 text-shadow">
+          <h2 className="text-3xl font-normal">{props.title}</h2>
+          <p>for {props.gameName}</p>
+        </div>
+        {/* <ModImage
           src={imagePath}
           width={400}
           title={props.title}
           gameName={props.gameName}
-        />
+        /> */}
         <div className="absolute top-0 -z-10 w-full h-full overflow-hidden">
           <Image
-            className="w-full h-full object-cover blur-lg"
+            className="w-full h-full object-cover blur"
             src={imagePath}
             layout="fill"
             priority
