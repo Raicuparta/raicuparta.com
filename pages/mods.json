@@ -1,8 +1,10 @@
 [
   {
     "title": "BaboonVR",
+    "mainVideo": "g3mzQDQ-iiE",
     "videos": [
-      "https://www.youtube.com/watch?v=g3mzQDQ-iiE"
+      "https://www.youtube.com/watch?v=DUnzTh49XoI",
+      "https://www.youtube.com/watch?v=XICW_xbxGZs"
     ],
     "articles": [
       {
@@ -38,9 +40,9 @@
   },
   {
     "title": "HeavenVR",
+    "mainVideo": "zC-k2HTqg1A",
     "videos": [
-      "https://www.youtube.com/watch?v=DrwI5f5qqpM",
-      "https://www.youtube.com/watch?v=zC-k2HTqg1A"
+      "https://www.youtube.com/watch?v=DrwI5f5qqpM"
     ],
     "articles": [
       {
@@ -68,11 +70,11 @@
   },
   {
     "title": "StanleyVR",
+    "mainVideo": "qM25FLL-NSQ",
     "videos": [
       "https://youtu.be/JVanThRk5e8",
       "https://youtu.be/iYt0YlLFjYI",
-      "https://youtu.be/ZIAWcsPLT1c",
-      "https://youtu.be/qM25FLL-NSQ"
+      "https://youtu.be/ZIAWcsPLT1c"
     ],
     "articles": [
       {
@@ -103,10 +105,10 @@
   },
   {
     "title": "ShipbreakerVR",
+    "mainVideo": "UGGtz1lYMNw",
     "videos": [
       "https://www.twitch.tv/ragesaq/video/1508802767",
-      "https://youtu.be/PZLhq5NiFKo",
-      "https://youtu.be/UGGtz1lYMNw"
+      "https://youtu.be/PZLhq5NiFKo"
     ],
     "articles": [],
     "gameName": "Hardspace: Shipbreaker",
@@ -132,11 +134,11 @@
   },
   {
     "title": "Two Forks VR",
+    "mainVideo": "Wo27DFX8rYw",
     "videos": [
       "https://youtu.be/jO_V-sq-Ics",
       "https://youtu.be/h2uI3ITaHj8",
-      "https://youtu.be/KeKsGIhehjU",
-      "https://youtu.be/Wo27DFX8rYw"
+      "https://youtu.be/KeKsGIhehjU"
     ],
     "articles": [
       {
@@ -184,6 +186,7 @@
   },
   {
     "title": "NomaiVR",
+    "mainVideo": "gPFiYRMm8Ok",
     "videos": [
       "https://youtu.be/g2NbjF4fG0s",
       "https://youtu.be/SCZ8vtl4sVs",
@@ -224,10 +227,8 @@
   },
   {
     "title": "ColossalVR",
-    "videos": [
-      "https://youtu.be/kqGIscwN6vc",
-      "https://youtu.be/fEyUUN_eKFQ"
-    ],
+    "mainVideo": "kqGIscwN6vc",
+    "videos": [],
     "buttonLinks": {
       "patreon": "https://www.patreon.com/raivr"
     },
@@ -248,9 +249,8 @@
   },
   {
     "title": "FatesVR",
-    "videos": [
-      "https://youtu.be/Gt_kIrmTl44"
-    ],
+    "mainVideo": "Gt_kIrmTl44",
+    "videos": [],
     "buttonLinks": {
       "patreon": "https://www.patreon.com/raivr"
     },

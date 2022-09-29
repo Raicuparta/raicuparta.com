@@ -4,7 +4,7 @@ import { useRouter } from 'next/router';
 import { websiteUrl } from '../helpers/constants';
 import { PageHead } from '../components/page-head';
 
-export type Mod = typeof mods[0];
+export type Mod = typeof mods[number];
 
 const ModPage = () => {
   const router = useRouter();
