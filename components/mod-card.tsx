@@ -109,13 +109,24 @@ export const ModCard = (props: Mod) => {
           <Section title="Articles">
             <LinkList>
               {props.articles.map((article) => (
-                <LinkListItem
-                  key={article.url}
-                  url={article.url}
-                  iconUrl={article.favicon}
-                >
-                  {article.siteName && <strong>{article.siteName}: </strong>}
-                  {article.title}
+                <LinkListItem key={article.url} url={article.url}>
+                  <div className="relative rounded overflow-hidden flex w-32 sm:w-40">
+                    <Image src={article.image} width={160} height={90} />
+                    <div className="absolute top-0 left">
+                      <Image
+                        src={article.favicon}
+                        width={32}
+                        height={32}
+                        className="rounded-br bg-white"
+                      />
+                    </div>
+                  </div>
+                  <div className="flex-1">
+                    {article.siteName && (
+                      <p className="font-bold">{article.siteName}</p>
+                    )}
+                    <p>{article.title}</p>
+                  </div>
                 </LinkListItem>
               ))}
             </LinkList>

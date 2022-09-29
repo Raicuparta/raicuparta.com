@@ -62,7 +62,6 @@ const StyledYouTubeIcon = styled(YouTubeIcon, {
   color: '#212121',
   height: 'auto',
   opacity: 0.8,
-  transition: 'all 0.2s cubic-bezier(0, 0, 0.2, 1)',
   width: 68,
   [`${StyledAspectRatio}:hover &`]: {
     color: '#f00',
