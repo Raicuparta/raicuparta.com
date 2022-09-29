@@ -10,30 +10,26 @@ import { TextLink } from '../components/text-link';
 
 export type Mod = InferGetStaticPropsType<typeof getStaticProps>;
 
-const ModPage = (props: Mod) => {
-  console.log(props);
-
-  return (
-    <>
-      <PageHead
-        description={`${props.title} is a mod that converts "${props.gameName}" into a VR game.`}
-        imageUrl={`${websiteUrl}${`/mods/${props.gameKey}/props.jpg`}`}
-        title={`${props.title} mod for ${props.gameName}`}
-        imageWidth={400}
-        imageHeight={225}
-        largeImage
-      ></PageHead>
-      <div className="mb-2 " data-nosnippet>
-        <Link href="/" passHref>
-          <TextLink isExternal={false}>Homepage</TextLink>
-        </Link>
-        <span className="text-xl leading-none">{' › '}</span>
-        <span>{props.title}</span>
-      </div>
-      <ModCard {...props} />
-    </>
-  );
-};
+const ModPage = (props: Mod) => (
+  <>
+    <PageHead
+      description={`${props.title} is a mod that converts "${props.gameName}" into a VR game.`}
+      imageUrl={`${websiteUrl}${`/mods/${props.gameKey}/props.jpg`}`}
+      title={`${props.title} mod for ${props.gameName}`}
+      imageWidth={400}
+      imageHeight={225}
+      largeImage
+    ></PageHead>
+    <div className="mb-2 " data-nosnippet>
+      <Link href="/" passHref>
+        <TextLink isExternal={false}>Homepage</TextLink>
+      </Link>
+      <span className="text-xl leading-none">{' › '}</span>
+      <span>{props.title}</span>
+    </div>
+    <ModCard {...props} />
+  </>
+);
 
 export async function getStaticPaths() {
   return {
