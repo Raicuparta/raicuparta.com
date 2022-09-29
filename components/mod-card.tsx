@@ -6,6 +6,7 @@ import { Section } from './section';
 import { ModImage } from './mod-image';
 import { IconLink } from './icon-link';
 import { Mod } from '../pages/[modPage]';
+import YoutubeLite from './youtube-embed';
 
 export const ModCard = (props: Mod) => {
   const imagePath = `/mods/${props.gameKey}/mod.jpg`;
@@ -73,8 +74,11 @@ export const ModCard = (props: Mod) => {
             </IconButton>
           )}
         </div>
+        {props.mainVideo && (
+          <YoutubeLite urlOrId={props.mainVideo} poster="sddefault" />
+        )}
         {props.videos.length > 0 && (
-          <Section title="Videos">
+          <Section title="More Videos">
             <div className="flex flex-wrap gap-4 justify-center">
               {props.videos.map((videoUrl, index) => (
                 <ButtonLink
