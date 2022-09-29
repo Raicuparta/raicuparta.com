@@ -3,8 +3,6 @@ import { IconButton } from './icon-button';
 import { ButtonLink } from './button-link';
 import { LinkList } from './link-list';
 import { Section } from './section';
-import { ModImage } from './mod-image';
-import { IconLink } from './icon-link';
 import { Mod } from '../pages/[modPage]';
 import YoutubeLite from './youtube-embed';
 import { LinkListItem } from './link-list-item';
@@ -13,24 +11,12 @@ export const ModCard = (props: Mod) => {
   const imagePath = `/mods/${props.gameKey}/mod.jpg`;
 
   return (
-    <div className="rounded bg-overlay bg-opacity-20 relative overflow-hidden">
-      <IconLink
-        iconName="Return"
-        title="Return to home page"
-        url="/"
-        className="absolute top-2 left-3 z-20"
-      />
+    <div className="rounded bg-overlay bg-opacity-20 overflow-hidden">
       <div className="relative flex justify-center">
         <div className="m-4 text-shadow">
           <h2 className="text-3xl font-normal">{props.title}</h2>
           <p>for {props.gameName}</p>
         </div>
-        {/* <ModImage
-          src={imagePath}
-          width={400}
-          title={props.title}
-          gameName={props.gameName}
-        /> */}
         <div className="absolute top-0 -z-10 w-full h-full overflow-hidden">
           <Image
             className="w-full h-full object-cover blur"

@@ -1,15 +1,18 @@
 import { AnchorHTMLAttributes, DetailedHTMLProps } from 'react';
 
-type Props = DetailedHTMLProps<
-  AnchorHTMLAttributes<HTMLAnchorElement>,
-  HTMLAnchorElement
->;
+interface Props
+  extends DetailedHTMLProps<
+    AnchorHTMLAttributes<HTMLAnchorElement>,
+    HTMLAnchorElement
+  > {
+  isExternal?: boolean;
+}
 
-export const TextLink = (props: Props) => (
+export const TextLink = ({ isExternal = true, ...props }: Props) => (
   <a
     className="underline font-normal text-darkWhite hover:text-white"
     {...props}
-    target={'_blank'}
-    rel={'noopener noreferrer'}
+    target={isExternal ? '_blank' : undefined}
+    rel={isExternal ? 'noopener noreferrer' : undefined}
   />
 );
