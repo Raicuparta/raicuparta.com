@@ -65,12 +65,15 @@ export const getStaticProps = async (context: GetStaticPropsContext) => {
     throw new Error(`failed to find mod for modPage ${modPage}`);
   }
 
+  const previewSettings = {
+    followRedirects: 'follow',
+    timeout: 20000,
+  } as const;
+
   const articles = (
     await Promise.all(
       mod.articles.map(async (article) => {
-        const linkPreview = await getLinkPreview(article.url, {
-          followRedirects: 'follow',
-        });
+        const linkPreview = await getLinkPreview(article.url, previewSettings);
 
         if (!('title' in linkPreview)) return undefined;
 
@@ -90,9 +93,7 @@ export const getStaticProps = async (context: GetStaticPropsContext) => {
   const videos = (
     await Promise.all(
       mod.videos.map(async (videoUrl) => {
-        const linkPreview = await getLinkPreview(videoUrl, {
-          followRedirects: 'follow',
-        });
+        const linkPreview = await getLinkPreview(videoUrl);
 
         if (!('title' in linkPreview)) return undefined;
 
