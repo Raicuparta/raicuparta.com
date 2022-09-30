@@ -68,7 +68,7 @@ export const ModCard = (props: Mod) => {
           )}
         </div>
         {props.mainVideo && (
-          <YoutubeLite urlOrId={props.mainVideo} poster="sddefault" />
+          <YoutubeLite urlOrId={props.mainVideo} poster="maxresdefault" />
         )}
         {props.videos.length > 0 && (
           <Section title="More Videos">

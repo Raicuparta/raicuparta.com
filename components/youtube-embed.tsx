@@ -6,6 +6,7 @@ import type * as Stitches from '@stitches/react';
 import * as AspectRatio from '@radix-ui/react-aspect-ratio';
 import type * as Youtube from 'youtube-player/dist/types';
 import { createStitches } from '@stitches/react';
+import Image from 'next/image';
 
 export const { styled } = createStitches();
 
@@ -34,6 +35,7 @@ const StyledAspectRatio = styled(AspectRatio.Root, {
   contain: 'content',
   cursor: 'pointer',
   borderRadius: '10px',
+  overflow: 'hidden',
   '& iframe': {
     border: 0,
     height: '100%',
@@ -55,18 +57,6 @@ const StyledButton = styled('button', {
   transform: 'translate3d(-50%, -50%, 0)',
   width: 68,
   zIndex: 1,
-});
-
-const StyledYouTubeIcon = styled(YouTubeIcon, {
-  boxSizing: 'border-box',
-  color: '#212121',
-  height: 'auto',
-  opacity: 0.8,
-  width: 68,
-  [`${StyledAspectRatio}:hover &`]: {
-    color: '#f00',
-    opacity: 1,
-  },
 });
 
 const StyledIframe = styled('iframe', {});
@@ -291,7 +281,7 @@ function RenderYouTubeLite(
   return (
     <StyledAspectRatio
       css={{
-        backgroundImage: `url(${posterUrl})`,
+        // backgroundImage: `url(${posterUrl})`,
         ...css,
         '&::before': { content: iframe ? 'none' : '""' },
       }}
@@ -319,13 +309,18 @@ function RenderYouTubeLite(
           {...iframeProps}
         ></StyledIframe>
       ) : (
-        <StyledButton
-          aria-label="Play"
-          data-testid="le-yt-button"
-          type="button"
-        >
-          <StyledYouTubeIcon />
-        </StyledButton>
+        <>
+          <div className="absolute top-0 left-0 h-full w-full -z-10">
+            <Image src={posterUrl} layout="fill" width={16} height={9} />
+          </div>
+          <button
+            aria-label="Play"
+            type="button"
+            className="h-full w-full opacity-80 text-black hover:opacity-100 hover:text-itch"
+          >
+            <YouTubeIcon className="m-auto w-24 h-24" />
+          </button>
+        </>
       )}
     </StyledAspectRatio>
   );
