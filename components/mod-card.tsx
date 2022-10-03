@@ -4,14 +4,15 @@ import { ButtonLink } from './button-link';
 import { LinkList } from './link-list';
 import { Section } from './section';
 import { Mod } from '../pages/[modPage]';
-import YoutubeLite from './youtube-embed';
+import YoutubeLite from './youtube-embed/youtube-embed';
 import { LinkListItem } from './link-list-item';
+import { Card } from './card';
 
 export const ModCard = (props: Mod) => {
   const imagePath = `/mods/${props.gameKey}/mod.jpg`;
 
   return (
-    <div className="rounded bg-overlay bg-opacity-20 overflow-hidden">
+    <Card>
       <div className="relative flex justify-center">
         <div className="m-4 text-shadow">
           <h2 className="text-3xl font-normal">{props.title}</h2>
@@ -135,6 +136,6 @@ export const ModCard = (props: Mod) => {
           </Section>
         )}
       </div>
-    </div>
+    </Card>
   );
 };

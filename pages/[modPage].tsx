@@ -7,6 +7,7 @@ import type { GetStaticPropsContext, InferGetStaticPropsType } from 'next';
 import { URL } from 'url';
 import Link from 'next/link';
 import { TextLink } from '../components/text-link';
+import { Card } from '../components/card';
 
 export type Mod = InferGetStaticPropsType<typeof getStaticProps>;
 
@@ -20,13 +21,13 @@ const ModPage = (props: Mod) => (
       imageHeight={225}
       largeImage
     ></PageHead>
-    <div className="mb-2 " data-nosnippet>
+    <Card className="mb-2 p-2" data-nosnippet>
       <Link href="/" passHref>
         <TextLink isExternal={false}>Homepage</TextLink>
       </Link>
       <span className="text-xl leading-none">{' › '}</span>
       <span>{props.title}</span>
-    </div>
+    </Card>
     <ModCard {...props} />
   </>
 );
