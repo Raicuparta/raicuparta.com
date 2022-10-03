@@ -2,21 +2,9 @@
 // Wasn't able to get it working as a dependency so had to copy it.
 
 import * as React from 'react';
-import * as AspectRatio from '@radix-ui/react-aspect-ratio';
-import type * as Youtube from 'youtube-player/dist/types';
 import Image from 'next/image';
 import { YouTubeIcon } from './youtube-icon';
-
-export type YoutubePosterQuality =
-  | 'maxresdefault'
-  | '0'
-  | '1'
-  | '2'
-  | '3'
-  | 'default'
-  | 'hqdefault'
-  | 'mqdefault'
-  | 'sddefault';
+import { YoutubePlayerParameters, YoutubePosterQuality } from './youtube-types';
 
 export interface YouTubeLiteProps
   extends React.ComponentPropsWithoutRef<'div'> {
@@ -32,8 +20,6 @@ export interface YouTubeLiteProps
   aspectRatio?: number;
   /**
    * A custom thumbnail image url to show instead of the original youtube thumbnail
-   *
-   * @default false
    */
   customThumbnail?: string;
   /**
@@ -50,13 +36,7 @@ export interface YouTubeLiteProps
    * List of available parameters:
    * https://developers.google.com/youtube/player_parameters#Parameters
    */
-  playerParameters?: Youtube.Options['playerVars'];
-  /**
-   * If the video URL contains a playlist or not
-   *
-   * @default false
-   */
-  playlist?: boolean;
+  playerParameters?: YoutubePlayerParameters;
   /**
    * The different quality to show the poster
    * see: https://developers.google.com/youtube/v3/docs/thumbnails
@@ -67,10 +47,8 @@ export interface YouTubeLiteProps
   poster?: YoutubePosterQuality;
   /**
    * The `data-title` to insert in the `iframe`
-   *
-   * @default "React YouTube Lite"
    */
-  title?: string;
+  title: string;
 }
 
 function getYouTubeId(url: string) {
@@ -90,7 +68,7 @@ type YoutubeOptions = {
   isPlaylist?: boolean;
   url: string;
   videoId: string;
-  opts?: Youtube.Options['playerVars'];
+  opts?: YoutubePlayerParameters;
 };
 
 function getYoutubePlayerOptions({
@@ -99,52 +77,20 @@ function getYoutubePlayerOptions({
   isPlaylist,
   opts,
 }: YoutubeOptions) {
-  let options: Youtube.Options['playerVars'] = {
+  let options: YoutubePlayerParameters = {
     ...(!isPlaylist
       ? {
-          autoplay: 1,
+          autoplay: '1',
         }
       : {
           list: videoId,
         }),
     ...opts,
   };
-  // @ts-ignore: we can use numbers on the values
+
   let params = new URLSearchParams(options);
 
   return `${url}?${params.toString()}`;
-}
-
-function addPrefetch(rel: string, href: string, as?: string) {
-  let element = document.querySelector(`link[rel="${rel}"][href="${href}"]`);
-  if (element) {
-    return;
-  }
-
-  let linkEl = document.createElement('link');
-
-  linkEl.setAttribute('rel', rel);
-  linkEl.setAttribute('href', href);
-
-  if (as) {
-    linkEl.setAttribute('as', as);
-  }
-
-  document.head.appendChild(linkEl);
-}
-
-function warmYoutubeConnections({
-  preconnected,
-  setPreconnected,
-}: WarmConnectionsProps) {
-  if (preconnected) return;
-
-  // The iframe document and the majority of its subresources are all taken directly from youtube.com.
-  addPrefetch('preconnect', 'https://www.youtube-nocookie.com');
-  // The botguard script can be found on google.com.
-  addPrefetch('preconnect', 'https://www.google.com');
-
-  setPreconnected(true);
 }
 
 function RenderYouTubeLite(
@@ -154,14 +100,12 @@ function RenderYouTubeLite(
     customThumbnail,
     iframeProps,
     playerParameters,
-    playlist,
     poster = 'hqdefault',
     title,
     ...props
   }: YouTubeLiteProps,
   ref: React.ForwardedRef<HTMLDivElement>
 ) {
-  const [preconnected, setPreconnected] = React.useState(false);
   const [iframe, setIframe] = React.useState(false);
 
   const videoId = encodeURIComponent(getYouTubeId(urlOrId));
@@ -170,16 +114,7 @@ function RenderYouTubeLite(
       ? customThumbnail
       : `https://i.ytimg.com/vi/${videoId}/${poster}.jpg`;
   const youtubeUrl = 'https://www.youtube-nocookie.com';
-  const iframeSrc = !playlist
-    ? `${youtubeUrl}/embed/${videoId}`
-    : `${youtubeUrl}/embed/videoseries`;
-
-  const warmConnections = () => {
-    return warmYoutubeConnections({
-      preconnected,
-      setPreconnected,
-    });
-  };
+  const iframeSrc = `${youtubeUrl}/embed/${videoId}`;
 
   const addIframe = () => {
     if (iframe) return;
@@ -188,10 +123,9 @@ function RenderYouTubeLite(
   };
 
   return (
-    <AspectRatio.Root
-      className="rounded overflow-hidden"
+    <div
+      className="rounded overflow-hidden relative aspect-video"
       data-title={title}
-      ratio={aspectRatio}
       ref={ref}
       {...props}
     >
@@ -200,16 +134,13 @@ function RenderYouTubeLite(
           allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
           data-testid="le-yt-iframe"
-          height={315}
           className="w-full h-full bg-black"
           src={getYoutubePlayerOptions({
             url: iframeSrc,
             videoId,
-            isPlaylist: playlist,
             ...playerParameters,
           })}
           title={title}
-          width={560}
           {...iframeProps}
         ></iframe>
       ) : (
@@ -219,7 +150,6 @@ function RenderYouTubeLite(
           </div>
           <button
             onClick={addIframe}
-            onPointerOver={warmConnections}
             aria-label="Play"
             type="button"
             className="relative h-full w-full opacity-80 text-black hover:opacity-100 hover:text-itch"
@@ -236,7 +166,7 @@ function RenderYouTubeLite(
           </button>
         </>
       )}
-    </AspectRatio.Root>
+    </div>
   );
 }
 
