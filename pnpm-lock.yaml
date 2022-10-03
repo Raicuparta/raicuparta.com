@@ -2,7 +2,6 @@ lockfileVersion: 5.3
 
 specifiers:
   '@radix-ui/react-aspect-ratio': ^1.0.0
-  '@stitches/react': ^1.2.8
   '@svgr/webpack': 6.2.1
   '@types/node': 18.0.3
   '@types/react': 18.0.15
@@ -23,7 +22,6 @@ specifiers:
 
 dependencies:
   '@radix-ui/react-aspect-ratio': 1.0.0_react-dom@18.0.0+react@18.2.0
-  '@stitches/react': 1.2.8_react@18.2.0
   '@svgr/webpack': 6.2.1
   '@types/youtube-player': 5.5.6
   link-preview-js: 3.0.4
@@ -1501,14 +1499,6 @@ packages:
     resolution: {integrity: sha512-t09vSN3MdfsyCHoFcTRCH/iUtG7OJ0CsjzB8cjAmKc/va/kIgeDI/TxsigdncE/4be734m0cvIYwNaV4i2XqAw==}
     engines: {node: '>=10'}
     dev: true
-
-  /@stitches/react/1.2.8_react@18.2.0:
-    resolution: {integrity: sha512-9g9dWI4gsSVe8bNLlb+lMkBYsnIKCZTmvqvDG+Avnn69XfmHZKiaMrx7cgTaddq7aTPPmXiTsbFcUy0xgI4+wA==}
-    peerDependencies:
-      react: '>= 16.3.0'
-    dependencies:
-      react: 18.2.0
-    dev: false
 
   /@svgr/babel-plugin-add-jsx-attribute/6.0.0_@babel+core@7.17.8:
     resolution: {integrity: sha512-MdPdhdWLtQsjd29Wa4pABdhWbaRMACdM1h31BY+c6FghTZqNGT7pEYdBoaGeKtdTOBC/XNFQaKVj+r/Ei2ryWA==}

@@ -2,13 +2,9 @@
 // Wasn't able to get it working as a dependency so had to copy it.
 
 import * as React from 'react';
-import type * as Stitches from '@stitches/react';
 import * as AspectRatio from '@radix-ui/react-aspect-ratio';
 import type * as Youtube from 'youtube-player/dist/types';
-import { createStitches } from '@stitches/react';
 import Image from 'next/image';
-
-export const { styled } = createStitches();
 
 function YouTubeIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
@@ -26,46 +22,6 @@ function YouTubeIcon(props: React.SVGProps<SVGSVGElement>) {
       <path d="M45 24 27 14v20" fill="#fff" />
     </svg>
   );
-}
-
-const StyledAspectRatio = styled(AspectRatio.Root, {
-  backgroundColor: '#000',
-  backgroundPosition: 'center',
-  backgroundSize: 'cover',
-  contain: 'content',
-  cursor: 'pointer',
-  borderRadius: '10px',
-  overflow: 'hidden',
-  '& iframe': {
-    border: 0,
-    height: '100%',
-    width: '100%',
-  },
-});
-
-const StyledButton = styled('button', {
-  appearance: 'none',
-  border: 0,
-  boxSizing: 'border-box',
-  height: 'auto',
-  left: '50%',
-  margin: 0,
-  outline: 'none',
-  padding: 0,
-  position: 'absolute',
-  top: '50%',
-  transform: 'translate3d(-50%, -50%, 0)',
-  width: 68,
-  zIndex: 1,
-});
-
-const StyledIframe = styled('iframe', {});
-
-export interface IframeProps extends React.ComponentPropsWithoutRef<'iframe'> {
-  /**
-   * It’s like the style attribute, but it supports tokens, media queries, nesting and token-aware values.
-   */
-  css?: Stitches.CSS;
 }
 
 export type YoutubePosterQuality =
@@ -98,10 +54,6 @@ export interface YouTubeLiteProps
    */
   aspectRatio?: number;
   /**
-   * It’s like the style attribute, but it supports tokens, media queries, nesting and token-aware values.
-   */
-  css?: Stitches.CSS;
-  /**
    * A custom thumbnail image url to show instead of the original youtube thumbnail
    *
    * @default false
@@ -110,7 +62,7 @@ export interface YouTubeLiteProps
   /**
    * Properties of the iframe element.
    */
-  iframeProps?: IframeProps;
+  iframeProps?: React.ComponentPropsWithoutRef<'iframe'>;
   /**
    * If you use GDPR and don't want YouTube cookies enable this option
    *
@@ -237,7 +189,6 @@ function RenderYouTubeLite(
     urlOrId,
     adNetwork,
     aspectRatio = 16 / 9,
-    css,
     customThumbnail,
     iframeProps,
     noCookie = true,
@@ -279,22 +230,20 @@ function RenderYouTubeLite(
   };
 
   return (
-    <StyledAspectRatio
-      css={{
-        ...css,
-        '&::before': { content: iframe ? 'none' : '""' },
-      }}
+    <AspectRatio.Root
+      className="rounded overflow-hidden"
       data-title={title}
       ratio={aspectRatio}
       ref={ref}
       {...props}
     >
       {iframe ? (
-        <StyledIframe
+        <iframe
           allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
           data-testid="le-yt-iframe"
           height={315}
+          className="w-full h-full bg-black"
           src={getYoutubePlayerOptions({
             url: iframeSrc,
             videoId,
@@ -304,7 +253,7 @@ function RenderYouTubeLite(
           title={title}
           width={560}
           {...iframeProps}
-        ></StyledIframe>
+        ></iframe>
       ) : (
         <>
           <div className="absolute top-0 left-0 h-full w-full -z-10">
@@ -329,7 +278,7 @@ function RenderYouTubeLite(
           </button>
         </>
       )}
-    </StyledAspectRatio>
+    </AspectRatio.Root>
   );
 }
 
