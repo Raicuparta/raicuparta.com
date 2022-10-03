@@ -25,12 +25,6 @@ export interface YouTubeLiteProps
    */
   urlOrId: string;
   /**
-   * Preconnect or not doubleclick ads, this is the adnetwork from Google.
-   *
-   * @default false
-   */
-  adNetwork?: boolean;
-  /**
    * The aspect ratio of the video.
    *
    * @default 16/9
@@ -46,12 +40,6 @@ export interface YouTubeLiteProps
    * Properties of the iframe element.
    */
   iframeProps?: React.ComponentPropsWithoutRef<'iframe'>;
-  /**
-   * If you use GDPR and don't want YouTube cookies enable this option
-   *
-   * @default false
-   */
-  noCookie?: boolean;
   /**
    * By appending parameters to the IFrame URL, you can customize the playback experience in your application.
    * For example, you can automatically play videos using the [`autoplay`](https://developers.google.com/youtube/player_parameters#autoplay)
@@ -96,7 +84,6 @@ function getYouTubeId(url: string) {
 export type WarmConnectionsProps = {
   preconnected: boolean;
   setPreconnected: (preconnected: boolean) => void;
-  adNetwork?: boolean;
 };
 
 type YoutubeOptions = {
@@ -149,7 +136,6 @@ function addPrefetch(rel: string, href: string, as?: string) {
 function warmYoutubeConnections({
   preconnected,
   setPreconnected,
-  adNetwork,
 }: WarmConnectionsProps) {
   if (preconnected) return;
 
@@ -158,23 +144,15 @@ function warmYoutubeConnections({
   // The botguard script can be found on google.com.
   addPrefetch('preconnect', 'https://www.google.com');
 
-  // These ad-related domains may or may not be on the critical path. Domain-specific throttling could be used to confirm.
-  if (adNetwork) {
-    addPrefetch('preconnect', 'https://googleads.g.doubleclick.net');
-    addPrefetch('preconnect', 'https://static.doubleclick.net');
-  }
-
   setPreconnected(true);
 }
 
 function RenderYouTubeLite(
   {
     urlOrId,
-    adNetwork,
     aspectRatio = 16 / 9,
     customThumbnail,
     iframeProps,
-    noCookie = true,
     playerParameters,
     playlist,
     poster = 'hqdefault',
@@ -191,9 +169,7 @@ function RenderYouTubeLite(
     typeof customThumbnail === 'string'
       ? customThumbnail
       : `https://i.ytimg.com/vi/${videoId}/${poster}.jpg`;
-  const youtubeUrl = noCookie
-    ? 'https://www.youtube-nocookie.com'
-    : 'https://www.youtube.com';
+  const youtubeUrl = 'https://www.youtube-nocookie.com';
   const iframeSrc = !playlist
     ? `${youtubeUrl}/embed/${videoId}`
     : `${youtubeUrl}/embed/videoseries`;
@@ -202,7 +178,6 @@ function RenderYouTubeLite(
     return warmYoutubeConnections({
       preconnected,
       setPreconnected,
-      adNetwork,
     });
   };
 
@@ -240,7 +215,7 @@ function RenderYouTubeLite(
       ) : (
         <>
           <div className="absolute top-0 left-0 h-full w-full -z-10">
-            <Image src={posterUrl} layout="fill" width={16} height={9} />
+            <Image src={posterUrl} layout="fill" priority />
           </div>
           <button
             onClick={addIframe}

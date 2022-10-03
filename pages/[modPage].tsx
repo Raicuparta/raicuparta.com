@@ -22,9 +22,9 @@ const ModPage = (props: Mod) => (
       largeImage
     ></PageHead>
     <Card className="mb-2 p-2" data-nosnippet>
-      <Link href="/" passHref>
-        <TextLink isExternal={false}>Homepage</TextLink>
-      </Link>
+      <TextLink href="/" isExternal={false}>
+        Homepage
+      </TextLink>
       <span className="text-xl leading-none">{' › '}</span>
       <span>{props.title}</span>
     </Card>

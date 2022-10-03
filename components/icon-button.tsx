@@ -1,14 +1,9 @@
-import { AnchorHTMLAttributes, DetailedHTMLProps } from 'react';
 import { twMerge } from 'tailwind-merge';
 import { IconName } from '../svg-assets';
 import { Icon } from './icon';
 import { ButtonLink } from './button-link';
 
-interface Props
-  extends DetailedHTMLProps<
-    AnchorHTMLAttributes<HTMLAnchorElement>,
-    HTMLAnchorElement
-  > {
+interface Props extends React.ComponentPropsWithoutRef<'a'> {
   children: React.ReactNode;
   iconName: IconName;
 }
