@@ -281,13 +281,10 @@ function RenderYouTubeLite(
   return (
     <StyledAspectRatio
       css={{
-        // backgroundImage: `url(${posterUrl})`,
         ...css,
         '&::before': { content: iframe ? 'none' : '""' },
       }}
       data-title={title}
-      onClick={addIframe}
-      onPointerOver={warmConnections}
       ratio={aspectRatio}
       ref={ref}
       {...props}
@@ -314,11 +311,21 @@ function RenderYouTubeLite(
             <Image src={posterUrl} layout="fill" width={16} height={9} />
           </div>
           <button
+            onClick={addIframe}
+            onPointerOver={warmConnections}
             aria-label="Play"
             type="button"
-            className="h-full w-full opacity-80 text-black hover:opacity-100 hover:text-itch"
+            className="relative h-full w-full opacity-80 text-black hover:opacity-100 hover:text-itch"
           >
             <YouTubeIcon className="m-auto w-24 h-24" />
+            <noscript>
+              <a
+                href={`https://www.youtube.com/watch?v=${videoId}`}
+                className="block absolute w-full h-full z-10 top-0 right-0"
+                target="_blank"
+                rel="noopener"
+              />
+            </noscript>
           </button>
         </>
       )}

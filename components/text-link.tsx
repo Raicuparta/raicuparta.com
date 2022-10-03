@@ -13,6 +13,6 @@ export const TextLink = ({ isExternal = true, ...props }: Props) => (
     className="underline font-normal text-darkWhite hover:text-white"
     {...props}
     target={isExternal ? '_blank' : undefined}
-    rel={isExternal ? 'noopener noreferrer' : undefined}
+    rel={isExternal ? 'noopener' : undefined}
   />
 );
