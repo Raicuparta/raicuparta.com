@@ -114,7 +114,8 @@
     "gameKey": "shipbreaker",
     "description": "ShipbreakerVR is a VR mod for Hardspace: Shipbreaker. This mod is still in early development. The current version has no motion controls, but features camera-independent aiming for all the game tools.",
     "buttonLinks": {
-      "patreon": "https://www.patreon.com/raivr"
+      "itch": "https://raicuparta.itch.io/shipbreaker-vr",
+      "source": "https://github.com/Raicuparta/shipbreaker-vr"
     },
     "gameLinks": [
       {
