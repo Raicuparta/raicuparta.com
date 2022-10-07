@@ -10,7 +10,6 @@ html {
 body {
   --background: #473a8f;
   --background-light: #3a698f;
-  --overlay-dark: rgba(0, 0, 0, 0.2);
   --highlight: rgba(256, 256, 256, 0.1);
   --text: rgba(255, 255, 255, 0.8);
   --accent: #ffffff;
@@ -21,11 +20,6 @@ body {
   margin: 0;
   color: white;
   background: var(--background);
-  background: linear-gradient(
-    0,
-    var(--background-light) 0%,
-    var(--background) 80%
-  );
   background-attachment: fixed;
   font-weight: lighter;
   scrollbar-width: thin;

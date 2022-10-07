@@ -58,10 +58,10 @@ export const YoutubeEmbed = ({
       data-title={title}
       {...props}
     >
-      <div ref={videoRef} className="w-full h-full absolute top-0 left-0" />
-      <div className="absolute top-0 left-0 h-full w-full -z-10">
+      <div className="absolute top-0 left-0 h-full w-full">
         <Image src={posterUrl} layout="fill" priority />
       </div>
+      <div ref={videoRef} className="w-full h-full absolute top-0 left-0" />
       {!isPlaying && (
         <button
           onClick={addIframe}

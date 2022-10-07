@@ -18,7 +18,7 @@ export const ModImage = (props: Props) => (
     )}
   >
     <Image
-      className="object-contain object-top shadow-xl shadow-black brightness-75"
+      className="object-contain object-top shadow-xl shadow-black"
       src={props.src}
       width={props.width}
       height={props.width ? props.width / (16 / 9) : undefined}
