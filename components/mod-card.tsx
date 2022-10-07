@@ -14,7 +14,7 @@ export const ModCard = (props: Mod) => {
   return (
     <Card>
       <div className="relative flex justify-center">
-        <div className="m-4 text-shadow">
+        <div className="m-4 text-shadow text-center">
           <h2 className="text-3xl font-normal">{props.title}</h2>
           <p>for {props.gameName}</p>
         </div>
