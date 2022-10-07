@@ -4,7 +4,7 @@ import { ButtonLink } from './button-link';
 import { LinkList } from './link-list';
 import { Section } from './section';
 import { Mod } from '../pages/[modPage]';
-import YoutubeLite from './youtube-embed/youtube-embed';
+import { YoutubeEmbed } from './youtube-embed/youtube-embed';
 import { LinkListItem } from './link-list-item';
 import { Card } from './card';
 
@@ -69,7 +69,7 @@ export const ModCard = (props: Mod) => {
           )}
         </div>
         {props.mainVideo && (
-          <YoutubeLite
+          <YoutubeEmbed
             urlOrId={props.mainVideo}
             poster="maxresdefault"
             title={props.title}

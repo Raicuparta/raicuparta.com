@@ -1,10 +1,11 @@
-lockfileVersion: 5.3
+lockfileVersion: 5.4
 
 specifiers:
   '@radix-ui/react-aspect-ratio': ^1.0.0
   '@svgr/webpack': 6.2.1
   '@types/node': 18.0.3
   '@types/react': 18.0.15
+  '@types/yt-player': ^3.5.1
   autoprefixer: ^10.4.7
   link-preview-js: ^3.0.4
   next: 12.2.2
@@ -17,22 +18,25 @@ specifiers:
   tailwind-merge: ^1.5.1
   tailwindcss: ^3.1.6
   typescript: 4.7.4
+  yt-player: ^3.6.1
 
 dependencies:
-  '@radix-ui/react-aspect-ratio': 1.0.0_react-dom@18.0.0+react@18.2.0
+  '@radix-ui/react-aspect-ratio': 1.0.0_zkivwhhj7zn2gwvu72jup5wu5i
   '@svgr/webpack': 6.2.1
+  '@types/yt-player': 3.5.1
   link-preview-js: 3.0.4
-  next: 12.2.2_dddfdc40c60414ae75c874fcebf9fb6d
+  next: 12.2.2_3xp5yqggaqkk45oiot6ox6p3nu
   react: 18.2.0
   react-dom: 18.0.0_react@18.2.0
   sass: 1.53.0
   tailwind-merge: 1.5.1
+  yt-player: 3.6.1
 
 devDependencies:
   '@types/node': 18.0.3
   '@types/react': 18.0.15
   autoprefixer: 10.4.7_postcss@8.4.14
-  next-export-optimize-images: 1.5.3_649857f3a4e5f95a365cb8ea3d4a3b9e
+  next-export-optimize-images: 1.5.3_msmfp45e4x4vuns4xdvd2sr3ty
   postcss: 8.4.14
   prettier: 2.7.1
   tailwindcss: 3.1.6
@@ -1448,14 +1452,14 @@ packages:
       fastq: 1.13.0
     dev: true
 
-  /@radix-ui/react-aspect-ratio/1.0.0_react-dom@18.0.0+react@18.2.0:
+  /@radix-ui/react-aspect-ratio/1.0.0_zkivwhhj7zn2gwvu72jup5wu5i:
     resolution: {integrity: sha512-/QlrIrrcWU8QPz5AccWgKdQGUFw+EKZaxzlH5eWqbOCBTmq0kM1lgaa9EbsmyJwOTtlN0Az9F83lNboQubifwg==}
     peerDependencies:
       react: ^16.8 || ^17.0 || ^18.0
       react-dom: ^16.8 || ^17.0 || ^18.0
     dependencies:
       '@babel/runtime': 7.17.8
-      '@radix-ui/react-primitive': 1.0.0_react-dom@18.0.0+react@18.2.0
+      '@radix-ui/react-primitive': 1.0.0_zkivwhhj7zn2gwvu72jup5wu5i
       react: 18.2.0
       react-dom: 18.0.0_react@18.2.0
     dev: false
@@ -1469,7 +1473,7 @@ packages:
       react: 18.2.0
     dev: false
 
-  /@radix-ui/react-primitive/1.0.0_react-dom@18.0.0+react@18.2.0:
+  /@radix-ui/react-primitive/1.0.0_zkivwhhj7zn2gwvu72jup5wu5i:
     resolution: {integrity: sha512-EyXe6mnRlHZ8b6f4ilTDrXmkLShICIuOTTj0GX4w1rp+wSxf3+TD05u1UOITC8VsJ2a9nwHvdXtOXEOl0Cw/zQ==}
     peerDependencies:
       react: ^16.8 || ^17.0 || ^18.0
@@ -1717,6 +1721,10 @@ packages:
   /@types/scheduler/0.16.2:
     resolution: {integrity: sha512-hppQEBDmlwhFAXKJX2KnWLYu5yMfi91yazPb2l+lbJiwW+wdo1gNeRA+3RgNSO39WYX2euey41KEwnqesU2Jew==}
     dev: true
+
+  /@types/yt-player/3.5.1:
+    resolution: {integrity: sha512-OvcbE+ageSYE5Mnw3j062mIQb0ducQWaJYFZUlTRgsAa8PygzgKwfxFlbMQafkAzYaSNi93H4r9Z3KBAXEGqEw==}
+    dev: false
 
   /abort-controller/3.0.0:
     resolution: {integrity: sha512-h8lQ8tacZYnR3vNQTgibj+tODHI5/+l06Au2Pcriv/Gmet0eaj4TwWH41sO9wnHDiQsEj19q0drzdWdeAHtweg==}
@@ -2566,6 +2574,10 @@ packages:
       - encoding
     dev: false
 
+  /load-script2/2.0.6:
+    resolution: {integrity: sha512-pyuw/AR+ycZkRKgkMyXOIf/o2OnRQPc9grjZ04wVOeoJ7SqX97WlcZahl+3/r5qi09L/5d0iCVZ0q4OqNT/v0Q==}
+    dev: false
+
   /lodash.debounce/4.0.8:
     resolution: {integrity: sha1-gteb/zCmfEAF/9XiUVMArZyk168=}
     dev: false
@@ -2641,7 +2653,7 @@ packages:
     resolution: {integrity: sha512-ONmRUqK7zj7DWX0D9ADe03wbwOBZxNAfF20PlGfCWQcD3+/MakShIHrMqx9YwPTfxDdF1zLeL+RGZiR9kGMLdg==}
     dev: true
 
-  /next-export-optimize-images/1.5.3_649857f3a4e5f95a365cb8ea3d4a3b9e:
+  /next-export-optimize-images/1.5.3_msmfp45e4x4vuns4xdvd2sr3ty:
     resolution: {integrity: sha512-e1+5G0gcTSNWFAfOUcSdLTT2XLeBDXjo7gGzn2G6hxLpdyTQxOwhhlQOB7x0jU5tsU2r1TnAPrbJy7Tko7C1fQ==}
     engines: {node: ^14.0.0 || ^16.0.0 || ^18.0.0}
     hasBin: true
@@ -2655,13 +2667,13 @@ packages:
       fs-extra: 10.1.0
       got: 11.8.5
       lodash.uniqwith: 4.5.0
-      next: 12.2.2_dddfdc40c60414ae75c874fcebf9fb6d
+      next: 12.2.2_3xp5yqggaqkk45oiot6ox6p3nu
       react: 18.2.0
       react-dom: 18.0.0_react@18.2.0
       sharp: 0.30.7
     dev: true
 
-  /next/12.2.2_dddfdc40c60414ae75c874fcebf9fb6d:
+  /next/12.2.2_3xp5yqggaqkk45oiot6ox6p3nu:
     resolution: {integrity: sha512-zAYFY45aBry/PlKONqtlloRFqU/We3zWYdn2NoGvDZkoYUYQSJC8WMcalS5C19MxbCZLUVCX7D7a6gTGgl2yLg==}
     engines: {node: '>=12.22.0'}
     hasBin: true
@@ -3424,3 +3436,9 @@ packages:
   /yaml/1.10.2:
     resolution: {integrity: sha512-r3vXyErRCYJ7wg28yvBY5VSoAF8ZvlcW9/BwUzEtUsjvX/DKs24dIkuwjtuprwJJHsbyUbLApepYTR1BN4uHrg==}
     engines: {node: '>= 6'}
+
+  /yt-player/3.6.1:
+    resolution: {integrity: sha512-JzpR/rlB73QCSq1V7YmE0rNceuThbJhDrjb0dNSk+2QJsdFWuU6quMofUkuiiXu71P3wgzyhLuNl/Q0ZgQlbwA==}
+    dependencies:
+      load-script2: 2.0.6
+    dev: false
