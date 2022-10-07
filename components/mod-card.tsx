@@ -20,7 +20,7 @@ export const ModCard = (props: Mod) => {
         </div>
         <div className="absolute top-0 -z-10 w-full h-full overflow-hidden">
           <Image
-            className="w-full h-full object-cover blur"
+            className="w-full h-full object-cover blur opacity-75"
             src={imagePath}
             layout="fill"
             priority
@@ -78,7 +78,7 @@ export const ModCard = (props: Mod) => {
         {props.videos.length > 0 && (
           <Section title="More Videos">
             <div className="flex flex-wrap gap-4 justify-center">
-              {props.videos.map((video, index) => (
+              {props.videos.map((video) => (
                 <ButtonLink
                   className="rounded overflow-hidden"
                   key={video.url}
