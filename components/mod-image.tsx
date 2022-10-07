@@ -18,7 +18,7 @@ export const ModImage = (props: Props) => (
     )}
   >
     <Image
-      className="object-contain object-top shadow-xl shadow-black"
+      className="object-contain object-top"
       src={props.src}
       width={props.width}
       height={props.width ? props.width / (16 / 9) : undefined}
@@ -27,8 +27,10 @@ export const ModImage = (props: Props) => (
       priority
       objectFit={props.width ? undefined : 'cover'}
     />
-    <div className="absolute bottom-4 flex flex-col items-center gap-4">
-      <h2 className="text-4xl font-normal text-shadow">{props.title}</h2>
+    <div className="absolute h-full flex flex-col items-center justify-between p-1">
+      <h2 className="text-4xl font-normal text-shadow bg-black bg-opacity-20 py-1 px-3 rounded">
+        {props.title}
+      </h2>
       <span className="bg-black bg-opacity-75 px-2 rounded text-shadow">
         for {props.gameName}
       </span>
