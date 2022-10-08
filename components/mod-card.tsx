@@ -90,6 +90,7 @@ export const ModCard = (props: Mod) => {
                       height={180}
                       src={video.images[0]}
                       alt={video.title}
+                      priority
                     />
                   </div>
                   <span className="absolute top-0 text-xs font-semibold bg-black bg-opacity-75 m-1 rounded p-1">
