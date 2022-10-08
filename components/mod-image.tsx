@@ -28,10 +28,10 @@ export const ModImage = (props: Props) => (
       objectFit={props.width ? undefined : 'cover'}
     />
     <div className="absolute h-full flex flex-col items-center justify-between p-1">
-      <h2 className="text-4xl font-normal text-shadow bg-black bg-opacity-20 py-1 px-3 rounded">
+      <span className="text-3xl font-normal drop-shadow-text bg-black bg-opacity-10 py-1 px-3 rounded">
         {props.title}
-      </h2>
-      <span className="bg-black bg-opacity-75 px-2 rounded text-shadow">
+      </span>
+      <span className="bg-black bg-opacity-50 px-2 rounded drop-shadow-text">
         for {props.gameName}
       </span>
     </div>

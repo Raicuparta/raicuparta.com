@@ -17,10 +17,7 @@ interface Props extends IconInfo {
 export const IconLink = (props: Props) => {
   return (
     <ButtonLink
-      className={twMerge(
-        'w-8 flex flex-col items-center drop-shadow',
-        props.className
-      )}
+      className={twMerge('w-8 flex flex-col items-center', props.className)}
       href={props.url}
       title={props.title}
     >

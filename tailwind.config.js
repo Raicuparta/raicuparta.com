@@ -17,6 +17,7 @@ module.exports = {
     },
     dropShadow: {
       DEFAULT: ['0 0 5px rgb(0 0 0 / 0.3)'],
+      text: ['0 0 3px rgb(0 0 0 / 1)'],
     },
     borderRadius: {
       full: '100%',

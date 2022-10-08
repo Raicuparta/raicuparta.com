@@ -15,8 +15,8 @@ specifiers:
   react: 18.2.0
   react-dom: 18.0.0
   sass: 1.53.0
-  tailwind-merge: ^1.5.1
-  tailwindcss: ^3.1.6
+  tailwind-merge: ^1.6.1
+  tailwindcss: 3.1.8
   typescript: 4.7.4
   yt-player: ^3.6.1
 
@@ -29,7 +29,7 @@ dependencies:
   react: 18.2.0
   react-dom: 18.0.0_react@18.2.0
   sass: 1.53.0
-  tailwind-merge: 1.5.1
+  tailwind-merge: 1.6.1
   yt-player: 3.6.1
 
 devDependencies:
@@ -39,7 +39,7 @@ devDependencies:
   next-export-optimize-images: 1.5.3_msmfp45e4x4vuns4xdvd2sr3ty
   postcss: 8.4.14
   prettier: 2.7.1
-  tailwindcss: 3.1.6
+  tailwindcss: 3.1.8
   typescript: 4.7.4
 
 packages:
@@ -3266,12 +3266,12 @@ packages:
       stable: 0.1.8
     dev: false
 
-  /tailwind-merge/1.5.1:
-    resolution: {integrity: sha512-lqmJS6+3vsNQY77TMMRBVFbWyMcIAAD/09Vs+IXCt3cza58/O7X5DBbOu+7p6LPhw0efK45LL8kAJ7IORccMag==}
+  /tailwind-merge/1.6.1:
+    resolution: {integrity: sha512-wC/tta/BxpmE/4Qc7WX0OK+ajhetgpJZ+IfQMpUBOv4nWjlxQKbq/FBkcZDX7fVGq2RJBnWa3WzsPz5mUe+g7g==}
     dev: false
 
-  /tailwindcss/3.1.6:
-    resolution: {integrity: sha512-7skAOY56erZAFQssT1xkpk+kWt2NrO45kORlxFPXUt3CiGsVPhH1smuH5XoDH6sGPXLyBv+zgCKA2HWBsgCytg==}
+  /tailwindcss/3.1.8:
+    resolution: {integrity: sha512-YSneUCZSFDYMwk+TGq8qYFdCA3yfBRdBlS7txSq0LUmzyeqRe3a8fBQzbz9M3WS/iFT4BNf/nmw9mEzrnSaC0g==}
     engines: {node: '>=12.13.0'}
     hasBin: true
     dependencies:
