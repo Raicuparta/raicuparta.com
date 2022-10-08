@@ -7,13 +7,6 @@ html {
   -webkit-tap-highlight-color: transparent;
 }
 
-body {
-  --background: #473a8f;
-  color: white;
-  background: var(--background);
-  font-weight: lighter;
-}
-
 body::-webkit-scrollbar {
   width: 0.5em;
 }

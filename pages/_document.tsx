@@ -32,7 +32,7 @@ class MyDocument extends Document {
 
   render() {
     return (
-      <Html lang="en">
+      <Html lang="en" className="text-white font-light bg-purple">
         <Head>
           <Analytics id={googleAnalyticsId} />
           <meta name="Description" content="Raicuparta: VR Mod Developer" />
