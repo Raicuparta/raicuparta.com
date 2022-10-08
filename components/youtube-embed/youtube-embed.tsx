@@ -59,7 +59,7 @@ export const YoutubeEmbed = ({
       {...props}
     >
       <div className="absolute top-0 left-0 h-full w-full">
-        <Image src={posterUrl} layout="fill" priority />
+        <Image src={posterUrl} layout="fill" priority alt={title} />
       </div>
       <div ref={videoRef} className="w-full h-full absolute top-0 left-0" />
       {!isPlaying && (

@@ -72,7 +72,7 @@ export const ModCard = (props: Mod) => {
           <YoutubeEmbed
             urlOrId={props.mainVideo}
             poster="maxresdefault"
-            title={props.title}
+            title={`${props.gameName} VR mod ${props.title} video.`}
           />
         )}
         {props.videos.length > 0 && (
