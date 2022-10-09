@@ -87,11 +87,12 @@
       }
     ],
     "buttonLinks": {
+      "itch": "https://raicuparta.itch.io/stanley-vr",
       "patreon": "https://www.patreon.com/raivr"
     },
     "gameName": "The Stanley Parable: Ultra Deluxe",
     "gameKey": "stanley-parable",
-    "description": "StanleyVR is a VR mod for The Stanley Parable: Ultra Deluxe. Still being polished but the full game is already playable. Full room-scale VR with motion controls.",
+    "description": "StanleyVR is a VR mod for The Stanley Parable: Ultra Deluxe. Still being polished but the full game is already playable. Includes full room-scale VR with motion controls. You can gain early access with a one-time purchase on Itch.io, or by being a subscriber on Patreon.",
     "gameLinks": [
       {
         "title": "The Stanley Parable: Ultra Deluxe on Steam",
