@@ -40,6 +40,7 @@ const Home = () => (
               key={mod.gameKey}
               href={`${mod.gameKey}-vr-mod`}
               className={isBig ? 'sm:col-span-2' : undefined}
+              title={`${mod.title} mod for ${mod.gameName}`}
             >
               <ModImage
                 src={`/mods/${mod.gameKey}.jpg`}
