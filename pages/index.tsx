@@ -32,21 +32,18 @@ const Home = () => (
       <h2 className="text-2xl font-normal text-center mt-4">
         Raicuparta's VR mods
       </h2>
-      <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 justify-center">
-        {mods.map((mod, index) => {
-          const isBig = mods.length % 2 !== 0 && index == 0;
+      <div className="grid gap-4 grid-cols-1 sm:grid-cols-2">
+        {mods.map((mod) => {
           return (
             <ButtonLink
               key={mod.gameKey}
               href={`${mod.gameKey}-vr-mod`}
-              className={isBig ? 'sm:col-span-2' : undefined}
               title={`${mod.title} mod for ${mod.gameName}`}
             >
               <ModImage
                 src={`/mods/${mod.gameKey}.jpg`}
                 title={mod.title}
                 gameName={mod.gameName}
-                className={`rounded${isBig ? ' h-52' : ''}`}
               />
             </ButtonLink>
           );
