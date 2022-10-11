@@ -42,7 +42,7 @@ const Home = () => (
               className={isBig ? 'sm:col-span-2' : undefined}
             >
               <ModImage
-                src={`/mods/${mod.gameKey}/mod.jpg`}
+                src={`/mods/${mod.gameKey}.jpg`}
                 title={mod.title}
                 gameName={mod.gameName}
                 className={`rounded${isBig ? ' h-52' : ''}`}
