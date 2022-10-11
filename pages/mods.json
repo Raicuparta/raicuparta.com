@@ -1,5 +1,20 @@
 [
   {
+    "title": "HumanFallVR",
+    "videos": [],
+    "articles": [],
+    "gameName": "Human: Fall Flat",
+    "gameKey": "human-fall-flat",
+    "description": "This mod hasn't been released yet, and there is no ETA as of now. This will be a full VR mod for Human: Fall Flat, with motion controls, somehow.",
+    "buttonLinks": {},
+    "gameLinks": [
+      {
+        "title": "Human: Fall Flat on Steam",
+        "url": "https://store.steampowered.com/app/477160/Human_Fall_Flat/"
+      }
+    ]
+  },
+  {
     "title": "BaboonVR",
     "mainVideo": "g3mzQDQ-iiE",
     "videos": [
