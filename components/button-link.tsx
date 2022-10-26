@@ -1,11 +1,8 @@
 import Link from 'next/link';
-import { DetailedHTMLProps, AnchorHTMLAttributes } from 'react';
+import { ComponentProps } from 'react';
 import { twMerge } from 'tailwind-merge';
 
-type Props = DetailedHTMLProps<
-  AnchorHTMLAttributes<HTMLAnchorElement>,
-  HTMLAnchorElement
->;
+type Props = ComponentProps<typeof Link>;
 
 export const ButtonLink: React.FunctionComponent<Props> = ({
   children,
@@ -13,21 +10,20 @@ export const ButtonLink: React.FunctionComponent<Props> = ({
   href,
   ...props
 }) => {
-  const isExternal = href?.startsWith('http');
+  const isExternal = href.toString().startsWith('http');
 
   return (
-    <Link href={href || '#'}>
-      <a
-        className={twMerge(
-          className,
-          'hover:brightness-125 will-change-transform'
-        )}
-        {...props}
-        target={isExternal ? '_blank' : undefined}
-        rel={isExternal ? 'noopener' : undefined}
-      >
-        {children}
-      </a>
+    <Link
+      href={href || '#'}
+      className={twMerge(
+        className,
+        'hover:brightness-125 will-change-transform'
+      )}
+      {...props}
+      target={isExternal ? '_blank' : undefined}
+      rel={isExternal ? 'noopener' : undefined}
+    >
+      {children}
     </Link>
   );
 };

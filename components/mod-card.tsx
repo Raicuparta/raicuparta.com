@@ -22,7 +22,7 @@ export const ModCard = (props: Mod) => {
           <Image
             className="w-full h-full object-cover blur"
             src={imagePath}
-            layout="fill"
+            fill
             priority
             alt={props.title}
           />
