@@ -54,6 +54,9 @@ class MyDocument extends Document {
             href="/favicon-16x16.png"
           />
           <link rel="manifest" href="/site.webmanifest" />
+          <a rel="me" href="https://mastodon.gamedev.place/@Raicuparta">
+            Mastodon
+          </a>
           <meta name="msapplication-TileColor" content="#da532c" />
           <meta name="theme-color" content="#ffffff" />
         </Head>
