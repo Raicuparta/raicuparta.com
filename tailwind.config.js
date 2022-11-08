@@ -1,3 +1,5 @@
+const colors = require('./colors.js');
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
@@ -5,16 +7,7 @@ module.exports = {
     './components/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
-    colors: {
-      patreon: '#d6343c',
-      itch: '#c04e4e',
-      cta: '#3a8f7e',
-      white: '#ffffff',
-      darkWhite: '#e6e1ff',
-      overlay: 'rgba(0, 0, 0, 0.3)',
-      black: '#000',
-      purple: '#473a8f',
-    },
+    colors,
     dropShadow: {
       DEFAULT: ['0 0 5px rgb(0 0 0 / 0.3)'],
       text: ['0 0 3px rgb(0 0 0 / 1)'],

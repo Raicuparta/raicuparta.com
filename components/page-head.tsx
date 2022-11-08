@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import { useRouter } from 'next/router';
+import colors from '../colors';
 import { websiteUrl } from '../helpers/constants';
 
 type Props = {
@@ -36,7 +37,7 @@ export const PageHead = (props: Props) => {
         property="og:image:height"
         content={`${props.imageHeight || props.imageWidth}px`}
       />
-      <meta name="theme-color" content="#473a8f" />
+      <meta name="theme-color" content={colors.purple} />
       {props.children}
     </Head>
   );
