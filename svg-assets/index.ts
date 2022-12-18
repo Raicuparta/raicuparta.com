@@ -6,6 +6,9 @@ import Download from './download.svg';
 import YouTube from './youtube.svg';
 import Return from './return.svg';
 import Itch from './itch.svg';
+import Mastodon from './mastodon.svg';
+import TikTok from './tiktok.svg';
+import PayPal from './paypal.svg';
 
 const assets = {
   Dev,
@@ -16,6 +19,9 @@ const assets = {
   YouTube,
   Return,
   Itch,
+  Mastodon,
+  TikTok,
+  PayPal,
 };
 
 export type IconName = keyof typeof assets;
