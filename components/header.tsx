@@ -12,7 +12,7 @@ export const Header = ({ title }: Props) => (
         <Image
           height="120"
           width="120"
-          src="/img/wario.png"
+          src="/img/avatar.png"
           className="rounded-full"
           alt="Raicuparta"
           priority

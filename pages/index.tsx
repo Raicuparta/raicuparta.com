@@ -8,7 +8,7 @@ const Home = () => (
   <>
     <PageHead
       description="Raicuparta makes VR mods for flat games"
-      imageUrl="/img/wario.png"
+      imageUrl="/img/avatar.png"
       imageWidth={120}
       title="Raicuparta's VR mods"
     />
