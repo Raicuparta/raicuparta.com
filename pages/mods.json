@@ -1,59 +1,5 @@
 [
   {
-    "title": "HumanFallVR",
-    "videos": [],
-    "articles": [],
-    "gameName": "Human: Fall Flat",
-    "gameKey": "human-fall-flat",
-    "description": "This mod hasn't been released yet, and there is no ETA as of now. This will be a full VR mod for Human: Fall Flat, with motion controls, somehow.",
-    "buttonLinks": {},
-    "gameLinks": [
-      {
-        "title": "Human: Fall Flat on Steam",
-        "url": "https://store.steampowered.com/app/477160/Human_Fall_Flat/"
-      }
-    ]
-  },
-  {
-    "title": "BaboonVR",
-    "mainVideo": "g3mzQDQ-iiE",
-    "videos": [
-      "https://www.youtube.com/watch?v=DUnzTh49XoI",
-      "https://www.youtube.com/watch?v=XICW_xbxGZs"
-    ],
-    "articles": [
-      {
-        "title": "PCGamer: Trombone Champ looks next level with this VR mod",
-        "url": "https://www.pcgamer.com/trombone-champ-looks-next-level-with-this-vr-mod/"
-      },
-      {
-        "title": "Eurogamer: A modder has added VR to Trombone Champ",
-        "url": "https://www.eurogamer.net/a-modder-has-added-vr-to-trombone-champ"
-      },
-      {
-        "title": "NME: 'Trombone Champ' gets unofficial VR support with 'meme mod'",
-        "url": "https://www.nme.com/news/gaming-news/trombone-champ-gets-unofficial-vr-support-with-meme-mod-3317965"
-      },
-      {
-        "title": "'Trombone Champ' Mod Brings VR Support to the Internet's Silliest Game",
-        "url": "https://www.roadtovr.com/trombone-champ-vr-mod-quest-2-steam-pc/"
-      }
-    ],
-    "gameName": "Trombone Champ",
-    "gameKey": "trombone-champ",
-    "description": "BaboonVR is a VR mod for Trombone Champ. A silly meme mod for a silly meme game. The game screen is shown as a projection in front of you, while you use your hands to control the trombone. The mod is still being developed, but you can gain early access with a one-time purchase on Itch.io, or by being a subscriber on Patreon.",
-    "buttonLinks": {
-      "itch": "https://raicuparta.itch.io/baboon-vr",
-      "patreon": "https://www.patreon.com/raivr"
-    },
-    "gameLinks": [
-      {
-        "title": "Trombone Champ on Steam",
-        "url": "https://store.steampowered.com/app/1059990/Trombone_Champ/"
-      }
-    ]
-  },
-  {
     "title": "HeavenVR",
     "mainVideo": "zC-k2HTqg1A",
     "videos": [
@@ -84,67 +30,43 @@
     ]
   },
   {
-    "title": "StanleyVR",
-    "mainVideo": "qM25FLL-NSQ",
+    "title": "NomaiVR",
+    "mainVideo": "gPFiYRMm8Ok",
     "videos": [
-      "https://youtu.be/JVanThRk5e8",
-      "https://youtu.be/iYt0YlLFjYI",
-      "https://youtu.be/ZIAWcsPLT1c"
+      "https://youtu.be/g2NbjF4fG0s",
+      "https://youtu.be/SCZ8vtl4sVs",
+      "https://youtu.be/5ntWk0rJTC0",
+      "https://youtu.be/_mfKvDbeEkg"
     ],
     "articles": [
       {
-        "title": "UploadVR: The Stanley Parable Is Getting A VR Mod, First Footage Revealed",
-        "url": "https://uploadvr.com/the-stanley-parable-vr-mod/"
+        "title": "UploadVR: Outer Wilds Now Has An Incredible VR Mod",
+        "url": "https://uploadvr.com/outer-wilds-vr-mod/"
       },
       {
-        "title": "Real o Virtual: The Stanley Parable también tendrá mod VR",
-        "url": "https://www.realovirtual.com/noticias/11309/stanley-parable-tendra-mod-vr"
+        "title": "Real o Virtual: Outer Wilds está en Gamepass y se puede jugar en VR",
+        "url": "https://www.realovirtual.com/noticias/10852/outer-wilds-esta-gamepass-se-puede-jugar-vr"
       }
     ],
+    "gameName": "Outer Wilds",
+    "gameKey": "outer-wilds",
+    "description": "NomaiVR is a VR mod for Outer Wilds. It was my first VR mod. The full game can be played in VR with room-scale tracking and motion controls.",
     "buttonLinks": {
-      "itch": "https://raicuparta.itch.io/stanley-vr",
-      "patreon": "https://www.patreon.com/raivr"
-    },
-    "gameName": "The Stanley Parable: Ultra Deluxe",
-    "gameKey": "stanley-parable",
-    "description": "StanleyVR is a VR mod for The Stanley Parable: Ultra Deluxe. Still being polished but the full game is already playable. Includes full room-scale VR with motion controls. You can gain early access with a one-time purchase on Itch.io, or by being a subscriber on Patreon.",
-    "gameLinks": [
-      {
-        "title": "The Stanley Parable: Ultra Deluxe on Steam",
-        "url": "https://store.steampowered.com/app/1703340/The_Stanley_Parable_Ultra_Deluxe/"
-      },
-      {
-        "title": "Official page",
-        "url": "https://www.stanleyparable.com/"
-      }
-    ]
-  },
-  {
-    "title": "ShipbreakerVR",
-    "mainVideo": "UGGtz1lYMNw",
-    "videos": [
-      "https://youtu.be/PZLhq5NiFKo"
-    ],
-    "articles": [],
-    "gameName": "Hardspace: Shipbreaker",
-    "gameKey": "shipbreaker",
-    "description": "ShipbreakerVR is a VR mod for Hardspace: Shipbreaker. This mod is still in early development. The current version has no motion controls, but features camera-independent aiming for all the game tools.",
-    "buttonLinks": {
-      "itch": "https://raicuparta.itch.io/shipbreaker-vr",
-      "source": "https://github.com/Raicuparta/shipbreaker-vr"
+      "download": "https://outerwildsmods.com/mods/nomaivr/",
+      "source": "https://github.com/Raicuparta/nomai-vr"
     },
     "gameLinks": [
       {
-        "title": "Hardspace: Shipbreaker on Steam",
-        "url": "https://store.steampowered.com/app/1161580/Hardspace_Shipbreaker/"
+        "title": "Outer Wilds on Steam",
+        "url": "https://store.steampowered.com/app/753640/Outer_Wilds/"
       },
       {
-        "title": "Hardspace: Shipbreaker on PC Xbox Game Pass",
-        "url": "https://www.xbox.com/en-US/games/store/hardspace-shipbreaker/9mw8rmsbb5qh"
+        "title": "Outer Wilds on PC Xbox Game Pass",
+        "url": "https://www.xbox.com/en-US/games/store/outer-wilds/C596FKDKMQN7"
       },
       {
-        "title": "Official page",
-        "url": "https://www.focus-entmt.com/en/games/hardspace-shipbreaker"
+        "title": "Outer Wilds on Epic Games Store",
+        "url": "https://store.epicgames.com/en-US/p/outerwilds"
       }
     ]
   },
@@ -201,65 +123,106 @@
     ]
   },
   {
-    "title": "NomaiVR",
-    "mainVideo": "gPFiYRMm8Ok",
+    "title": "StanleyVR",
+    "mainVideo": "qM25FLL-NSQ",
     "videos": [
-      "https://youtu.be/g2NbjF4fG0s",
-      "https://youtu.be/SCZ8vtl4sVs",
-      "https://youtu.be/5ntWk0rJTC0",
-      "https://youtu.be/_mfKvDbeEkg"
+      "https://youtu.be/JVanThRk5e8",
+      "https://youtu.be/iYt0YlLFjYI",
+      "https://youtu.be/ZIAWcsPLT1c"
     ],
     "articles": [
       {
-        "title": "UploadVR: Outer Wilds Now Has An Incredible VR Mod",
-        "url": "https://uploadvr.com/outer-wilds-vr-mod/"
+        "title": "UploadVR: The Stanley Parable Is Getting A VR Mod, First Footage Revealed",
+        "url": "https://uploadvr.com/the-stanley-parable-vr-mod/"
       },
       {
-        "title": "Real o Virtual: Outer Wilds está en Gamepass y se puede jugar en VR",
-        "url": "https://www.realovirtual.com/noticias/10852/outer-wilds-esta-gamepass-se-puede-jugar-vr"
+        "title": "Real o Virtual: The Stanley Parable también tendrá mod VR",
+        "url": "https://www.realovirtual.com/noticias/11309/stanley-parable-tendra-mod-vr"
       }
     ],
-    "gameName": "Outer Wilds",
-    "gameKey": "outer-wilds",
-    "description": "NomaiVR is a VR mod for Outer Wilds. It was my first VR mod. The full game can be played in VR with room-scale tracking and motion controls.",
     "buttonLinks": {
-      "download": "https://outerwildsmods.com/mods/nomaivr/",
-      "source": "https://github.com/Raicuparta/nomai-vr"
+      "itch": "https://raicuparta.itch.io/stanley-vr",
+      "patreon": "https://www.patreon.com/raivr"
     },
+    "gameName": "The Stanley Parable: Ultra Deluxe",
+    "gameKey": "stanley-parable",
+    "description": "StanleyVR is a VR mod for The Stanley Parable: Ultra Deluxe. Still being polished but the full game is already playable. Includes full room-scale VR with motion controls. You can gain early access with a one-time purchase on Itch.io, or by being a subscriber on Patreon.",
     "gameLinks": [
       {
-        "title": "Outer Wilds on Steam",
-        "url": "https://store.steampowered.com/app/753640/Outer_Wilds/"
+        "title": "The Stanley Parable: Ultra Deluxe on Steam",
+        "url": "https://store.steampowered.com/app/1703340/The_Stanley_Parable_Ultra_Deluxe/"
       },
       {
-        "title": "Outer Wilds on PC Xbox Game Pass",
-        "url": "https://www.xbox.com/en-US/games/store/outer-wilds/C596FKDKMQN7"
-      },
-      {
-        "title": "Outer Wilds on Epic Games Store",
-        "url": "https://store.epicgames.com/en-US/p/outerwilds"
+        "title": "Official page",
+        "url": "https://www.stanleyparable.com/"
       }
     ]
   },
   {
-    "title": "ColossalVR",
-    "mainVideo": "kqGIscwN6vc",
-    "videos": [],
+    "title": "BaboonVR",
+    "mainVideo": "g3mzQDQ-iiE",
+    "videos": [
+      "https://www.youtube.com/watch?v=DUnzTh49XoI",
+      "https://www.youtube.com/watch?v=XICW_xbxGZs"
+    ],
+    "articles": [
+      {
+        "title": "PCGamer: Trombone Champ looks next level with this VR mod",
+        "url": "https://www.pcgamer.com/trombone-champ-looks-next-level-with-this-vr-mod/"
+      },
+      {
+        "title": "Eurogamer: A modder has added VR to Trombone Champ",
+        "url": "https://www.eurogamer.net/a-modder-has-added-vr-to-trombone-champ"
+      },
+      {
+        "title": "NME: 'Trombone Champ' gets unofficial VR support with 'meme mod'",
+        "url": "https://www.nme.com/news/gaming-news/trombone-champ-gets-unofficial-vr-support-with-meme-mod-3317965"
+      },
+      {
+        "title": "'Trombone Champ' Mod Brings VR Support to the Internet's Silliest Game",
+        "url": "https://www.roadtovr.com/trombone-champ-vr-mod-quest-2-steam-pc/"
+      }
+    ],
+    "gameName": "Trombone Champ",
+    "gameKey": "trombone-champ",
+    "description": "BaboonVR is a VR mod for Trombone Champ. A silly meme mod for a silly meme game. The game screen is shown as a projection in front of you, while you use your hands to control the trombone. The mod is still being developed, but you can gain early access with a one-time purchase on Itch.io, or by being a subscriber on Patreon.",
     "buttonLinks": {
+      "itch": "https://raicuparta.itch.io/baboon-vr",
       "patreon": "https://www.patreon.com/raivr"
     },
-    "articles": [],
-    "gameName": "Praey for the Gods",
-    "gameKey": "praey-for-the-gods",
-    "description": "ColossalVR is a VR mod for Praey for the Gods. This is a third person game, and the VR mod keeps that perspective. A tracked VR camera with adjustments to the game UI.",
     "gameLinks": [
       {
-        "title": "Praey for the Gods on Steam",
-        "url": "https://store.steampowered.com/app/494430/Praey_for_the_Gods/"
+        "title": "Trombone Champ on Steam",
+        "url": "https://store.steampowered.com/app/1059990/Trombone_Champ/"
+      }
+    ]
+  },
+  {
+    "title": "ShipbreakerVR",
+    "mainVideo": "UGGtz1lYMNw",
+    "videos": [
+      "https://youtu.be/PZLhq5NiFKo"
+    ],
+    "articles": [],
+    "gameName": "Hardspace: Shipbreaker",
+    "gameKey": "shipbreaker",
+    "description": "ShipbreakerVR is a VR mod for Hardspace: Shipbreaker. This mod is still in early development. The current version has no motion controls, but features camera-independent aiming for all the game tools.",
+    "buttonLinks": {
+      "itch": "https://raicuparta.itch.io/shipbreaker-vr",
+      "source": "https://github.com/Raicuparta/shipbreaker-vr"
+    },
+    "gameLinks": [
+      {
+        "title": "Hardspace: Shipbreaker on Steam",
+        "url": "https://store.steampowered.com/app/1161580/Hardspace_Shipbreaker/"
+      },
+      {
+        "title": "Hardspace: Shipbreaker on PC Xbox Game Pass",
+        "url": "https://www.xbox.com/en-US/games/store/hardspace-shipbreaker/9mw8rmsbb5qh"
       },
       {
         "title": "Official page",
-        "url": "https://www.praeyforthegods.com/"
+        "url": "https://www.focus-entmt.com/en/games/hardspace-shipbreaker"
       }
     ]
   }
