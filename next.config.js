@@ -14,7 +14,7 @@ module.exports = (phase) => {
   const isProd = phase === PHASE_PRODUCTION_BUILD;
 
   const env = {
-    analyticsId: isProd ? 'UA-65658920-2' : undefined,
+    analyticsId: isProd ? 'G-S6H5DSE38D' : undefined,
     isProd,
   };
 
