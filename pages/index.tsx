@@ -2,13 +2,14 @@ import { ButtonLink } from '../components/button-link';
 import { ModImage } from '../components/mod-image';
 import { PageHead } from '../components/page-head';
 import { TextLink } from '../components/text-link';
+import { websiteUrl } from '../helpers/constants';
 import mods from './mods.json';
 
 const Home = () => (
   <>
     <PageHead
       description="Raicuparta makes VR mods for flat games"
-      imageUrl="/img/avatar.png"
+      imageUrl={`${websiteUrl}/img/avatar.png`}
       imageWidth={120}
       title="Raicuparta's VR mods"
     />

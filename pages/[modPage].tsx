@@ -5,7 +5,6 @@ import { PageHead } from '../components/page-head';
 import { getLinkPreview } from 'link-preview-js';
 import type { GetStaticPropsContext, InferGetStaticPropsType } from 'next';
 import { URL } from 'url';
-import Link from 'next/link';
 import { TextLink } from '../components/text-link';
 import { Card } from '../components/card';
 
@@ -15,7 +14,7 @@ const ModPage = (props: Mod) => (
   <>
     <PageHead
       description={`${props.title} is a mod that converts "${props.gameName}" into a VR game.`}
-      imageUrl={`${websiteUrl}${`/mods/${props.gameKey}/props.jpg`}`}
+      imageUrl={`${websiteUrl}${`/mods/${props.gameKey}.jpg`}`}
       title={`${props.title} mod for ${props.gameName}`}
       imageWidth={400}
       imageHeight={225}
