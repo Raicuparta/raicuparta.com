@@ -51,7 +51,7 @@ const Home = () => (
           );
         })}
       </div>
-      <h2 className="text-2xl font-normal text-center mt-4">
+      {/* <h2 className="text-2xl font-normal text-center mt-4">
         Raicuparta's Other Projects
       </h2>
       <div className="grid gap-4 grid-cols-1 sm:grid-cols-2">
@@ -70,7 +70,7 @@ const Home = () => (
             </ButtonLink>
           );
         })}
-      </div>
+      </div> */}
     </div>
   </>
 );
