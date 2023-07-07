@@ -14,7 +14,7 @@
     "@svgr/webpack": "6.2.1",
     "@types/yt-player": "^3.5.1",
     "link-preview-js": "^3.0.4",
-    "next": "13.0.0",
+    "next": "13.3.4",
     "react": "18.2.0",
     "react-dom": "18.0.0",
     "sass": "1.53.0",
@@ -25,7 +25,7 @@
     "@types/node": "18.0.3",
     "@types/react": "18.0.15",
     "autoprefixer": "^10.4.12",
-    "next-export-optimize-images": "^1.9.0",
+    "next-export-optimize-images": "^2.1.0",
     "postcss": "^8.4.18",
     "prettier": "2.7.1",
     "tailwindcss": "^3.2.1",
@@ -33,7 +33,7 @@
   },
   "engines": {
     "node": ">=14",
-    "pnpm": ">=7"
+    "pnpm": ">=8"
   },
-  "packageManager": "pnpm@7.13.2"
+  "packageManager": "pnpm@8.6.5"
 }
