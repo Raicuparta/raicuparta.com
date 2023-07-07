@@ -4,6 +4,7 @@ import { PageHead } from '../components/page-head';
 import { TextLink } from '../components/text-link';
 import { websiteUrl } from '../helpers/constants';
 import mods from './mods.json';
+import otherProjects from './other-projects.json';
 
 const Home = () => (
   <>
@@ -31,7 +32,7 @@ const Home = () => (
         <TextLink href="https://github.com/Raicuparta">my GitHub</TextLink>.
       </p>
       <h2 className="text-2xl font-normal text-center mt-4">
-        Raicuparta's VR mods
+        Raicuparta's VR Mods
       </h2>
       <div className="grid gap-4 grid-cols-1 sm:grid-cols-2">
         {mods.map((mod) => {
@@ -45,6 +46,26 @@ const Home = () => (
                 src={`/mods/${mod.gameKey}.jpg`}
                 title={mod.title}
                 gameName={mod.gameName}
+              />
+            </ButtonLink>
+          );
+        })}
+      </div>
+      <h2 className="text-2xl font-normal text-center mt-4">
+        Raicuparta's Other Projects
+      </h2>
+      <div className="grid gap-4 grid-cols-1 sm:grid-cols-2">
+        {otherProjects.map((project) => {
+          return (
+            <ButtonLink
+              key={project.id}
+              href={`/projects/${project.id}`}
+              title={project.title}
+            >
+              <ModImage
+                src={`/mods/neon-white.jpg`}
+                title={project.title}
+                gameName={project.title}
               />
             </ButtonLink>
           );
