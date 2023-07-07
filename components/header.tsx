@@ -1,6 +1,4 @@
-import Image from 'next/image';
 import { ButtonLink } from './button-link';
-import svgAssets from '../svg-assets';
 import { Icon } from './icon';
 import { MouseEventHandler, useState } from 'react';
 
