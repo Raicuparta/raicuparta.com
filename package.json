@@ -11,29 +11,29 @@
     "prettier": "prettier --write ."
   },
   "dependencies": {
-    "@svgr/webpack": "6.2.1",
+    "@svgr/webpack": "8.0.1",
     "@types/yt-player": "^3.5.1",
     "link-preview-js": "^3.0.4",
-    "next": "13.0.0",
+    "next": "13.3.4",
     "react": "18.2.0",
-    "react-dom": "18.0.0",
-    "sass": "1.53.0",
-    "tailwind-merge": "^1.7.0",
+    "react-dom": "18.2.0",
+    "sass": "1.63.6",
+    "tailwind-merge": "^1.13.2",
     "yt-player": "^3.6.1"
   },
   "devDependencies": {
     "@types/node": "18.0.3",
-    "@types/react": "18.0.15",
-    "autoprefixer": "^10.4.12",
-    "next-export-optimize-images": "^1.9.0",
-    "postcss": "^8.4.18",
-    "prettier": "2.7.1",
-    "tailwindcss": "^3.2.1",
-    "typescript": "4.7.4"
+    "@types/react": "18.2.14",
+    "autoprefixer": "^10.4.14",
+    "next-export-optimize-images": "^2.1.0",
+    "postcss": "^8.4.25",
+    "prettier": "3.0.0",
+    "tailwindcss": "^3.3.2",
+    "typescript": "5.1.6"
   },
   "engines": {
     "node": ">=14",
-    "pnpm": ">=7"
+    "pnpm": ">=8"
   },
-  "packageManager": "pnpm@7.13.2"
+  "packageManager": "pnpm@8.6.5"
 }

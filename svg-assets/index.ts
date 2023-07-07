@@ -9,6 +9,7 @@ import Itch from './itch.svg';
 import Mastodon from './mastodon.svg';
 import TikTok from './tiktok.svg';
 import PayPal from './paypal.svg';
+import Avatar from './avatar.svg';
 
 const assets = {
   Dev,
@@ -22,6 +23,7 @@ const assets = {
   Mastodon,
   TikTok,
   PayPal,
+  Avatar,
 };
 
 export type IconName = keyof typeof assets;
