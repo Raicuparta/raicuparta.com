@@ -19,8 +19,8 @@ export const ModImage = (props: Props) => (
       className="object-contain drop-shadow"
       src={props.src}
       alt={props.title}
-      width={630}
-      height={500}
+      width={1400}
+      height={400}
       priority
     />
   </div>

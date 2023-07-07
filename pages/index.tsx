@@ -34,7 +34,7 @@ const Home = () => (
       <h2 className="text-2xl font-normal text-center mt-4">
         Raicuparta's VR Mods
       </h2>
-      <div className="grid gap-4 grid-cols-1 sm:grid-cols-2">
+      <div className="flex gap-4 flex-col">
         {mods.map((mod) => {
           return (
             <ButtonLink
@@ -43,7 +43,7 @@ const Home = () => (
               title={`${mod.title} mod for ${mod.gameName}`}
             >
               <ModImage
-                src={`/mods/${mod.gameKey}.jpg`}
+                src={`/mods/${mod.gameKey}.png`}
                 title={mod.title}
                 gameName={mod.gameName}
               />
