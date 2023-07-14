@@ -1,4 +1,6 @@
 import { ButtonLink } from '../components/button-link';
+import { Card } from '../components/card';
+import { MainPageSection } from '../components/main-page-section';
 import { ModImage } from '../components/mod-image';
 import { PageHead } from '../components/page-head';
 import { TextLink } from '../components/text-link';
@@ -15,26 +17,29 @@ const Home = () => (
       title="Raicuparta's VR mods"
     />
     <title>Raicuparta</title>
-    <div className="flex flex-col gap-4 bg-overlay p-4 rounded">
-      <p>Hello. I'm Raicuparta, and I make VR mods for flat screen games.</p>
-      <p>
-        Initially, my mods are available exclusively on{' '}
-        <TextLink href="https://www.patreon.com/raivr">my Patreon</TextLink>. If
-        you're a patron, you'll also get a special role in the{' '}
-        <TextLink href="https://discord.gg/gEEqTVFzvD">
-          Flat2VR Discord
-        </TextLink>
-        , and you'll have access to more frequent development updates and
-        discussion about my mods.
-      </p>
-      <p>
-        After a while, I usually make my mods free and open source, available on{' '}
-        <TextLink href="https://github.com/Raicuparta">my GitHub</TextLink>.
-      </p>
-      <h2 className="text-2xl font-normal text-center mt-4">
-        Raicuparta's VR Mods
-      </h2>
-      <div className="flex gap-4 flex-col">
+    <div className="flex flex-col gap-4">
+      <MainPageSection id="intro">
+        <p>Hello. I'm Raicuparta, and I'm some kind of developer.</p>
+        <p>
+          I'm most known for my{' '}
+          <TextLink href="#vr-mods" isExternal={false}>
+            VR mods
+          </TextLink>
+          : I modify flat games to make them work in VR, with stereo rendering
+          and motion control support. These mods are available on{' '}
+          <TextLink href="https://www.patreon.com/raivr">my Patreon</TextLink>{' '}
+          and on <TextLink href="https://raicuparta.itch.io">Itch.io</TextLink>
+        </p>
+        <p>
+          I also have professional experience with full-stack web development,
+          but mostly frontend. I've used this experience in a few of my{' '}
+          <TextLink isExternal={false} href="#other-projects">
+            personal projects
+          </TextLink>{' '}
+          too.
+        </p>
+      </MainPageSection>
+      <MainPageSection title="Raicuparta's VR Mods" id="vr-mods">
         {mods.map((mod) => {
           return (
             <ButtonLink
@@ -50,11 +55,8 @@ const Home = () => (
             </ButtonLink>
           );
         })}
-      </div>
-      <h2 className="text-2xl font-normal text-center mt-4">
-        Raicuparta's Other Projects
-      </h2>
-      <div className="flex gap-4 flex-col">
+      </MainPageSection>
+      <MainPageSection title="Raicuparta's Other Projects" id="other-projects">
         {otherProjects.map((project) => {
           return (
             <ButtonLink
@@ -70,7 +72,7 @@ const Home = () => (
             </ButtonLink>
           );
         })}
-      </div>
+      </MainPageSection>
     </div>
   </>
 );
