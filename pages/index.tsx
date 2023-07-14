@@ -43,34 +43,34 @@ const Home = () => (
               title={`${mod.title} mod for ${mod.gameName}`}
             >
               <ModImage
-                src={`/mods/${mod.gameKey}.png`}
+                src={`/img/projects/${mod.gameKey}.png`}
                 title={mod.title}
-                gameName={mod.gameName}
+                description={`for ${mod.gameName}`}
               />
             </ButtonLink>
           );
         })}
       </div>
-      {/* <h2 className="text-2xl font-normal text-center mt-4">
+      <h2 className="text-2xl font-normal text-center mt-4">
         Raicuparta's Other Projects
       </h2>
-      <div className="grid gap-4 grid-cols-1 sm:grid-cols-2">
+      <div className="flex gap-4 flex-col">
         {otherProjects.map((project) => {
           return (
             <ButtonLink
               key={project.id}
-              href={`/projects/${project.id}`}
+              href={project.url}
               title={project.title}
             >
               <ModImage
-                src={`/mods/neon-white.jpg`}
+                src={`/img/projects/${project.id}.png`}
                 title={project.title}
-                gameName={project.title}
+                description={project.title}
               />
             </ButtonLink>
           );
         })}
-      </div> */}
+      </div>
     </div>
   </>
 );

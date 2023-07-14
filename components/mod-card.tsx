@@ -9,7 +9,7 @@ import { LinkListItem } from './link-list-item';
 import { Card } from './card';
 
 export const ModCard = (props: Mod) => {
-  const imagePath = `/mods/${props.gameKey}.png`;
+  const imagePath = `/img/projects/${props.gameKey}.png`;
 
   return (
     <Card>

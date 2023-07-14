@@ -4,7 +4,7 @@ import { twMerge } from 'tailwind-merge';
 type Props = {
   src: string;
   title: string;
-  gameName: string;
+  description: string;
   className?: string;
 };
 
@@ -12,7 +12,7 @@ export const ModImage = (props: Props) => (
   <div className={twMerge('relative overflow-hidden rounded', props.className)}>
     <div className="absolute h-full flex flex-col items-center justify-end z-10">
       <span className="bg-black bg-opacity-40 p-2 leading-3 rounded-tr drop-shadow-text">
-        for {props.gameName}
+        {props.description}
       </span>
     </div>
     <Image

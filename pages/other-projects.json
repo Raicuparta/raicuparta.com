@@ -3,18 +3,18 @@
     "title": "Outer Wilds Mod Manager",
     "id": "ow-mod-manager",
     "description": "",
-    "buttonLinks": {
-      "source": "https://github.com/ow-mods/ow-mod-manager",
-      "page": "https://outerwildsmods.com/manager"
-    }
+    "url": "https://outerwildsmods.com/mod-manager"
   },
   {
     "title": "Outer Wilds Mods Website",
     "id": "ow-mods-website",
-    "description": "hoho website",
-    "buttonLinks": {
-      "source": "https://github.com/ow-mods/outerwildsmods.com",
-      "page": "https://outerwildsmods.com"
-    }
+    "description": "",
+    "url": "https://outerwildsmods.com"
+  },
+  {
+    "title": "Lemmy Go",
+    "id": "lemmy-go",
+    "description": "",
+    "url": "https://lemmy.raicuparta.com"
   }
 ]
