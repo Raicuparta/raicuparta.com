@@ -3,7 +3,8 @@
     "title": "HeavenVR",
     "mainVideo": "zC-k2HTqg1A",
     "videos": [
-      "https://www.youtube.com/watch?v=DrwI5f5qqpM"
+      "https://www.youtube.com/watch?v=DrwI5f5qqpM",
+      "https://www.youtube.com/watch?v=9guAWg58RrU"
     ],
     "articles": [
       {
@@ -17,10 +18,11 @@
     ],
     "gameName": "Neon White",
     "gameKey": "neon-white",
-    "description": "HeavenVR is a VR mod for Neon White. This fast-paced shooter/platformer fits VR really well, it's just so fun and addictive. It's a very intense VR experience. The mod is still being developed, but you can gain early access with a one-time purchase on Itch.io, or by being a subscriber on Patreon.",
+    "description": "HeavenVR is a VR mod for Neon White. This fast-paced shooter/platformer fits VR really well, it's just so fun and addictive. It's a very intense VR experience.",
     "buttonLinks": {
       "itch": "https://raicuparta.itch.io/heaven-vr",
-      "patreon": "https://www.patreon.com/raivr"
+      "patreon": "https://www.patreon.com/raivr",
+      "source": "https://github.com/Raicuparta/heaven-vr"
     },
     "gameLinks": [
       {
@@ -185,7 +187,7 @@
     ],
     "gameName": "Trombone Champ",
     "gameKey": "trombone-champ",
-    "description": "BaboonVR is a VR mod for Trombone Champ. A silly meme mod for a silly meme game. The game screen is shown as a projection in front of you, while you use your hands to control the trombone. The mod is still being developed, but you can gain early access with a one-time purchase on Itch.io, or by being a subscriber on Patreon.",
+    "description": "BaboonVR is a VR mod for Trombone Champ. A silly meme mod for a silly meme game. The game screen is shown as a projection in front of you, while you use your hands to control the trombone.",
     "buttonLinks": {
       "itch": "https://raicuparta.itch.io/baboon-vr",
       "patreon": "https://www.patreon.com/raivr"
@@ -206,7 +208,7 @@
     "articles": [],
     "gameName": "Hardspace: Shipbreaker",
     "gameKey": "shipbreaker",
-    "description": "ShipbreakerVR is a VR mod for Hardspace: Shipbreaker. This mod is still in early development. The current version has no motion controls, but features camera-independent aiming for all the game tools.",
+    "description": "ShipbreakerVR is a VR mod for Hardspace: Shipbreaker. Has no motion controls, but features camera-independent aiming for all the game tools.",
     "buttonLinks": {
       "itch": "https://raicuparta.itch.io/shipbreaker-vr",
       "source": "https://github.com/Raicuparta/shipbreaker-vr"

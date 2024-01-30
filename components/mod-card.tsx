@@ -106,7 +106,7 @@ export const ModCard = (props: Mod) => {
             <LinkList>
               {props.articles.map((article) => (
                 <LinkListItem key={article.url} url={article.url}>
-                  <div className="relative rounded overflow-hidden flex w-32 sm:w-40">
+                  <div className="relative rounded overflow-hidden flex">
                     <Image src={article.image} width={160} height={90} alt="" />
                     <div className="absolute top-0 left">
                       <Image
