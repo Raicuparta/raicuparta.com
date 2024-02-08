@@ -9,12 +9,7 @@ type Props = {
 };
 
 export const ModImage = (props: Props) => (
-  <div className={twMerge('relative overflow-hidden rounded', props.className)}>
-    <div className="absolute h-full flex flex-col items-center justify-end z-10">
-      <span className="bg-black bg-opacity-40 p-2 leading-3 rounded-tr drop-shadow-text">
-        {props.description}
-      </span>
-    </div>
+  <div className={twMerge('overflow-hidden rounded', props.className)}>
     <Image
       className="object-contain drop-shadow"
       src={props.src}
@@ -23,5 +18,8 @@ export const ModImage = (props: Props) => (
       height={400}
       priority
     />
+    <div className=" bg-black bg-opacity-20 text-center text-lg p-3 leading-3 drop-shadow-text">
+      {props.description}
+    </div>
   </div>
 );

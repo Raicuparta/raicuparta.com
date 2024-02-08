@@ -3,16 +3,10 @@
     "title": "Rai Pal",
     "id": "rai-pal",
     "description": "",
-    "url": "https://pal.raicuparta.com"
+    "url": "/rai-pal"
   },
   {
-    "title": "Outer Wilds Mod Manager",
-    "id": "ow-mod-manager",
-    "description": "",
-    "url": "https://outerwildsmods.com/mod-manager"
-  },
-  {
-    "title": "Outer Wilds Mods Website",
+    "title": "Outer Wilds Mods",
     "id": "ow-mods-website",
     "description": "",
     "url": "https://outerwildsmods.com"

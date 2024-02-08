@@ -1,4 +1,4 @@
-import { ModCard } from '../components/mod-card';
+import { ProjectCard } from '../components/project-card';
 import mods from './mods.json';
 import { websiteUrl } from '../helpers/constants';
 import { PageHead } from '../components/page-head';
@@ -19,7 +19,7 @@ const ModPage = (props: Mod) => (
       imageWidth={400}
       imageHeight={225}
       largeImage
-    ></PageHead>
+    />
     <Card className="mb-2 p-2" data-nosnippet>
       <TextLink href="/" isExternal={false}>
         Homepage
@@ -27,7 +27,7 @@ const ModPage = (props: Mod) => (
       <span className="text-xl leading-none">{' › '}</span>
       <span>{props.title}</span>
     </Card>
-    <ModCard {...props} />
+    <ProjectCard project={props} />
   </>
 );
 
@@ -60,7 +60,7 @@ export const getStaticProps = async (context: GetStaticPropsContext) => {
 
   if (typeof modPage != 'string') {
     throw new Error(
-      `modPage param is of wrong type. Expected string, got ${typeof modPage}`
+      `modPage param is of wrong type. Expected string, got ${typeof modPage}`,
     );
   }
 
@@ -87,7 +87,7 @@ export const getStaticProps = async (context: GetStaticPropsContext) => {
           favicon: linkPreview.favicons[linkPreview.favicons.length - 1],
           siteName: linkPreview.siteName ?? url,
         };
-      })
+      }),
     )
   ).filter(filterUndefined);
 
@@ -99,7 +99,7 @@ export const getStaticProps = async (context: GetStaticPropsContext) => {
         if (!('title' in linkPreview)) return undefined;
 
         return linkPreview;
-      })
+      }),
     )
   ).filter(filterUndefined);
 

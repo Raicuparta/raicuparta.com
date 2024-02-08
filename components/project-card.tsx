@@ -8,15 +8,22 @@ import { YoutubeEmbed } from './youtube-embed/youtube-embed';
 import { LinkListItem } from './link-list-item';
 import { Card } from './card';
 
-export const ModCard = (props: Mod) => {
-  const imagePath = `/img/projects/${props.gameKey}.png`;
+export type Project = Omit<Mod, 'gameName'> & Partial<Mod>;
+
+type Props = {
+  project: Project;
+  children?: React.ReactNode;
+};
+
+export const ProjectCard = (props: Props) => {
+  const imagePath = `/img/projects/${props.project.gameKey}.png`;
 
   return (
     <Card>
       <div className="relative flex justify-center">
         <div className="m-4 drop-shadow-text text-center">
-          <h2 className="text-3xl font-normal">{props.title}</h2>
-          <p>for {props.gameName}</p>
+          <h2 className="text-3xl font-normal">{props.project.title}</h2>
+          {props.project.gameName && <p>for {props.project.gameName}</p>}
         </div>
         <div className="absolute top-0 -z-10 w-full h-full overflow-hidden">
           <Image
@@ -24,61 +31,62 @@ export const ModCard = (props: Mod) => {
             src={imagePath}
             fill
             priority
-            alt={props.title}
+            alt={props.project.title}
           />
         </div>
       </div>
       <div className="p-4 flex flex-col gap-6">
-        <p>{props.description}</p>
+        {props.project.description && <p>{props.project.description}</p>}
         <div className="flex gap-4 flex-wrap justify-center">
-          {props.buttonLinks?.download && (
+          {props.project.buttonLinks?.download && (
             <IconButton
-              href={props.buttonLinks.download}
+              href={props.project.buttonLinks.download}
               iconName="Download"
               className="bg-cta"
             >
-              Download mod
+              Download {props.project.title}
             </IconButton>
           )}
-          {props.buttonLinks?.itch && (
+          {props.project.buttonLinks?.itch && (
             <IconButton
-              href={props.buttonLinks.itch}
+              href={props.project.buttonLinks.itch}
               iconName="Itch"
               className="bg-itch"
             >
               Download on Itch.io
             </IconButton>
           )}
-          {props.buttonLinks?.patreon && (
+          {props.project.buttonLinks?.source && (
             <IconButton
-              href={props.buttonLinks.patreon}
-              iconName="Patreon"
-              className="bg-patreon"
-            >
-              Subscribe on Patreon
-            </IconButton>
-          )}
-          {props.buttonLinks?.source && (
-            <IconButton
-              href={props.buttonLinks.source}
+              href={props.project.buttonLinks.source}
               iconName="Github"
               className="bg-cta bg-opacity-30"
             >
               Source code
             </IconButton>
           )}
+          {props.project.buttonLinks?.patreon && (
+            <IconButton
+              href={props.project.buttonLinks.patreon}
+              iconName="Patreon"
+              className="bg-patreon"
+            >
+              Subscribe on Patreon
+            </IconButton>
+          )}
         </div>
-        {props.mainVideo && (
+        {props.children}
+        {props.project.mainVideo && (
           <YoutubeEmbed
-            urlOrId={props.mainVideo}
+            urlOrId={props.project.mainVideo}
             poster="maxresdefault"
-            title={`${props.gameName} VR mod ${props.title} video.`}
+            title={`${props.project.gameName} VR mod ${props.project.title} video.`}
           />
         )}
-        {props.videos.length > 0 && (
+        {props.project.videos.length > 0 && (
           <Section title="More Videos">
             <div className="flex flex-wrap gap-4 justify-center">
-              {props.videos.map((video) => (
+              {props.project.videos.map((video) => (
                 <ButtonLink
                   className="rounded overflow-hidden"
                   key={video.url}
@@ -101,10 +109,10 @@ export const ModCard = (props: Mod) => {
             </div>
           </Section>
         )}
-        {props.articles.length > 0 && (
+        {props.project.articles.length > 0 && (
           <Section title="Articles">
             <LinkList>
-              {props.articles.map((article) => (
+              {props.project.articles.map((article) => (
                 <LinkListItem key={article.url} url={article.url}>
                   <div className="relative rounded overflow-hidden flex">
                     <Image src={article.image} width={160} height={90} alt="" />
@@ -129,10 +137,10 @@ export const ModCard = (props: Mod) => {
             </LinkList>
           </Section>
         )}
-        {props.gameLinks.length > 0 && (
-          <Section title="Game links">
+        {props.project.gameLinks.length > 0 && (
+          <Section title="More">
             <LinkList>
-              {props.gameLinks.map((gameLink) => (
+              {props.project.gameLinks.map((gameLink) => (
                 <LinkListItem key={gameLink.url} url={gameLink.url}>
                   {gameLink.title}
                 </LinkListItem>
