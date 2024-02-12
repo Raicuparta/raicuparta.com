@@ -74,19 +74,30 @@ export const getStaticProps = async (context: GetStaticPropsContext) => {
   const articles = (
     await Promise.all(
       mod.articles.map(async (article) => {
-        const linkPreview = await getPreview(article.url);
+        try {
+          const linkPreview = await getPreview(article.url);
 
-        if (!('title' in linkPreview)) return undefined;
+          if (!('title' in linkPreview) || linkPreview.images.length === 0) {
+            return undefined;
+          }
 
-        const url = new URL(article.url).hostname.replace('www.', '');
+          console.log('thing', linkPreview);
 
-        return {
-          url: linkPreview.url,
-          title: linkPreview.title,
-          image: linkPreview.images[0],
-          favicon: linkPreview.favicons[linkPreview.favicons.length - 1],
-          siteName: linkPreview.siteName ?? url,
-        };
+          const url = new URL(article.url).hostname.replace('www.', '');
+
+          return {
+            url: linkPreview.url,
+            title: linkPreview.title,
+            image: linkPreview.images[0] ?? '',
+            favicon: linkPreview.favicons[linkPreview.favicons.length - 1],
+            siteName: linkPreview.siteName ?? url,
+          };
+        } catch (error) {
+          console.error(
+            `Failed to get article from url ${article.url}: ${error}`,
+          );
+          return undefined;
+        }
       }),
     )
   ).filter(filterUndefined);
