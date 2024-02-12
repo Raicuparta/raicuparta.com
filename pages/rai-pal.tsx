@@ -8,22 +8,29 @@ import { websiteUrl } from '../helpers/constants';
 
 const raiPal: Project = {
   title: 'Rai Pal',
-  gameKey: 'rai-pal',
+  id: 'rai-pal',
   description:
     'Mod manager for universal game mods, like UEVR for Unreal games, and UUVR for Unity games.',
   articles: [],
-  buttonLinks: {
-    download:
-      'https://github.com/Raicuparta/rai-pal/releases/latest/download/RaiPal.msi',
-    source: 'https://github.com/raicuparta/rai-pal',
-  },
-  gameLinks: [
+  buttons: [
     {
-      title: 'Check the full Readme for more information',
+      icon: 'Download',
+      url: 'https://github.com/Raicuparta/rai-pal/releases/latest/download/RaiPal.msi',
+      label: 'Download Rai Pal for Windows',
+    },
+    {
+      icon: 'Github',
+      url: 'https://github.com/raicuparta/rai-pal',
+      label: 'Star on GitHub',
+    },
+  ],
+  moreLinks: [
+    {
+      label: 'Check the full Readme for more information',
       url: 'https://github.com/Raicuparta/rai-pal?tab=readme-ov-file#readme',
     },
     {
-      title: 'For help or bug reports, open an issue on GitHub',
+      label: 'For help or bug reports, open an issue on GitHub',
       url: 'https://github.com/Raicuparta/rai-pal/issues',
     },
   ],
@@ -36,7 +43,7 @@ const RaiPalPage = () => {
     <>
       <PageHead
         description={raiPal.description}
-        imageUrl={`${websiteUrl}${`/mods/${raiPal.gameKey}.jpg`}`}
+        imageUrl={`${websiteUrl}${`/mods/${raiPal.id}.jpg`}`}
         title={'Rai Pal'}
         imageWidth={400}
         imageHeight={225}

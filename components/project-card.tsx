@@ -16,7 +16,7 @@ type Props = {
 };
 
 export const ProjectCard = (props: Props) => {
-  const imagePath = `/img/projects/${props.project.gameKey}.png`;
+  const imagePath = `/img/projects/${props.project.id}.png`;
 
   return (
     <Card>
@@ -37,43 +37,17 @@ export const ProjectCard = (props: Props) => {
       </div>
       <div className="p-4 flex flex-col gap-6">
         {props.project.description && <p>{props.project.description}</p>}
-        <div className="flex gap-4 flex-wrap justify-center">
-          {props.project.buttonLinks?.download && (
+        <div className="flex flex-col gap-4 justify-center items-center">
+          {props.project.buttons.map((button, index) => (
             <IconButton
-              href={props.project.buttonLinks.download}
-              iconName="Download"
-              className="bg-cta"
+              key={button.url}
+              href={button.url}
+              iconName={button.icon}
+              className={index > 0 ? 'bg-purple' : 'bg-cta'}
             >
-              Download {props.project.title}
+              {button.label}
             </IconButton>
-          )}
-          {props.project.buttonLinks?.itch && (
-            <IconButton
-              href={props.project.buttonLinks.itch}
-              iconName="Itch"
-              className="bg-itch"
-            >
-              Download on Itch.io
-            </IconButton>
-          )}
-          {props.project.buttonLinks?.source && (
-            <IconButton
-              href={props.project.buttonLinks.source}
-              iconName="Github"
-              className="bg-cta bg-opacity-30"
-            >
-              Source code
-            </IconButton>
-          )}
-          {props.project.buttonLinks?.patreon && (
-            <IconButton
-              href={props.project.buttonLinks.patreon}
-              iconName="Patreon"
-              className="bg-patreon"
-            >
-              Subscribe on Patreon
-            </IconButton>
-          )}
+          ))}
         </div>
         {props.children}
         {props.project.mainVideo && (
@@ -137,12 +111,12 @@ export const ProjectCard = (props: Props) => {
             </LinkList>
           </Section>
         )}
-        {props.project.gameLinks.length > 0 && (
+        {props.project.moreLinks.length > 0 && (
           <Section title="More">
             <LinkList>
-              {props.project.gameLinks.map((gameLink) => (
+              {props.project.moreLinks.map((gameLink) => (
                 <LinkListItem key={gameLink.url} url={gameLink.url}>
-                  {gameLink.title}
+                  {gameLink.label}
                 </LinkListItem>
               ))}
             </LinkList>

@@ -4,8 +4,8 @@ import { MainPageSection } from '../components/main-page-section';
 import { ModImage } from '../components/mod-image';
 import { PageHead } from '../components/page-head';
 import { TextLink } from '../components/text-link';
+import { mods } from '../data/mods';
 import { websiteUrl } from '../helpers/constants';
-import mods from './mods.json';
 import otherProjects from './other-projects.json';
 
 const Home = () => (
@@ -43,12 +43,12 @@ const Home = () => (
         {mods.map((mod) => {
           return (
             <ButtonLink
-              key={mod.gameKey}
-              href={`${mod.gameKey}-vr-mod`}
+              key={mod.id}
+              href={`${mod.id}-vr-mod`}
               title={`${mod.title} mod for ${mod.gameName}`}
             >
               <ModImage
-                src={`/img/projects/${mod.gameKey}.png`}
+                src={`/img/projects/${mod.id}.png`}
                 title={mod.title}
                 description={`for ${mod.gameName}`}
               />
