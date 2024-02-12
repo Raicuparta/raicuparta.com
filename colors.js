@@ -1,6 +1,4 @@
 module.exports = {
-  patreon: '#d6343c',
-  itch: '#c04e4e',
   cta: '#f8cf46',
   white: '#ffffff',
   darkWhite: '#e6e1ff',
