@@ -1,7 +1,7 @@
 module.exports = {
   patreon: '#d6343c',
   itch: '#c04e4e',
-  cta: '#f1e04c',
+  cta: '#f8cf46',
   white: '#ffffff',
   darkWhite: '#e6e1ff',
   overlay: 'rgba(0, 0, 0, 0.3)',

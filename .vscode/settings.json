@@ -1,4 +1,10 @@
 {
   "editor.formatOnSave": true,
-  "cSpell.words": ["Firewatch", "Hardspace", "platformer", "Shipbreaker"]
+  "cSpell.words": [
+    "Firewatch",
+    "Hardspace",
+    "maxresdefault",
+    "platformer",
+    "Shipbreaker"
+  ]
 }
