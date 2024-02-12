@@ -1,33 +1,34 @@
-import { ProjectCard } from '../components/project-card';
-import mods from './mods.json';
+import { Article, ProjectCard, Video } from '../components/project-card';
 import { websiteUrl } from '../helpers/constants';
 import { PageHead } from '../components/page-head';
 import { getLinkPreview } from 'link-preview-js';
-import type { GetStaticPropsContext, InferGetStaticPropsType } from 'next';
+import type {
+  GetStaticPropsContext,
+  GetStaticPropsResult,
+  InferGetStaticPropsType,
+} from 'next';
 import { URL } from 'url';
 import { TextLink } from '../components/text-link';
 import { Card } from '../components/card';
+import { Project, mods } from '../data/mods';
 
-export type Mod = InferGetStaticPropsType<typeof getStaticProps>;
+type Props = {
+  project: Project;
+  articles: Article[];
+  videos: Video[];
+};
 
-const ModPage = (props: Mod) => (
+const ModPage = (props: Props) => (
   <>
     <PageHead
-      description={`${props.title} is a mod that converts "${props.gameName}" into a VR game.`}
-      imageUrl={`${websiteUrl}${`/mods/${props.gameKey}.jpg`}`}
-      title={`${props.title} mod for ${props.gameName}`}
+      description={props.project.subtitle}
+      imageUrl={`${websiteUrl}${`/mods/${props.project.id}.jpg`}`}
+      title={`${props.project.title}: ${props.project.subtitle}`}
       imageWidth={400}
       imageHeight={225}
       largeImage
     />
-    <Card className="mb-2 p-2" data-nosnippet>
-      <TextLink href="/" isExternal={false}>
-        Homepage
-      </TextLink>
-      <span className="text-xl leading-none">{' › '}</span>
-      <span>{props.title}</span>
-    </Card>
-    <ProjectCard project={props} />
+    <ProjectCard {...props} />
   </>
 );
 
@@ -35,7 +36,7 @@ export async function getStaticPaths() {
   return {
     paths: mods.map((mod) => ({
       params: {
-        modPage: `${mod.gameKey}-vr-mod`,
+        modPage: `${mod.id}-vr-mod`,
       },
     })),
     fallback: false,
@@ -55,7 +56,9 @@ const getPreview = (url: string) =>
     },
   });
 
-export const getStaticProps = async (context: GetStaticPropsContext) => {
+export const getStaticProps = async (
+  context: GetStaticPropsContext,
+): Promise<GetStaticPropsResult<Props>> => {
   const modPage = context.params?.modPage;
 
   if (typeof modPage != 'string') {
@@ -65,17 +68,17 @@ export const getStaticProps = async (context: GetStaticPropsContext) => {
   }
 
   const modId = modPage.replace('-vr-mod', '');
-  const mod = mods.find(({ gameKey }) => gameKey === modId);
+  const project = mods.find(({ id }) => id === modId);
 
-  if (!mod) {
+  if (!project) {
     throw new Error(`failed to find mod for modPage ${modPage}`);
   }
 
   const articles = (
     await Promise.all(
-      mod.articles.map(async (article) => {
+      project.articles.map(async (articleUrl) => {
         try {
-          const linkPreview = await getPreview(article.url);
+          const linkPreview = await getPreview(articleUrl);
 
           if (!('title' in linkPreview) || linkPreview.images.length === 0) {
             return undefined;
@@ -83,7 +86,7 @@ export const getStaticProps = async (context: GetStaticPropsContext) => {
 
           console.log('thing', linkPreview);
 
-          const url = new URL(article.url).hostname.replace('www.', '');
+          const url = new URL(articleUrl).hostname.replace('www.', '');
 
           return {
             url: linkPreview.url,
@@ -94,7 +97,7 @@ export const getStaticProps = async (context: GetStaticPropsContext) => {
           };
         } catch (error) {
           console.error(
-            `Failed to get article from url ${article.url}: ${error}`,
+            `Failed to get article from url ${articleUrl}: ${error}`,
           );
           return undefined;
         }
@@ -104,19 +107,23 @@ export const getStaticProps = async (context: GetStaticPropsContext) => {
 
   const videos = (
     await Promise.all(
-      mod.videos.map(async (videoUrl) => {
+      project.videos.map(async (videoUrl) => {
         const linkPreview = await getPreview(videoUrl);
 
         if (!('title' in linkPreview)) return undefined;
 
-        return linkPreview;
+        return {
+          url: linkPreview.url,
+          title: linkPreview.title,
+          image: linkPreview.images[0],
+        };
       }),
     )
   ).filter(filterUndefined);
 
   return {
     props: {
-      ...mod,
+      project,
       articles,
       videos,
     },

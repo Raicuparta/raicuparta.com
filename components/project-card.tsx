@@ -3,27 +3,51 @@ import { IconButton } from './icon-button';
 import { ButtonLink } from './button-link';
 import { LinkList } from './link-list';
 import { Section } from './section';
-import { Mod } from '../pages/[modPage]';
 import { YoutubeEmbed } from './youtube-embed/youtube-embed';
 import { LinkListItem } from './link-list-item';
 import { Card } from './card';
+import { Project } from '../data/mods';
+import { Icon } from './icon';
 
-export type Project = Omit<Mod, 'gameName'> & Partial<Mod>;
+export type Article = {
+  url: string;
+  title: string;
+  image: string;
+  favicon: string;
+  siteName: string;
+};
+
+export type Video = {
+  url: string;
+  title: string;
+  image: string;
+};
 
 type Props = {
   project: Project;
+  articles?: Article[];
+  videos?: Video[];
   children?: React.ReactNode;
 };
 
 export const ProjectCard = (props: Props) => {
-  const imagePath = `/img/projects/${props.project.gameKey}.png`;
+  const imagePath = `/img/projects/${props.project.id}.png`;
 
   return (
     <Card>
       <div className="relative flex justify-center">
-        <div className="m-4 drop-shadow-text text-center">
+        <div className="absolute left-0 top-0">
+          <ButtonLink
+            className="bg-overlay opacity-75 rounded-br px-2 h-full flex items-center gap-2 p-2 hover:opacity-100"
+            href="/"
+          >
+            <Icon name="Back" className="h-6" />
+            <span>Home</span>
+          </ButtonLink>
+        </div>
+        <div className="m-6 drop-shadow-text text-center">
           <h2 className="text-3xl font-normal">{props.project.title}</h2>
-          {props.project.gameName && <p>for {props.project.gameName}</p>}
+          {props.project.subtitle && <p>{props.project.subtitle}</p>}
         </div>
         <div className="absolute top-0 -z-10 w-full h-full overflow-hidden">
           <Image
@@ -37,56 +61,32 @@ export const ProjectCard = (props: Props) => {
       </div>
       <div className="p-4 flex flex-col gap-6">
         {props.project.description && <p>{props.project.description}</p>}
-        <div className="flex gap-4 flex-wrap justify-center">
-          {props.project.buttonLinks?.download && (
+        <div className="flex flex-col gap-4 justify-center items-center">
+          {props.project.buttons.map((button, index) => (
             <IconButton
-              href={props.project.buttonLinks.download}
-              iconName="Download"
-              className="bg-cta"
+              key={button.url}
+              href={button.url}
+              iconName={button.icon}
+              className={
+                index > 0 ? 'bg-purple py-1' : 'bg-cta text-purple font-normal'
+              }
             >
-              Download {props.project.title}
+              {button.label}
             </IconButton>
-          )}
-          {props.project.buttonLinks?.itch && (
-            <IconButton
-              href={props.project.buttonLinks.itch}
-              iconName="Itch"
-              className="bg-itch"
-            >
-              Download on Itch.io
-            </IconButton>
-          )}
-          {props.project.buttonLinks?.source && (
-            <IconButton
-              href={props.project.buttonLinks.source}
-              iconName="Github"
-              className="bg-cta bg-opacity-30"
-            >
-              Source code
-            </IconButton>
-          )}
-          {props.project.buttonLinks?.patreon && (
-            <IconButton
-              href={props.project.buttonLinks.patreon}
-              iconName="Patreon"
-              className="bg-patreon"
-            >
-              Subscribe on Patreon
-            </IconButton>
-          )}
+          ))}
         </div>
         {props.children}
         {props.project.mainVideo && (
           <YoutubeEmbed
             urlOrId={props.project.mainVideo}
             poster="maxresdefault"
-            title={`${props.project.gameName} VR mod ${props.project.title} video.`}
+            title={`${props.project.title} (${props.project.subtitle}) video.`}
           />
         )}
-        {props.project.videos.length > 0 && (
+        {props.videos && props.videos.length > 0 && (
           <Section title="More Videos">
             <div className="flex flex-wrap gap-4 justify-center">
-              {props.project.videos.map((video) => (
+              {props.videos.map((video) => (
                 <ButtonLink
                   className="rounded overflow-hidden"
                   key={video.url}
@@ -96,7 +96,7 @@ export const ProjectCard = (props: Props) => {
                     <Image
                       width={320}
                       height={180}
-                      src={video.images[0]}
+                      src={video.image}
                       alt={video.title}
                       priority
                     />
@@ -109,10 +109,10 @@ export const ProjectCard = (props: Props) => {
             </div>
           </Section>
         )}
-        {props.project.articles.length > 0 && (
+        {props.articles && props.articles.length > 0 && (
           <Section title="Articles">
             <LinkList>
-              {props.project.articles.map((article) => (
+              {props.articles.map((article) => (
                 <LinkListItem key={article.url} url={article.url}>
                   <div className="relative rounded overflow-hidden flex">
                     <Image src={article.image} width={160} height={90} alt="" />
@@ -137,12 +137,12 @@ export const ProjectCard = (props: Props) => {
             </LinkList>
           </Section>
         )}
-        {props.project.gameLinks.length > 0 && (
+        {props.project.moreLinks.length > 0 && (
           <Section title="More">
             <LinkList>
-              {props.project.gameLinks.map((gameLink) => (
+              {props.project.moreLinks.map((gameLink) => (
                 <LinkListItem key={gameLink.url} url={gameLink.url}>
-                  {gameLink.title}
+                  {gameLink.label}
                 </LinkListItem>
               ))}
             </LinkList>

@@ -1,32 +1,41 @@
 import Image from 'next/image';
 import RaiPalImage from '../public/img/projects/rai-pal.png';
 import { Card } from '../components/card';
-import { Project, ProjectCard } from '../components/project-card';
+import { ProjectCard } from '../components/project-card';
 import { PageHead } from '../components/page-head';
 import { TextLink } from '../components/text-link';
 import { websiteUrl } from '../helpers/constants';
+import { Project } from '../data/mods';
 
 const raiPal: Project = {
   title: 'Rai Pal',
-  gameKey: 'rai-pal',
+  id: 'rai-pal',
   description:
     'Mod manager for universal game mods, like UEVR for Unreal games, and UUVR for Unity games.',
   articles: [],
-  buttonLinks: {
-    download:
-      'https://github.com/Raicuparta/rai-pal/releases/latest/download/RaiPal.msi',
-    source: 'https://github.com/raicuparta/rai-pal',
-  },
-  gameLinks: [
+  buttons: [
     {
-      title: 'Check the full Readme for more information',
-      url: 'https://github.com/Raicuparta/rai-pal?tab=readme-ov-file#readme',
+      icon: 'Download',
+      url: 'https://github.com/Raicuparta/rai-pal/releases/latest/download/RaiPal.msi',
+      label: 'Download Rai Pal for Windows',
     },
     {
-      title: 'For help or bug reports, open an issue on GitHub',
+      icon: 'Github',
+      url: 'https://github.com/raicuparta/rai-pal',
+      label: 'Star on GitHub',
+    },
+    {
+      icon: 'Github',
+      url: 'https://github.com/Raicuparta/rai-pal?tab=readme-ov-file#readme',
+      label: 'Check the Readme on GitHub',
+    },
+    {
+      icon: 'Github',
       url: 'https://github.com/Raicuparta/rai-pal/issues',
+      label: 'Open a bug report on GitHub',
     },
   ],
+  moreLinks: [],
   mainVideo: '',
   videos: [],
 };
@@ -36,19 +45,12 @@ const RaiPalPage = () => {
     <>
       <PageHead
         description={raiPal.description}
-        imageUrl={`${websiteUrl}${`/mods/${raiPal.gameKey}.jpg`}`}
+        imageUrl={`${websiteUrl}${`/mods/${raiPal.id}.jpg`}`}
         title={'Rai Pal'}
         imageWidth={400}
         imageHeight={225}
         largeImage
       />
-      <Card className="mb-2 p-2" data-nosnippet>
-        <TextLink href="/" isExternal={false}>
-          Homepage
-        </TextLink>
-        <span className="text-xl leading-none">{' › '}</span>
-        <span>{raiPal.title}</span>
-      </Card>
       <ProjectCard project={raiPal}>
         <Image src={RaiPalImage} alt="Rai Pal" className="rounded border" />
         <div className="flex flex-col gap-2">

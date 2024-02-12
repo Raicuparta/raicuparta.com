@@ -11,6 +11,7 @@ import TikTok from './tiktok.svg';
 import PayPal from './paypal.svg';
 import Avatar from './avatar.svg';
 import AvatarFancy from './avatar-fancy.svg';
+import Back from './back.svg';
 
 const assets = {
   Dev,
@@ -26,6 +27,7 @@ const assets = {
   PayPal,
   Avatar,
   AvatarFancy,
+  Back,
 };
 
 export type IconName = keyof typeof assets;

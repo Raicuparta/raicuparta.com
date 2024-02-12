@@ -16,12 +16,12 @@ export const IconButton = ({
   ...props
 }: Props) => (
   <ButtonLink
-    className={twMerge(className, 'flex p-2 rounded')}
+    className={twMerge('flex p-2 rounded', className)}
     {...props}
     href={href ?? '#'}
   >
     <div>
-      <Icon className="fill-white mr-2 h-6" name={iconName} />
+      <Icon className="mr-2 h-6" name={iconName} />
     </div>
     {children}
   </ButtonLink>

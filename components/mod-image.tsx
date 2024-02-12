@@ -4,7 +4,7 @@ import { twMerge } from 'tailwind-merge';
 type Props = {
   src: string;
   title: string;
-  description: string;
+  description?: string;
   className?: string;
 };
 
@@ -18,8 +18,10 @@ export const ModImage = (props: Props) => (
       height={400}
       priority
     />
-    <div className=" bg-black bg-opacity-20 text-center text-lg p-3 leading-3 drop-shadow-text">
-      {props.description}
-    </div>
+    {props.description && (
+      <div className=" bg-black bg-opacity-20 text-center text-lg p-3 leading-3 drop-shadow-text">
+        {props.description}
+      </div>
+    )}
   </div>
 );

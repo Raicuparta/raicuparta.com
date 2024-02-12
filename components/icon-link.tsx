@@ -14,16 +14,16 @@ export const IconLink = (props: Props) => {
   return (
     <ButtonLink
       className={twMerge(
-        'w-8 flex flex-col items-center justify-between',
-        props.className
+        'w-6 flex flex-col items-center justify-between group',
+        props.className,
       )}
       href={props.url}
       title={props.title}
     >
       <Icon className="fill-darkWhite" name={props.iconName} />
-      {props.iconName && (
-        <div className="text-center text-xs">{props.iconName}</div>
-      )}
+      <div className="text-center text-xs absolute top-6 invisible group-hover:visible">
+        {props.title}
+      </div>
     </ButtonLink>
   );
 };
