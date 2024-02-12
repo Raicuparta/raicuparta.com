@@ -13,7 +13,8 @@ const raiPal: Project = {
     'Mod manager for universal game mods, like UEVR for Unreal games, and UUVR for Unity games.',
   articles: [],
   buttonLinks: {
-    download: 'https://github.com/Raicuparta/rai-pal/releases/latest',
+    download:
+      'https://github.com/Raicuparta/rai-pal/releases/latest/download/RaiPal.msi',
     source: 'https://github.com/raicuparta/rai-pal',
   },
   gameLinks: [
