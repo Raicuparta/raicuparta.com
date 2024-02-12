@@ -6,7 +6,7 @@ import type { GetStaticPropsContext, InferGetStaticPropsType } from 'next';
 import { URL } from 'url';
 import { TextLink } from '../components/text-link';
 import { Card } from '../components/card';
-import { mods } from '../data/mods';
+import { mods } from '../data/data';
 
 export type Mod = InferGetStaticPropsType<typeof getStaticProps>;
 

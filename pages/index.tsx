@@ -4,9 +4,9 @@ import { MainPageSection } from '../components/main-page-section';
 import { ModImage } from '../components/mod-image';
 import { PageHead } from '../components/page-head';
 import { TextLink } from '../components/text-link';
-import { mods } from '../data/mods';
+import { mods } from '../data/data';
+import { otherProjects } from '../data/other-projects';
 import { websiteUrl } from '../helpers/constants';
-import otherProjects from './other-projects.json';
 
 const Home = () => (
   <>
