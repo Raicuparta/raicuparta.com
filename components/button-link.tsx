@@ -17,7 +17,7 @@ export const ButtonLink: React.FunctionComponent<Props> = ({
       href={href || '#'}
       className={twMerge(
         className,
-        'hover:brightness-125 will-change-transform'
+        'hover:brightness-125 will-change-transform',
       )}
       {...props}
       target={isExternal ? '_blank' : undefined}

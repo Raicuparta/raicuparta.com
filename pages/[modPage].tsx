@@ -28,13 +28,6 @@ const ModPage = (props: Props) => (
       imageHeight={225}
       largeImage
     />
-    <Card className="mb-2 p-2" data-nosnippet>
-      <TextLink href="/" isExternal={false}>
-        Homepage
-      </TextLink>
-      <span className="text-xl leading-none">{' › '}</span>
-      <span>{props.project.title}</span>
-    </Card>
     <ProjectCard {...props} />
   </>
 );

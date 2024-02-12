@@ -7,6 +7,7 @@ import { YoutubeEmbed } from './youtube-embed/youtube-embed';
 import { LinkListItem } from './link-list-item';
 import { Card } from './card';
 import { Project } from '../data/mods';
+import { Icon } from './icon';
 
 export type Article = {
   url: string;
@@ -35,7 +36,16 @@ export const ProjectCard = (props: Props) => {
   return (
     <Card>
       <div className="relative flex justify-center">
-        <div className="m-4 drop-shadow-text text-center">
+        <div className="absolute left-0 top-0">
+          <ButtonLink
+            className="bg-overlay opacity-75 rounded-br px-2 h-full flex items-center gap-2 p-2 hover:opacity-100"
+            href="/"
+          >
+            <Icon name="Back" className="h-6" />
+            <span>Home</span>
+          </ButtonLink>
+        </div>
+        <div className="m-6 drop-shadow-text text-center">
           <h2 className="text-3xl font-normal">{props.project.title}</h2>
           {props.project.subtitle && <p>{props.project.subtitle}</p>}
         </div>

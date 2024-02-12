@@ -2,56 +2,54 @@ import { PropsWithChildren } from 'react';
 import { IconLink } from '../components/icon-link';
 
 export const LinkRow = ({ children }: PropsWithChildren) => (
-  <div className="flex justify-evenly max-w-lg m-auto p-2 gap-6">
-    {children}
-  </div>
+  <div className="flex justify-evenly max-w-lg gap-4">{children}</div>
 );
 
 export const SocialLinks = () => (
-  <div className="bg-overlay ">
-    <nav className="flex flex-col pb-2">
+  <div className="bg-overlay p-4">
+    <nav className="flex justify-center flex-wrap gap-4">
       <LinkRow>
         <IconLink
-          iconName="Mastodon"
-          title="Mastodon @Raicuparta@mastodon.gamedev.place"
-          url="https://mastodon.gamedev.place/@Raicuparta"
-        />
-        <IconLink
           iconName="Patreon"
-          title="Raicuparta's Patreon"
+          title="Patreon"
           url="https://www.patreon.com/raivr"
         />
         <IconLink
-          iconName="YouTube"
-          title="Raicuparta on YouTube"
-          url="https://www.youtube.com/c/Raicuparta"
+          iconName="PayPal"
+          title="PayPal"
+          url="https://paypal.me/raicuparta/5usd"
         />
         <IconLink
           iconName="Github"
-          title="Github @Raicuparta"
+          title="GitHub"
           url="https://github.com/Raicuparta"
+        />
+        <IconLink
+          iconName="Itch"
+          title="Itch"
+          url="https://raicuparta.itch.io"
         />
       </LinkRow>
       <LinkRow>
         <IconLink
           iconName="Twitter"
-          title="Twitter @Raicuparta"
+          title="Twitter"
           url="https://twitter.com/raicuparta"
         />
         <IconLink
-          iconName="PayPal"
-          title="Donate to Raicuparta with PayPal"
-          url="https://paypal.me/raicuparta/5usd"
+          iconName="Mastodon"
+          title="Mastodon"
+          url="https://mastodon.gamedev.place/@Raicuparta"
         />
         <IconLink
           iconName="TikTok"
-          title="Raicuparta on TikTok"
+          title="TikTok"
           url="https://www.tiktok.com/@raicuparta"
         />
         <IconLink
-          iconName="Itch"
-          title="Raicuparta on itch.io"
-          url="https://raicuparta.itch.io"
+          iconName="YouTube"
+          title="YouTube"
+          url="https://www.youtube.com/c/Raicuparta"
         />
       </LinkRow>
     </nav>

@@ -51,13 +51,6 @@ const RaiPalPage = () => {
         imageHeight={225}
         largeImage
       />
-      <Card className="mb-2 p-2" data-nosnippet>
-        <TextLink href="/" isExternal={false}>
-          Homepage
-        </TextLink>
-        <span className="text-xl leading-none">{' › '}</span>
-        <span>{raiPal.title}</span>
-      </Card>
       <ProjectCard project={raiPal}>
         <Image src={RaiPalImage} alt="Rai Pal" className="rounded border" />
         <div className="flex flex-col gap-2">

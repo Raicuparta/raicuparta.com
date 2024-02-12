@@ -1,3 +1,4 @@
+import { twMerge } from 'tailwind-merge';
 import assets, { IconName } from '../svg-assets';
 
 type Props = {
@@ -7,5 +8,5 @@ type Props = {
 
 export const Icon = ({ name, className }: Props) => {
   const SvgIcon = assets[name];
-  return <SvgIcon className={className} />;
+  return <SvgIcon className={twMerge('fill-current', className)} />;
 };
