@@ -3,15 +3,29 @@ import { IconButton } from './icon-button';
 import { ButtonLink } from './button-link';
 import { LinkList } from './link-list';
 import { Section } from './section';
-import { Mod } from '../pages/[modPage]';
 import { YoutubeEmbed } from './youtube-embed/youtube-embed';
 import { LinkListItem } from './link-list-item';
 import { Card } from './card';
+import { Project } from '../data/mods';
 
-export type Project = Omit<Mod, 'gameName'> & Partial<Mod>;
+export type Article = {
+  url: string;
+  title: string;
+  image: string;
+  favicon: string;
+  siteName: string;
+};
+
+export type Video = {
+  url: string;
+  title: string;
+  image: string;
+};
 
 type Props = {
   project: Project;
+  articles?: Article[];
+  videos?: Video[];
   children?: React.ReactNode;
 };
 
@@ -23,7 +37,7 @@ export const ProjectCard = (props: Props) => {
       <div className="relative flex justify-center">
         <div className="m-4 drop-shadow-text text-center">
           <h2 className="text-3xl font-normal">{props.project.title}</h2>
-          {props.project.gameName && <p>for {props.project.gameName}</p>}
+          {props.project.subtitle && <p>{props.project.subtitle}</p>}
         </div>
         <div className="absolute top-0 -z-10 w-full h-full overflow-hidden">
           <Image
@@ -56,13 +70,13 @@ export const ProjectCard = (props: Props) => {
           <YoutubeEmbed
             urlOrId={props.project.mainVideo}
             poster="maxresdefault"
-            title={`${props.project.gameName} VR mod ${props.project.title} video.`}
+            title={`${props.project.title} (${props.project.subtitle}) video.`}
           />
         )}
-        {props.project.videos.length > 0 && (
+        {props.videos && props.videos.length > 0 && (
           <Section title="More Videos">
             <div className="flex flex-wrap gap-4 justify-center">
-              {props.project.videos.map((video) => (
+              {props.videos.map((video) => (
                 <ButtonLink
                   className="rounded overflow-hidden"
                   key={video.url}
@@ -72,7 +86,7 @@ export const ProjectCard = (props: Props) => {
                     <Image
                       width={320}
                       height={180}
-                      src={video.images[0]}
+                      src={video.image}
                       alt={video.title}
                       priority
                     />
@@ -85,10 +99,10 @@ export const ProjectCard = (props: Props) => {
             </div>
           </Section>
         )}
-        {props.project.articles.length > 0 && (
+        {props.articles && props.articles.length > 0 && (
           <Section title="Articles">
             <LinkList>
-              {props.project.articles.map((article) => (
+              {props.articles.map((article) => (
                 <LinkListItem key={article.url} url={article.url}>
                   <div className="relative rounded overflow-hidden flex">
                     <Image src={article.image} width={160} height={90} alt="" />

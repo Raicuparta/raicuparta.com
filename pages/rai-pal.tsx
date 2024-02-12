@@ -1,10 +1,11 @@
 import Image from 'next/image';
 import RaiPalImage from '../public/img/projects/rai-pal.png';
 import { Card } from '../components/card';
-import { Project, ProjectCard } from '../components/project-card';
+import { ProjectCard } from '../components/project-card';
 import { PageHead } from '../components/page-head';
 import { TextLink } from '../components/text-link';
 import { websiteUrl } from '../helpers/constants';
+import { Project } from '../data/mods';
 
 const raiPal: Project = {
   title: 'Rai Pal',

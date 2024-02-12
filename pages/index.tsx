@@ -1,10 +1,9 @@
 import { ButtonLink } from '../components/button-link';
-import { Card } from '../components/card';
 import { MainPageSection } from '../components/main-page-section';
 import { ModImage } from '../components/mod-image';
 import { PageHead } from '../components/page-head';
 import { TextLink } from '../components/text-link';
-import { mods } from '../data/data';
+import { mods } from '../data/mods';
 import { otherProjects } from '../data/other-projects';
 import { websiteUrl } from '../helpers/constants';
 
@@ -45,12 +44,12 @@ const Home = () => (
             <ButtonLink
               key={mod.id}
               href={`${mod.id}-vr-mod`}
-              title={`${mod.title} mod for ${mod.gameName}`}
+              title={`${mod.title} - ${mod.subtitle}`}
             >
               <ModImage
                 src={`/img/projects/${mod.id}.png`}
                 title={mod.title}
-                description={`for ${mod.gameName}`}
+                description={mod.subtitle}
               />
             </ButtonLink>
           );

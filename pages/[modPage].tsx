@@ -1,21 +1,29 @@
-import { ProjectCard } from '../components/project-card';
+import { Article, ProjectCard, Video } from '../components/project-card';
 import { websiteUrl } from '../helpers/constants';
 import { PageHead } from '../components/page-head';
 import { getLinkPreview } from 'link-preview-js';
-import type { GetStaticPropsContext, InferGetStaticPropsType } from 'next';
+import type {
+  GetStaticPropsContext,
+  GetStaticPropsResult,
+  InferGetStaticPropsType,
+} from 'next';
 import { URL } from 'url';
 import { TextLink } from '../components/text-link';
 import { Card } from '../components/card';
-import { mods } from '../data/data';
+import { Project, mods } from '../data/mods';
 
-export type Mod = InferGetStaticPropsType<typeof getStaticProps>;
+type Props = {
+  project: Project;
+  articles: Article[];
+  videos: Video[];
+};
 
-const ModPage = (props: Mod) => (
+const ModPage = (props: Props) => (
   <>
     <PageHead
-      description={`${props.title} is a mod that converts "${props.gameName}" into a VR game.`}
-      imageUrl={`${websiteUrl}${`/mods/${props.id}.jpg`}`}
-      title={`${props.title} mod for ${props.gameName}`}
+      description={props.project.subtitle}
+      imageUrl={`${websiteUrl}${`/mods/${props.project.id}.jpg`}`}
+      title={`${props.project.title}: ${props.project.subtitle}`}
       imageWidth={400}
       imageHeight={225}
       largeImage
@@ -25,9 +33,9 @@ const ModPage = (props: Mod) => (
         Homepage
       </TextLink>
       <span className="text-xl leading-none">{' › '}</span>
-      <span>{props.title}</span>
+      <span>{props.project.title}</span>
     </Card>
-    <ProjectCard project={props} />
+    <ProjectCard {...props} />
   </>
 );
 
@@ -55,7 +63,9 @@ const getPreview = (url: string) =>
     },
   });
 
-export const getStaticProps = async (context: GetStaticPropsContext) => {
+export const getStaticProps = async (
+  context: GetStaticPropsContext,
+): Promise<GetStaticPropsResult<Props>> => {
   const modPage = context.params?.modPage;
 
   if (typeof modPage != 'string') {
@@ -65,15 +75,15 @@ export const getStaticProps = async (context: GetStaticPropsContext) => {
   }
 
   const modId = modPage.replace('-vr-mod', '');
-  const mod = mods.find(({ id }) => id === modId);
+  const project = mods.find(({ id }) => id === modId);
 
-  if (!mod) {
+  if (!project) {
     throw new Error(`failed to find mod for modPage ${modPage}`);
   }
 
   const articles = (
     await Promise.all(
-      mod.articles.map(async (articleUrl) => {
+      project.articles.map(async (articleUrl) => {
         try {
           const linkPreview = await getPreview(articleUrl);
 
@@ -104,19 +114,23 @@ export const getStaticProps = async (context: GetStaticPropsContext) => {
 
   const videos = (
     await Promise.all(
-      mod.videos.map(async (videoUrl) => {
+      project.videos.map(async (videoUrl) => {
         const linkPreview = await getPreview(videoUrl);
 
         if (!('title' in linkPreview)) return undefined;
 
-        return linkPreview;
+        return {
+          url: linkPreview.url,
+          title: linkPreview.title,
+          image: linkPreview.images[0],
+        };
       }),
     )
   ).filter(filterUndefined);
 
   return {
     props: {
-      ...mod,
+      project,
       articles,
       videos,
     },

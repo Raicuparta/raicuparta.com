@@ -3,6 +3,7 @@ import { IconName } from '../svg-assets';
 export type Project = {
   id: string;
   title: string;
+  subtitle?: string;
   mainVideo: string;
   videos: string[];
   articles: string[];
@@ -22,11 +23,7 @@ export type ProjectButton = {
   label: string;
 };
 
-export interface Mod extends Project {
-  gameName: string;
-}
-
-export const mods: Mod[] = [
+export const mods: Project[] = [
   {
     title: 'HeavenVR',
     mainVideo: 'zC-k2HTqg1A',
@@ -38,10 +35,10 @@ export const mods: Mod[] = [
       'https://www.eurogamer.net/this-new-flatscreen-to-vr-mod-turns-neon-white-into-the-perfect-just-one-more-go-vr-game',
       'https://www.realovirtual.com/noticias/11851/frenetico-plataformas-neon-white-tendra-mod-vr-este-mismo-mes',
     ],
-    gameName: 'Neon White',
+    subtitle: 'Neon White VR Mod',
     id: 'neon-white',
     description:
-      "HeavenVR is a VR mod for Neon White. This fast-paced shooter/platformer fits VR really well, it's just so fun and addictive. It's a very intense VR experience.",
+      "Neon White is a really fun speedrunning FPS, but don't get too scared by the fast-paced shooter/platformer gameplay. The movement is really smooth and the game converts really well to VR. It's an intense, fun, and addictive VR experience.",
     buttons: [
       {
         url: 'https://raicuparta.itch.io/heaven-vr',
@@ -75,7 +72,7 @@ export const mods: Mod[] = [
       'https://uploadvr.com/outer-wilds-vr-mod/',
       'https://www.realovirtual.com/noticias/10852/outer-wilds-esta-gamepass-se-puede-jugar-vr',
     ],
-    gameName: 'Outer Wilds',
+    subtitle: 'Outer Wilds VR Mod',
     description:
       'NomaiVR is a VR mod for Outer Wilds. It was my first VR mod. The full game can be played in VR with room-scale tracking and motion controls.',
     buttons: [
@@ -120,7 +117,7 @@ export const mods: Mod[] = [
       'https://www.realovirtual.com/noticias/11291/mod-vr-firewatch-llega-su-version-definitiva',
       'https://uploadvr.com/firewatch-vr-mod-now-complete/',
     ],
-    gameName: 'Firewatch',
+    subtitle: 'Firewatch VR Mod',
     description:
       'Two Forks VR is a VR mod for Firewatch. The full game is playable in VR, with room-scale tracking, motion controls, and multiple comfort options. The mod is finished and has thus been open-sourced.',
     buttons: [
@@ -179,7 +176,7 @@ export const mods: Mod[] = [
         label: 'Star on GitHub',
       },
     ],
-    gameName: 'The Stanley Parable: Ultra Deluxe',
+    subtitle: 'The Stanley Parable: Ultra Deluxe VR Mod',
     description:
       'StanleyVR is a VR mod for The Stanley Parable: Ultra Deluxe. She mod is missing some polish, but the game is playable from start to finish. Includes full room-scale VR with motion controls. The mod is free nd open source.',
     moreLinks: [
@@ -206,7 +203,7 @@ export const mods: Mod[] = [
       'https://www.nme.com/news/gaming-news/trombone-champ-gets-unofficial-vr-support-with-meme-mod-3317965',
       'https://www.roadtovr.com/trombone-champ-vr-mod-quest-2-steam-pc/',
     ],
-    gameName: 'Trombone Champ',
+    subtitle: 'Trombone Champ VR Mod',
     id: 'trombone-champ',
     description:
       'BaboonVR is a VR mod for Trombone Champ. A silly meme mod for a silly meme game. The game screen is shown as a projection in front of you, while you use your hands to control the trombone.',
@@ -229,7 +226,7 @@ export const mods: Mod[] = [
     mainVideo: 'UGGtz1lYMNw',
     videos: ['https://youtu.be/PZLhq5NiFKo'],
     articles: [],
-    gameName: 'Hardspace: Shipbreaker',
+    subtitle: 'Hardspace: Shipbreaker VR Mod',
     id: 'shipbreaker',
     description:
       'ShipbreakerVR is a VR mod for Hardspace: Shipbreaker. Has no motion controls, but features camera-independent aiming for all the game tools.',
