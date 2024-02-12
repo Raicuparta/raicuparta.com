@@ -43,7 +43,9 @@ export const ProjectCard = (props: Props) => {
               key={button.url}
               href={button.url}
               iconName={button.icon}
-              className={index > 0 ? 'bg-purple' : 'bg-cta'}
+              className={
+                index > 0 ? 'bg-purple py-1' : 'bg-cta text-purple font-normal'
+              }
             >
               {button.label}
             </IconButton>

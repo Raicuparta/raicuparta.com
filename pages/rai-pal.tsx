@@ -23,17 +23,18 @@ const raiPal: Project = {
       url: 'https://github.com/raicuparta/rai-pal',
       label: 'Star on GitHub',
     },
-  ],
-  moreLinks: [
     {
-      label: 'Check the full Readme for more information',
+      icon: 'Github',
       url: 'https://github.com/Raicuparta/rai-pal?tab=readme-ov-file#readme',
+      label: 'Check the Readme on GitHub',
     },
     {
-      label: 'For help or bug reports, open an issue on GitHub',
+      icon: 'Github',
       url: 'https://github.com/Raicuparta/rai-pal/issues',
+      label: 'Open a bug report on GitHub',
     },
   ],
+  moreLinks: [],
   mainVideo: '',
   videos: [],
 };

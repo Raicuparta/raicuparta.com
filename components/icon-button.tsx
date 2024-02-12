@@ -21,7 +21,7 @@ export const IconButton = ({
     href={href ?? '#'}
   >
     <div>
-      <Icon className="fill-white mr-2 h-6" name={iconName} />
+      <Icon className="fill-current mr-2 h-6" name={iconName} />
     </div>
     {children}
   </ButtonLink>
