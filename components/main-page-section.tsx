@@ -1,3 +1,5 @@
+import { css } from '../styled-system/css';
+import { stack } from '../styled-system/patterns';
 import { Card } from './card';
 
 type Props = {
@@ -7,9 +9,17 @@ type Props = {
 };
 
 export const MainPageSection = (props: Props) => (
-  <Card className="flex p-4 gap-4 flex-col" id={props.id}>
+  <Card className={stack({ padding: 4 })} id={props.id}>
     {props.title && (
-      <h2 className="text-2xl font-normal text-center">{props.title}</h2>
+      <h2
+        className={css({
+          fontSize: '2xl',
+          fontWeight: 'normal',
+          textAlign: 'center',
+        })}
+      >
+        {props.title}
+      </h2>
     )}
     {props.children}
   </Card>

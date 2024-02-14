@@ -3,6 +3,7 @@ import Image from 'next/image';
 import { YouTubeIcon } from './youtube-icon';
 import { YoutubePlayerParameters, YoutubePosterQuality } from './youtube-types';
 import YouTubePlayer from 'yt-player';
+import { css } from '../../styled-system/css';
 
 interface Props extends React.ComponentPropsWithoutRef<'div'> {
   urlOrId: string;
@@ -16,7 +17,7 @@ interface Props extends React.ComponentPropsWithoutRef<'div'> {
 
 function getYouTubeId(url: string) {
   const arr = url.split(
-    /(youtu.*be.*)\/(watch\?v=|embed\/|v|shorts|)(.*?((?=[&#?])|$))/gm
+    /(youtu.*be.*)\/(watch\?v=|embed\/|v|shorts|)(.*?((?=[&#?])|$))/gm,
   );
 
   return undefined !== arr[3] ? arr[3] : arr[0];
@@ -54,26 +55,69 @@ export const YoutubeEmbed = ({
 
   return (
     <div
-      className="rounded overflow-hidden relative aspect-video"
+      className={css({
+        rounded: 'md',
+        overflow: 'hidden',
+        position: 'relative',
+        width: '100%',
+        aspectRatio: '16/9',
+      })}
       data-title={title}
       {...props}
     >
-      <div className="absolute top-0 left-0 h-full w-full">
+      <div
+        className={css({
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          height: '100%',
+          width: '100%',
+        })}
+      >
         <Image src={posterUrl} fill priority alt={title} />
       </div>
-      <div ref={videoRef} className="w-full h-full absolute top-0 left-0" />
+      <div
+        ref={videoRef}
+        className={css({
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          height: '100%',
+          width: '100%',
+        })}
+      />
       {!isPlaying && (
         <button
           onClick={addIframe}
           aria-label="Play"
           type="button"
-          className="relative h-full w-full opacity-80 text-black hover:opacity-100 hover:text-itch"
+          className={css({
+            position: 'relative',
+            height: '100%',
+            width: '100%',
+            opacity: 0.8,
+            color: 'black',
+            _hover: {
+              opacity: 0.8,
+              color: 'red', // TODO check color
+            },
+          })}
         >
-          <YouTubeIcon className="m-auto w-24 h-24" />
+          <YouTubeIcon
+            className={css({ margin: 'auto', width: 24, height: 24 })}
+          />
           <noscript>
             <a
               href={`https://www.youtube.com/watch?v=${videoId}`}
-              className="block absolute w-full h-full z-10 top-0 right-0"
+              className={css({
+                display: 'block',
+                position: 'absolute',
+                top: 0,
+                right: 0,
+                height: '100%',
+                width: '100%',
+                zIndex: 10,
+              })}
               target="_blank"
               rel="noopener"
             />

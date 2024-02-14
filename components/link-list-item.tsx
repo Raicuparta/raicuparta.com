@@ -1,3 +1,5 @@
+import { flex } from '../styled-system/patterns';
+
 export type LinkInfo = {
   url: string;
   children: React.ReactNode;
@@ -5,7 +7,17 @@ export type LinkInfo = {
 
 export const LinkListItem = (props: LinkInfo) => (
   <a
-    className="bg-white bg-opacity-20 w-full p-2 rounded hover:bg-opacity-40 flex gap-2 items-center"
+    className={flex({
+      background: 'white/20',
+      width: '100%',
+      padding: 2,
+      rounded: 'md',
+      gap: 2,
+      alignItems: 'center',
+      _hover: {
+        background: 'white/40',
+      },
+    })}
     target="_blank"
     rel="noopener"
     key={props.url}

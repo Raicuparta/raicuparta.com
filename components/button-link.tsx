@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { ComponentProps } from 'react';
-import { twMerge } from 'tailwind-merge';
+import { css, cx } from '../styled-system/css';
 
 type Props = ComponentProps<typeof Link>;
 
@@ -15,9 +15,13 @@ export const ButtonLink: React.FunctionComponent<Props> = ({
   return (
     <Link
       href={href || '#'}
-      className={twMerge(
+      className={cx(
+        css({
+          _hover: {
+            filter: 'brightness(125%)',
+          },
+        }),
         className,
-        'hover:brightness-125 will-change-transform',
       )}
       {...props}
       target={isExternal ? '_blank' : undefined}
