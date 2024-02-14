@@ -10,7 +10,7 @@ type Props = {
 
 export const ModImage = (props: Props) => (
   <div
-    className={cx(css({ rounded: 'md', overflow: 'hidden' }), props.className)}
+    className={cx(css({ rounded: 'lg', overflow: 'hidden' }), props.className)}
   >
     <Image
       className={css({

@@ -4,7 +4,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev -p 3001",
+    "dev": "pnpm i && next dev -p 3001",
     "run-build": "pnpm run build && pnpm run test-build",
     "build": "next build && next export && next-export-optimize-images",
     "test-build": "pnpm dlx http-server out",

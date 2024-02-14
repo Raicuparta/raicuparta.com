@@ -5,5 +5,5 @@ type Props = {
 };
 
 export const LinkList = (props: Props) => (
-  <div className={stack({ gap: 2 })}>{props.children}</div>
+  <div className={stack()}>{props.children}</div>
 );

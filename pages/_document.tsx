@@ -5,8 +5,11 @@ import Document, {
   NextScript,
   DocumentContext,
 } from 'next/document';
-import colors from '../colors.js';
 import { css } from '../styled-system/css';
+import pandaConfig from '../panda.config';
+import { token } from '../styled-system/tokens';
+
+const colors = pandaConfig.theme?.extend?.tokens?.colors;
 
 const googleAnalyticsId = process.env.analyticsId;
 
@@ -39,7 +42,7 @@ class MyDocument extends Document {
         className={css({
           color: 'white',
           fontWeight: 'light',
-          background: 'purple',
+          backgroundColor: 'purple',
         })}
       >
         <Head>
@@ -63,8 +66,11 @@ class MyDocument extends Document {
             href="/favicon-16x16.png"
           />
           <link rel="manifest" href="/site.webmanifest" />
-          <meta name="msapplication-TileColor" content={colors.purple} />
-          <meta name="theme-color" content={colors.purple} />
+          <meta
+            name="msapplication-TileColor"
+            content={token('colors.purple')}
+          />
+          <meta name="theme-color" content={token('colors.purple')} />
         </Head>
         <body>
           <Main />

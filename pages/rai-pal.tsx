@@ -55,9 +55,9 @@ const RaiPalPage = () => {
         <Image
           src={RaiPalImage}
           alt="Rai Pal"
-          className={css({ rounded: 'md' })}
+          className={css({ rounded: 'lg' })}
         />
-        <div className={hstack({ gap: 2 })}>
+        <div className={hstack()}>
           <p>
             Rai Pal is a tool that helps you use and make universal game mods.
             That means mods that aren't made for any specific game, but work

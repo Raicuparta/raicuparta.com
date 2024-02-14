@@ -19,6 +19,7 @@ export const IconLink = (props: Props) => {
           width: 6,
           position: 'relative',
           justify: 'center',
+          color: 'darkWhite',
         }),
         'group',
       )}
@@ -28,10 +29,13 @@ export const IconLink = (props: Props) => {
       <Icon className={css({ fill: 'darkWhite' })} name={props.iconName} />
       <div
         className={css({
+          backgroundColor: 'purple',
+          paddingX: 1,
+          rounded: 'lg',
           textAlign: 'center',
           fontSize: 'xs',
           position: 'absolute',
-          top: 6,
+          bottom: 6,
           visibility: 'hidden',
           _groupHover: {
             visibility: 'visible',

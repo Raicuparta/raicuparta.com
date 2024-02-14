@@ -1,14 +1,11 @@
 import { css } from '../styled-system/css';
-import { circle, hstack } from '../styled-system/patterns';
+import { circle, hstack, stack, vstack } from '../styled-system/patterns';
 import { ButtonLink } from './button-link';
 import { Icon } from './icon';
 import { MouseEventHandler, useState } from 'react';
+import { SocialLinks } from './social-links';
 
-type Props = {
-  title: string;
-};
-
-export const Header = ({ title }: Props) => {
+export const Header = () => {
   const [isFancy, setIsFancy] = useState(false);
 
   const onClickAvatar: MouseEventHandler<HTMLSpanElement> = (event) => {
@@ -18,11 +15,9 @@ export const Header = ({ title }: Props) => {
 
   return (
     <header
-      className={css({
+      className={stack({
         background: 'overlay',
-        paddingX: 4,
-        paddingTop: 4,
-        overflow: 'hidden',
+        padding: 2,
         fontSize: '3xl',
       })}
     >
@@ -38,8 +33,10 @@ export const Header = ({ title }: Props) => {
         >
           <Icon name={isFancy ? 'AvatarFancy' : 'Avatar'} />
         </span>
-        <h1>{title}</h1>
+        <h1>Raicuparta</h1>
       </ButtonLink>
+
+      <SocialLinks />
     </header>
   );
 };

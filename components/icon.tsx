@@ -8,5 +8,5 @@ type Props = {
 
 export const Icon = ({ name, className }: Props) => {
   const SvgIcon = assets[name];
-  return <SvgIcon className={cx(css({ fill: 'current' }), className)} />;
+  return <SvgIcon className={cx(css({ fill: 'currentcolor' }), className)} />;
 };

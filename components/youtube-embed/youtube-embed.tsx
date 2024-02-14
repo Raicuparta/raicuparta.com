@@ -56,7 +56,7 @@ export const YoutubeEmbed = ({
   return (
     <div
       className={css({
-        rounded: 'md',
+        rounded: 'lg',
         overflow: 'hidden',
         position: 'relative',
         width: '100%',

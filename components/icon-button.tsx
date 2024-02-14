@@ -17,7 +17,7 @@ export const IconButton = ({
   ...props
 }: Props) => (
   <ButtonLink
-    className={cx(flex({ padding: 2, rounded: 'md' }), className)}
+    className={cx(flex({ padding: 2, rounded: 'lg' }), className)}
     {...props}
     href={href ?? '#'}
   >

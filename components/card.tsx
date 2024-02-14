@@ -6,7 +6,7 @@ export const Card = ({
 }: React.ComponentPropsWithoutRef<'div'>) => (
   <div
     className={cx(
-      css({ rounded: 'md', background: 'overlay', overflow: 'hidden' }),
+      css({ rounded: 'lg', background: 'overlay', overflow: 'hidden' }),
       className,
     )}
     {...props}

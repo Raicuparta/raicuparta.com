@@ -40,27 +40,26 @@ export const ProjectCard = (props: Props) => {
       <div className={flex({ position: 'relative', justify: 'center' })}>
         <div className={css({ position: 'absolute', left: 0, top: 0 })}>
           <ButtonLink
-            className={flex({
+            className={hstack({
               background: 'black',
               opacity: 0.5,
               roundedBottomRight: 'md',
               borderRightWidth: 1,
               borderBottomWidth: 1,
               borderColor: 'white/25',
-              paddingX: 2,
               height: '100%',
               alignItems: 'center',
-              gap: 2,
-              padding: 2,
+              padding: 1,
+              gap: 1,
               _hover: { opacity: 0.75 },
             })}
             href="/"
           >
-            <Icon name="Back" className={css({ height: 6 })} />
+            <Icon name="Back" className={css({ height: 4 })} />
             <span>Home</span>
           </ButtonLink>
         </div>
-        <div className={css({ margin: 6, textAlign: 'center' })}>
+        <div className={css({ margin: 4, textAlign: 'center' })}>
           <h2 className={css({ fontSize: '3xl', fontWeight: 'normal' })}>
             {props.project.title}
           </h2>
@@ -93,7 +92,7 @@ export const ProjectCard = (props: Props) => {
           />
         </div>
       </div>
-      <div className={vstack({ padding: 4, gap: 6 })}>
+      <div className={vstack({ padding: 2, gap: 6 })}>
         {props.project.description && <p>{props.project.description}</p>}
         <div
           className={stack({
@@ -134,7 +133,7 @@ export const ProjectCard = (props: Props) => {
               {props.videos.map((video) => (
                 <ButtonLink
                   className={css({
-                    rounded: 'md',
+                    rounded: 'lg',
                     overflow: 'hidden',
                     position: 'relative',
                   })}
@@ -158,7 +157,7 @@ export const ProjectCard = (props: Props) => {
                       fontWeight: 'semibold',
                       background: 'black/75',
                       margin: 1,
-                      rounded: 'md',
+                      rounded: 'lg',
                       padding: 1,
                     })}
                   >
@@ -177,7 +176,7 @@ export const ProjectCard = (props: Props) => {
                   <div
                     className={flex({
                       position: 'relative',
-                      rounded: 'md',
+                      rounded: 'lg',
                       overflow: 'hidden',
                     })}
                   >

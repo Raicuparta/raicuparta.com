@@ -4,7 +4,7 @@ import { css } from '../styled-system/css';
 type Props = { title: string; children: React.ReactNode };
 
 export const Section = (props: Props) => (
-  <div>
+  <div className={css({ width: '100%' })}>
     <h3
       className={css({
         fontSize: 'lg',
