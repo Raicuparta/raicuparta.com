@@ -9,7 +9,7 @@ type Props = {
 };
 
 export const MainPageSection = (props: Props) => (
-  <Card className={stack({ padding: 2 })} id={props.id}>
+  <Card className={stack({ padding: 2, lineHeight: 1.5 })} id={props.id}>
     {props.title && (
       <h2
         className={css({
