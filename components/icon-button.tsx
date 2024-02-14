@@ -1,7 +1,8 @@
-import { twMerge } from 'tailwind-merge';
 import { IconName } from '../svg-assets';
 import { Icon } from './icon';
 import { ButtonLink } from './button-link';
+import { css, cx } from '../styled-system/css';
+import { flex } from '../styled-system/patterns';
 
 interface Props extends React.ComponentPropsWithoutRef<'a'> {
   children: React.ReactNode;
@@ -16,12 +17,12 @@ export const IconButton = ({
   ...props
 }: Props) => (
   <ButtonLink
-    className={twMerge('flex p-2 rounded', className)}
+    className={cx(flex({ padding: 2, rounded: 'md' }), className)}
     {...props}
     href={href ?? '#'}
   >
     <div>
-      <Icon className="mr-2 h-6" name={iconName} />
+      <Icon className={css({ marginRight: 2, height: 6 })} name={iconName} />
     </div>
     {children}
   </ButtonLink>

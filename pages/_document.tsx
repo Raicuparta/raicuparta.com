@@ -6,6 +6,7 @@ import Document, {
   DocumentContext,
 } from 'next/document';
 import colors from '../colors.js';
+import { css } from '../styled-system/css';
 
 const googleAnalyticsId = process.env.analyticsId;
 
@@ -33,7 +34,14 @@ class MyDocument extends Document {
 
   render() {
     return (
-      <Html lang="en" className="text-white font-light bg-purple">
+      <Html
+        lang="en"
+        className={css({
+          color: 'white',
+          fontWeight: 'light',
+          background: 'purple',
+        })}
+      >
         <Head>
           <Analytics id={googleAnalyticsId} />
           <meta name="Description" content="Raicuparta: VR Mod Developer" />

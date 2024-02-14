@@ -8,7 +8,8 @@
     "run-build": "pnpm run build && pnpm run test-build",
     "build": "next build && next export && next-export-optimize-images",
     "test-build": "pnpm dlx http-server out",
-    "prettier": "prettier --write ."
+    "prettier": "prettier --write .",
+    "prepare": "panda codegen"
   },
   "dependencies": {
     "@svgr/webpack": "8.0.1",
@@ -22,6 +23,7 @@
     "yt-player": "^3.6.1"
   },
   "devDependencies": {
+    "@pandacss/dev": "^0.31.0",
     "@types/node": "18.0.3",
     "@types/react": "18.2.14",
     "autoprefixer": "^10.4.17",

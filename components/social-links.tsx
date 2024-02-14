@@ -1,13 +1,17 @@
 import { PropsWithChildren } from 'react';
 import { IconLink } from '../components/icon-link';
+import { css } from '../styled-system/css';
+import { hstack } from '../styled-system/patterns';
 
 export const LinkRow = ({ children }: PropsWithChildren) => (
-  <div className="flex justify-evenly max-w-lg gap-4">{children}</div>
+  <div className={hstack({ justify: 'space-evenly', maxWidth: 'lg' })}>
+    {children}
+  </div>
 );
 
 export const SocialLinks = () => (
-  <div className="bg-overlay p-4">
-    <nav className="flex justify-center flex-wrap gap-4">
+  <div className={css({ background: 'overlay', padding: 4 })}>
+    <nav className={hstack({ flexWrap: 'wrap', justify: 'center' })}>
       <LinkRow>
         <IconLink
           iconName="Patreon"

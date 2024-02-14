@@ -26,3 +26,7 @@ yarn-error.log*
 
 # generated sitemap
 /public/sitemap.xml
+
+## Panda
+styled-system
+styled-system-studio

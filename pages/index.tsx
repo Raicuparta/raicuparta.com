@@ -6,6 +6,7 @@ import { TextLink } from '../components/text-link';
 import { mods } from '../data/mods';
 import { otherProjects } from '../data/other-projects';
 import { websiteUrl } from '../helpers/constants';
+import { stack } from '../styled-system/patterns';
 
 const Home = () => (
   <>
@@ -16,7 +17,7 @@ const Home = () => (
       title="Raicuparta's VR mods"
     />
     <title>Raicuparta</title>
-    <div className="flex flex-col gap-4">
+    <div className={stack()}>
       <MainPageSection id="intro">
         <p>Hello. I'm Raicuparta, and I'm some kind of developer.</p>
         <p>
