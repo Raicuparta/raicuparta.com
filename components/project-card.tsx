@@ -8,6 +8,8 @@ import { LinkListItem } from './link-list-item';
 import { Card } from './card';
 import { Project } from '../data/mods';
 import { Icon } from './icon';
+import { css } from '../styled-system/css';
+import { flex, hstack, stack, vstack } from '../styled-system/patterns';
 
 export type Article = {
   url: string;
@@ -35,23 +37,54 @@ export const ProjectCard = (props: Props) => {
 
   return (
     <Card>
-      <div className="relative flex justify-center">
-        <div className="absolute left-0 top-0">
+      <div className={flex({ position: 'relative', justify: 'center' })}>
+        <div className={css({ position: 'absolute', left: 0, top: 0 })}>
           <ButtonLink
-            className="bg-overlay opacity-75 rounded-br px-2 h-full flex items-center gap-2 p-2 hover:opacity-100"
+            className={hstack({
+              background: 'black',
+              opacity: 0.5,
+              roundedBottomRight: 'md',
+              borderRightWidth: 1,
+              borderBottomWidth: 1,
+              borderColor: 'white/25',
+              height: '100%',
+              alignItems: 'center',
+              padding: 1,
+              gap: 1,
+              _hover: { opacity: 0.75 },
+            })}
             href="/"
           >
-            <Icon name="Back" className="h-6" />
+            <Icon name="Back" className={css({ height: 4 })} />
             <span>Home</span>
           </ButtonLink>
         </div>
-        <div className="m-6 drop-shadow-text text-center">
-          <h2 className="text-3xl font-normal">{props.project.title}</h2>
+        <div className={css({ margin: 4, textAlign: 'center' })}>
+          <h2 className={css({ fontSize: '3xl', fontWeight: 'normal' })}>
+            {props.project.title}
+          </h2>
           {props.project.subtitle && <p>{props.project.subtitle}</p>}
         </div>
-        <div className="absolute top-0 -z-10 w-full h-full overflow-hidden">
+        <div
+          className={css({
+            position: 'absolute',
+            top: '0',
+            zIndex: -10,
+            width: '100%',
+            height: '100%',
+            overflow: 'hidden',
+            background: 'black',
+          })}
+        >
           <Image
-            className="w-full h-full object-cover blur"
+            className={css({
+              width: '100%',
+              height: '100%',
+              objectFit: 'cover',
+              filter: 'blur(10px)',
+              transform: 'scale(1.2)',
+              opacity: 0.75,
+            })}
             src={imagePath}
             fill
             priority
@@ -59,16 +92,27 @@ export const ProjectCard = (props: Props) => {
           />
         </div>
       </div>
-      <div className="p-4 flex flex-col gap-6">
+      <div className={vstack({ padding: 2, gap: 6 })}>
         {props.project.description && <p>{props.project.description}</p>}
-        <div className="flex flex-col gap-4 justify-center items-center">
+        <div
+          className={stack({
+            alignItems: 'center',
+            justify: 'center',
+          })}
+        >
           {props.project.buttons.map((button, index) => (
             <IconButton
               key={button.url}
               href={button.url}
               iconName={button.icon}
               className={
-                index > 0 ? 'bg-purple py-1' : 'bg-cta text-purple font-normal'
+                index > 0
+                  ? css({ background: 'purple', paddingY: 1 })
+                  : css({
+                      background: 'cta',
+                      color: 'purple',
+                      fontWeight: 'normal',
+                    })
               }
             >
               {button.label}
@@ -85,14 +129,18 @@ export const ProjectCard = (props: Props) => {
         )}
         {props.videos && props.videos.length > 0 && (
           <Section title="More Videos">
-            <div className="flex flex-wrap gap-4 justify-center">
+            <div className={hstack({ flexWrap: 'wrap', justify: 'center' })}>
               {props.videos.map((video) => (
                 <ButtonLink
-                  className="rounded overflow-hidden"
+                  className={css({
+                    rounded: 'lg',
+                    overflow: 'hidden',
+                    position: 'relative',
+                  })}
                   key={video.url}
                   href={video.url}
                 >
-                  <div className="text-zero">
+                  <div className={css({ fontSize: 0 })}>
                     <Image
                       width={320}
                       height={180}
@@ -101,7 +149,18 @@ export const ProjectCard = (props: Props) => {
                       priority
                     />
                   </div>
-                  <span className="absolute top-0 text-xs font-semibold bg-black bg-opacity-75 m-1 rounded p-1">
+                  <span
+                    className={css({
+                      position: 'absolute',
+                      top: 0,
+                      fontSize: 'xs',
+                      fontWeight: 'semibold',
+                      background: 'black/75',
+                      margin: 1,
+                      rounded: 'lg',
+                      padding: 1,
+                    })}
+                  >
                     {video.title}
                   </span>
                 </ButtonLink>
@@ -114,21 +173,34 @@ export const ProjectCard = (props: Props) => {
             <LinkList>
               {props.articles.map((article) => (
                 <LinkListItem key={article.url} url={article.url}>
-                  <div className="relative rounded overflow-hidden flex">
+                  <div
+                    className={flex({
+                      position: 'relative',
+                      rounded: 'lg',
+                      overflow: 'hidden',
+                    })}
+                  >
                     <Image src={article.image} width={160} height={90} alt="" />
-                    <div className="absolute top-0 left">
+                    <div
+                      className={css({ position: 'absolute', top: 0, left: 0 })}
+                    >
                       <Image
                         src={article.favicon}
                         width={32}
                         height={32}
-                        className="rounded-br bg-white"
+                        className={css({
+                          roundedBottomRight: 'md',
+                          background: 'white',
+                        })}
                         alt={article.siteName}
                       />
                     </div>
                   </div>
-                  <div className="flex-1">
+                  <div className={css({ flex: 1 })}>
                     {article.siteName && (
-                      <p className="font-bold">{article.siteName}</p>
+                      <p className={css({ fontWeight: 'bold' })}>
+                        {article.siteName}
+                      </p>
                     )}
                     <p>{article.title}</p>
                   </div>

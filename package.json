@@ -4,11 +4,12 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev -p 3001",
+    "dev": "pnpm i && next dev -p 3001",
     "run-build": "pnpm run build && pnpm run test-build",
     "build": "next build && next export && next-export-optimize-images",
     "test-build": "pnpm dlx http-server out",
-    "prettier": "prettier --write ."
+    "prettier": "prettier --write .",
+    "prepare": "panda codegen"
   },
   "dependencies": {
     "@svgr/webpack": "8.0.1",
@@ -18,17 +19,16 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "sass": "1.63.6",
-    "tailwind-merge": "^2.2.1",
     "yt-player": "^3.6.1"
   },
   "devDependencies": {
+    "@pandacss/dev": "^0.31.0",
     "@types/node": "18.0.3",
     "@types/react": "18.2.14",
     "autoprefixer": "^10.4.17",
     "next-export-optimize-images": "^2.1.0",
     "postcss": "^8.4.35",
     "prettier": "3.0.0",
-    "tailwindcss": "^3.4.1",
     "typescript": "5.1.6"
   },
   "engines": {

@@ -1,11 +1,14 @@
+import { cx, css } from '../styled-system/css';
+
 export const Card = ({
   className,
   ...props
 }: React.ComponentPropsWithoutRef<'div'>) => (
   <div
-    className={`rounded bg-overlay bg-opacity-20 overflow-hidden ${
-      className ?? ''
-    }`}
+    className={cx(
+      css({ rounded: 'lg', background: 'overlay', overflow: 'hidden' }),
+      className,
+    )}
     {...props}
   />
 );

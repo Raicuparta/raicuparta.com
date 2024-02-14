@@ -1,11 +1,11 @@
 import Image from 'next/image';
 import RaiPalImage from '../public/img/projects/rai-pal.png';
-import { Card } from '../components/card';
 import { ProjectCard } from '../components/project-card';
 import { PageHead } from '../components/page-head';
-import { TextLink } from '../components/text-link';
 import { websiteUrl } from '../helpers/constants';
 import { Project } from '../data/mods';
+import { css } from '../styled-system/css';
+import { hstack } from '../styled-system/patterns';
 
 const raiPal: Project = {
   title: 'Rai Pal',
@@ -52,15 +52,19 @@ const RaiPalPage = () => {
         largeImage
       />
       <ProjectCard project={raiPal}>
-        <Image src={RaiPalImage} alt="Rai Pal" className="rounded border" />
-        <div className="flex flex-col gap-2">
+        <Image
+          src={RaiPalImage}
+          alt="Rai Pal"
+          className={css({ rounded: 'lg' })}
+        />
+        <div className={hstack()}>
           <p>
             Rai Pal is a tool that helps you use and make universal game mods.
             That means mods that aren't made for any specific game, but work
             across multiple games, usually of the same game engine. Some
             features:
           </p>
-          <ul className="list-disc list-inside">
+          <ul>
             <li>Auto-find installed games from supported providers.</li>
             <li>
               Auto-find owned (but not necessarily installed) games from

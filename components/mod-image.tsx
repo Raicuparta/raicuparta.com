@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { twMerge } from 'tailwind-merge';
+import { css, cx } from '../styled-system/css';
 
 type Props = {
   src: string;
@@ -9,9 +9,13 @@ type Props = {
 };
 
 export const ModImage = (props: Props) => (
-  <div className={twMerge('overflow-hidden rounded', props.className)}>
+  <div
+    className={cx(css({ rounded: 'lg', overflow: 'hidden' }), props.className)}
+  >
     <Image
-      className="object-contain drop-shadow"
+      className={css({
+        objectFit: 'contain',
+      })}
       src={props.src}
       alt={props.title}
       width={1400}
@@ -19,7 +23,14 @@ export const ModImage = (props: Props) => (
       priority
     />
     {props.description && (
-      <div className=" bg-black bg-opacity-20 text-center text-lg p-3 leading-3 drop-shadow-text">
+      <div
+        className={css({
+          background: 'overlay',
+          textAlign: 'center',
+          fontSize: 'lg',
+          padding: 1,
+        })}
+      >
         {props.description}
       </div>
     )}
