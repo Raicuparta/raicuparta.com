@@ -9,7 +9,7 @@ import { Card } from './card';
 import { Project } from '../data/mods';
 import { Icon } from './icon';
 import { css } from '../styled-system/css';
-import { flex, vstack } from '../styled-system/patterns';
+import { flex, hstack, stack, vstack } from '../styled-system/patterns';
 
 export type Article = {
   url: string;
@@ -41,15 +41,18 @@ export const ProjectCard = (props: Props) => {
         <div className={css({ position: 'absolute', left: 0, top: 0 })}>
           <ButtonLink
             className={flex({
-              background: 'overlay',
-              opacity: 0.75,
+              background: 'black',
+              opacity: 0.5,
               roundedBottomRight: 'md',
+              borderRightWidth: 1,
+              borderBottomWidth: 1,
+              borderColor: 'white/25',
               paddingX: 2,
               height: '100%',
               alignItems: 'center',
               gap: 2,
               padding: 2,
-              _hover: { opacity: '100%' },
+              _hover: { opacity: 0.75 },
             })}
             href="/"
           >
@@ -93,8 +96,9 @@ export const ProjectCard = (props: Props) => {
       <div className={vstack({ padding: 4, gap: 6 })}>
         {props.project.description && <p>{props.project.description}</p>}
         <div
-          className={css({
-            a: 'flex flex-col gap-4 justify-center items-center',
+          className={stack({
+            alignItems: 'center',
+            justify: 'center',
           })}
         >
           {props.project.buttons.map((button, index) => (
@@ -103,7 +107,13 @@ export const ProjectCard = (props: Props) => {
               href={button.url}
               iconName={button.icon}
               className={
-                index > 0 ? 'bg-purple py-1' : 'bg-cta text-purple font-normal'
+                index > 0
+                  ? css({ background: 'purple', paddingY: 1 })
+                  : css({
+                      background: 'cta',
+                      color: 'purple',
+                      fontWeight: 'normal',
+                    })
               }
             >
               {button.label}
@@ -120,14 +130,18 @@ export const ProjectCard = (props: Props) => {
         )}
         {props.videos && props.videos.length > 0 && (
           <Section title="More Videos">
-            <div className={css({ a: 'flex flex-wrap gap-4 justify-center' })}>
+            <div className={hstack({ flexWrap: 'wrap', justify: 'center' })}>
               {props.videos.map((video) => (
                 <ButtonLink
-                  className={css({ a: 'rounded overflow-hidden' })}
+                  className={css({
+                    rounded: 'md',
+                    overflow: 'hidden',
+                    position: 'relative',
+                  })}
                   key={video.url}
                   href={video.url}
                 >
-                  <div className={css({ a: 'text-zero' })}>
+                  <div className={css({ fontSize: 0 })}>
                     <Image
                       width={320}
                       height={180}
@@ -138,7 +152,14 @@ export const ProjectCard = (props: Props) => {
                   </div>
                   <span
                     className={css({
-                      a: 'absolute top-0 text-xs font-semibold bg-black bg-opacity-75 m-1 rounded p-1',
+                      position: 'absolute',
+                      top: 0,
+                      fontSize: 'xs',
+                      fontWeight: 'semibold',
+                      background: 'black/75',
+                      margin: 1,
+                      rounded: 'md',
+                      padding: 1,
                     })}
                   >
                     {video.title}
@@ -154,24 +175,31 @@ export const ProjectCard = (props: Props) => {
               {props.articles.map((article) => (
                 <LinkListItem key={article.url} url={article.url}>
                   <div
-                    className={css({
-                      a: 'relative rounded overflow-hidden flex',
+                    className={flex({
+                      position: 'relative',
+                      rounded: 'md',
+                      overflow: 'hidden',
                     })}
                   >
                     <Image src={article.image} width={160} height={90} alt="" />
-                    <div className={css({ a: 'absolute top-0 left' })}>
+                    <div
+                      className={css({ position: 'absolute', top: 0, left: 0 })}
+                    >
                       <Image
                         src={article.favicon}
                         width={32}
                         height={32}
-                        className={css({ a: 'rounded-br bg-white' })}
+                        className={css({
+                          roundedBottomRight: 'md',
+                          background: 'white',
+                        })}
                         alt={article.siteName}
                       />
                     </div>
                   </div>
-                  <div className={css({ a: 'flex-1' })}>
+                  <div className={css({ flex: 1 })}>
                     {article.siteName && (
-                      <p className={css({ a: 'font-bold' })}>
+                      <p className={css({ fontWeight: 'bold' })}>
                         {article.siteName}
                       </p>
                     )}

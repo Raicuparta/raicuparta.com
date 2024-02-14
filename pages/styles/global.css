@@ -1,10 +1,6 @@
 /* Panda CSS */
 @layer reset, base, tokens, recipes, utilities;
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 html {
   overflow-y: scroll;
   -webkit-tap-highlight-color: transparent;
