@@ -7,7 +7,7 @@ function App({ Component, pageProps }: AppProps) {
   return (
     <main>
       <Header />
-      <div className={css({ maxWidth: '3xl', padding: 2, margin: 'auto' })}>
+      <div className={css({ maxWidth: '3xl', padding: 4, margin: 'auto' })}>
         <Component {...pageProps} />
       </div>
     </main>

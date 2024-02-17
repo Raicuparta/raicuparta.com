@@ -5,7 +5,8 @@ import { PageHead } from '../components/page-head';
 import { websiteUrl } from '../helpers/constants';
 import { Project } from '../data/mods';
 import { css } from '../styled-system/css';
-import { hstack } from '../styled-system/patterns';
+import { hstack, stack } from '../styled-system/patterns';
+import { TextLink } from '../components/text-link';
 
 const raiPal: Project = {
   title: 'Rai Pal',
@@ -57,14 +58,14 @@ const RaiPalPage = () => {
           alt="Rai Pal"
           className={css({ rounded: 'lg' })}
         />
-        <div className={hstack()}>
+        <div className={stack()}>
           <p>
             Rai Pal is a tool that helps you use and make universal game mods.
             That means mods that aren't made for any specific game, but work
             across multiple games, usually of the same game engine. Some
             features:
           </p>
-          <ul>
+          <ul className={css({ listStyle: 'inside' })}>
             <li>Auto-find installed games from supported providers.</li>
             <li>
               Auto-find owned (but not necessarily installed) games from
@@ -77,6 +78,12 @@ const RaiPalPage = () => {
             <li>Easily install/run the correct version of universal mods.</li>
             <li>Easily update universal mods.</li>
           </ul>
+          <p>
+            <TextLink href="https://github.com/Raicuparta/rai-pal?tab=readme-ov-file#readme">
+              Check the Readme on GitHub
+            </TextLink>{' '}
+            to learn more about Rai Pal.
+          </p>
         </div>
       </ProjectCard>
     </>

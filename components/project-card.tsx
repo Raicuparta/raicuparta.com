@@ -49,7 +49,8 @@ export const ProjectCard = (props: Props) => {
               borderColor: 'white/25',
               height: '100%',
               alignItems: 'center',
-              padding: 1,
+              paddingX: 2,
+              paddingY: 1,
               gap: 1,
               _hover: { opacity: 0.75 },
             })}
@@ -92,7 +93,7 @@ export const ProjectCard = (props: Props) => {
           />
         </div>
       </div>
-      <div className={vstack({ padding: 2, gap: 6 })}>
+      <div className={vstack({ padding: 4, gap: 6 })}>
         {props.project.description && <p>{props.project.description}</p>}
         <div
           className={stack({
