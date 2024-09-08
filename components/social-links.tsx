@@ -36,14 +36,14 @@ export const SocialLinks = () => (
         url="https://twitter.com/raicuparta"
       />
       <IconLink
+        iconName="Bluesky"
+        title="Bluesky"
+        url="https://bsky.app/profile/raicuparta.com"
+      />
+      <IconLink
         iconName="Mastodon"
         title="Mastodon"
         url="https://mastodon.gamedev.place/@Raicuparta"
-      />
-      <IconLink
-        iconName="TikTok"
-        title="TikTok"
-        url="https://www.tiktok.com/@raicuparta"
       />
       <IconLink
         iconName="YouTube"

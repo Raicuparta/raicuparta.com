@@ -12,6 +12,7 @@ import PayPal from './paypal.svg';
 import Avatar from './avatar.svg';
 import AvatarFancy from './avatar-fancy.svg';
 import Back from './back.svg';
+import Bluesky from './bluesky.svg';
 
 const assets = {
   Dev,
@@ -28,6 +29,7 @@ const assets = {
   Avatar,
   AvatarFancy,
   Back,
+  Bluesky,
 };
 
 export type IconName = keyof typeof assets;
