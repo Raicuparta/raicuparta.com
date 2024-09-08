@@ -43,8 +43,8 @@ export async function getStaticPaths() {
   };
 }
 
-function filterUndefined<T>(item: T | undefined): item is T {
-  return item != undefined;
+function filterNullUndefined<T>(item: T | null | undefined): item is T {
+  return item != undefined && item != null;
 }
 
 const getPreview = (url: string) =>
@@ -81,7 +81,7 @@ export const getStaticProps = async (
           const linkPreview = await getPreview(articleUrl);
 
           if (!('title' in linkPreview) || linkPreview.images.length === 0) {
-            return undefined;
+            return null;
           }
 
           console.log('thing', linkPreview);
@@ -99,18 +99,18 @@ export const getStaticProps = async (
           console.error(
             `Failed to get article from url ${articleUrl}: ${error}`,
           );
-          return undefined;
+          return null;
         }
       }),
     )
-  ).filter(filterUndefined);
+  ).filter(filterNullUndefined);
 
   const videos = (
     await Promise.all(
       project.videos.map(async (videoUrl) => {
         const linkPreview = await getPreview(videoUrl);
 
-        if (!('title' in linkPreview)) return undefined;
+        if (!('title' in linkPreview)) return null;
 
         return {
           url: linkPreview.url,
@@ -119,15 +119,34 @@ export const getStaticProps = async (
         };
       }),
     )
-  ).filter(filterUndefined);
+  ).filter(filterNullUndefined);
+
+  const props: Props = {
+    project,
+    articles,
+    videos,
+  };
+
+  deleteUndefined(props);
 
   return {
-    props: {
-      project,
-      articles,
-      videos,
-    },
+    props,
   };
 };
+
+// Hack needed to avoid JSON-Serialization validation error from Next.js https://github.com/zeit/next.js/discussions/11209
+// >>> Reason: `undefined` cannot be serialized as JSON. Please use `null` or omit this value all together.
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+function deleteUndefined(obj: Record<string, any> | undefined): void {
+  if (obj) {
+    Object.keys(obj).forEach((key: string) => {
+      if (obj[key] && typeof obj[key] === 'object') {
+        deleteUndefined(obj[key]);
+      } else if (typeof obj[key] === 'undefined') {
+        delete obj[key]; // eslint-disable-line no-param-reassign
+      }
+    });
+  }
+}
 
 export default ModPage;
