@@ -4,10 +4,10 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "pnpm i && next dev -p 3001",
-    "run-build": "pnpm run build && pnpm run test-build",
+    "dev": "next dev -p 3001",
+    "run-build": "npm run build && npm run test-build",
     "build": "next build && next export && next-export-optimize-images",
-    "test-build": "pnpm dlx http-server out",
+    "test-build": "npx http-server out",
     "prettier": "prettier --write .",
     "prepare": "panda codegen"
   },
@@ -32,8 +32,6 @@
     "typescript": "5.1.6"
   },
   "engines": {
-    "node": ">=14",
-    "pnpm": ">=8"
-  },
-  "packageManager": "pnpm@8.15.1"
+    "node": ">=19"
+  }
 }
