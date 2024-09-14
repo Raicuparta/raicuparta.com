@@ -10,6 +10,10 @@ export type Project = {
   description: string;
   buttons: ProjectButton[];
   moreLinks: Link[];
+  steamEmbed?: {
+    appId: string;
+    description: string;
+  };
 };
 
 export type Link = {
@@ -216,10 +220,23 @@ export const mods: Project[] = [
     ],
     moreLinks: [
       {
+        label: 'Trombone Champ: Unflattened on Steam',
+        url: 'https://store.steampowered.com/app/3151670/Trombone_Champ_Unflattened/',
+      },
+      {
+        label: 'Trombone Champ: Unflattened on Quest',
+        url: 'https://www.meta.com/en-gb/experiences/trombone-champ-unflattened/25085547287757633/',
+      },
+      {
         label: 'Trombone Champ on Steam',
         url: 'https://store.steampowered.com/app/1059990/Trombone_Champ/',
       },
     ],
+    steamEmbed: {
+      appId: '3151670',
+      description:
+        'This mod eventually became an official VR port! The official port is much, much better than the mod, so get that instead!',
+    },
   },
   {
     title: 'ShipbreakerVR',
