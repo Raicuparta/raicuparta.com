@@ -84,8 +84,6 @@ export const getStaticProps = async (
             return null;
           }
 
-          console.log('thing', linkPreview);
-
           const url = new URL(articleUrl).hostname.replace('www.', '');
 
           return {
