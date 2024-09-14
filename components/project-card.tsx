@@ -10,6 +10,7 @@ import { Project } from '../data/mods';
 import { Icon } from './icon';
 import { css } from '../styled-system/css';
 import { flex, hstack, stack, vstack } from '../styled-system/patterns';
+import { SteamEmbed } from './steam-embed';
 
 export type Article = {
   url: string;
@@ -95,6 +96,12 @@ export const ProjectCard = (props: Props) => {
       </div>
       <div className={vstack({ padding: 4, gap: 6 })}>
         {props.project.description && <p>{props.project.description}</p>}
+        {props.project.steamEmbed && (
+          <div className={stack({ width: '100%' })}>
+            <p>{props.project.steamEmbed.description}</p>
+            <SteamEmbed appId={props.project.steamEmbed.appId} />
+          </div>
+        )}
         <div
           className={stack({
             alignItems: 'center',

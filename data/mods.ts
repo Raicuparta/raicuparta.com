@@ -235,7 +235,7 @@ export const mods: Project[] = [
     steamEmbed: {
       appId: '3151670',
       description:
-        'This mod eventually became an official VR port! The official port is much, much better than the mod, so get that instead!',
+        'This mod eventually became an official VR port on Quest, PCVR, and PSVR 2. The official port is much, much better than the mod, so get that instead!',
     },
   },
   {
