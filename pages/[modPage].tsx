@@ -103,21 +103,13 @@ export const getStaticProps = async (
     )
   ).filter(filterNullUndefined);
 
-  const videos = (
-    await Promise.all(
-      project.videos.map(async (videoUrl) => {
-        const linkPreview = await getPreview(videoUrl);
-
-        if (!('title' in linkPreview)) return null;
-
-        return {
-          url: linkPreview.url,
-          title: linkPreview.title,
-          image: linkPreview.images[0],
-        };
-      }),
-    )
-  ).filter(filterNullUndefined);
+  const videos = project.videos.map((videoId) => ({
+    url: `https://www.youtube.com/watch?v=${videoId}`,
+    image: `https://i.ytimg.com/vi/${videoId}/mqdefault.jpg`,
+    // I used to do a getPreview here, which would get me the video title too,
+    // but that suddenly stopped working on the GitHub pages build for some reason,
+    // so for now (and probably forever) I'm just skipping the title.
+  }));
 
   const props: Props = {
     project,

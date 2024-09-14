@@ -22,7 +22,7 @@ export type Article = {
 
 export type Video = {
   url: string;
-  title: string;
+  title?: string;
   image: string;
 };
 
@@ -153,7 +153,7 @@ export const ProjectCard = (props: Props) => {
                       width={320}
                       height={180}
                       src={video.image}
-                      alt={video.title}
+                      alt={video.title ?? `${props.project.title} video`}
                       priority
                     />
                   </div>

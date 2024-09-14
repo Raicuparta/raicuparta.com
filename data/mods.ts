@@ -31,10 +31,7 @@ export const mods: Project[] = [
   {
     title: 'HeavenVR',
     mainVideo: 'zC-k2HTqg1A',
-    videos: [
-      'https://www.youtube.com/watch?v=DrwI5f5qqpM',
-      'https://www.youtube.com/watch?v=9guAWg58RrU',
-    ],
+    videos: ['DrwI5f5qqpM', '9guAWg58RrU'],
     articles: [
       'https://www.eurogamer.net/this-new-flatscreen-to-vr-mod-turns-neon-white-into-the-perfect-just-one-more-go-vr-game',
       'https://www.realovirtual.com/noticias/11851/frenetico-plataformas-neon-white-tendra-mod-vr-este-mismo-mes',
@@ -66,12 +63,7 @@ export const mods: Project[] = [
     id: 'outer-wilds',
     title: 'NomaiVR',
     mainVideo: 'gPFiYRMm8Ok',
-    videos: [
-      'https://youtu.be/g2NbjF4fG0s',
-      'https://youtu.be/SCZ8vtl4sVs',
-      'https://youtu.be/5ntWk0rJTC0',
-      'https://youtu.be/_mfKvDbeEkg',
-    ],
+    videos: ['g2NbjF4fG0s', 'SCZ8vtl4sVs', '5ntWk0rJTC0', '_mfKvDbeEkg'],
     articles: [
       'https://uploadvr.com/outer-wilds-vr-mod/',
       'https://www.realovirtual.com/noticias/10852/outer-wilds-esta-gamepass-se-puede-jugar-vr',
@@ -110,11 +102,7 @@ export const mods: Project[] = [
     id: 'firewatch',
     title: 'Two Forks VR',
     mainVideo: 'Wo27DFX8rYw',
-    videos: [
-      'https://youtu.be/jO_V-sq-Ics',
-      'https://youtu.be/h2uI3ITaHj8',
-      'https://youtu.be/KeKsGIhehjU',
-    ],
+    videos: ['jO_V-sq-Ics', 'h2uI3ITaHj8', 'KeKsGIhehjU'],
     articles: [
       'https://www.roadtovr.com/firewatch-vr-mod-free-pc-vr-quest/',
       'https://vrscout.com/news/firewatch-vr-mod-now-available-free-of-charge/',
@@ -159,11 +147,7 @@ export const mods: Project[] = [
     id: 'stanley-parable',
     title: 'StanleyVR',
     mainVideo: 'qM25FLL-NSQ',
-    videos: [
-      'https://youtu.be/JVanThRk5e8',
-      'https://youtu.be/iYt0YlLFjYI',
-      'https://youtu.be/ZIAWcsPLT1c',
-    ],
+    videos: ['JVanThRk5e8', 'iYt0YlLFjYI', 'ZIAWcsPLT1c'],
     articles: [
       'https://uploadvr.com/the-stanley-parable-vr-mod/',
       'https://www.realovirtual.com/noticias/11309/stanley-parable-tendra-mod-vr',
@@ -197,10 +181,7 @@ export const mods: Project[] = [
   {
     title: 'BaboonVR',
     mainVideo: 'g3mzQDQ-iiE',
-    videos: [
-      'https://www.youtube.com/watch?v=DUnzTh49XoI',
-      'https://www.youtube.com/watch?v=XICW_xbxGZs',
-    ],
+    videos: ['DUnzTh49XoI', 'XICW_xbxGZs'],
     articles: [
       'https://www.pcgamer.com/trombone-champ-looks-next-level-with-this-vr-mod/',
       'https://www.eurogamer.net/a-modder-has-added-vr-to-trombone-champ',
@@ -241,7 +222,7 @@ export const mods: Project[] = [
   {
     title: 'ShipbreakerVR',
     mainVideo: 'UGGtz1lYMNw',
-    videos: ['https://youtu.be/PZLhq5NiFKo'],
+    videos: ['PZLhq5NiFKo'],
     articles: [],
     subtitle: 'Hardspace: Shipbreaker VR Mod',
     id: 'shipbreaker',
