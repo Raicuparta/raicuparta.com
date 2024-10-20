@@ -16,7 +16,7 @@ export function SteamEmbed(props: Props) {
   return (
     <div
       className={css({
-        overflowX: 'scroll',
+        overflowX: 'auto',
       })}
     >
       <iframe
