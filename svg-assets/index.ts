@@ -13,6 +13,7 @@ import Avatar from './avatar.svg';
 import AvatarFancy from './avatar-fancy.svg';
 import Back from './back.svg';
 import Bluesky from './bluesky.svg';
+import Kofi from './kofi.svg';
 
 const assets = {
   Dev,
@@ -30,6 +31,7 @@ const assets = {
   AvatarFancy,
   Back,
   Bluesky,
+  Kofi,
 };
 
 export type IconName = keyof typeof assets;
