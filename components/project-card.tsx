@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { css, cx } from '../styled-system/css';
 import { flex, stack } from '../styled-system/patterns';
 
@@ -20,16 +21,21 @@ export const ProjectCard = (props: Props) => (
     )}
   >
     <div
-      style={{ backgroundImage: `url(${props.src})` }}
       className={css({
-        width: 150,
         maxWidth: 150,
         minWidth: 150,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backdropBlur: 'xl',
+        position: 'relative',
       })}
-    />
+    >
+      <Image
+        src={props.src}
+        fill
+        quality={30}
+        alt={props.title}
+        priority
+        className={css({ objectFit: 'cover' })}
+      />
+    </div>
     <div className={stack({ padding: 4, gap: 4 })}>
       <div
         className={css({
