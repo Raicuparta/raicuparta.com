@@ -6,7 +6,7 @@ import { Section } from './section';
 import { YoutubeEmbed } from './youtube-embed/youtube-embed';
 import { LinkListItem } from './link-list-item';
 import { Card } from './card';
-import { Project } from '../data/mods';
+import { Project } from '../data/data';
 import { Icon } from './icon';
 import { css } from '../styled-system/css';
 import { flex, hstack, stack, vstack } from '../styled-system/patterns';
@@ -61,12 +61,11 @@ export const ProjectCard = (props: Props) => {
             <span>Home</span>
           </ButtonLink>
         </div>
-        <div className={css({ margin: 4, textAlign: 'center' })}>
-          <h2 className={css({ fontSize: '3xl', fontWeight: 'normal' })}>
-            {props.project.title}
-          </h2>
-          {props.project.subtitle && <p>{props.project.subtitle}</p>}
-        </div>
+        <h2
+          className={css({ margin: 4, fontSize: '3xl', fontWeight: 'normal' })}
+        >
+          {props.project.title}
+        </h2>
         <div
           className={css({
             position: 'absolute',
@@ -132,7 +131,7 @@ export const ProjectCard = (props: Props) => {
           <YoutubeEmbed
             urlOrId={props.project.mainVideo}
             poster="maxresdefault"
-            title={`${props.project.title} (${props.project.subtitle}) video.`}
+            title={`${props.project.title} video.`}
           />
         )}
         {props.videos && props.videos.length > 0 && (

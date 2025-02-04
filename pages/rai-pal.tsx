@@ -3,10 +3,10 @@ import RaiPalImage from '../public/img/projects/rai-pal.png';
 import { ProjectCard } from '../components/project-card';
 import { PageHead } from '../components/page-head';
 import { websiteUrl } from '../helpers/constants';
-import { Project } from '../data/mods';
 import { css } from '../styled-system/css';
-import { hstack, stack } from '../styled-system/patterns';
+import { stack } from '../styled-system/patterns';
 import { TextLink } from '../components/text-link';
+import { Project } from '../data/data';
 
 const raiPal: Project = {
   title: 'Rai Pal',
@@ -46,7 +46,7 @@ const RaiPalPage = () => {
     <>
       <PageHead
         description={raiPal.description}
-        imageUrl={`${websiteUrl}${`/mods/${raiPal.id}.jpg`}`}
+        imageUrl={`${websiteUrl}${`/mods/${raiPal.id}.png`}`}
         title={'Rai Pal'}
         imageWidth={400}
         imageHeight={225}

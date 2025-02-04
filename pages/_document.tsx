@@ -40,7 +40,7 @@ class MyDocument extends Document {
       <Html
         lang="en"
         className={css({
-          color: 'white',
+          color: 'darkWhite',
           fontWeight: 'light',
           backgroundColor: 'purple',
         })}

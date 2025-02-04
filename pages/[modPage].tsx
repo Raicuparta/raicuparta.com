@@ -2,15 +2,10 @@ import { Article, ProjectCard, Video } from '../components/project-card';
 import { websiteUrl } from '../helpers/constants';
 import { PageHead } from '../components/page-head';
 import { getLinkPreview } from 'link-preview-js';
-import type {
-  GetStaticPropsContext,
-  GetStaticPropsResult,
-  InferGetStaticPropsType,
-} from 'next';
+import type { GetStaticPropsContext, GetStaticPropsResult } from 'next';
 import { URL } from 'url';
-import { TextLink } from '../components/text-link';
-import { Card } from '../components/card';
-import { Project, mods } from '../data/mods';
+import { Project } from '../data/data';
+import { allMods } from '../data/all-mods';
 
 type Props = {
   project: Project;
@@ -21,9 +16,9 @@ type Props = {
 const ModPage = (props: Props) => (
   <>
     <PageHead
-      description={props.project.subtitle}
+      description={props.project.description}
       imageUrl={`${websiteUrl}${`/mods/${props.project.id}.jpg`}`}
-      title={`${props.project.title}: ${props.project.subtitle}`}
+      title={`${props.project.title}`}
       imageWidth={400}
       imageHeight={225}
       largeImage
@@ -34,7 +29,7 @@ const ModPage = (props: Props) => (
 
 export async function getStaticPaths() {
   return {
-    paths: mods.map((mod) => ({
+    paths: allMods.map((mod) => ({
       params: {
         modPage: `${mod.id}-vr-mod`,
       },
@@ -68,7 +63,7 @@ export const getStaticProps = async (
   }
 
   const modId = modPage.replace('-vr-mod', '');
-  const project = mods.find(({ id }) => id === modId);
+  const project = allMods.find(({ id }) => id === modId);
 
   if (!project) {
     throw new Error(`failed to find mod for modPage ${modPage}`);

@@ -12,7 +12,7 @@ export default defineConfig({
         colors: {
           cta: { value: '#f8cf46' },
           white: { value: '#ffffff' },
-          darkWhite: { value: '#e6e1ff' },
+          darkWhite: { value: '#cec5ff' },
           overlay: { value: 'rgba(0, 0, 0, 0.3)' },
           black: { value: '#000000' },
           purple: { value: '#473a8f' },

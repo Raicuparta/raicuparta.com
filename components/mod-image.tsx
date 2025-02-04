@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import { css, cx } from '../styled-system/css';
+import { flex, hstack, stack, vstack } from '../styled-system/patterns';
 
 type Props = {
   src: string;
@@ -10,29 +11,46 @@ type Props = {
 
 export const ModImage = (props: Props) => (
   <div
-    className={cx(css({ rounded: 'lg', overflow: 'hidden' }), props.className)}
+    className={cx(
+      flex({
+        rounded: 'lg',
+        overflow: 'hidden',
+        background: 'overlay',
+      }),
+      props.className,
+    )}
   >
-    <Image
+    <div
+      style={{ backgroundImage: `url(${props.src})` }}
       className={css({
-        objectFit: 'contain',
+        width: 150,
+        maxWidth: 150,
+        minWidth: 150,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backdropBlur: 'xl',
       })}
-      src={props.src}
-      alt={props.title}
-      width={1400}
-      height={400}
-      priority
     />
-    {props.description && (
+    <div className={stack({ padding: 4, gap: 4 })}>
       <div
         className={css({
-          background: 'overlay',
-          textAlign: 'center',
-          fontSize: 'lg',
-          padding: 1,
+          lineHeight: 1,
+          fontSize: 'xl',
+          color: 'white',
+          fontWeight: 'medium',
         })}
       >
-        {props.description}
+        {props.title}
       </div>
-    )}
+      {props.description && (
+        <div
+          className={css({
+            fontSize: 'md',
+          })}
+        >
+          {props.description}
+        </div>
+      )}
+    </div>
   </div>
 );

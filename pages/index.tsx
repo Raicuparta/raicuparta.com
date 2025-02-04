@@ -4,7 +4,8 @@ import { ModImage } from '../components/mod-image';
 import { PageHead } from '../components/page-head';
 import { SteamEmbed } from '../components/steam-embed';
 import { TextLink } from '../components/text-link';
-import { mods } from '../data/mods';
+import { bestMods } from '../data/best-mods';
+import { mehMods } from '../data/meh-mods';
 import { otherProjects } from '../data/other-projects';
 import { websiteUrl } from '../helpers/constants';
 import { css } from '../styled-system/css';
@@ -42,42 +43,42 @@ const Home = () => (
         </p>
       </MainPageSection>
       <MainPageSection
-        title="Trombone Champ: Unflattened"
-        id="trombone-champ-unflattened"
+        title="Raicuparta's Top VR Mods"
+        id="vr-mods"
+        description="These are the mods I worked the hardest on, playable from start to finish in 6dof VR, with full motion control support, etc. These will give you an experience close to some top native VR games."
       >
-        <p>
-          What started as an unofficial VR mod (
-          <TextLink href="/trombone-champ-vr-mod" isExternal={false}>
-            BaboonVR
-          </TextLink>
-          ) eventually became <strong>Trombone Champ: Unflattened</strong>, an
-          official VR port targeting Meta Quest, PCVR, and PSVR 2.
-        </p>
-        <p>
-          You can already{' '}
-          <TextLink href="https://www.meta.com/en-gb/experiences/trombone-champ-unflattened/25085547287757633/">
-            pre-order Trombone Champ: Unflattened on the Quest Store
-          </TextLink>
-          , or{' '}
-          <TextLink href="https://store.steampowered.com/app/3151670/Trombone_Champ_Unflattened/">
-            add it to your wishlist on Steam
-          </TextLink>
-          .
-        </p>
-        <SteamEmbed appId="3151670" utmSource="widget-rai-home" />
-      </MainPageSection>
-      <MainPageSection title="Raicuparta's VR Mods" id="vr-mods">
-        {mods.map((mod) => {
+        {bestMods.map((mod) => {
           return (
             <ButtonLink
               key={mod.id}
               href={`${mod.id}-vr-mod`}
-              title={`${mod.title} - ${mod.subtitle}`}
+              title={`${mod.title} - ${mod.description}`}
             >
               <ModImage
                 src={`/img/projects/${mod.id}.png`}
                 title={mod.title}
-                description={mod.subtitle}
+                description={mod.description}
+              />
+            </ButtonLink>
+          );
+        })}
+      </MainPageSection>
+      <MainPageSection
+        title="'Just OK' VR Mods"
+        id="meh-vr-mods"
+        description="These mods that I wasn't able to fully polish for one reason or another, but still allow you to experience the game in VR. You should expect some jank."
+      >
+        {mehMods.map((mod) => {
+          return (
+            <ButtonLink
+              key={mod.id}
+              href={`${mod.id}-vr-mod`}
+              title={`${mod.title} - ${mod.description}`}
+            >
+              <ModImage
+                src={`/img/projects/${mod.id}.png`}
+                title={mod.title}
+                description={mod.description}
               />
             </ButtonLink>
           );
@@ -94,7 +95,7 @@ const Home = () => (
               <ModImage
                 src={`/img/projects/${project.id}.png`}
                 title={project.title}
-                description={project.title}
+                description={project.description}
               />
             </ButtonLink>
           );
