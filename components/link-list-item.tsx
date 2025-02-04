@@ -1,4 +1,5 @@
 import { flex, hstack } from '../styled-system/patterns';
+import { ButtonLink } from './button-link';
 
 export type LinkInfo = {
   url: string;
@@ -6,16 +7,13 @@ export type LinkInfo = {
 };
 
 export const LinkListItem = (props: LinkInfo) => (
-  <a
+  <ButtonLink
     className={hstack({
-      background: 'white/20',
+      background: 'overlay',
       width: '100%',
       padding: 2,
       rounded: 'lg',
       alignItems: 'center',
-      _hover: {
-        background: 'white/40',
-      },
     })}
     target="_blank"
     rel="noopener"
@@ -23,5 +21,5 @@ export const LinkListItem = (props: LinkInfo) => (
     href={props.url}
   >
     {props.children}
-  </a>
+  </ButtonLink>
 );

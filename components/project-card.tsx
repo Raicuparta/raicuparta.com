@@ -54,6 +54,7 @@ export const ProjectCard = (props: Props) => {
               paddingY: 1,
               gap: 1,
               _hover: { opacity: 0.75 },
+              color: 'white',
             })}
             href="/"
           >
@@ -62,7 +63,12 @@ export const ProjectCard = (props: Props) => {
           </ButtonLink>
         </div>
         <h2
-          className={css({ margin: 4, fontSize: '3xl', fontWeight: 'normal' })}
+          className={css({
+            margin: 4,
+            fontSize: '3xl',
+            fontWeight: 'normal',
+            color: 'white',
+          })}
         >
           {props.project.title}
         </h2>
