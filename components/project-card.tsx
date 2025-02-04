@@ -16,24 +16,52 @@ export const ProjectCard = (props: Props) => (
         rounded: 'lg',
         overflow: 'hidden',
         background: 'overlay',
+        flexDirection: 'column',
+        sm: {
+          flexDirection: 'row',
+        },
       }),
       props.className,
     )}
   >
     <div
       className={css({
-        maxWidth: 150,
-        minWidth: 150,
+        sm: {
+          maxWidth: 200,
+          minWidth: 200,
+          height: 'unset',
+        },
+        height: 200,
+        maxWidth: undefined,
+        minWidth: undefined,
         position: 'relative',
+        overflow: 'hidden',
       })}
     >
       <Image
         src={props.src}
-        fill
+        width={500}
+        height={400}
         quality={30}
         alt={props.title}
         priority
-        className={css({ objectFit: 'cover' })}
+        className={css({
+          position: 'absolute',
+          objectFit: 'cover',
+          height: '100%',
+          width: '100%',
+          filter: 'blur(10px)',
+          zIndex: -1,
+        })}
+      />
+      <Image
+        src={props.src}
+        width={150}
+        height={150}
+        quality={30}
+        alt={props.title}
+        priority
+        className={css({ objectFit: 'contain', height: '100%', width: '100%' })}
       />
     </div>
     <div className={stack({ padding: 4, gap: 4 })}>
