@@ -10,7 +10,7 @@ export default defineConfig({
     extend: {
       tokens: {
         colors: {
-          cta: { value: '#f8cf46' },
+          cta: { value: '#c3a3ff' },
           white: { value: '#ffffff' },
           darkWhite: { value: '#cec5ff' },
           overlay: { value: 'rgba(0, 0, 0, 0.3)' },

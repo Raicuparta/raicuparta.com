@@ -124,7 +124,7 @@ export const ProjectPage = (props: Props) => {
                   : css({
                       background: 'cta',
                       color: 'purple',
-                      fontWeight: 'normal',
+                      fontWeight: 'bold',
                     })
               }
             >
