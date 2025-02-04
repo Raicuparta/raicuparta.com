@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import RaiPalImage from '../public/img/projects/rai-pal.png';
-import { ProjectCard } from '../components/project-card';
+import { ProjectPage } from '../components/project-page';
 import { PageHead } from '../components/page-head';
 import { websiteUrl } from '../helpers/constants';
 import { css } from '../styled-system/css';
@@ -52,7 +52,7 @@ const RaiPalPage = () => {
         imageHeight={225}
         largeImage
       />
-      <ProjectCard project={raiPal}>
+      <ProjectPage project={raiPal}>
         <Image
           src={RaiPalImage}
           alt="Rai Pal"
@@ -85,7 +85,7 @@ const RaiPalPage = () => {
             to learn more about Rai Pal.
           </p>
         </div>
-      </ProjectCard>
+      </ProjectPage>
     </>
   );
 };

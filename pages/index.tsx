@@ -1,6 +1,6 @@
 import { ButtonLink } from '../components/button-link';
 import { MainPageSection } from '../components/main-page-section';
-import { ModImage } from '../components/mod-image';
+import { ProjectCard } from '../components/project-card';
 import { PageHead } from '../components/page-head';
 import { SteamEmbed } from '../components/steam-embed';
 import { TextLink } from '../components/text-link';
@@ -54,7 +54,7 @@ const Home = () => (
               href={`${mod.id}-vr-mod`}
               title={`${mod.title} - ${mod.description}`}
             >
-              <ModImage
+              <ProjectCard
                 src={`/img/projects/${mod.id}.png`}
                 title={mod.title}
                 description={mod.description}
@@ -75,7 +75,7 @@ const Home = () => (
               href={`${mod.id}-vr-mod`}
               title={`${mod.title} - ${mod.description}`}
             >
-              <ModImage
+              <ProjectCard
                 src={`/img/projects/${mod.id}.png`}
                 title={mod.title}
                 description={mod.description}
@@ -92,7 +92,7 @@ const Home = () => (
               href={project.url}
               title={project.title}
             >
-              <ModImage
+              <ProjectCard
                 src={`/img/projects/${project.id}.png`}
                 title={project.title}
                 description={project.description}

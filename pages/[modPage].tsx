@@ -1,4 +1,4 @@
-import { Article, ProjectCard, Video } from '../components/project-card';
+import { Article, ProjectPage, Video } from '../components/project-page';
 import { websiteUrl } from '../helpers/constants';
 import { PageHead } from '../components/page-head';
 import { getLinkPreview } from 'link-preview-js';
@@ -23,7 +23,7 @@ const ModPage = (props: Props) => (
       imageHeight={225}
       largeImage
     />
-    <ProjectCard {...props} />
+    <ProjectPage {...props} />
   </>
 );
 
