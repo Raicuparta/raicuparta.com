@@ -6,32 +6,17 @@ import { Avatar } from "./avatar";
 import { ButtonLink } from "./button-link";
 import { Icon } from "./icon";
 import { IconButton } from "./icon-button";
-import { Image } from "./image";
 import { LinkList } from "./link-list";
 import { LinkListItem } from "./link-list-item";
 import { ProjectCard } from "./project-card";
 import { Section } from "./section";
 import { SocialLinks } from "./social-links";
 import { SteamEmbed } from "./steam-embed";
+import VideoPreview from "./video-preview";
 import { YoutubeEmbed } from "./youtube-embed/youtube-embed";
-
-export type Article = {
-	url: string;
-	title: string;
-	image: string;
-	favicon: string | undefined;
-	siteName: string;
-};
-
-export type Video = {
-	url: string;
-	title?: string;
-	image: string;
-};
 
 type Props = {
 	project: Project;
-	videos?: Video[];
 	children?: React.ReactNode;
 };
 
@@ -114,42 +99,11 @@ export const ProjectPage = (props: Props) => {
 							title={`${props.project.title} video.`}
 						/>
 					)}
-					{props.videos && props.videos.length > 0 && (
+					{props.project.videos && props.project.videos.length > 0 && (
 						<Section>
 							<div className={hstack({ flexWrap: "wrap", justify: "center" })}>
-								{props.videos.map((video) => (
-									<ButtonLink
-										className={css({
-											rounded: "lg",
-											overflow: "hidden",
-											position: "relative",
-										})}
-										key={video.url}
-										href={video.url}
-									>
-										<div className={css({ fontSize: 0 })}>
-											<Image
-												width={320}
-												height={180}
-												src={video.image}
-												alt={video.title ?? `${props.project.title} video`}
-											/>
-										</div>
-										<span
-											className={css({
-												position: "absolute",
-												top: 0,
-												fontSize: "xs",
-												fontWeight: "semibold",
-												background: "black/75",
-												margin: 1,
-												rounded: "lg",
-												padding: 1,
-											})}
-										>
-											{video.title}
-										</span>
-									</ButtonLink>
+								{props.project.videos.map((videoUrl) => (
+									<VideoPreview key={videoUrl} youtubeId={videoUrl} />
 								))}
 							</div>
 						</Section>

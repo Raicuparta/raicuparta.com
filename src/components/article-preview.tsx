@@ -1,8 +1,8 @@
-import LinkPreview from "link-preview-js";
 import { css } from "../styled-system/css";
 import { flex } from "../styled-system/patterns";
 import { LinkListItem } from "./link-list-item";
 import { Image } from "./image";
+import { getPagePreview } from "../helpers/page-preview";
 
 type Props = {
 	articleUrl: string;
@@ -54,32 +54,22 @@ export default async function ArticlePreview({ articleUrl }: Props) {
 
 async function getArticle(articleUrl: string) {
 	try {
-		const linkPreview = await getPreview(articleUrl);
+		const pagePreview = await getPagePreview(articleUrl);
 
-		if (!("title" in linkPreview) || linkPreview.images.length === 0) {
+		if (!("title" in pagePreview) || pagePreview.images.length === 0) {
 			throw "Missing title or image";
 		}
 
 		const url = new URL(articleUrl).hostname.replace("www.", "");
 
 		return {
-			url: linkPreview.url,
-			title: linkPreview.title,
-			image: linkPreview.images[0] ?? "",
-			favicon: linkPreview.favicons[linkPreview.favicons.length - 1],
-			siteName: linkPreview.siteName ?? url,
+			url: pagePreview.url,
+			title: pagePreview.title,
+			image: pagePreview.images[0] ?? "",
+			favicon: pagePreview.favicons[pagePreview.favicons.length - 1],
+			siteName: pagePreview.siteName ?? url,
 		};
 	} catch (error) {
 		throw `Failed to get article from url ${articleUrl}: ${error}`;
 	}
-}
-
-async function getPreview(url: string) {
-	return LinkPreview.getLinkPreview(url, {
-		followRedirects: "follow",
-		timeout: 20000,
-		headers: {
-			"user-agent": "googlebot",
-		},
-	});
 }

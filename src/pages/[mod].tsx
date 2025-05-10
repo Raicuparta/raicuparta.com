@@ -5,25 +5,25 @@ import { allMods } from "../data/all-mods";
 import { websiteUrl } from "../helpers/constants";
 
 export default async function ModPage(props: PageProps<"[mod]">) {
-	const data = await getData(props.mod);
+	const project = await getProject(props.mod);
 
 	return (
 		<>
 			<PageHead
 				route={props.path}
-				description={data.project.description}
-				imageUrl={`${websiteUrl}${`/mods/${data.project.id}.jpg`}`}
-				title={`${data.project.title}`}
+				description={project.description}
+				imageUrl={`${websiteUrl}${`/mods/${project.id}.jpg`}`}
+				title={`${project.title}`}
 				imageWidth={400}
 				imageHeight={225}
 				largeImage
 			/>
-			<ProjectPage {...data} />
+			<ProjectPage project={project} />
 		</>
 	);
 }
 
-export const getData = async (mod: string) => {
+export const getProject = async (mod: string) => {
 	if (typeof mod !== "string") {
 		throw new Error(
 			`modPage param is of wrong type. Expected string, got ${typeof mod}`,
@@ -37,18 +37,7 @@ export const getData = async (mod: string) => {
 		throw new Error(`failed to find mod for modPage ${mod}`);
 	}
 
-	const videos = project.videos.map((videoId) => ({
-		url: `https://www.youtube.com/watch?v=${videoId}`,
-		image: `https://i.ytimg.com/vi/${videoId}/mqdefault.jpg`,
-		// I used to do a getPreview here, which would get me the video title too,
-		// but that suddenly stopped working on the GitHub pages build for some reason,
-		// so for now (and probably forever) I'm just skipping the title.
-	}));
-
-	return {
-		project,
-		videos,
-	};
+	return project;
 };
 
 export const getConfig = async () => {
