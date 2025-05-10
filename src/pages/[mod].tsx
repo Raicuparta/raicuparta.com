@@ -1,5 +1,3 @@
-import { URL } from "node:url";
-import LinkPreview from "link-preview-js";
 import type { PageProps } from "waku/router";
 import { PageHead } from "../components/page-head";
 import { ProjectPage } from "../components/project-page";
@@ -25,19 +23,6 @@ export default async function ModPage(props: PageProps<"[mod]">) {
 	);
 }
 
-function filterNullUndefined<T>(item: T | null | undefined): item is T {
-	return item !== undefined && item !== null;
-}
-
-const getPreview = (url: string) =>
-	LinkPreview.getLinkPreview(url, {
-		followRedirects: "follow",
-		timeout: 20000,
-		headers: {
-			"user-agent": "googlebot",
-		},
-	});
-
 export const getData = async (mod: string) => {
 	if (typeof mod !== "string") {
 		throw new Error(
@@ -52,35 +37,6 @@ export const getData = async (mod: string) => {
 		throw new Error(`failed to find mod for modPage ${mod}`);
 	}
 
-	const articles = (
-		await Promise.all(
-			project.articles.map(async (articleUrl) => {
-				try {
-					const linkPreview = await getPreview(articleUrl);
-
-					if (!("title" in linkPreview) || linkPreview.images.length === 0) {
-						return null;
-					}
-
-					const url = new URL(articleUrl).hostname.replace("www.", "");
-
-					return {
-						url: linkPreview.url,
-						title: linkPreview.title,
-						image: linkPreview.images[0] ?? "",
-						favicon: linkPreview.favicons[linkPreview.favicons.length - 1],
-						siteName: linkPreview.siteName ?? url,
-					};
-				} catch (error) {
-					console.error(
-						`Failed to get article from url ${articleUrl}: ${error}`,
-					);
-					return null;
-				}
-			}),
-		)
-	).filter(filterNullUndefined);
-
 	const videos = project.videos.map((videoId) => ({
 		url: `https://www.youtube.com/watch?v=${videoId}`,
 		image: `https://i.ytimg.com/vi/${videoId}/mqdefault.jpg`,
@@ -91,7 +47,6 @@ export const getData = async (mod: string) => {
 
 	return {
 		project,
-		articles,
 		videos,
 	};
 };

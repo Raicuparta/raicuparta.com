@@ -1,6 +1,7 @@
 import type { Project } from "../data/data";
 import { css } from "../styled-system/css";
 import { flex, hstack, stack, vstack } from "../styled-system/patterns";
+import ArticlePreview from "./article-preview";
 import { Avatar } from "./avatar";
 import { ButtonLink } from "./button-link";
 import { Icon } from "./icon";
@@ -30,7 +31,6 @@ export type Video = {
 
 type Props = {
 	project: Project;
-	articles?: Article[];
 	videos?: Video[];
 	children?: React.ReactNode;
 };
@@ -154,54 +154,11 @@ export const ProjectPage = (props: Props) => {
 							</div>
 						</Section>
 					)}
-					{props.articles && props.articles.length > 0 && (
+					{props.project.articles && props.project.articles.length > 0 && (
 						<Section>
 							<LinkList>
-								{props.articles.map((article) => (
-									<LinkListItem key={article.url} url={article.url}>
-										<div
-											className={flex({
-												position: "relative",
-												rounded: "lg",
-												overflow: "hidden",
-											})}
-										>
-											<Image
-												src={article.image}
-												width={160}
-												height={90}
-												alt=""
-											/>
-											{article.favicon && (
-												<div
-													className={css({
-														position: "absolute",
-														top: 0,
-														left: 0,
-													})}
-												>
-													<Image
-														src={article.favicon}
-														width={32}
-														height={32}
-														className={css({
-															roundedBottomRight: "md",
-															background: "white",
-														})}
-														alt={article.siteName}
-													/>
-												</div>
-											)}
-										</div>
-										<div className={css({ flex: 1 })}>
-											{article.siteName && (
-												<p className={css({ fontWeight: "bold" })}>
-													{article.siteName}
-												</p>
-											)}
-											<p>{article.title}</p>
-										</div>
-									</LinkListItem>
+								{props.project.articles.map((articleUrl) => (
+									<ArticlePreview key={articleUrl} articleUrl={articleUrl} />
 								))}
 							</LinkList>
 						</Section>
