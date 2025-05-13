@@ -4,6 +4,7 @@ import { flex, hstack, stack, vstack } from "../styled-system/patterns";
 import ArticlePreview from "./article-preview";
 import { Avatar } from "./avatar";
 import { ButtonLink } from "./button-link";
+import Favicon from "./favicon";
 import { Icon } from "./icon";
 import { IconButton } from "./icon-button";
 import { LinkList } from "./link-list";
@@ -122,7 +123,7 @@ export const ProjectPage = (props: Props) => {
 							<LinkList>
 								{props.project.moreLinks.map((gameLink) => (
 									<LinkListItem key={gameLink.url} url={gameLink.url}>
-										🔗 {gameLink.label}
+										<Favicon pageUrl={gameLink.url} /> {gameLink.label}
 									</LinkListItem>
 								))}
 							</LinkList>

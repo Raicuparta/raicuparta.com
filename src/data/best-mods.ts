@@ -65,7 +65,7 @@ export const bestMods: Project[] = [
 			},
 			{
 				label: "Outer Wilds on Epic Games Store",
-				url: "https://store.epicgames.com/en-US/p/outerwilds",
+				url: "https://store.epicgames.com/p/outerwilds",
 			},
 		],
 	},

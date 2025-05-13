@@ -1,8 +1,9 @@
 import { css } from "../styled-system/css";
-import { flex } from "../styled-system/patterns";
+import { flex, hstack } from "../styled-system/patterns";
 import { LinkListItem } from "./link-list-item";
 import { Image } from "./image";
 import { getPagePreview } from "../helpers/page-preview";
+import Favicon from "./favicon";
 
 type Props = {
 	articleUrl: string;
@@ -15,37 +16,17 @@ export default async function ArticlePreview({ articleUrl }: Props) {
 		<LinkListItem key={article.url} url={article.url}>
 			<div
 				className={flex({
-					position: "relative",
 					rounded: "lg",
 					overflow: "hidden",
 				})}
 			>
 				<Image src={article.image} width={160} height={90} alt="" />
-				{article.favicon && (
-					<div
-						className={css({
-							position: "absolute",
-							top: 0,
-							left: 0,
-						})}
-					>
-						<Image
-							src={article.favicon}
-							width={32}
-							height={32}
-							className={css({
-								roundedBottomRight: "md",
-								background: "white",
-							})}
-							alt={article.siteName}
-						/>
-					</div>
-				)}
 			</div>
 			<div className={css({ flex: 1 })}>
-				{article.siteName && (
+				<div className={hstack({ gap: 1 })}>
+					<Favicon pageUrl={article.url} />
 					<p className={css({ fontWeight: "bold" })}>{article.siteName}</p>
-				)}
+				</div>
 				<p>{article.title}</p>
 			</div>
 		</LinkListItem>

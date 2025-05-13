@@ -1,6 +1,7 @@
 import crypto from "node:crypto";
 import fs from "node:fs/promises";
 import sharp from "sharp";
+import sharpIco from "sharp-ico";
 
 interface Props extends React.ComponentProps<"img"> {
 	src: string;
@@ -37,25 +38,29 @@ async function optimizeImage(
 	height?: number,
 	quality = 75,
 ): Promise<string> {
-	const sharpImage = await getSharpImage(src);
-	const fileName = `${crypto.createHash("md5").update(`${src}${width}${height}${quality}`).digest("hex")}.webp`;
-	const outputFolder = "optimized";
-	const publicFolder = `./public/${outputFolder}`;
-	await fs.mkdir(publicFolder, { recursive: true });
+	try {
+		const sharpImage = await getSharpImage(src);
+		const fileName = `${crypto.createHash("md5").update(`${src}${width}${height}${quality}`).digest("hex")}.webp`;
+		const outputFolder = "optimized";
+		const publicFolder = `./public/${outputFolder}`;
+		await fs.mkdir(publicFolder, { recursive: true });
 
-	await sharpImage
-		.resize({
-			width,
-			height,
-			fit: "inside",
-		})
-		.webp({
-			quality,
-		})
-		.toFile(`${publicFolder}/${fileName}`);
+		await sharpImage
+			.resize({
+				width,
+				height,
+				fit: "inside",
+			})
+			.webp({
+				quality,
+			})
+			.toFile(`${publicFolder}/${fileName}`);
 
-	// When using the path in img src we don't want to include the 'public' part.
-	return `/${outputFolder}/${fileName}`;
+		// When using the path in img src we don't want to include the 'public' part.
+		return `/${outputFolder}/${fileName}`;
+	} catch (error) {
+		throw new Error(`Failed to optimize image ${src}: ${error}`);
+	}
 }
 
 async function getSharpImage(src: string): Promise<sharp.Sharp> {
@@ -67,6 +72,15 @@ async function getSharpImage(src: string): Promise<sharp.Sharp> {
 			throw new Error(`Failed to fetch image: ${response.statusText}`);
 		}
 		const buffer = await response.arrayBuffer();
+
+		if (src.endsWith(".ico")) {
+			const sharpFromIco = sharpIco.sharpsFromIco(Buffer.from(buffer))[0];
+			if (!sharpFromIco || "bpp" in sharpFromIco) {
+				throw new Error(`Failed to decode ico from ${src}`);
+			}
+			return sharpFromIco;
+		}
+
 		return sharp(buffer);
 	}
 	const buffer = await fs.readFile(`./private/${src}`);
