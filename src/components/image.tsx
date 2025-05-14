@@ -2,6 +2,7 @@ import crypto from "node:crypto";
 import fs from "node:fs/promises";
 import sharp from "sharp";
 import sharpIco from "sharp-ico";
+import { serverUserAgent } from "../helpers/constants";
 
 interface Props extends React.ComponentProps<"img"> {
 	src: string;
@@ -47,8 +48,8 @@ async function optimizeImage(
 
 		await sharpImage
 			.resize({
-				width,
-				height,
+				width: width ? width * 1.5 : undefined,
+				height: height ? height * 1.5 : undefined,
 				fit: "inside",
 			})
 			.webp({
@@ -63,42 +64,16 @@ async function optimizeImage(
 	}
 }
 
-async function fetchWithAndWithoutWww(url: string): Promise<Response> {
-	const response = await fetch(url, {
-		redirect: "follow",
-		headers: {
-			"user-agent":
-				"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.16 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
-		},
-	});
-	if (response.ok) {
-		console.log(`Fetched image from ${url}`);
-		return response;
-	}
-
-	const urlWithoutWww = url.replace(/^https?:\/\/(www\.)?/, "https://");
-	console.log(`Fetching image from ${urlWithoutWww}`);
-
-	const responseWithoutWww = await fetch(urlWithoutWww, {
-		redirect: "follow",
-		headers: {
-			"user-agent":
-				"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.16 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
-		},
-	});
-	if (!responseWithoutWww.ok) {
-		throw new Error(
-			`Failed to fetch image ${urlWithoutWww}: ${response.statusText}`,
-		);
-	}
-	return responseWithoutWww;
-}
-
 async function getSharpImage(src: string): Promise<sharp.Sharp> {
 	const isExternal = /^https?:\/\//.test(src);
 
 	if (isExternal) {
-		const response = await fetchWithAndWithoutWww(src);
+		const response = await fetch(src, {
+			redirect: "follow",
+			headers: {
+				"user-agent": serverUserAgent,
+			},
+		});
 		if (!response.ok) {
 			throw new Error(`Failed to fetch image: ${response.statusText}`);
 		}
