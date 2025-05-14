@@ -29,6 +29,10 @@ export const bestMods: Project[] = [
 				label: "Neon White on Steam",
 				url: "https://store.steampowered.com/app/1533420/Neon_White/",
 			},
+			{
+				label: "Neon White on PC Xbox Game Pass",
+				url: "https://www.xbox.com/games/store/neon-white/9mtgvhf37dfk",
+			},
 		],
 	},
 	{
@@ -37,7 +41,7 @@ export const bestMods: Project[] = [
 		mainVideo: "gPFiYRMm8Ok",
 		videos: ["g2NbjF4fG0s", "SCZ8vtl4sVs", "5ntWk0rJTC0", "_mfKvDbeEkg"],
 		articles: [
-			"https://uploadvr.com/outer-wilds-vr-mod/",
+			"https://www.uploadvr.com/outer-wilds-vr-mod/",
 			"https://www.realovirtual.com/noticias/10852/outer-wilds-esta-gamepass-se-puede-jugar-vr",
 		],
 		description:
@@ -76,9 +80,8 @@ export const bestMods: Project[] = [
 		videos: ["jO_V-sq-Ics", "h2uI3ITaHj8", "KeKsGIhehjU"],
 		articles: [
 			"https://www.roadtovr.com/firewatch-vr-mod-free-pc-vr-quest/",
-			"https://vrscout.com/news/firewatch-vr-mod-now-available-free-of-charge/",
 			"https://www.realovirtual.com/noticias/11291/mod-vr-firewatch-llega-su-version-definitiva",
-			"https://uploadvr.com/firewatch-vr-mod-now-complete/",
+			"https://www.uploadvr.com/firewatch-vr-mod-now-complete/",
 		],
 		description:
 			"Firewatch VR mod. The full game is playable in VR, with room-scale tracking, motion controls, and multiple comfort options.",
