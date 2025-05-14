@@ -63,11 +63,25 @@ async function optimizeImage(
 	}
 }
 
+async function fetchWithAndWithoutWww(url: string): Promise<Response> {
+	const response = await fetch(url);
+	if (response.ok) {
+		return response;
+	}
+
+	const urlWithoutWww = url.replace(/^https?:\/\/(www\.)?/, "https://");
+	const responseWithoutWww = await fetch(urlWithoutWww);
+	if (!responseWithoutWww.ok) {
+		throw new Error(`Failed to fetch image: ${response.statusText}`);
+	}
+	return responseWithoutWww;
+}
+
 async function getSharpImage(src: string): Promise<sharp.Sharp> {
 	const isExternal = /^https?:\/\//.test(src);
 
 	if (isExternal) {
-		const response = await fetch(src);
+		const response = await fetchWithAndWithoutWww(src);
 		if (!response.ok) {
 			throw new Error(`Failed to fetch image: ${response.statusText}`);
 		}
