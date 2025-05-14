@@ -123,7 +123,9 @@ export const ProjectPage = (props: Props) => {
 							<LinkList>
 								{props.project.moreLinks.map((gameLink) => (
 									<LinkListItem key={gameLink.url} url={gameLink.url}>
-										<Favicon pageUrl={gameLink.url} /> {gameLink.label}
+										<div className={hstack({ gap: 2 })}>
+											<Favicon pageUrl={gameLink.url} /> {gameLink.label}
+										</div>
 									</LinkListItem>
 								))}
 							</LinkList>

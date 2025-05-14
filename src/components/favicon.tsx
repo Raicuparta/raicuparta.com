@@ -10,7 +10,7 @@ export default async function Favicon({ pageUrl }: Props) {
 		<div
 			className={css({
 				background: "darkWhite",
-				rounded: "xl",
+				rounded: "sm",
 				padding: "2px",
 				overflow: "hidden",
 			})}

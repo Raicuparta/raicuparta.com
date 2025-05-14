@@ -23,7 +23,7 @@ export default async function ArticlePreview({ articleUrl }: Props) {
 				<Image src={article.image} width={160} height={90} alt="" />
 			</div>
 			<div className={css({ flex: 1 })}>
-				<div className={hstack({ gap: 1 })}>
+				<div className={hstack({ gap: 2 })}>
 					<Favicon pageUrl={article.url} />
 					<p className={css({ fontWeight: "bold" })}>{article.siteName}</p>
 				</div>
