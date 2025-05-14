@@ -25,44 +25,26 @@ export const ProjectCard = (props: Props) => (
 			props.className,
 		)}
 	>
-		<div
+		<Image
+			src={props.src}
+			width={500}
+			height={400}
+			quality={30}
+			alt={props.title}
 			className={css({
+				objectFit: "contain",
+				background: "overlay",
 				sm: {
 					maxWidth: 200,
 					minWidth: 200,
 					height: "unset",
 				},
 				height: 200,
+				width: "100%",
 				maxWidth: undefined,
 				minWidth: undefined,
-				position: "relative",
-				overflow: "hidden",
 			})}
-		>
-			<Image
-				src={props.src}
-				width={500}
-				height={400}
-				quality={30}
-				alt={props.title}
-				className={css({
-					position: "absolute",
-					objectFit: "cover",
-					height: "100%",
-					width: "100%",
-					filter: "blur(10px)",
-					zIndex: -1,
-				})}
-			/>
-			<Image
-				src={props.src}
-				width={500}
-				height={400}
-				quality={30}
-				alt={props.title}
-				className={css({ objectFit: "contain", height: "100%", width: "100%" })}
-			/>
-		</div>
+		/>
 		<div className={stack({ padding: 4, gap: 4 })}>
 			<div
 				className={css({
