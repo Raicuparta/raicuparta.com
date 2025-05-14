@@ -64,15 +64,24 @@ async function optimizeImage(
 }
 
 async function fetchWithAndWithoutWww(url: string): Promise<Response> {
-	const response = await fetch(url);
+	const response = await fetch(url, {
+		redirect: "follow",
+	});
 	if (response.ok) {
+		console.log(`Fetched image from ${url}`);
 		return response;
 	}
 
 	const urlWithoutWww = url.replace(/^https?:\/\/(www\.)?/, "https://");
-	const responseWithoutWww = await fetch(urlWithoutWww);
+	console.log(`Fetching image from ${urlWithoutWww}`);
+
+	const responseWithoutWww = await fetch(urlWithoutWww, {
+		redirect: "follow",
+	});
 	if (!responseWithoutWww.ok) {
-		throw new Error(`Failed to fetch image: ${response.statusText}`);
+		throw new Error(
+			`Failed to fetch image ${urlWithoutWww}: ${response.statusText}`,
+		);
 	}
 	return responseWithoutWww;
 }
