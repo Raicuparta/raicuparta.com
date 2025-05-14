@@ -1,8 +1,8 @@
 import LinkPreview from "link-preview-js";
 
-export async function getPagePreview(url: string) {
+export async function getPagePreview(url: string, followRedirects = true) {
 	return LinkPreview.getLinkPreview(url, {
-		followRedirects: "follow",
+		followRedirects: followRedirects ? "follow" : "error",
 		timeout: 20000,
 		headers: {
 			"user-agent":
