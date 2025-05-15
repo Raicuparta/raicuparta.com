@@ -1,37 +1,33 @@
 {
-  "name": "raicuparta-com",
-  "homepage": "https://raicuparta.com",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "dev": "next dev -p 3001",
-    "run-build": "npm run build && npm run test-build",
-    "build": "next build && next export && next-export-optimize-images",
-    "test-build": "npx http-server out",
-    "prettier": "prettier --write .",
-    "prepare": "panda codegen"
-  },
-  "dependencies": {
-    "@svgr/webpack": "8.0.1",
-    "@types/yt-player": "^3.5.4",
-    "link-preview-js": "^3.0.5",
-    "next": "13.3.4",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "sass": "1.63.6",
-    "yt-player": "^3.6.1"
-  },
-  "devDependencies": {
-    "@pandacss/dev": "^0.31.0",
-    "@types/node": "18.0.3",
-    "@types/react": "18.2.14",
-    "autoprefixer": "^10.4.17",
-    "next-export-optimize-images": "^2.1.0",
-    "postcss": "^8.4.35",
-    "prettier": "3.0.0",
-    "typescript": "5.1.6"
-  },
-  "engines": {
-    "node": ">=19"
-  }
+	"name": "waku-raicuparta-com",
+	"version": "1.0.0",
+	"type": "module",
+	"private": true,
+	"scripts": {
+		"dev": "waku dev",
+		"build": "waku build",
+		"copy-optimized": "cpy \"public/optimized/**/*\" dist/public/optimized",
+		"start": "waku start",
+		"prepare": "panda codegen",
+		"format": "biome check --write ./src"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "1.9.4",
+		"@pandacss/dev": "0.53.6",
+		"@types/react": "19.1.4",
+		"@types/react-dom": "19.1.5",
+		"@types/yt-player": "3.5.4",
+		"cpy-cli": "5.0.0",
+		"link-preview-js": "3.0.14",
+		"postcss": "8.5.3",
+		"react": "19.1.0",
+		"react-dom": "19.1.0",
+		"react-server-dom-webpack": "19.1.0",
+		"sharp": "0.34.1",
+		"sharp-ico": "0.1.5",
+		"typescript": "5.8.3",
+		"vite-plugin-svgr": "4.3.0",
+		"waku": "0.23.0",
+		"yt-player": "3.6.1"
+	}
 }
