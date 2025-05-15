@@ -1,3 +1,3 @@
 # [raicuparta.com](https://raicuparta.com)
 
-Personal page made using [Next.js](https://nextjs.org)
+Personal page made using [waku]([https://nextjs.org](https://waku.gg/))
