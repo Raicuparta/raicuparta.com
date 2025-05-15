@@ -1,8 +1,9 @@
+/// <reference types="vite-plugin-svgr/client" />
+
 import AvatarFancy from "./avatar-fancy.svg?react";
 import Avatar from "./avatar.svg?react";
 import Back from "./back.svg?react";
 import Bluesky from "./bluesky.svg?react";
-/// <reference types="vite-plugin-svgr/client" />
 import Dev from "./dev.svg?react";
 import Download from "./download.svg?react";
 import Github from "./github.svg?react";
