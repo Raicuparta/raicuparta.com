@@ -12,7 +12,7 @@ import { mehMods } from "../data/meh-mods";
 import { otherProjects } from "../data/other-projects";
 import { websiteUrl } from "../helpers/constants";
 import { css } from "../styled-system/css";
-import { stack } from "../styled-system/patterns";
+import { flex, hstack, stack } from "../styled-system/patterns";
 
 export default function HomePage(props: PageProps<"/">) {
 	return (
@@ -39,12 +39,23 @@ export default function HomePage(props: PageProps<"/">) {
 							},
 						})}
 					>
-						<div>
+						<div
+							className={flex({
+								gap: 2,
+								flexDirection: "row",
+								alignItems: "center",
+								sm: { flexDirection: "column", gap: 0 },
+							})}
+						>
 							<Avatar
 								className={css({
-									width: 100,
-									height: 100,
 									background: "overlay",
+									width: "40px",
+									height: "40px",
+									sm: {
+										width: 100,
+										height: 100,
+									},
 								})}
 							/>
 							<h1

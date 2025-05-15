@@ -39,7 +39,7 @@ export const ProjectCard = (props: Props) => (
 					minWidth: 200,
 					height: "unset",
 				},
-				height: 200,
+				height: 150,
 				width: "100%",
 				maxWidth: undefined,
 				minWidth: undefined,
