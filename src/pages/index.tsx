@@ -12,7 +12,7 @@ import { mehMods } from "../data/meh-mods";
 import { otherProjects } from "../data/other-projects";
 import { websiteUrl } from "../helpers/constants";
 import { css } from "../styled-system/css";
-import { flex, hstack, stack } from "../styled-system/patterns";
+import { flex, stack } from "../styled-system/patterns";
 
 export default function HomePage(props: PageProps<"/">) {
 	return (

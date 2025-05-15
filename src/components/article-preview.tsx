@@ -1,9 +1,9 @@
+import { getPagePreview } from "../helpers/page-preview";
 import { css } from "../styled-system/css";
 import { flex, hstack } from "../styled-system/patterns";
-import { LinkListItem } from "./link-list-item";
-import { Image } from "./image";
-import { getPagePreview } from "../helpers/page-preview";
 import Favicon from "./favicon";
+import { Image } from "./image";
+import { LinkListItem } from "./link-list-item";
 
 type Props = {
 	articleUrl: string;
