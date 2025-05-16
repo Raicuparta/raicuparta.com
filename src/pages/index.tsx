@@ -115,12 +115,12 @@ export default function HomePage(props: PageProps<"/">) {
 							<ButtonLink
 								key={mod.id}
 								href={`/${mod.id}-vr-mod`}
-								title={`${mod.title} - ${mod.description}`}
+								title={`${mod.title} - ${mod.shortDescription}`}
 							>
 								<ProjectCard
 									src={`/images/projects/${mod.id}.png`}
 									title={mod.title}
-									description={mod.description}
+									description={mod.shortDescription}
 									clickable
 								/>
 							</ButtonLink>
@@ -137,12 +137,12 @@ export default function HomePage(props: PageProps<"/">) {
 							<ButtonLink
 								key={mod.id}
 								href={`/${mod.id}-vr-mod`}
-								title={`${mod.title} - ${mod.description}`}
+								title={`${mod.title} - ${mod.shortDescription}`}
 							>
 								<ProjectCard
 									src={`/images/projects/${mod.id}.png`}
 									title={mod.title}
-									description={mod.description}
+									description={mod.shortDescription}
 									clickable
 								/>
 							</ButtonLink>

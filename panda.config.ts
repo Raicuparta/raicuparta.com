@@ -19,6 +19,9 @@ export default defineConfig({
 					purple: { value: "#473a8f" },
 				},
 			},
+			breakpoints: {
+				xs: "420px"
+			}
 		},
 	},
 	outdir: "src/styled-system",
