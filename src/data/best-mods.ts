@@ -10,9 +10,8 @@ export const bestMods: Project[] = [
 			"https://www.realovirtual.com/noticias/11851/frenetico-plataformas-neon-white-tendra-mod-vr-este-mismo-mes",
 		],
 		id: "neon-white",
-		shortDescription: "Neon White VR mod",
-		longDescription:
-			"Really fun speedrunning FPS, with fast-paced shooter/platformer gameplay. It's an intense, fun, and addictive VR experience.",
+		description:
+			"Neon White VR mod. Really fun speedrunning FPS, with fast-paced shooter/platformer gameplay. It's an intense, fun, and addictive VR experience.",
 		buttons: [
 			{
 				url: "https://raicuparta.itch.io/heaven-vr",
@@ -45,9 +44,8 @@ export const bestMods: Project[] = [
 			"https://www.uploadvr.com/outer-wilds-vr-mod/",
 			"https://www.realovirtual.com/noticias/10852/outer-wilds-esta-gamepass-se-puede-jugar-vr",
 		],
-		shortDescription: "Outer Wilds VR mod",
-		longDescription:
-			"My first mod, and still my most popular one. Lots of exploration, and a really interesting mystery to solve.",
+		description:
+			"Outer Wilds VR mod. My first mod, and still my most popular one. Lots of exploration, and a really interesting mystery to solve.",
 		buttons: [
 			{
 				icon: "Download",
@@ -85,9 +83,8 @@ export const bestMods: Project[] = [
 			"https://www.realovirtual.com/noticias/11291/mod-vr-firewatch-llega-su-version-definitiva",
 			"https://www.uploadvr.com/firewatch-vr-mod-now-complete/",
 		],
-		shortDescription: "Firewatch VR mod",
-		longDescription:
-			"The full game is playable in VR, with room-scale tracking, motion controls, and multiple comfort options.",
+		description:
+			"Firewatch VR mod. The full game is playable in VR, with room-scale tracking, motion controls, and multiple comfort options.",
 		buttons: [
 			{
 				url: "https://raicuparta.itch.io/two-forks-vr",

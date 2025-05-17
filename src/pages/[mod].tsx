@@ -11,9 +11,9 @@ export default async function ModPage(props: PageProps<"[mod]">) {
 		<>
 			<PageHead
 				route={props.path}
-				description={project.longDescription}
+				description={project.description}
 				imageUrl={`${websiteUrl}${`/mods/${project.id}.jpg`}`}
-				title={`${project.title}: ${project.shortDescription}`}
+				title={`${project.title}`}
 				imageWidth={400}
 				imageHeight={225}
 				largeImage

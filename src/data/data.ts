@@ -6,8 +6,7 @@ export type Project = {
 	mainVideo: string;
 	videos: string[];
 	articles: string[];
-	shortDescription: string;
-	longDescription: string;
+	description: string;
 	buttons: ProjectButton[];
 	moreLinks: Link[];
 	steamEmbed?: {

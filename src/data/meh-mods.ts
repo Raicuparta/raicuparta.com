@@ -22,9 +22,8 @@ export const mehMods: Project[] = [
 				label: "Star on GitHub",
 			},
 		],
-		shortDescription: "Stanley Parable VR mod",
-		longDescription:
-			"Ultra Deluxe only. Missing some polish, but the game is playable from start to finish with motion controls.",
+		description:
+			"The Stanley Parable VR Mod (Ultra Deluxe only). Missing some polish, but the game is playable from start to finish with motion controls.",
 		moreLinks: [
 			{
 				label: "The Stanley Parable: Ultra Deluxe on Steam",
@@ -47,9 +46,8 @@ export const mehMods: Project[] = [
 			"https://www.roadtovr.com/trombone-champ-vr-mod-quest-2-steam-pc/",
 		],
 		id: "trombone-champ",
-		shortDescription: "Trombone Champ VR mod",
-		longDescription:
-			"Redundant now that there is an official port, Trombone Champ: Unflattened (which I worked on!).",
+		description:
+			"Trombone Champ VR mod. Redundant now that there is an official port, Trombone Champ: Unflattened (which I worked on!).",
 		buttons: [
 			{
 				url: "https://raicuparta.itch.io/baboon-vr",
@@ -87,9 +85,8 @@ export const mehMods: Project[] = [
 		videos: ["PZLhq5NiFKo"],
 		articles: [],
 		id: "shipbreaker",
-		shortDescription: "Hardspace: Shipbreaker VR mod",
-		longDescription:
-			"Has no motion controls, but features camera-independent aiming for all the game tools. Some UI elements broken.",
+		description:
+			"Hardspace: Shipbreaker VR mod. Has no motion controls, but features camera-independent aiming for all the game tools. Some UI elements broken.",
 		buttons: [
 			{
 				url: "https://raicuparta.itch.io/shipbreaker-vr",
