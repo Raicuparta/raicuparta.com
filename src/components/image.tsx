@@ -1,5 +1,6 @@
 import crypto from "node:crypto";
 import fs from "node:fs/promises";
+import { existsSync } from "node:fs";
 import sharp from "sharp";
 import sharpIco from "sharp-ico";
 import { serverUserAgent } from "../helpers/constants";
@@ -40,22 +41,25 @@ async function optimizeImage(
 	quality = 75,
 ): Promise<string> {
 	try {
-		const sharpImage = await getSharpImage(src);
 		const fileName = `${crypto.createHash("md5").update(`${src}${width}${height}${quality}`).digest("hex")}.webp`;
 		const outputFolder = "optimized";
 		const publicFolder = `./public/${outputFolder}`;
 		await fs.mkdir(publicFolder, { recursive: true });
+		const outputPath = `${publicFolder}/${fileName}`;
 
-		await sharpImage
-			.resize({
-				width: width ? width * 1.5 : undefined,
-				height: height ? height * 1.5 : undefined,
-				fit: "inside",
-			})
-			.webp({
-				quality,
-			})
-			.toFile(`${publicFolder}/${fileName}`);
+		if (!existsSync(outputPath)) {
+			const sharpImage = await getSharpImage(src);
+			await sharpImage
+				.resize({
+					width: width ? Math.round(width * 1.5) : undefined,
+					height: height ? Math.round(height * 1.5) : undefined,
+					fit: "inside",
+				})
+				.webp({
+					quality,
+				})
+				.toFile(outputPath);
+		}
 
 		// When using the path in img src we don't want to include the 'public' part.
 		return `/${outputFolder}/${fileName}`;
