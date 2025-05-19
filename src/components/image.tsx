@@ -1,5 +1,4 @@
 import crypto from "node:crypto";
-import { existsSync } from "node:fs";
 import fs from "node:fs/promises";
 import sharp from "sharp";
 import sharpIco from "sharp-ico";
@@ -21,15 +20,15 @@ export async function Image({
 	quality,
 	...props
 }: Props) {
-	const optimizedImagePath = await optimizeImage(src, width, height, quality);
+	const optimizedImage = await optimizeImage(src, width, height, quality);
 
 	return (
 		<img
 			{...props}
 			alt={alt}
-			src={optimizedImagePath}
-			height={height}
-			width={width}
+			src={optimizedImage.path}
+			height={height ?? optimizedImage.height}
+			width={width ?? optimizedImage.width}
 		/>
 	);
 }
@@ -39,7 +38,7 @@ async function optimizeImage(
 	width?: number,
 	height?: number,
 	quality = 75,
-): Promise<string> {
+) {
 	try {
 		const fileName = `${crypto.createHash("md5").update(`${src}${width}${height}${quality}`).digest("hex")}.webp`;
 		const outputFolder = "optimized";
@@ -47,22 +46,24 @@ async function optimizeImage(
 		await fs.mkdir(publicFolder, { recursive: true });
 		const outputPath = `${publicFolder}/${fileName}`;
 
-		if (!existsSync(outputPath)) {
-			const sharpImage = await getSharpImage(src);
-			await sharpImage
-				.resize({
-					width: width ? Math.round(width * 1.5) : undefined,
-					height: height ? Math.round(height * 1.5) : undefined,
-					fit: "inside",
-				})
-				.webp({
-					quality,
-				})
-				.toFile(outputPath);
-		}
+		const sharpImage = await getSharpImage(src);
+		const imageOutput = await sharpImage
+			.resize({
+				width: width ? Math.round(width * 1.5) : undefined,
+				height: height ? Math.round(height * 1.5) : undefined,
+				fit: "inside",
+			})
+			.webp({
+				quality,
+			})
+			.toFile(outputPath);
 
-		// When using the path in img src we don't want to include the 'public' part.
-		return `/${outputFolder}/${fileName}`;
+		return {
+			// When using the path in img src we don't want to include the 'public' part.
+			path: `/${outputFolder}/${fileName}`,
+			width: imageOutput.width,
+			height: imageOutput.height,
+		};
 	} catch (error) {
 		throw new Error(`Failed to optimize image ${src}: ${error}`);
 	}
