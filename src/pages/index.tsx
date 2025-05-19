@@ -121,7 +121,7 @@ export default function HomePage(props: PageProps<"/">) {
 									src={`/images/projects/${mod.id}.png`}
 									title={mod.title}
 									description={mod.description}
-									clickable
+									clickable={true}
 								/>
 							</ButtonLink>
 						);
@@ -143,7 +143,7 @@ export default function HomePage(props: PageProps<"/">) {
 									src={`/images/projects/${mod.id}.png`}
 									title={mod.title}
 									description={mod.description}
-									clickable
+									clickable={true}
 								/>
 							</ButtonLink>
 						);
@@ -164,7 +164,7 @@ export default function HomePage(props: PageProps<"/">) {
 									src={`/images/projects/${project.id}.png`}
 									title={project.title}
 									description={project.description}
-									clickable
+									clickable={true}
 								/>
 							</ButtonLink>
 						);

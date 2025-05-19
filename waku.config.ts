@@ -1,5 +1,5 @@
-import { defineConfig } from "waku/config";
 import svgr from "vite-plugin-svgr";
+import { defineConfig } from "waku/config";
 
 export default defineConfig({
 	unstable_viteConfigs: {

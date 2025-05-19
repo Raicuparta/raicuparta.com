@@ -1,10 +1,10 @@
 import type { Project } from "../data/data";
 import { css } from "../styled-system/css";
 import { flex, hstack, stack, vstack } from "../styled-system/patterns";
-import ArticlePreview from "./article-preview";
+import { ArticlePreview } from "./article-preview";
 import { Avatar } from "./avatar";
 import { ButtonLink } from "./button-link";
-import Favicon from "./favicon";
+import { Favicon } from "./favicon";
 import { Icon } from "./icon";
 import { IconButton } from "./icon-button";
 import { LinkList } from "./link-list";

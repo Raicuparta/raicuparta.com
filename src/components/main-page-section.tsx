@@ -9,18 +9,6 @@ type Props = {
 	id: string;
 };
 
-function Hr() {
-	return (
-		<hr
-			className={css({
-				height: "1px",
-				backgroundColor: "darkWhite",
-				flex: 1,
-			})}
-		/>
-	);
-}
-
 export const MainPageSection = (props: Props) => (
 	<div className={stack({ lineHeight: 1.5, gap: 4 })} id={props.id}>
 		{props.title && (

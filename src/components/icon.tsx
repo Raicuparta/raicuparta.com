@@ -1,5 +1,5 @@
 import { css, cx } from "../styled-system/css";
-import assets, { type IconName } from "../svg-assets";
+import { type IconName, svgAssets } from "../svg-assets";
 
 type Props = {
 	name: IconName;
@@ -7,6 +7,6 @@ type Props = {
 };
 
 export const Icon = ({ name, className }: Props) => {
-	const SvgIcon = assets[name];
+	const SvgIcon = svgAssets[name];
 	return <SvgIcon className={cx(css({ fill: "currentcolor" }), className)} />;
 };

@@ -1,7 +1,7 @@
 /// <reference types="vite-plugin-svgr/client" />
 
-import AvatarFancy from "./avatar-fancy.svg?react";
 import Avatar from "./avatar.svg?react";
+import AvatarFancy from "./avatar-fancy.svg?react";
 import Back from "./back.svg?react";
 import Bluesky from "./bluesky.svg?react";
 import Dev from "./dev.svg?react";
@@ -17,7 +17,7 @@ import TikTok from "./tiktok.svg?react";
 import Twitter from "./twitter.svg?react";
 import YouTube from "./youtube.svg?react";
 
-const assets = {
+export const svgAssets = {
 	Dev,
 	Github,
 	Twitter,
@@ -36,5 +36,4 @@ const assets = {
 	Kofi,
 };
 
-export type IconName = keyof typeof assets;
-export default assets;
+export type IconName = keyof typeof svgAssets;

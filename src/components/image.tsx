@@ -1,6 +1,6 @@
 import crypto from "node:crypto";
-import fs from "node:fs/promises";
 import { existsSync } from "node:fs";
+import fs from "node:fs/promises";
 import sharp from "sharp";
 import sharpIco from "sharp-ico";
 import { serverUserAgent } from "../helpers/constants";

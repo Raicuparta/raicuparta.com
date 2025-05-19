@@ -16,14 +16,14 @@ export default async function ModPage(props: PageProps<"[mod]">) {
 				title={`${project.title}`}
 				imageWidth={400}
 				imageHeight={225}
-				largeImage
+				largeImage={true}
 			/>
 			<ProjectPage project={project} />
 		</>
 	);
 }
 
-export const getProject = async (mod: string) => {
+async function getProject(mod: string) {
 	if (typeof mod !== "string") {
 		throw new Error(
 			`modPage param is of wrong type. Expected string, got ${typeof mod}`,
@@ -38,11 +38,11 @@ export const getProject = async (mod: string) => {
 	}
 
 	return project;
-};
+}
 
-export const getConfig = async () => {
+export async function getConfig() {
 	return {
 		render: "static",
 		staticPaths: allMods.map((mod) => `${mod.id}-vr-mod`),
 	} as const;
-};
+}

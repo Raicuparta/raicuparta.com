@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import ScrollResetter from "../components/scroll-resetter";
+import { ScrollResetter } from "../components/scroll-resetter";
 import { css } from "../styled-system/css";
 import { token } from "../styled-system/tokens";
 

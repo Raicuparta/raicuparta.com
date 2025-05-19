@@ -18,9 +18,9 @@ export const Avatar = ({ className }: Props) => {
 
 	return (
 		<span
+			aria-hidden="true"
 			className={cx(circle({ overflow: "hidden" }), className)}
 			onClick={onClickAvatar}
-			onKeyUp={onClickAvatar}
 		>
 			<Icon name={isFancy ? "AvatarFancy" : "Avatar"} />
 		</span>

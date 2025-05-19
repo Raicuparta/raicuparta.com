@@ -1,7 +1,7 @@
 import { getPagePreview } from "../helpers/page-preview";
 import { css } from "../styled-system/css";
 import { flex, hstack } from "../styled-system/patterns";
-import Favicon from "./favicon";
+import { Favicon } from "./favicon";
 import { Image } from "./image";
 import { LinkListItem } from "./link-list-item";
 
@@ -9,7 +9,7 @@ type Props = {
 	articleUrl: string;
 };
 
-export default async function ArticlePreview({ articleUrl }: Props) {
+export async function ArticlePreview({ articleUrl }: Props) {
 	const article = await getArticle(articleUrl);
 
 	return (
@@ -38,7 +38,7 @@ async function getArticle(articleUrl: string) {
 		const pagePreview = await getPagePreview(articleUrl);
 
 		if (!("title" in pagePreview) || pagePreview.images.length === 0) {
-			throw "Missing title or image";
+			throw new Error("Missing title or image");
 		}
 
 		const url = new URL(articleUrl).hostname.replace("www.", "");
@@ -47,10 +47,10 @@ async function getArticle(articleUrl: string) {
 			url: pagePreview.url,
 			title: pagePreview.title,
 			image: pagePreview.images[0] ?? "",
-			favicon: pagePreview.favicons[pagePreview.favicons.length - 1],
+			favicon: pagePreview.favicons.at(-1),
 			siteName: pagePreview.siteName ?? url,
 		};
 	} catch (error) {
-		throw `Failed to get article from url ${articleUrl}: ${error}`;
+		throw new Error(`Failed to get article from url ${articleUrl}: ${error}`);
 	}
 }

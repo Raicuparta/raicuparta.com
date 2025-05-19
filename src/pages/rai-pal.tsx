@@ -45,7 +45,7 @@ export default function RaiPalPage(props: PageProps<"rai-pal">) {
 				title={"Rai Pal"}
 				imageWidth={400}
 				imageHeight={225}
-				largeImage
+				largeImage={true}
 			/>
 			<ProjectPage project={raiPal}>
 				<Image

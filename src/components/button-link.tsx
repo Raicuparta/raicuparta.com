@@ -15,8 +15,10 @@ type Props = {
 	children: React.ReactNode;
 };
 
+const externalUrlRegex = /^https?:\/\//;
+
 export function ButtonLink({ href, ...props }: Props) {
-	const isExternal = /^https?:\/\//.test(href);
+	const isExternal = externalUrlRegex.test(href);
 	if (isExternal) {
 		return <ButtonLinkExternal href={href} {...props} />;
 	}
@@ -33,7 +35,7 @@ function ButtonLinkInternal({
 		<Link
 			// Waku's auto-scroll disabled and done in scorll-resetter.tsx instead.
 			scroll={false}
-			unstable_prefetchOnView
+			unstable_prefetchOnView={true}
 			className={cx(defaultStyle, className)}
 			{...props}
 		>

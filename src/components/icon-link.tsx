@@ -1,11 +1,11 @@
 import { css, cx } from "../styled-system/css";
 import { flex } from "../styled-system/patterns";
-import type assets from "../svg-assets";
+import type { IconName } from "../svg-assets";
 import { ButtonLink } from "./button-link";
 import { Icon } from "./icon";
 
 type Props = {
-	iconName: keyof typeof assets;
+	iconName: IconName;
 	title: string;
 	url: string;
 	className?: string;

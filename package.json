@@ -9,10 +9,10 @@
 		"copy-optimized": "cpy \"public/optimized/**/*\" dist/public/optimized",
 		"start": "waku start",
 		"prepare": "panda codegen",
-		"format": "biome check --write ./src"
+		"format": "biome"
 	},
 	"devDependencies": {
-		"@biomejs/biome": "1.9.4",
+		"@biomejs/biome": "2.0.0-beta.4",
 		"@pandacss/dev": "0.53.6",
 		"@types/react": "19.1.4",
 		"@types/react-dom": "19.1.5",
