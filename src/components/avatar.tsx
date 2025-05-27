@@ -19,7 +19,10 @@ export const Avatar = ({ className }: Props) => {
 	return (
 		<span
 			aria-hidden="true"
-			className={cx(circle({ overflow: "hidden" }), className)}
+			className={cx(
+				circle({ overflow: "hidden", background: "overlay" }),
+				className,
+			)}
 			onClick={onClickAvatar}
 		>
 			<Icon name={isFancy ? "AvatarFancy" : "Avatar"} />

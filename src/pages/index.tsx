@@ -49,7 +49,6 @@ export default function HomePage(props: PageProps<"/">) {
 						>
 							<Avatar
 								className={css({
-									background: "overlay",
 									width: "40px",
 									height: "40px",
 									sm: {
