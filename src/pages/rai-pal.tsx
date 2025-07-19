@@ -16,7 +16,7 @@ const raiPal: Project = {
   buttons: [
     {
       icon: "Download",
-      url: "https://github.com/Raicuparta/rai-pal/releases/latest/download/RaiPal.msi",
+      url: "https://github.com/Raicuparta/rai-pal/releases/latest/download/RaiPal.exe",
       label: "Download Rai Pal for Windows",
     },
     {
