@@ -69,13 +69,7 @@ export default function HomePage(props: PageProps<"/">) {
 						</div>
 						<Card className={stack({ padding: 4, gap: 4 })}>
 							<div className={stack()}>
-								<p>
-									Hello. I'm Raicuparta, Tech Lead at{" "}
-									<TextLink href="https://flat2vrstudios.com/">
-										Flat2VR Studios
-									</TextLink>
-									, and some kind of developer in my free time.
-								</p>
+								<p>Hello. I'm Raicuparta. I make games and mods and things.</p>
 								<p>
 									I'm most known for my{" "}
 									<TextLink href="#vr-mods" isExternal={false}>
@@ -91,13 +85,20 @@ export default function HomePage(props: PageProps<"/">) {
 									<TextLink href="https://raicuparta.itch.io">Itch.io</TextLink>
 								</p>
 								<p>
-									I also have professional experience with full-stack web
-									development, but mostly frontend. I've used this experience in
-									a few of my{" "}
+									Professionally, I've done a bit of web dev, a bit of game dev,
+									a bit of engineering management. I was the Tech Lead at{" "}
+									<TextLink href="https://flat2vrstudios.com/">
+										Flat2VR Studios
+									</TextLink>
+									.
+								</p>
+								<p>
+									I've used some of my experience with full-stack web
+									development in a few of my{" "}
 									<TextLink isExternal={false} href="#other-projects">
 										personal projects
-									</TextLink>{" "}
-									too.
+									</TextLink>
+									.
 								</p>
 							</div>
 							<SocialLinks />
