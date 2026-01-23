@@ -17,6 +17,8 @@ type Page =
 | ({ path: '/[mod]' } & GetConfigResponse<typeof Mod_getConfig>)
 | ({ path: '/_root' } & GetConfigResponse<typeof Root_getConfig>)
 | ({ path: '/' } & GetConfigResponse<typeof Index_getConfig>)
+| { path: '/rai-pal-docs/discord-privacy'; render: 'dynamic' }
+| { path: '/rai-pal-docs/discord-terms'; render: 'dynamic' }
 | ({ path: '/rai-pal' } & GetConfigResponse<typeof RaiPal_getConfig>);
 
 // prettier-ignore
