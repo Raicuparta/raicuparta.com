@@ -10,6 +10,10 @@ import type { getConfig as Root_getConfig } from './pages/_root';
 // prettier-ignore
 import type { getConfig as Index_getConfig } from './pages/index';
 // prettier-ignore
+import type { getConfig as RaiPalDocsDiscordPrivacy_getConfig } from './pages/rai-pal-docs/discord-privacy';
+// prettier-ignore
+import type { getConfig as RaiPalDocsDiscordTerms_getConfig } from './pages/rai-pal-docs/discord-terms';
+// prettier-ignore
 import type { getConfig as RaiPal_getConfig } from './pages/rai-pal';
 
 // prettier-ignore
@@ -17,8 +21,8 @@ type Page =
 | ({ path: '/[mod]' } & GetConfigResponse<typeof Mod_getConfig>)
 | ({ path: '/_root' } & GetConfigResponse<typeof Root_getConfig>)
 | ({ path: '/' } & GetConfigResponse<typeof Index_getConfig>)
-| { path: '/rai-pal-docs/discord-privacy'; render: 'dynamic' }
-| { path: '/rai-pal-docs/discord-terms'; render: 'dynamic' }
+| ({ path: '/rai-pal-docs/discord-privacy' } & GetConfigResponse<typeof RaiPalDocsDiscordPrivacy_getConfig>)
+| ({ path: '/rai-pal-docs/discord-terms' } & GetConfigResponse<typeof RaiPalDocsDiscordTerms_getConfig>)
 | ({ path: '/rai-pal' } & GetConfigResponse<typeof RaiPal_getConfig>);
 
 // prettier-ignore
