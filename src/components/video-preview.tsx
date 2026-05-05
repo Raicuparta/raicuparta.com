@@ -43,17 +43,27 @@ export default async function VideoPreview({ youtubeId }: Props) {
 
 async function getVideo(youtubeId: string) {
 	const videoUrl = `https://www.youtube.com/watch?v=${youtubeId}`;
-	const pagePreview = await getPagePreview(videoUrl);
 
-	if (!("title" in pagePreview)) {
-		throw new Error(
-			`failed to get title from ${videoUrl} - ${JSON.stringify(pagePreview)}`,
+	try {
+		const pagePreview = await getPagePreview(videoUrl);
+
+		if ("title" in pagePreview && pagePreview.title) {
+			return {
+				url: videoUrl,
+				image: `https://i.ytimg.com/vi/${youtubeId}/mqdefault.jpg`,
+				title: pagePreview.title,
+			};
+		}
+	} catch (error) {
+		console.warn(
+			`Failed to fetch video title for ${videoUrl}:`,
+			error instanceof Error ? error.message : error,
 		);
 	}
 
 	return {
 		url: videoUrl,
 		image: `https://i.ytimg.com/vi/${youtubeId}/mqdefault.jpg`,
-		title: pagePreview.title,
+		title: "Video",
 	};
 }
