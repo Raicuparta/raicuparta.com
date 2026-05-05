@@ -1,5 +1,6 @@
 import { css, cx } from "../styled-system/css";
-import { flex, stack } from "../styled-system/patterns";
+import { flex, hstack, stack } from "../styled-system/patterns";
+import { Icon } from "./icon";
 import { Image } from "./image";
 
 type Props = {
@@ -16,7 +17,7 @@ export const ProjectCard = (props: Props) => (
 			flex({
 				rounded: "lg",
 				overflow: "hidden",
-				background: props.clickable ? "interactive" : "overlay",
+				background: "overlay",
 				flexDirection: "column",
 				sm: {
 					flexDirection: "row",
@@ -45,24 +46,55 @@ export const ProjectCard = (props: Props) => (
 				minWidth: undefined,
 			})}
 		/>
-		<div className={stack({ padding: 4, gap: 4 })}>
+		<div
+			className={hstack({
+				alignItems: "stretch",
+				justifyContent: "space-between",
+				width: "100%",
+			})}
+		>
 			<div
-				className={css({
-					lineHeight: 1,
-					fontSize: "xl",
-					color: "white",
-					fontWeight: "medium",
-				})}
+				className={cx(
+					stack({ padding: 4, gap: 4 }),
+					css({ alignSelf: "center" }),
+				)}
 			>
-				{props.title}
-			</div>
-			{props.description && (
 				<div
 					className={css({
-						fontSize: "md",
+						lineHeight: 1,
+						fontSize: "xl",
+						color: "white",
+						fontWeight: "medium",
 					})}
 				>
-					{props.description}
+					{props.title}
+				</div>
+				{props.description && (
+					<div
+						className={css({
+							fontSize: "md",
+						})}
+					>
+						{props.description}
+					</div>
+				)}
+			</div>
+			{props.clickable && (
+				<div
+					className={cx(
+						flex({
+							justify: "center",
+							alignItems: "center",
+							padding: 2,
+							background: "interactive",
+						}),
+						css({ alignSelf: "stretch" }),
+					)}
+				>
+					<Icon
+						name="ChevronRight"
+						className={css({ height: 10, width: 10 })}
+					/>
 				</div>
 			)}
 		</div>

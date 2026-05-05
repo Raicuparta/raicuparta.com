@@ -82,7 +82,7 @@ export const ProjectPage = (props: Props) => {
 									button.isPrimary
 										? css({
 												background: "cta",
-												color: "purple",
+												color: "white",
 												fontWeight: "bold",
 											})
 										: css({ background: "interactive", paddingY: 1 })

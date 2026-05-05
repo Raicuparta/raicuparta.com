@@ -10,13 +10,13 @@ export default defineConfig({
 		extend: {
 			tokens: {
 				colors: {
-					cta: { value: "#c3a3ff" },
-					interactive: { value: "#2e265d" },
+					cta: { value: "#2b7c4d" },
+					interactive: { value: "#41327b" },
+					interactiveText: { value: "#d2c6ff" },
 					white: { value: "#ffffff" },
-					darkWhite: { value: "#cec5ff" },
-					overlay: { value: "rgba(0, 0, 0, 0.15)" },
+					overlay: { value: "rgba(187, 158, 255, 0.04)" },
 					black: { value: "#000000" },
-					purple: { value: "#473a8f" },
+					purple: { value: "#1d1b20" },
 				},
 			},
 		},

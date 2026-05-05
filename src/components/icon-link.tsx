@@ -19,14 +19,17 @@ export const IconLink = (props: Props) => {
 					width: 6,
 					position: "relative",
 					justify: "center",
-					color: "darkWhite",
+					color: "white",
 				}),
 				"group",
 			)}
 			href={props.url}
 			title={props.title}
 		>
-			<Icon className={css({ fill: "darkWhite" })} name={props.iconName} />
+			<Icon
+				className={css({ color: "interactiveText" })}
+				name={props.iconName}
+			/>
 			<div
 				className={css({
 					backgroundColor: "purple",

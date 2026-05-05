@@ -10,7 +10,7 @@ export default async function RootElement({ children }: RootLayoutProps) {
 		<html
 			lang="en"
 			className={css({
-				color: "darkWhite",
+				color: "white",
 				fontWeight: "light",
 				backgroundColor: "purple",
 			})}

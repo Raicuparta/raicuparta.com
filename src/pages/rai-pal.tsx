@@ -58,7 +58,12 @@ export default function RaiPalPage(props: PageProps<"rai-pal">) {
 				<Image
 					src={"/images/projects/rai-pal.png"}
 					alt="Rai Pal"
-					className={css({ rounded: "lg", width: "100%" })}
+					className={css({
+						rounded: "lg",
+						width: "100%",
+						shadow: "2xl",
+						boxShadow: "0px 0px 20px rgba(198, 172, 255, 0.2)",
+					})}
 				/>
 				<div className={stack()}>
 					<p>

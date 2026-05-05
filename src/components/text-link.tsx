@@ -9,8 +9,8 @@ export const TextLink = ({ isExternal = true, href, ...props }: Props) => (
 		href={href ?? "#"}
 		className={css({
 			textDecoration: "underline",
-			fontWeight: "normal",
-			color: "darkWhite",
+			fontWeight: "bold",
+			color: "interactiveText",
 			_hover: {
 				color: "white",
 			},

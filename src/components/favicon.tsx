@@ -13,7 +13,7 @@ export async function Favicon({ pageUrl }: Props) {
 	return (
 		<div
 			className={css({
-				background: "darkWhite",
+				background: "white",
 				rounded: "sm",
 				padding: "2px",
 				overflow: "hidden",

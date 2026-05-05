@@ -15,6 +15,7 @@ export const mehMods: Project[] = [
 				url: "https://raicuparta.itch.io/stanley-vr",
 				icon: "Itch",
 				label: "Download on Itch",
+				isPrimary: true,
 			},
 			{
 				url: "https://github.com/Raicuparta/stanley-vr",
@@ -53,6 +54,7 @@ export const mehMods: Project[] = [
 				url: "https://raicuparta.itch.io/baboon-vr",
 				icon: "Itch",
 				label: "Download on Itch",
+				isPrimary: true,
 			},
 		],
 		moreLinks: [
@@ -92,6 +94,7 @@ export const mehMods: Project[] = [
 				url: "https://raicuparta.itch.io/shipbreaker-vr",
 				icon: "Itch",
 				label: "Download on Itch",
+				isPrimary: true,
 			},
 			{
 				url: "https://github.com/Raicuparta/shipbreaker-vr",

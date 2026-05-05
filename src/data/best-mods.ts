@@ -17,6 +17,7 @@ export const bestMods: Project[] = [
 				url: "https://raicuparta.itch.io/heaven-vr",
 				icon: "Itch",
 				label: "Download on Itch",
+				isPrimary: true,
 			},
 			{
 				url: "https://github.com/Raicuparta/heaven-vr",
@@ -51,6 +52,7 @@ export const bestMods: Project[] = [
 				icon: "Download",
 				url: "https://outerwildsmods.com/mods/nomaivr/",
 				label: "Download on OuterWildsMods.com",
+				isPrimary: true,
 			},
 			{
 				url: "https://github.com/Raicuparta/nomai-vr",
@@ -90,6 +92,7 @@ export const bestMods: Project[] = [
 				url: "https://raicuparta.itch.io/two-forks-vr",
 				icon: "Itch",
 				label: "Download on Itch",
+				isPrimary: true,
 			},
 			{
 				url: "https://github.com/Raicuparta/two-forks-vr",

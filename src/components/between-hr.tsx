@@ -10,7 +10,7 @@ function Hr() {
 		<hr
 			className={css({
 				height: "1px",
-				backgroundColor: "darkWhite",
+				backgroundColor: "white",
 				flex: 1,
 			})}
 		/>
