@@ -29,6 +29,9 @@ export async function getPagePreview(url: string, followRedirects = true) {
 			// Don't retry on the last attempt
 			if (attempt < MAX_RETRIES - 1) {
 				const delayMs = RETRY_DELAY_MS * Math.pow(2, attempt);
+				console.log(
+					`Retry ${attempt + 1}/${MAX_RETRIES - 1} for ${url} in ${delayMs}ms`,
+				);
 				await new Promise((resolve) => setTimeout(resolve, delayMs));
 			}
 		}
