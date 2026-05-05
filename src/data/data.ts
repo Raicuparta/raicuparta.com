@@ -24,4 +24,5 @@ export type ProjectButton = {
 	url: string;
 	icon: IconName;
 	label: string;
+	isPrimary?: boolean;
 };

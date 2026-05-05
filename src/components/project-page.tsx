@@ -73,19 +73,19 @@ export const ProjectPage = (props: Props) => {
 							justify: "center",
 						})}
 					>
-						{props.project.buttons.map((button, index) => (
+						{props.project.buttons.map((button) => (
 							<IconButton
 								key={button.url}
 								href={button.url}
 								iconName={button.icon}
 								className={
-									index > 0
-										? css({ background: "interactive", paddingY: 1 })
-										: css({
+									button.isPrimary
+										? css({
 												background: "cta",
 												color: "purple",
 												fontWeight: "bold",
 											})
+										: css({ background: "interactive", paddingY: 1 })
 								}
 							>
 								{button.label}
