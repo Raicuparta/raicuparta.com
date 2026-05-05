@@ -22,15 +22,6 @@ export async function getPagePreview(url: string, followRedirects = true) {
 			console.log(
 				`[page-preview] Raw result for ${url}: ${JSON.stringify(result)}`,
 			);
-			if (
-				"title" in result &&
-				typeof result.title === "string" &&
-				/https?:\/\//.test(result.title)
-			) {
-				throw new Error(
-					`Got URL-like title for ${url}: "${result.title}"`,
-				);
-			}
 			console.log(`[page-preview] Success for ${url}: "${("title" in result && result.title) || "(no title)"}"`);
 			return result;
 		} catch (error) {

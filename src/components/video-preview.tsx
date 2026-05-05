@@ -1,4 +1,3 @@
-import { getPagePreview } from "../helpers/page-preview";
 import { css } from "../styled-system/css";
 import { ButtonLink } from "./button-link";
 import { Image } from "./image";
@@ -45,14 +44,17 @@ async function getVideo(youtubeId: string) {
 	const videoUrl = `https://www.youtube.com/watch?v=${youtubeId}`;
 
 	try {
-		const pagePreview = await getPagePreview(videoUrl);
-
-		if ("title" in pagePreview && pagePreview.title) {
-			return {
-				url: videoUrl,
-				image: `https://i.ytimg.com/vi/${youtubeId}/mqdefault.jpg`,
-				title: pagePreview.title,
-			};
+		const oembedUrl = `https://www.youtube.com/oembed?url=${encodeURIComponent(videoUrl)}&format=json`;
+		const response = await fetch(oembedUrl);
+		if (response.ok) {
+			const data = (await response.json()) as { title?: string };
+			if (data.title) {
+				return {
+					url: videoUrl,
+					image: `https://i.ytimg.com/vi/${youtubeId}/mqdefault.jpg`,
+					title: data.title,
+				};
+			}
 		}
 	} catch (error) {
 		console.warn(
