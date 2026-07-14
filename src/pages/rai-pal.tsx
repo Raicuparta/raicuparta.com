@@ -9,9 +9,10 @@ import { stack } from "../styled-system/patterns";
 
 const raiPal: Project = {
 	title: "Rai Pal",
+	tagline: "Universal mod manager.",
 	id: "rai-pal",
 	description:
-		"Mod manager for universal game mods, like UEVR for Unreal games, and UUVR for Unity games.",
+		"Makes it easier to manage mods like UEVR for Unreal games, and UUVR for Unity games, among others.",
 	articles: [],
 	buttons: [
 		{
@@ -49,7 +50,7 @@ export default function RaiPalPage(props: PageProps<"/rai-pal">) {
 				route={props.path}
 				description={raiPal.description}
 				imageUrl={`${websiteUrl}${`/mods/${raiPal.id}.png`}`}
-				title={"Rai Pal"}
+				title={`${raiPal.title} - ${raiPal.tagline}`}
 				imageWidth={400}
 				imageHeight={225}
 				largeImage={true}

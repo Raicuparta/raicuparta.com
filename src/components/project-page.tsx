@@ -59,7 +59,7 @@ export const ProjectPage = (props: Props) => {
 					<ProjectCard
 						src={`/images/projects/${props.project.id}.png`}
 						title={props.project.title}
-						description={props.project.description}
+						description={`${props.project.tagline}. ${props.project.description}`}
 					/>
 					{props.project.steamEmbed && (
 						<div className={stack({ width: "100%" })}>

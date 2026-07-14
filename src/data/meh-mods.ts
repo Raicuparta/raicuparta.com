@@ -4,6 +4,7 @@ export const mehMods: Project[] = [
 	{
 		id: "stanley-parable",
 		title: "StanleyVR",
+		tagline: "The Stanley Parable VR Mod (Ultra Deluxe only)",
 		mainVideo: "qM25FLL-NSQ",
 		videos: ["JVanThRk5e8", "iYt0YlLFjYI", "ZIAWcsPLT1c"],
 		articles: [
@@ -24,7 +25,7 @@ export const mehMods: Project[] = [
 			},
 		],
 		description:
-			"The Stanley Parable VR Mod (Ultra Deluxe only). Missing some polish, but the game is playable from start to finish with motion controls.",
+			"Missing some polish, but the game is playable from start to finish with motion controls.",
 		moreLinks: [
 			{
 				label: "The Stanley Parable: Ultra Deluxe on Steam",
@@ -38,6 +39,7 @@ export const mehMods: Project[] = [
 	},
 	{
 		title: "BaboonVR",
+		tagline: "Trombone Champ VR mod",
 		mainVideo: "g3mzQDQ-iiE",
 		videos: ["DUnzTh49XoI", "XICW_xbxGZs"],
 		articles: [
@@ -48,7 +50,7 @@ export const mehMods: Project[] = [
 		],
 		id: "trombone-champ",
 		description:
-			"Trombone Champ VR mod. Redundant now that there is an official port, Trombone Champ: Unflattened (which I worked on!).",
+			"Redundant now that there is an official port, Trombone Champ: Unflattened (which I worked on!).",
 		buttons: [
 			{
 				url: "https://raicuparta.itch.io/baboon-vr",
@@ -83,12 +85,13 @@ export const mehMods: Project[] = [
 	},
 	{
 		title: "ShipbreakerVR",
+		tagline: "Hardspace: Shipbreaker VR mod",
 		mainVideo: "UGGtz1lYMNw",
 		videos: ["PZLhq5NiFKo"],
 		articles: [],
 		id: "shipbreaker",
 		description:
-			"Hardspace: Shipbreaker VR mod. Has no motion controls, but features camera-independent aiming for all the game tools. Some UI elements broken.",
+			"Has no motion controls, but features camera-independent aiming for all the game tools. Some UI elements broken.",
 		buttons: [
 			{
 				url: "https://raicuparta.itch.io/shipbreaker-vr",

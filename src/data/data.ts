@@ -3,6 +3,7 @@ import type { IconName } from "../svg-assets";
 export type Project = {
 	id: string;
 	title: string;
+	tagline: string;
 	mainVideo: string;
 	videos: string[];
 	articles: string[];

@@ -3,6 +3,7 @@ import type { Project } from "./data";
 export const bestMods: Project[] = [
 	{
 		title: "HeavenVR",
+		tagline: "Neon White VR mod",
 		mainVideo: "zC-k2HTqg1A",
 		videos: ["DrwI5f5qqpM", "9guAWg58RrU"],
 		articles: [
@@ -11,7 +12,7 @@ export const bestMods: Project[] = [
 		],
 		id: "neon-white",
 		description:
-			"Neon White VR mod. Really fun speedrunning FPS, with fast-paced shooter/platformer gameplay. It's an intense, fun, and addictive VR experience.",
+			"Really fun speedrunning FPS, with fast-paced shooter/platformer gameplay. It's an intense, fun, and addictive VR experience.",
 		buttons: [
 			{
 				url: "https://raicuparta.itch.io/heaven-vr",
@@ -39,6 +40,7 @@ export const bestMods: Project[] = [
 	{
 		id: "outer-wilds",
 		title: "NomaiVR",
+		tagline: "Outer Wilds VR mod",
 		mainVideo: "gPFiYRMm8Ok",
 		videos: ["g2NbjF4fG0s", "SCZ8vtl4sVs", "5ntWk0rJTC0", "_mfKvDbeEkg"],
 		articles: [
@@ -46,7 +48,7 @@ export const bestMods: Project[] = [
 			"https://www.realovirtual.com/noticias/10852/outer-wilds-esta-gamepass-se-puede-jugar-vr",
 		],
 		description:
-			"Outer Wilds VR mod. My first mod, and still my most popular one. Lots of exploration, and a really interesting mystery to solve.",
+			"My first mod, and still my most popular one. Lots of exploration, and a really interesting mystery to solve.",
 		buttons: [
 			{
 				icon: "Download",
@@ -78,6 +80,7 @@ export const bestMods: Project[] = [
 	{
 		id: "firewatch",
 		title: "Two Forks VR",
+		tagline: "Firewatch VR mod",
 		mainVideo: "Wo27DFX8rYw",
 		videos: ["jO_V-sq-Ics", "h2uI3ITaHj8", "KeKsGIhehjU"],
 		articles: [
@@ -86,7 +89,7 @@ export const bestMods: Project[] = [
 			"https://www.uploadvr.com/firewatch-vr-mod-now-complete/",
 		],
 		description:
-			"Firewatch VR mod. The full game is playable in VR, with room-scale tracking, motion controls, and multiple comfort options.",
+			"The full game is playable in VR, with room-scale tracking, motion controls, and multiple comfort options.",
 		buttons: [
 			{
 				url: "https://raicuparta.itch.io/two-forks-vr",
