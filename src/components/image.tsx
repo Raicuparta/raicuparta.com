@@ -1,6 +1,6 @@
 import crypto from "node:crypto";
 import fs from "node:fs/promises";
-import sharp, { type Sharp } from "sharp";
+import sharp from "sharp";
 import sharpIco from "sharp-ico";
 import { serverUserAgent } from "../helpers/constants";
 
@@ -69,7 +69,7 @@ async function optimizeImage(
 	}
 }
 
-async function getSharpImage(src: string): Promise<Sharp> {
+async function getSharpImage(src: string): Promise<sharp.Sharp> {
 	const isExternal = /^https?:\/\//.test(src);
 
 	if (isExternal) {
@@ -92,7 +92,7 @@ async function getSharpImage(src: string): Promise<Sharp> {
 			return sharpFromIco;
 		}
 
-		return sharp(Buffer.from(buffer));
+		return sharp(buffer);
 	}
 	const buffer = await fs.readFile(`./private/${src}`);
 	return sharp(buffer);
