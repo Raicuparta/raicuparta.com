@@ -42,7 +42,7 @@ const raiPal: Project = {
 	videos: [],
 };
 
-export default function RaiPalPage(props: PageProps<"rai-pal">) {
+export default function RaiPalPage(props: PageProps<"/rai-pal">) {
 	return (
 		<>
 			<PageHead

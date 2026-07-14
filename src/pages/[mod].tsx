@@ -4,7 +4,7 @@ import { ProjectPage } from "../components/project-page";
 import { allMods } from "../data/all-mods";
 import { websiteUrl } from "../helpers/constants";
 
-export default async function ModPage(props: PageProps<"[mod]">) {
+export default async function ModPage(props: PageProps<"/[mod]">) {
 	const project = await getProject(props.mod);
 
 	return (
