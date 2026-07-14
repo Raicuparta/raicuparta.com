@@ -1,29 +1,33 @@
 // deno-fmt-ignore-file
 // biome-ignore format: generated types do not need formatting
 // prettier-ignore
-import type { PathsForPages, GetConfigResponse } from 'waku/router';
+import type { PathsForPages, GetConfigResponse, SearchCodecsForPages } from 'waku/router';
 
 // prettier-ignore
-import type { getConfig as Mod_getConfig } from './pages/[mod]';
+import type { getConfig as File_Mod_getConfig } from './pages/[mod]';
 // prettier-ignore
-import type { getConfig as Root_getConfig } from './pages/_root';
+import type { getConfig as File_Root_getConfig } from './pages/_root';
 // prettier-ignore
-import type { getConfig as Index_getConfig } from './pages/index';
+import type { getConfig as File_Index_getConfig } from './pages/index';
 // prettier-ignore
-import type { getConfig as RaiPalDocsDiscordPrivacy_getConfig } from './pages/rai-pal-docs/discord-privacy';
+import type { getConfig as File_RaiPalDocsDiscordPrivacy_getConfig } from './pages/rai-pal-docs/discord-privacy';
 // prettier-ignore
-import type { getConfig as RaiPalDocsDiscordTerms_getConfig } from './pages/rai-pal-docs/discord-terms';
+import type { getConfig as File_RaiPalDocsDiscordTerms_getConfig } from './pages/rai-pal-docs/discord-terms';
 // prettier-ignore
-import type { getConfig as RaiPal_getConfig } from './pages/rai-pal';
+import type { getConfig as File_RaiPal_getConfig } from './pages/rai-pal';
 
 // prettier-ignore
 type Page =
-| ({ path: '/[mod]' } & GetConfigResponse<typeof Mod_getConfig>)
-| ({ path: '/_root' } & GetConfigResponse<typeof Root_getConfig>)
-| ({ path: '/' } & GetConfigResponse<typeof Index_getConfig>)
-| ({ path: '/rai-pal-docs/discord-privacy' } & GetConfigResponse<typeof RaiPalDocsDiscordPrivacy_getConfig>)
-| ({ path: '/rai-pal-docs/discord-terms' } & GetConfigResponse<typeof RaiPalDocsDiscordTerms_getConfig>)
-| ({ path: '/rai-pal' } & GetConfigResponse<typeof RaiPal_getConfig>);
+| ({ path: '/[mod]' } & GetConfigResponse<typeof File_Mod_getConfig>)
+| ({ path: '/_root' } & GetConfigResponse<typeof File_Root_getConfig>)
+| ({ path: '/' } & GetConfigResponse<typeof File_Index_getConfig>)
+| ({ path: '/rai-pal-docs/discord-privacy' } & GetConfigResponse<typeof File_RaiPalDocsDiscordPrivacy_getConfig>)
+| ({ path: '/rai-pal-docs/discord-terms' } & GetConfigResponse<typeof File_RaiPalDocsDiscordTerms_getConfig>)
+| ({ path: '/rai-pal' } & GetConfigResponse<typeof File_RaiPal_getConfig>);
+
+// prettier-ignore
+type Layout =
+| { path: '/' };
 
 // prettier-ignore
 declare module 'waku/router' {
@@ -32,6 +36,7 @@ declare module 'waku/router' {
   }
   interface CreatePagesConfig {
     pages: Page;
+    layouts: Layout;
   }
+  interface SearchCodecsConfig extends SearchCodecsForPages<Page> {}
 }
-  

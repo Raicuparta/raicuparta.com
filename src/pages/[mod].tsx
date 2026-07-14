@@ -4,16 +4,16 @@ import { ProjectPage } from "../components/project-page";
 import { allMods } from "../data/all-mods";
 import { websiteUrl } from "../helpers/constants";
 
-export default async function ModPage(props: PageProps<"[mod]">) {
+export default async function ModPage(props: PageProps<"/[mod]">) {
 	const project = await getProject(props.mod);
 
 	return (
 		<>
 			<PageHead
 				route={props.path}
-				description={project.description}
+				description={`${project.tagline}. ${project.description}`}
 				imageUrl={`${websiteUrl}${`/mods/${project.id}.jpg`}`}
-				title={`${project.title}`}
+				title={`${project.title} - ${project.tagline}`}
 				imageWidth={400}
 				imageHeight={225}
 				largeImage={true}
