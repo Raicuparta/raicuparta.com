@@ -28,5 +28,8 @@ export async function getPagePreview(url: string, followRedirects = true) {
 		}
 	}
 
-	throw lastError || new Error(`Failed to fetch preview after ${MAX_RETRIES} attempts: ${url}`);
+	throw (
+		lastError ||
+		new Error(`Failed to fetch preview after ${MAX_RETRIES} attempts: ${url}`)
+	);
 }
