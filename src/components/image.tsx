@@ -1,5 +1,6 @@
 import crypto from "node:crypto";
 import fs from "node:fs/promises";
+import type { ReactNode } from "react";
 import sharp, { type Sharp } from "sharp";
 import sharpIco from "sharp-ico";
 import { serverUserAgent } from "../helpers/constants";
@@ -19,18 +20,28 @@ export async function Image({
 	height,
 	quality,
 	...props
-}: Props) {
-	const optimizedImage = await optimizeImage(src, width, height, quality);
+}: Props): Promise<ReactNode> {
+	try {
+		const optimizedImage = await optimizeImage(src, width, height, quality);
 
-	return (
-		<img
-			{...props}
-			alt={alt}
-			src={optimizedImage.path}
-			height={height ?? optimizedImage.height}
-			width={width ?? optimizedImage.width}
-		/>
-	);
+		return (
+			<img
+				{...props}
+				alt={alt}
+				src={optimizedImage.path}
+				height={height ?? optimizedImage.height}
+				width={width ?? optimizedImage.width}
+			/>
+		);
+	} catch (error) {
+		// Remote images (like favicons) can become unavailable at any time. They
+		// should not fail the whole build, so degrade gracefully instead.
+		if (/^https?:\/\//.test(src)) {
+			console.warn(`Skipping unavailable image ${src}: ${error}`);
+			return null;
+		}
+		throw error;
+	}
 }
 
 async function optimizeImage(

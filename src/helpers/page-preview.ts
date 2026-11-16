@@ -1,4 +1,4 @@
-import LinkPreview from "link-preview-js";
+import { getLinkPreview } from "link-preview-js";
 import { serverUserAgent } from "./constants";
 
 const MAX_RETRIES = 3;
@@ -10,7 +10,7 @@ export async function getPagePreview(url: string, followRedirects = true) {
 
 	for (let attempt = 0; attempt < MAX_RETRIES; attempt++) {
 		try {
-			return await LinkPreview.getLinkPreview(url, {
+			return await getLinkPreview(url, {
 				followRedirects: followRedirects ? "follow" : "error",
 				timeout: TIMEOUT_MS,
 				headers: { "user-agent": serverUserAgent },

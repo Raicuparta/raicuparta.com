@@ -35,7 +35,7 @@ function ButtonLinkInternal({
 		<Link
 			// Waku's auto-scroll disabled and done in scorll-resetter.tsx instead.
 			scroll={false}
-			unstable_prefetchOnView={true}
+			unstable_prefetchOnView={{}}
 			className={cx(defaultStyle, className)}
 			{...props}
 		>
