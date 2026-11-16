@@ -1,6 +1,8 @@
 node_modules
 dist
+/.direnv
 .env*
+!.envrc
 *.tsbuildinfo
 .cache
 .DS_Store
