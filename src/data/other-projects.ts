@@ -1,12 +1,5 @@
 export const otherProjects = [
 	{
-		title: "Rai Pal",
-		id: "rai-pal",
-		description:
-			"Mod manager for universal game mods, like UEVR for Unreal games, and UUVR for Unity games.",
-		url: "/rai-pal",
-	},
-	{
 		title: "Outer Wilds Mods",
 		id: "ow-mods-website",
 		description:

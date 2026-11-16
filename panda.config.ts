@@ -11,6 +11,8 @@ export default defineConfig({
 			tokens: {
 				colors: {
 					cta: { value: "#2b7c4d" },
+					windows: { value: "#1a9fe0" },
+					linux: { value: "#d94a2b" },
 					interactive: { value: "#41327b" },
 					interactiveText: { value: "#d2c6ff" },
 					white: { value: "#ffffff" },

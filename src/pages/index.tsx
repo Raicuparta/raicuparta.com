@@ -105,6 +105,16 @@ export default function HomePage(props: PageProps<"/">) {
 						</Card>
 					</div>
 				</MainPageSection>
+				<MainPageSection title="My Mod Manager" id="rai-pal">
+					<ButtonLink href="/rai-pal" title="Rai Pal">
+						<ProjectCard
+							src="/images/projects/rai-pal.png"
+							title="Rai Pal"
+							description="Mod manager for universal game mods, like UEVR for Unreal games, and UUVR for Unity games."
+							clickable
+						/>
+					</ButtonLink>
+				</MainPageSection>
 				<MainPageSection
 					title="Raicuparta's Top VR Mods"
 					id="vr-mods"

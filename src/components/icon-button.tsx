@@ -16,12 +16,27 @@ export const IconButton = ({
 	...props
 }: Props) => (
 	<ButtonLink
-		className={cx(flex({ padding: 2, rounded: "lg" }), className)}
+		className={cx(
+			flex({
+				paddingY: "0.5em",
+				paddingX: 4,
+				rounded: "3xl",
+				justify: "space-between",
+				align: "center",
+				gap: "1em",
+			}),
+			className,
+		)}
 		{...props}
 	>
-		<div>
-			<Icon className={css({ marginRight: 2, height: 6 })} name={iconName} />
+		<Icon className={css({ width: "25px", height: "25px" })} name={iconName} />
+		<div
+			className={flex({
+				flex: 1,
+				justify: "center",
+			})}
+		>
+			{children}
 		</div>
-		{children}
 	</ButtonLink>
 );

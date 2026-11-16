@@ -1,17 +1,14 @@
 import type { Project } from "../data/data";
-import { css } from "../styled-system/css";
-import { flex, hstack, stack, vstack } from "../styled-system/patterns";
+import { hstack, stack, vstack } from "../styled-system/patterns";
 import { ArticlePreview } from "./article-preview";
-import { Avatar } from "./avatar";
-import { ButtonLink } from "./button-link";
 import { Favicon } from "./favicon";
-import { Icon } from "./icon";
-import { IconButton } from "./icon-button";
 import { LinkList } from "./link-list";
 import { LinkListItem } from "./link-list-item";
+import { PageNav } from "./page-nav";
+import { ProjectButton } from "./project-button";
+import { ProjectButtonList } from "./project-button-list";
 import { ProjectCard } from "./project-card";
 import { Section } from "./section";
-import { SocialLinks } from "./social-links";
 import { SteamEmbed } from "./steam-embed";
 import VideoPreview from "./video-preview";
 import { YoutubeEmbed } from "./youtube-embed/youtube-embed";
@@ -24,36 +21,7 @@ type Props = {
 export const ProjectPage = (props: Props) => {
 	return (
 		<div className={stack({ gap: 4 })}>
-			<div
-				className={flex({
-					justify: "center",
-					width: "100%",
-				})}
-			>
-				<div
-					className={hstack({
-						justify: "space-between",
-						flexWrap: "wrap",
-						width: "100%",
-					})}
-				>
-					<ButtonLink
-						className={hstack({
-							rounded: "md",
-							alignItems: "center",
-							paddingX: 0,
-							paddingY: 1,
-							gap: 1,
-						})}
-						href="/"
-					>
-						<Icon name="Back" className={css({ height: 4 })} />
-						<Avatar className={css({ width: 6 })} />
-						<span>More by Rai</span>
-					</ButtonLink>
-					<SocialLinks />
-				</div>
-			</div>
+			<PageNav />
 			<div className={stack({ gap: 4, align: "center" })}>
 				<div className={vstack({ gap: 6 })}>
 					<ProjectCard
@@ -67,31 +35,11 @@ export const ProjectPage = (props: Props) => {
 							<SteamEmbed appId={props.project.steamEmbed.appId} />
 						</div>
 					)}
-					<div
-						className={stack({
-							alignItems: "center",
-							justify: "center",
-						})}
-					>
+					<ProjectButtonList>
 						{props.project.buttons.map((button) => (
-							<IconButton
-								key={button.url}
-								href={button.url}
-								iconName={button.icon}
-								className={
-									button.isPrimary
-										? css({
-												background: "cta",
-												color: "white",
-												fontWeight: "bold",
-											})
-										: css({ background: "interactive", paddingY: 1 })
-								}
-							>
-								{button.label}
-							</IconButton>
+							<ProjectButton key={button.url} button={button} />
 						))}
-					</div>
+					</ProjectButtonList>
 					{props.children}
 					{props.project.mainVideo && (
 						<YoutubeEmbed

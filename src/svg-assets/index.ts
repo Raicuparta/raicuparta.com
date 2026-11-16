@@ -7,10 +7,12 @@ import Bluesky from "./bluesky.svg?react";
 import Download from "./download.svg?react";
 import Github from "./github.svg?react";
 import Itch from "./itch.svg?react";
+import Linux from "./linux.svg?react";
 import Patreon from "./patreon.svg?react";
 import PayPal from "./paypal.svg?react";
 import Return from "./return.svg?react";
 import YouTube from "./youtube.svg?react";
+import Windows from "./windows.svg?react";
 import ChevronRight from "./chevron-right.svg?react";
 
 export const svgAssets = {
@@ -26,7 +28,8 @@ export const svgAssets = {
 	Back,
 	Bluesky,
 	ChevronRight,
-
+	Linux,
+	Windows,
 };
 
 export type IconName = keyof typeof svgAssets;
