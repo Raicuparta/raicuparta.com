@@ -1,4 +1,5 @@
 import type { Project } from "../data/data";
+import { css } from "../styled-system/css";
 import { hstack, stack, vstack } from "../styled-system/patterns";
 import { ArticlePreview } from "./article-preview";
 import { Favicon } from "./favicon";
@@ -24,11 +25,18 @@ export const ProjectPage = (props: Props) => {
 			<PageNav />
 			<div className={stack({ gap: 4, align: "center" })}>
 				<div className={vstack({ gap: 6 })}>
-					<ProjectCard
-						src={`/images/projects/${props.project.id}.png`}
-						title={props.project.title}
-						description={`${props.project.tagline}. ${props.project.description}`}
-					/>
+					<h1 className={css({ fontSize: "3xl", fontWeight: "normal" })}>
+						{props.project.title}
+					</h1>
+					<p>{`${props.project.tagline}. ${props.project.description}`}</p>
+					{props.children}
+					{props.project.mainVideo && (
+						<YoutubeEmbed
+							urlOrId={props.project.mainVideo}
+							poster="maxresdefault"
+							title={`${props.project.title} video.`}
+						/>
+					)}
 					{props.project.steamEmbed && (
 						<div className={stack({ width: "100%" })}>
 							<p>{props.project.steamEmbed.description}</p>
@@ -40,14 +48,6 @@ export const ProjectPage = (props: Props) => {
 							<ProjectButton key={button.url} button={button} />
 						))}
 					</ProjectButtonList>
-					{props.children}
-					{props.project.mainVideo && (
-						<YoutubeEmbed
-							urlOrId={props.project.mainVideo}
-							poster="maxresdefault"
-							title={`${props.project.title} video.`}
-						/>
-					)}
 					{props.project.videos && props.project.videos.length > 0 && (
 						<Section>
 							<div className={hstack({ flexWrap: "wrap", justify: "center" })}>

@@ -1,5 +1,5 @@
 import { css, cx } from "../styled-system/css";
-import { flex, hstack, stack } from "../styled-system/patterns";
+import { flex, stack } from "../styled-system/patterns";
 import { Icon } from "./icon";
 import { Image } from "./image";
 
@@ -18,45 +18,46 @@ export const ProjectCard = (props: Props) => (
 				rounded: "lg",
 				overflow: "hidden",
 				background: "overlay",
-				flexDirection: "column",
-				sm: {
-					flexDirection: "row",
-				},
+				flexDirection: "row",
 			}),
 			props.className,
 		)}
 	>
-		<Image
-			src={props.src}
-			width={500}
-			height={400}
-			quality={30}
-			alt={props.title}
-			className={css({
-				objectFit: "contain",
-				background: "overlay",
-				sm: {
-					maxWidth: 200,
-					minWidth: 200,
-					height: "unset",
-				},
-				height: 150,
-				width: "100%",
-				maxWidth: undefined,
-				minWidth: undefined,
-			})}
-		/>
 		<div
-			className={hstack({
-				alignItems: "stretch",
-				justifyContent: "space-between",
+			className={css({
+				display: "flex",
+				flexDirection: "column",
+				sm: {
+					flexDirection: "row",
+				},
 				width: "100%",
+				minWidth: 0,
 			})}
 		>
+			<Image
+				src={props.src}
+				width={500}
+				height={400}
+				quality={30}
+				alt={props.title}
+				className={css({
+					objectFit: "contain",
+					background: "overlay",
+					sm: {
+						maxWidth: 200,
+						minWidth: 200,
+						height: "unset",
+					},
+					height: 150,
+					width: "100%",
+					maxWidth: undefined,
+					minWidth: undefined,
+				})}
+			/>
 			<div
 				className={cx(
 					stack({ padding: 4, gap: 4 }),
-					css({ alignSelf: "center" }),
+					css({ alignSelf: "stretch", sm: { alignSelf: "center" } }),
 				)}
 			>
 				<div
@@ -79,24 +80,18 @@ export const ProjectCard = (props: Props) => (
 					</div>
 				)}
 			</div>
-			{props.clickable && (
-				<div
-					className={cx(
-						flex({
-							justify: "center",
-							alignItems: "center",
-							padding: 2,
-							background: "interactive",
-						}),
-						css({ alignSelf: "stretch" }),
-					)}
-				>
-					<Icon
-						name="ChevronRight"
-						className={css({ height: 10, width: 10 })}
-					/>
-				</div>
-			)}
 		</div>
+		{props.clickable && (
+			<div
+				className={flex({
+					justify: "center",
+					alignItems: "center",
+					background: "interactive",
+					alignSelf: "stretch",
+				})}
+			>
+				<Icon name="ChevronRight" className={css({ height: 10, width: 10 })} />
+			</div>
+		)}
 	</div>
 );

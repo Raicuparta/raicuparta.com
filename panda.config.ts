@@ -17,7 +17,7 @@ export default defineConfig({
 					interactive: { value: "#41327b" },
 					interactiveText: { value: "#d2c6ff" },
 					white: { value: "#ffffff" },
-					overlay: { value: "rgba(187, 158, 255, 0.04)" },
+					overlay: { value: "rgba(187, 158, 255, 0.08)" },
 					black: { value: "#000000" },
 					purple: { value: "#1d1b20" },
 				},
